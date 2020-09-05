@@ -34,7 +34,7 @@ public class DevOps : MonoBehaviour
     void FixedUpdate()
     {
         // Pull        
-        if (mode && player.pullClick && pauseMenu.activeSelf)
+        if (mode && player.pullClick && (pauseMenu.activeSelf || deadMenu.activeSelf || victoryMenu.activeSelf))
         {
             player.rb.constraints = RigidbodyConstraints2D.None;
             player.rb.MovePosition(Camera.main.ScreenToWorldPoint(Input.mousePosition));
