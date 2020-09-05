@@ -1,0 +1,6034 @@
+fileFormatVersion: 2
+guid: dcb495bcd2963214393cc6c5e1601903
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5797667949411456719
+    second: Pegas_0
+  - first:
+      213: 7905640621793223003
+    second: Pegas_1
+  - first:
+      213: -6702411417894512935
+    second: Pegas_2
+  - first:
+      213: -383060331746090803
+    second: Pegas_3
+  - first:
+      213: 1364445342808651087
+    second: Pegas_4
+  - first:
+      213: -7153495801489368595
+    second: Pegas_5
+  - first:
+      213: 7550911209988328258
+    second: Pegas_6
+  - first:
+      213: -9057178327536490236
+    second: Pegas_7
+  - first:
+      213: 7085377144456600841
+    second: Pegas_8
+  - first:
+      213: 5380759295046249855
+    second: Pegas_9
+  - first:
+      213: 4097678081253404089
+    second: Pegas_10
+  - first:
+      213: -8023049349701833369
+    second: Pegas_11
+  - first:
+      213: 7461056643317043479
+    second: Pegas_12
+  - first:
+      213: 8290618577745769735
+    second: Pegas_13
+  - first:
+      213: -5547325584239488201
+    second: Pegas_14
+  - first:
+      213: -957904948518855966
+    second: Pegas_15
+  - first:
+      213: 1939465276761047673
+    second: Pegas_16
+  - first:
+      213: 1231927408072453929
+    second: Pegas_17
+  - first:
+      213: 2208216452993662575
+    second: Pegas_18
+  - first:
+      213: 8168301866963698043
+    second: Pegas_19
+  - first:
+      213: -7931702448944443358
+    second: Pegas_20
+  - first:
+      213: 6653876113541497539
+    second: Pegas_21
+  - first:
+      213: 7260453268700207024
+    second: Pegas_22
+  - first:
+      213: 4159654460750649632
+    second: Pegas_23
+  - first:
+      213: -8116679674148412979
+    second: Pegas_24
+  - first:
+      213: 9058476165232658997
+    second: Pegas_25
+  - first:
+      213: 6685257745763984639
+    second: Pegas_26
+  - first:
+      213: -7676936457793468752
+    second: Pegas_27
+  - first:
+      213: 6861744243315290470
+    second: Pegas_28
+  - first:
+      213: -5389298665343291700
+    second: Pegas_29
+  - first:
+      213: 1657185116013985755
+    second: Pegas_30
+  - first:
+      213: -3304583146140063766
+    second: Pegas_31
+  - first:
+      213: 6609783258605692558
+    second: Pegas_32
+  - first:
+      213: -3702061172250972940
+    second: Pegas_33
+  - first:
+      213: -4699580344938497571
+    second: Pegas_34
+  - first:
+      213: -8727153509794432157
+    second: Pegas_35
+  - first:
+      213: 2688967264704415672
+    second: Pegas_36
+  - first:
+      213: -3708835791152736438
+    second: Pegas_37
+  - first:
+      213: -5387549510851244900
+    second: Pegas_38
+  - first:
+      213: -3272960990842534980
+    second: Pegas_39
+  - first:
+      213: -3381474485416345969
+    second: Pegas_40
+  - first:
+      213: -6307061446206843850
+    second: Pegas_41
+  - first:
+      213: -1796522636941673089
+    second: Pegas_42
+  - first:
+      213: -8934680763430194673
+    second: Pegas_43
+  - first:
+      213: -269237614486884631
+    second: Pegas_44
+  - first:
+      213: -2505958281360163011
+    second: Pegas_45
+  - first:
+      213: 7377837006915867082
+    second: Pegas_46
+  - first:
+      213: -5250208656527268161
+    second: Pegas_47
+  - first:
+      213: -5682698665960328912
+    second: Pegas_48
+  - first:
+      213: 8743108355244648906
+    second: Pegas_49
+  - first:
+      213: 7702181547009418235
+    second: Pegas_50
+  - first:
+      213: 822831155871978167
+    second: Pegas_51
+  - first:
+      213: 7546391042784579698
+    second: Pegas_52
+  - first:
+      213: 253179618031627242
+    second: Pegas_53
+  - first:
+      213: -9191923059024130827
+    second: Pegas_54
+  - first:
+      213: -2197469978883045775
+    second: Pegas_55
+  - first:
+      213: -9022048518852423683
+    second: Pegas_56
+  - first:
+      213: -1582474470289254572
+    second: Pegas_57
+  - first:
+      213: 2968050649215015671
+    second: Pegas_58
+  - first:
+      213: -1956190828634295396
+    second: Pegas_59
+  - first:
+      213: 7673986766216785244
+    second: Pegas_60
+  - first:
+      213: -6238828431936993885
+    second: Pegas_61
+  - first:
+      213: 6168245165876931262
+    second: Pegas_62
+  - first:
+      213: 2282523358549680244
+    second: Pegas_63
+  - first:
+      213: -2854202153189176762
+    second: Pegas_64
+  - first:
+      213: -7798543757182433266
+    second: Pegas_65
+  - first:
+      213: -1565870016958733163
+    second: Pegas_66
+  - first:
+      213: 4239847836256845918
+    second: Pegas_67
+  - first:
+      213: -836052192284720318
+    second: Pegas_68
+  - first:
+      213: 1540112743767537604
+    second: Pegas_69
+  - first:
+      213: -58135475799223122
+    second: Pegas_70
+  - first:
+      213: 1884230287101902397
+    second: Pegas_71
+  - first:
+      213: -7943256543726875060
+    second: Pegas_72
+  - first:
+      213: -2788000117035687491
+    second: Pegas_73
+  - first:
+      213: 7037119031530595640
+    second: Pegas_74
+  - first:
+      213: 5305647819657024635
+    second: Pegas_75
+  - first:
+      213: -4572561138540649905
+    second: Pegas_76
+  - first:
+      213: -7782503392655799773
+    second: Pegas_77
+  - first:
+      213: 8492836147392570939
+    second: Pegas_78
+  - first:
+      213: 2296991957032228132
+    second: Pegas_79
+  - first:
+      213: 9198613509000143604
+    second: Pegas_80
+  - first:
+      213: 3495618415649248251
+    second: Pegas_81
+  - first:
+      213: -994849064344017941
+    second: Pegas_82
+  - first:
+      213: 3762788002592487560
+    second: Pegas_83
+  - first:
+      213: 3280269180710297900
+    second: Pegas_84
+  - first:
+      213: 6293200021214835695
+    second: Pegas_85
+  - first:
+      213: -4317312264799485755
+    second: Pegas_86
+  - first:
+      213: 9039874576238804067
+    second: Pegas_87
+  - first:
+      213: 6067520947128874697
+    second: Pegas_88
+  - first:
+      213: 4149904838731319194
+    second: Pegas_89
+  - first:
+      213: -1393807696672371337
+    second: Pegas_90
+  - first:
+      213: 8809874327907002400
+    second: Pegas_91
+  - first:
+      213: -2721269654302531953
+    second: Pegas_92
+  - first:
+      213: 5321531917010314909
+    second: Pegas_93
+  - first:
+      213: 7654344561239513406
+    second: Pegas_94
+  - first:
+      213: -1364369515429206106
+    second: Pegas_95
+  - first:
+      213: -1863567442557953809
+    second: Pegas_96
+  - first:
+      213: -7259591660272351416
+    second: Pegas_97
+  - first:
+      213: 2721682757082270251
+    second: Pegas_98
+  - first:
+      213: -5624433666406384224
+    second: Pegas_99
+  - first:
+      213: 3693588450621661609
+    second: Pegas_100
+  - first:
+      213: -2651233283610306007
+    second: Pegas_101
+  - first:
+      213: -1135758356581474959
+    second: Pegas_102
+  - first:
+      213: 4099029018203774075
+    second: Pegas_103
+  - first:
+      213: -6694516575819263778
+    second: Pegas_104
+  - first:
+      213: 2261722930299614924
+    second: Pegas_105
+  - first:
+      213: -6085890984709863089
+    second: Pegas_106
+  - first:
+      213: -1965103459484833602
+    second: Pegas_107
+  - first:
+      213: 1977240535756077568
+    second: Pegas_108
+  - first:
+      213: -1571346656736160381
+    second: Pegas_109
+  - first:
+      213: -1483824359728246471
+    second: Pegas_110
+  - first:
+      213: 294461855379358510
+    second: Pegas_111
+  - first:
+      213: -9157215095483020657
+    second: Pegas_112
+  - first:
+      213: -8736259057423364247
+    second: Pegas_113
+  - first:
+      213: -788432104956376149
+    second: Pegas_114
+  - first:
+      213: -6238893350728669597
+    second: Pegas_115
+  - first:
+      213: -2670620269414100055
+    second: Pegas_116
+  - first:
+      213: 3426595877550332281
+    second: Pegas_117
+  - first:
+      213: -3072870917817451179
+    second: Pegas_118
+  - first:
+      213: 4215942729017968851
+    second: Pegas_119
+  - first:
+      213: 8614855104460434523
+    second: Pegas_120
+  - first:
+      213: 1716694650776112479
+    second: Pegas_121
+  - first:
+      213: 4715983218488840494
+    second: Pegas_122
+  - first:
+      213: -7977032633424265200
+    second: Pegas_123
+  - first:
+      213: 4664338465666288736
+    second: Pegas_124
+  - first:
+      213: 5986067597402976742
+    second: Pegas_125
+  - first:
+      213: -5702554207581656545
+    second: Pegas_126
+  - first:
+      213: -1601581285719961966
+    second: Pegas_127
+  - first:
+      213: -7688253416620341104
+    second: Pegas_128
+  - first:
+      213: 1456912076789828775
+    second: Pegas_129
+  - first:
+      213: -7246853298314932716
+    second: Pegas_130
+  - first:
+      213: -6520171767690783527
+    second: Pegas_131
+  - first:
+      213: 6706243088292889903
+    second: Pegas_132
+  - first:
+      213: -5060513581663039320
+    second: Pegas_133
+  - first:
+      213: 6755237955139341052
+    second: Pegas_134
+  - first:
+      213: -1747515167108695673
+    second: Pegas_135
+  - first:
+      213: -7078743090350416658
+    second: Pegas_136
+  - first:
+      213: -3838866748902756932
+    second: Pegas_137
+  - first:
+      213: 4224339418190283766
+    second: Pegas_138
+  - first:
+      213: 6827663120254388409
+    second: Pegas_139
+  - first:
+      213: 5498476273989926995
+    second: Pegas_140
+  - first:
+      213: 6942549409875325499
+    second: Pegas_141
+  - first:
+      213: 6640087685255090769
+    second: Pegas_142
+  - first:
+      213: -5306744303820517959
+    second: Pegas_143
+  - first:
+      213: 6882016871182878812
+    second: Pegas_144
+  - first:
+      213: 8002144029233913642
+    second: Pegas_145
+  - first:
+      213: -6751620808962441958
+    second: Pegas_146
+  - first:
+      213: -508426028854292359
+    second: Pegas_147
+  - first:
+      213: 5296503494010121082
+    second: Pegas_148
+  - first:
+      213: 5675394622710955404
+    second: Pegas_149
+  - first:
+      213: -6732047939990476210
+    second: Pegas_150
+  - first:
+      213: -6309887592750182834
+    second: Pegas_151
+  - first:
+      213: -6272431443821738355
+    second: Pegas_152
+  - first:
+      213: 6509616085004468902
+    second: Pegas_153
+  - first:
+      213: 2338617891129770287
+    second: Pegas_154
+  - first:
+      213: 392990468251177560
+    second: Pegas_155
+  - first:
+      213: 7290732484733915755
+    second: Pegas_156
+  - first:
+      213: 7255425757419602304
+    second: Pegas_157
+  - first:
+      213: -3775303973877438775
+    second: Pegas_158
+  - first:
+      213: -1246149701861204100
+    second: Pegas_159
+  - first:
+      213: 6788984107779267260
+    second: Pegas_160
+  - first:
+      213: 4187788219103763177
+    second: Pegas_161
+  - first:
+      213: 1618377261879815983
+    second: Pegas_162
+  - first:
+      213: -7495783104654289212
+    second: Pegas_163
+  - first:
+      213: 7708070334706973939
+    second: Pegas_164
+  - first:
+      213: -217458601244254025
+    second: Pegas_165
+  - first:
+      213: -1489975868245419424
+    second: Pegas_166
+  - first:
+      213: -6816579518513884131
+    second: Pegas_167
+  - first:
+      213: 4200397793366899932
+    second: Pegas_168
+  - first:
+      213: -6183061199193421600
+    second: Pegas_169
+  - first:
+      213: 1899885080304753574
+    second: Pegas_170
+  - first:
+      213: -1710525372819392937
+    second: Pegas_171
+  - first:
+      213: -672013623488799248
+    second: Pegas_172
+  - first:
+      213: 8506812283114037683
+    second: Pegas_173
+  - first:
+      213: 4820058758669541500
+    second: Pegas_174
+  - first:
+      213: -6156138519057828202
+    second: Pegas_175
+  - first:
+      213: -3428187158187238627
+    second: Pegas_176
+  - first:
+      213: 6376206841941117781
+    second: Pegas_177
+  - first:
+      213: -8783635832508564282
+    second: Pegas_178
+  - first:
+      213: -3673860791274600831
+    second: Pegas_179
+  - first:
+      213: -8526999086030269504
+    second: Pegas_180
+  - first:
+      213: 6634158596847780779
+    second: Pegas_181
+  - first:
+      213: 381604783319578744
+    second: Pegas_182
+  - first:
+      213: -7433337633643071188
+    second: Pegas_183
+  - first:
+      213: -7144298499405624787
+    second: Pegas_184
+  - first:
+      213: -5327411288872288909
+    second: Pegas_185
+  - first:
+      213: -7595438931128867263
+    second: Pegas_186
+  - first:
+      213: 7898549648674325030
+    second: Pegas_187
+  - first:
+      213: -7534043035288810221
+    second: Pegas_188
+  - first:
+      213: 7538478338084869018
+    second: Pegas_189
+  - first:
+      213: -7765102994634531656
+    second: Pegas_190
+  - first:
+      213: 929089886212564407
+    second: Pegas_191
+  - first:
+      213: 6507860749717127746
+    second: Pegas_192
+  - first:
+      213: 5365055475441120952
+    second: Pegas_193
+  - first:
+      213: -4640919689472574630
+    second: Pegas_194
+  - first:
+      213: -8283697499642695487
+    second: Pegas_195
+  - first:
+      213: 1131898038249946722
+    second: Pegas_196
+  - first:
+      213: 7482314100014145296
+    second: Pegas_197
+  - first:
+      213: 4872043513983741375
+    second: Pegas_198
+  - first:
+      213: 802743005575876591
+    second: Pegas_199
+  - first:
+      213: -6951037353499106348
+    second: Pegas_200
+  - first:
+      213: -4393039386359450022
+    second: Pegas_201
+  - first:
+      213: 6223049085831058465
+    second: Pegas_202
+  - first:
+      213: 8809748459565809092
+    second: Pegas_203
+  - first:
+      213: -6788847951684723272
+    second: Pegas_204
+  - first:
+      213: -4598486131008629250
+    second: Pegas_205
+  - first:
+      213: -588973510261881581
+    second: Pegas_206
+  - first:
+      213: 7639913281243817243
+    second: Pegas_207
+  - first:
+      213: 6593921172564877452
+    second: Pegas_208
+  - first:
+      213: 212292556433250280
+    second: Pegas_209
+  - first:
+      213: 1373015406365374567
+    second: Pegas_210
+  - first:
+      213: -8446289418690107712
+    second: Pegas_211
+  - first:
+      213: -2363709701773897781
+    second: Pegas_212
+  - first:
+      213: -871053903243446627
+    second: Pegas_213
+  - first:
+      213: -4930860060889351141
+    second: Pegas_214
+  - first:
+      213: 5258680242171453541
+    second: Pegas_215
+  - first:
+      213: 1388215448846571142
+    second: Pegas_216
+  - first:
+      213: 6992776502098273462
+    second: Pegas_217
+  - first:
+      213: 8180692379399760470
+    second: Pegas_218
+  - first:
+      213: 5796295266399268075
+    second: Pegas_219
+  - first:
+      213: -6626350147696729167
+    second: Pegas_220
+  - first:
+      213: 6742454698558833914
+    second: Pegas_221
+  - first:
+      213: -1714644903312808488
+    second: Pegas_222
+  - first:
+      213: 2752024858800624692
+    second: Pegas_223
+  - first:
+      213: 4407796388531430836
+    second: Pegas_224
+  - first:
+      213: 108772634991363263
+    second: Pegas_225
+  - first:
+      213: 5861759344350501867
+    second: Pegas_226
+  - first:
+      213: 1700847771455843926
+    second: Pegas_227
+  - first:
+      213: -3620238622675174029
+    second: Pegas_228
+  - first:
+      213: 1129260865389116005
+    second: Pegas_229
+  - first:
+      213: 6763169569258833033
+    second: Pegas_230
+  - first:
+      213: -1604177937129780608
+    second: Pegas_231
+  - first:
+      213: -7227666933155002153
+    second: Pegas_232
+  - first:
+      213: -6228813941990621991
+    second: Pegas_233
+  - first:
+      213: -1590655302445165703
+    second: Pegas_234
+  - first:
+      213: -8323679449724977633
+    second: Pegas_235
+  - first:
+      213: -8121348723025958088
+    second: Pegas_236
+  - first:
+      213: 1464742329876467689
+    second: Pegas_237
+  - first:
+      213: -3096320412901624929
+    second: Pegas_238
+  - first:
+      213: 1902306619870909979
+    second: Pegas_239
+  - first:
+      213: -8477033662708946903
+    second: Pegas_240
+  - first:
+      213: -3843732132979483321
+    second: Pegas_241
+  - first:
+      213: -9158912442390886656
+    second: Pegas_242
+  - first:
+      213: -9107514679447139307
+    second: Pegas_243
+  - first:
+      213: 143894683557228653
+    second: Pegas_244
+  - first:
+      213: -3374959667486603354
+    second: Pegas_245
+  - first:
+      213: -3302869604244775985
+    second: Pegas_246
+  - first:
+      213: 1246956331845521642
+    second: Pegas_247
+  - first:
+      213: -7507534286169185833
+    second: Pegas_248
+  - first:
+      213: -5272311640077786704
+    second: Pegas_249
+  - first:
+      213: 5797606595924458490
+    second: Pegas_250
+  - first:
+      213: -4621750548740403640
+    second: Pegas_251
+  - first:
+      213: -7546769340965022139
+    second: Pegas_252
+  - first:
+      213: -4782777052163698116
+    second: Pegas_253
+  - first:
+      213: -5989173464215192208
+    second: Pegas_254
+  - first:
+      213: 2558195270711088593
+    second: Pegas_255
+  - first:
+      213: 3513779214142066934
+    second: Pegas_256
+  - first:
+      213: 7049731374147914448
+    second: Pegas_257
+  - first:
+      213: -7247879870130792953
+    second: Pegas_258
+  - first:
+      213: -5495139240734864398
+    second: Pegas_259
+  - first:
+      213: -8761181605177051130
+    second: Pegas_260
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 94
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pegas_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1057
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc6565a5844757050800000000000000
+      internalID: 5797667949411456719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_1
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 1057
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5122e7724a76bd60800000000000000
+      internalID: 7905640621793223003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_2
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 1057
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d610e983504cf2a0800000000000000
+      internalID: -6702411417894512935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_3
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 1057
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc02bb668a81faaf0800000000000000
+      internalID: -383060331746090803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_4
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 1057
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f45bb856fcb7fe210800000000000000
+      internalID: 1364445342808651087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_5
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 1057
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de95af9287da9bc90800000000000000
+      internalID: -7153495801489368595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_6
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 1057
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24b8ed13db93ac860800000000000000
+      internalID: 7550911209988328258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_7
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 1057
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40922df4c407e4280800000000000000
+      internalID: -9057178327536490236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_8
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 1057
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90dd10319f0545260800000000000000
+      internalID: 7085377144456600841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_9
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 1057
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7dec13021c4caa40800000000000000
+      internalID: 5380759295046249855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_10
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 1057
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bd63052180edd830800000000000000
+      internalID: 4097678081253404089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_11
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 1057
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76de797df1768a090800000000000000
+      internalID: -8023049349701833369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_12
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 1057
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7111bf99c7ffa8760800000000000000
+      internalID: 7461056643317043479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_13
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7057acebba13e0370800000000000000
+      internalID: 8290618577745769735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_14
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73318f9a5c0f303b0800000000000000
+      internalID: -5547325584239488201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_15
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ead1f64686d4b2f0800000000000000
+      internalID: -957904948518855966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_16
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9720c8bb46d5aea10800000000000000
+      internalID: 1939465276761047673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_17
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92fe93b537fa81110800000000000000
+      internalID: 1231927408072453929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_18
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6e3cd31a2925ae10800000000000000
+      internalID: 2208216452993662575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_19
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b71088e3543ab5170800000000000000
+      internalID: 8168301866963698043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_20
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 220129a85aeece190800000000000000
+      internalID: -7931702448944443358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_21
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c2091f4211575c50800000000000000
+      internalID: 6653876113541497539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_22
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b71335c7cf42c460800000000000000
+      internalID: 7260453268700207024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_23
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 029596971bf0ab930800000000000000
+      internalID: 4159654460750649632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_24
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc120c227d2cb5f80800000000000000
+      internalID: -8116679674148412979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_25
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53a0903141c26bd70800000000000000
+      internalID: 9058476165232658997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_26
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff4e030ff7ec6cc50800000000000000
+      internalID: 6685257745763984639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_27
+      rect:
+        serializedVersion: 2
+        x: 1345
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b689fd37fa067590800000000000000
+      internalID: -7676936457793468752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_28
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 661b362c800d93f50800000000000000
+      internalID: 6861744243315290470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_29
+      rect:
+        serializedVersion: 2
+        x: 1537
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccee9b7ea6d5535b0800000000000000
+      internalID: -5389298665343291700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_30
+      rect:
+        serializedVersion: 2
+        x: 1633
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdff31735118ff610800000000000000
+      internalID: 1657185116013985755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_31
+      rect:
+        serializedVersion: 2
+        x: 1729
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae724931323c322d0800000000000000
+      internalID: -3304583146140063766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_32
+      rect:
+        serializedVersion: 2
+        x: 1825
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8624838adaaabb50800000000000000
+      internalID: 6609783258605692558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_33
+      rect:
+        serializedVersion: 2
+        x: 1921
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fce63b6af2af9cc0800000000000000
+      internalID: -3702061172250972940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_34
+      rect:
+        serializedVersion: 2
+        x: 2017
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd97882639cb7ceb0800000000000000
+      internalID: -4699580344938497571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_35
+      rect:
+        serializedVersion: 2
+        x: 2113
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36b366c0f1ce2e680800000000000000
+      internalID: -8727153509794432157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_36
+      rect:
+        serializedVersion: 2
+        x: 2209
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b74c510b71215520800000000000000
+      internalID: 2688967264704415672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_37
+      rect:
+        serializedVersion: 2
+        x: 2305
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a47161a8f71978cc0800000000000000
+      internalID: -3708835791152736438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_38
+      rect:
+        serializedVersion: 2
+        x: 2401
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9cc1eba3449b35b0800000000000000
+      internalID: -5387549510851244900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_39
+      rect:
+        serializedVersion: 2
+        x: 2497
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb3ce19d15b1492d0800000000000000
+      internalID: -3272960990842534980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_40
+      rect:
+        serializedVersion: 2
+        x: 2593
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8e36bf0fd69211d0800000000000000
+      internalID: -3381474485416345969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_41
+      rect:
+        serializedVersion: 2
+        x: 2689
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 634974ae701d878a0800000000000000
+      internalID: -6307061446206843850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_42
+      rect:
+        serializedVersion: 2
+        x: 2785
+        y: 961
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7db42a1e287117e0800000000000000
+      internalID: -1796522636941673089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_43
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f023a320f23a10480800000000000000
+      internalID: -8934680763430194673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_44
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eee55ce0d9734cf0800000000000000
+      internalID: -269237614486884631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_45
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3f3491683c093dd0800000000000000
+      internalID: -2505958281360163011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_46
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac193f71ba7536660800000000000000
+      internalID: 7377837006915867082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_47
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb6e20f2b038327b0800000000000000
+      internalID: -5250208656527268161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_48
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03139d9ebaff221b0800000000000000
+      internalID: -5682698665960328912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_49
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac96b13e9b2c55970800000000000000
+      internalID: 8743108355244648906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_50
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf3a0112f45a3ea60800000000000000
+      internalID: 7702181547009418235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_51
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b29fd3a3984b6b00800000000000000
+      internalID: 822831155871978167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_52
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2705d51cbaa2ab860800000000000000
+      internalID: 7546391042784579698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_53
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aebe42d6589738300800000000000000
+      internalID: 253179618031627242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_54
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fc0520cdaabf6080800000000000000
+      internalID: -9191923059024130827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_55
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 176471862b40181e0800000000000000
+      internalID: -2197469978883045775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_56
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dff46774cae3bc280800000000000000
+      internalID: -9022048518852423683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_57
+      rect:
+        serializedVersion: 2
+        x: 1345
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 457d8448adbe90ae0800000000000000
+      internalID: -1582474470289254572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_58
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fa14dd0752a03920800000000000000
+      internalID: 2968050649215015671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_59
+      rect:
+        serializedVersion: 2
+        x: 1537
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9330624ec63ad4e0800000000000000
+      internalID: -1956190828634295396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_60
+      rect:
+        serializedVersion: 2
+        x: 1633
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5d666b2e4a7f7a60800000000000000
+      internalID: 7673986766216785244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_61
+      rect:
+        serializedVersion: 2
+        x: 1729
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a5c9cb889a3b69a0800000000000000
+      internalID: -6238828431936993885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_62
+      rect:
+        serializedVersion: 2
+        x: 1825
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eba6d9f2c420a9550800000000000000
+      internalID: 6168245165876931262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_63
+      rect:
+        serializedVersion: 2
+        x: 1921
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 470a2e9b6e62daf10800000000000000
+      internalID: 2282523358549680244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_64
+      rect:
+        serializedVersion: 2
+        x: 2017
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64a010e8346d368d0800000000000000
+      internalID: -2854202153189176762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_65
+      rect:
+        serializedVersion: 2
+        x: 2113
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e080dc375c106c390800000000000000
+      internalID: -7798543757182433266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_66
+      rect:
+        serializedVersion: 2
+        x: 2209
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5946db21489e44ae0800000000000000
+      internalID: -1565870016958733163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_67
+      rect:
+        serializedVersion: 2
+        x: 2305
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e504cc5b427f6da30800000000000000
+      internalID: 4239847836256845918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_68
+      rect:
+        serializedVersion: 2
+        x: 2401
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 243ce21f5feb564f0800000000000000
+      internalID: -836052192284720318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_69
+      rect:
+        serializedVersion: 2
+        x: 2497
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c7f05e61649f5510800000000000000
+      internalID: 1540112743767537604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_70
+      rect:
+        serializedVersion: 2
+        x: 2593
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea49320c716713ff0800000000000000
+      internalID: -58135475799223122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_71
+      rect:
+        serializedVersion: 2
+        x: 2689
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3ebdb98671262a10800000000000000
+      internalID: 1884230287101902397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_72
+      rect:
+        serializedVersion: 2
+        x: 2785
+        y: 865
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4ecc573242e3c190800000000000000
+      internalID: -7943256543726875060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_73
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db1275e3aa80f49d0800000000000000
+      internalID: -2788000117035687491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_74
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 835a584997ed8a160800000000000000
+      internalID: 7037119031530595640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_75
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b749bf9d49271a940800000000000000
+      internalID: 5305647819657024635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_76
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f426787fedffa80c0800000000000000
+      internalID: -4572561138540649905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_77
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32a8a79d56efef390800000000000000
+      internalID: -7782503392655799773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_78
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b366ee4aa7d9cd570800000000000000
+      internalID: 8492836147392570939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_79
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 425d5d2d30e80ef10800000000000000
+      internalID: 2296991957032228132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_80
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f22016004a08af70800000000000000
+      internalID: 9198613509000143604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_81
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf3561fad6ee28030800000000000000
+      internalID: 3495618415649248251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_82
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be325a20c069132f0800000000000000
+      internalID: -994849064344017941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_83
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88870a390cb183430800000000000000
+      internalID: 3762788002592487560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_84
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2126e3b07bd58d20800000000000000
+      internalID: 3280269180710297900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_85
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe3bdf49310f55750800000000000000
+      internalID: 6293200021214835695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_86
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c080388e53d514c0800000000000000
+      internalID: -4317312264799485755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_87
+      rect:
+        serializedVersion: 2
+        x: 1345
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36c7cc22806147d70800000000000000
+      internalID: 9039874576238804067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_88
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c6bbd0872a243450800000000000000
+      internalID: 6067520947128874697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_89
+      rect:
+        serializedVersion: 2
+        x: 1537
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a974144b67c679930800000000000000
+      internalID: 4149904838731319194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_90
+      rect:
+        serializedVersion: 2
+        x: 1633
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d43aad84338ace0800000000000000
+      internalID: -1393807696672371337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_91
+      rect:
+        serializedVersion: 2
+        x: 1729
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 028eab64606f24a70800000000000000
+      internalID: 8809874327907002400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_92
+      rect:
+        serializedVersion: 2
+        x: 1825
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8e5f35daab1c3ad0800000000000000
+      internalID: -2721269654302531953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_93
+      rect:
+        serializedVersion: 2
+        x: 1921
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d96ad467511e9d940800000000000000
+      internalID: 5321531917010314909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_94
+      rect:
+        serializedVersion: 2
+        x: 2017
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e39df11f2d1b93a60800000000000000
+      internalID: 7654344561239513406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_95
+      rect:
+        serializedVersion: 2
+        x: 2113
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a7687a8729c01de0800000000000000
+      internalID: -1364369515429206106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_96
+      rect:
+        serializedVersion: 2
+        x: 2209
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe8995bd8474326e0800000000000000
+      internalID: -1863567442557953809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_97
+      rect:
+        serializedVersion: 2
+        x: 2305
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 847041319dfb04b90800000000000000
+      internalID: -7259591660272351416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_98
+      rect:
+        serializedVersion: 2
+        x: 2401
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2ac1372c0c55c520800000000000000
+      internalID: 2721682757082270251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_99
+      rect:
+        serializedVersion: 2
+        x: 2497
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ad7913416ff1f1b0800000000000000
+      internalID: -5624433666406384224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_100
+      rect:
+        serializedVersion: 2
+        x: 2593
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a12ac95023424330800000000000000
+      internalID: 3693588450621661609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_101
+      rect:
+        serializedVersion: 2
+        x: 2689
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92a17b9106de43bd0800000000000000
+      internalID: -2651233283610306007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_102
+      rect:
+        serializedVersion: 2
+        x: 2785
+        y: 769
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17d974dcac9fc30f0800000000000000
+      internalID: -1135758356581474959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_103
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7cdd0aac2da2e830800000000000000
+      internalID: 4099029018203774075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_104
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed01453b4ac4813a0800000000000000
+      internalID: -6694516575819263778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_105
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc63dd0a501436f10800000000000000
+      internalID: 2261722930299614924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_106
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f49cd92d4629a8ba0800000000000000
+      internalID: -6085890984709863089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_107
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb8e38ea0dc8ab4e0800000000000000
+      internalID: -1965103459484833602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_108
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00a7e399ac1907b10800000000000000
+      internalID: 1977240535756077568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_109
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3855e328a84713ae0800000000000000
+      internalID: -1571346656736160381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_110
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93193514b95686be0800000000000000
+      internalID: -1483824359728246471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_111
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e230ac15f73261400800000000000000
+      internalID: 294461855379358510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_112
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8ac3ed33690be080800000000000000
+      internalID: -9157215095483020657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_113
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96fcd788ca292c680800000000000000
+      internalID: -8736259057423364247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_114
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: babcf868d2dee05f0800000000000000
+      internalID: -788432104956376149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_115
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36665467d8ffa69a0800000000000000
+      internalID: -6238893350728669597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_116
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a35d97b30d00fad0800000000000000
+      internalID: -2670620269414100055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_117
+      rect:
+        serializedVersion: 2
+        x: 1345
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9799436bbc6bd8f20800000000000000
+      internalID: 3426595877550332281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_118
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55dbcd65e28fa55d0800000000000000
+      internalID: -3072870917817451179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_119
+      rect:
+        serializedVersion: 2
+        x: 1537
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d8c1843399028a30800000000000000
+      internalID: 4215942729017968851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_120
+      rect:
+        serializedVersion: 2
+        x: 1633
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5c23d4f21d1e8770800000000000000
+      internalID: 8614855104460434523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_121
+      rect:
+        serializedVersion: 2
+        x: 1729
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5dc25f70bce2d710800000000000000
+      internalID: 1716694650776112479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_122
+      rect:
+        serializedVersion: 2
+        x: 1825
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e211bb830c9827140800000000000000
+      internalID: 4715983218488840494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_123
+      rect:
+        serializedVersion: 2
+        x: 1921
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0104c038513eb4190800000000000000
+      internalID: -7977032633424265200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_124
+      rect:
+        serializedVersion: 2
+        x: 2017
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06cca3e2f1f0bb040800000000000000
+      internalID: 4664338465666288736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_125
+      rect:
+        serializedVersion: 2
+        x: 2113
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e13ea8a3c8c21350800000000000000
+      internalID: 5986067597402976742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_126
+      rect:
+        serializedVersion: 2
+        x: 2209
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1aafa069257cd0b0800000000000000
+      internalID: -5702554207581656545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_127
+      rect:
+        serializedVersion: 2
+        x: 2305
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29e8fb16e4a06c9e0800000000000000
+      internalID: -1601581285719961966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_128
+      rect:
+        serializedVersion: 2
+        x: 2401
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 098492f6046dd4590800000000000000
+      internalID: -7688253416620341104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_129
+      rect:
+        serializedVersion: 2
+        x: 2497
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7acc80690ddf73410800000000000000
+      internalID: 1456912076789828775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_130
+      rect:
+        serializedVersion: 2
+        x: 2593
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41e029612510e6b90800000000000000
+      internalID: -7246853298314932716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_131
+      rect:
+        serializedVersion: 2
+        x: 2689
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d492489252b385a0800000000000000
+      internalID: -6520171767690783527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_132
+      rect:
+        serializedVersion: 2
+        x: 2785
+        y: 673
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f25cd1fbe8c511d50800000000000000
+      internalID: 6706243088292889903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_133
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a05fef85b175c9b0800000000000000
+      internalID: -5060513581663039320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_134
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfa0151212d6fbd50800000000000000
+      internalID: 6755237955139341052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_135
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 789f0e8d6349fb7e0800000000000000
+      internalID: -1747515167108695673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_136
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eec99630aa043cd90800000000000000
+      internalID: -7078743090350416658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_137
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbda793f70b99bac0800000000000000
+      internalID: -3838866748902756932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_138
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f389efb15edf9a30800000000000000
+      internalID: 4224339418190283766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_139
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b84cc0fe6bb0ce50800000000000000
+      internalID: 6827663120254388409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_140
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 350451df9038e4c40800000000000000
+      internalID: 5498476273989926995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_141
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b327733b7e3e85060800000000000000
+      internalID: 6942549409875325499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_142
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 152531da194562c50800000000000000
+      internalID: 6640087685255090769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_143
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bd43f80c28aa56b0800000000000000
+      internalID: -5306744303820517959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_144
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c58c911c1e5d18f50800000000000000
+      internalID: 6882016871182878812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_145
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2f1000f8935d0f60800000000000000
+      internalID: 8002144029233913642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_146
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1d78a755ac6d42a0800000000000000
+      internalID: -6751620808962441958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_147
+      rect:
+        serializedVersion: 2
+        x: 1345
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 970d3937835b1f8f0800000000000000
+      internalID: -508426028854292359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_148
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7ba610add5f08940800000000000000
+      internalID: 5296503494010121082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_149
+      rect:
+        serializedVersion: 2
+        x: 1537
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8d39def65d03ce40800000000000000
+      internalID: 5675394622710955404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_150
+      rect:
+        serializedVersion: 2
+        x: 1633
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4aa7f50116f292a0800000000000000
+      internalID: -6732047939990476210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_151
+      rect:
+        serializedVersion: 2
+        x: 1729
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4e0b756aa6ce68a0800000000000000
+      internalID: -6309887592750182834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_152
+      rect:
+        serializedVersion: 2
+        x: 1825
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d86c309a5d8d3f8a0800000000000000
+      internalID: -6272431443821738355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_153
+      rect:
+        serializedVersion: 2
+        x: 1921
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a24cd2075dc65a50800000000000000
+      internalID: 6509616085004468902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_154
+      rect:
+        serializedVersion: 2
+        x: 2017
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f21c92ad490747020800000000000000
+      internalID: 2338617891129770287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_155
+      rect:
+        serializedVersion: 2
+        x: 2113
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 852d93cafbe247500800000000000000
+      internalID: 392990468251177560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_156
+      rect:
+        serializedVersion: 2
+        x: 2209
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6257f02192ed2560800000000000000
+      internalID: 7290732484733915755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_157
+      rect:
+        serializedVersion: 2
+        x: 2305
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0810735194370b460800000000000000
+      internalID: 7255425757419602304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_158
+      rect:
+        serializedVersion: 2
+        x: 2401
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c62ae5c90d6b9bc0800000000000000
+      internalID: -3775303973877438775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_159
+      rect:
+        serializedVersion: 2
+        x: 2497
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7f9a93d279c4bee0800000000000000
+      internalID: -1246149701861204100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_160
+      rect:
+        serializedVersion: 2
+        x: 2593
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cba94f19311573e50800000000000000
+      internalID: 6788984107779267260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_161
+      rect:
+        serializedVersion: 2
+        x: 2689
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eade3a82330e1a30800000000000000
+      internalID: 4187788219103763177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_162
+      rect:
+        serializedVersion: 2
+        x: 2785
+        y: 577
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2f6aee8b81a57610800000000000000
+      internalID: 1618377261879815983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_163
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c6d4bd0bf0a9f790800000000000000
+      internalID: -7495783104654289212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_164
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fc7feb512198fa60800000000000000
+      internalID: 7708070334706973939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_165
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b0ab77ed8e6bfcf0800000000000000
+      internalID: -217458601244254025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_166
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06ad35197da825be0800000000000000
+      internalID: -1489975868245419424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_167
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d14d6cf2b05a661a0800000000000000
+      internalID: -6816579518513884131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_168
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdcf7f4d98fca4a30800000000000000
+      internalID: 4200397793366899932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_169
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e8439d399a513aa0800000000000000
+      internalID: -6183061199193421600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_170
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ab11ad1a6fbd5a10800000000000000
+      internalID: 1899885080304753574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_171
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 756bec57c3ef248e0800000000000000
+      internalID: -1710525372819392937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_172
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fd1abf7b278ca6f0800000000000000
+      internalID: -672013623488799248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_173
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b121f153b44e0670800000000000000
+      internalID: 8506812283114037683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_174
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c70220b37e944e240800000000000000
+      internalID: 4820058758669541500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_175
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 696757f22a0019aa0800000000000000
+      internalID: -6156138519057828202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_176
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1b91b461f1ac60d0800000000000000
+      internalID: -3428187158187238627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_177
+      rect:
+        serializedVersion: 2
+        x: 1345
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55bc0541756dc7850800000000000000
+      internalID: 6376206841941117781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_178
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cc3fee7fb14a1680800000000000000
+      internalID: -8783635832508564282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_179
+      rect:
+        serializedVersion: 2
+        x: 1537
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18687d54313d30dc0800000000000000
+      internalID: -3673860791274600831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_180
+      rect:
+        serializedVersion: 2
+        x: 1633
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c3d51d52830aa980800000000000000
+      internalID: -8526999086030269504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_181
+      rect:
+        serializedVersion: 2
+        x: 1729
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba347b43814411c50800000000000000
+      internalID: 6634158596847780779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_182
+      rect:
+        serializedVersion: 2
+        x: 1825
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8787a52578bbb4500800000000000000
+      internalID: 381604783319578744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_183
+      rect:
+        serializedVersion: 2
+        x: 1921
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2979234eca77d890800000000000000
+      internalID: -7433337633643071188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_184
+      rect:
+        serializedVersion: 2
+        x: 2017
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2a429ded5a5adc90800000000000000
+      internalID: -7144298499405624787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_185
+      rect:
+        serializedVersion: 2
+        x: 2113
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37d7c5a98ab3116b0800000000000000
+      internalID: -5327411288872288909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_186
+      rect:
+        serializedVersion: 2
+        x: 2209
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14624e4d884979690800000000000000
+      internalID: -7595438931128867263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_187
+      rect:
+        serializedVersion: 2
+        x: 2305
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6220502ae094d9d60800000000000000
+      internalID: 7898549648674325030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_188
+      rect:
+        serializedVersion: 2
+        x: 2401
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31dca17c6c3b17790800000000000000
+      internalID: -7534043035288810221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_189
+      rect:
+        serializedVersion: 2
+        x: 2497
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a939680ab1e0e9860800000000000000
+      internalID: 7538478338084869018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_190
+      rect:
+        serializedVersion: 2
+        x: 2593
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bc9c78b7ffcc3490800000000000000
+      internalID: -7765102994634531656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_191
+      rect:
+        serializedVersion: 2
+        x: 2689
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b5ab18345ac4ec00800000000000000
+      internalID: 929089886212564407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_192
+      rect:
+        serializedVersion: 2
+        x: 2785
+        y: 481
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 242c89a2fd0905a50800000000000000
+      internalID: 6507860749717127746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_193
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 385
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b6bee59781847a40800000000000000
+      internalID: 5365055475441120952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_194
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 385
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5bfedd8124289fb0800000000000000
+      internalID: -4640919689472574630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_195
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 385
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c0710353056a0d80800000000000000
+      internalID: -8283697499642695487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_196
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 385
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26e79dbc44f45bf00800000000000000
+      internalID: 1131898038249946722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_197
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 385
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01f5d3de70586d760800000000000000
+      internalID: 7482314100014145296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_198
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 385
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbd2f3543c9fc9340800000000000000
+      internalID: 4872043513983741375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_199
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 385
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fef874da28ae32b00800000000000000
+      internalID: 802743005575876591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_200
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 385
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d3e63cea54f88f90800000000000000
+      internalID: -6951037353499106348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_201
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 385
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a56beb314f9c803c0800000000000000
+      internalID: -4393039386359450022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_202
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 385
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12497c42c26bc5650800000000000000
+      internalID: 6223049085831058465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_203
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 289
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cdf6f44c83824a70800000000000000
+      internalID: 8809748459565809092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_204
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 289
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bd91bdb1ca29c1a0800000000000000
+      internalID: -6788847951684723272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_205
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 289
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef59ba84a35ee20c0800000000000000
+      internalID: -4598486131008629250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_206
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 289
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 315c9b286bb83d7f0800000000000000
+      internalID: -588973510261881581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_207
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 289
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b15a35bb6ac660a60800000000000000
+      internalID: 7639913281243817243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_208
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 289
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8028afce50528b50800000000000000
+      internalID: 6593921172564877452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_209
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 289
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e7d9ae84f632f200800000000000000
+      internalID: 212292556433250280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_210
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 289
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 768fb8fcc3eed0310800000000000000
+      internalID: 1373015406365374567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_211
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 289
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c6e5d82680c8ca80800000000000000
+      internalID: -8446289418690107712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_212
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 289
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcf4f99bc8a623fd0800000000000000
+      internalID: -2363709701773897781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_213
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 193
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d96f4fc071569e3f0800000000000000
+      internalID: -871053903243446627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_214
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 193
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1c778146e0129bb0800000000000000
+      internalID: -4930860060889351141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_215
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 193
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 560aefd81d59af840800000000000000
+      internalID: 5258680242171453541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_216
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 193
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 686953c789ee34310800000000000000
+      internalID: 1388215448846571142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_217
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 193
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b42449ed255b0160800000000000000
+      internalID: 6992776502098273462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_218
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 193
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65a2eda3068a78170800000000000000
+      internalID: 8180692379399760470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_219
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 193
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beca10fa5d3907050800000000000000
+      internalID: 5796295266399268075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_220
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 193
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b3ed2906a97a04a0800000000000000
+      internalID: -6626350147696729167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_221
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 193
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af443c543d2029d50800000000000000
+      internalID: 6742454698558833914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_222
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 193
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d52b168b8b5438e0800000000000000
+      internalID: -1714644903312808488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_223
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 193
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4341bd93708213620800000000000000
+      internalID: 2752024858800624692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_224
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 193
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b56aac3673ab2d30800000000000000
+      internalID: 4407796388531430836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_225
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 193
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb481fd9220728100800000000000000
+      internalID: 108772634991363263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_226
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 193
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beb96d61117295150800000000000000
+      internalID: 5861759344350501867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_227
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 97
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65ee3a26900aa9710800000000000000
+      internalID: 1700847771455843926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_228
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 97
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37dfb4d472452cdc0800000000000000
+      internalID: -3620238622675174029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_229
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 97
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56ab44426c0fbaf00800000000000000
+      internalID: 1129260865389116005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_230
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 97
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9848763f3ea9bdd50800000000000000
+      internalID: 6763169569258833033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_231
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 97
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08a4cdc5aa0dcb9e0800000000000000
+      internalID: -1604177937129780608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_232
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 97
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d88576d73b22bb90800000000000000
+      internalID: -7227666933155002153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_233
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 97
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dcf5afa8bece89a0800000000000000
+      internalID: -6228813941990621991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_234
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 97
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9731aa91e6bdce9e0800000000000000
+      internalID: -1590655302445165703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_235
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 97
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1e7ce624a95c7c80800000000000000
+      internalID: -8323679449724977633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_236
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 97
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83b27fa7d5c2b4f80800000000000000
+      internalID: -8121348723025958088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_237
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 97
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9efc3c3736fc35410800000000000000
+      internalID: 1464742329876467689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_238
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 97
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f93353e4df8a705d0800000000000000
+      internalID: -3096320412901624929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_239
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 97
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b16974bbac9566a10800000000000000
+      internalID: 1902306619870909979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_240
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 97
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92864390cc68b5a80800000000000000
+      internalID: -8477033662708946903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_241
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 1
+        width: 94
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74dd0027df158aac0800000000000000
+      internalID: -3843732132979483321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_242
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 94
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 007c26ed8a105e080800000000000000
+      internalID: -9158912442390886656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_243
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 1
+        width: 94
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51cc5e817ab9b9180800000000000000
+      internalID: -9107514679447139307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pegas_244
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 1
+        width: 94
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d60fe7ac3773ff100800000000000000
+      internalID: 143894683557228653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
