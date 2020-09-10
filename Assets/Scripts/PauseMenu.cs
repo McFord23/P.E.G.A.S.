@@ -11,8 +11,16 @@ public class PauseMenu : MonoBehaviour
     public new CameraFollow camera;
     private Button fakeButton;
 
+    public AudioSource clickSound;
+    public AudioSource gameMusic;
+    public AudioSource pauseMusic;
+
     public void Resume()
     {
+        clickSound.Play();
+        pauseMusic.Stop();
+        gameMusic.Play();
+
         pauseMenu.SetActive(false);
         player.Resumed();
         //Time.timeScale = 1f;
@@ -21,6 +29,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Exit()
     {
+        clickSound.Play();
         Time.timeScale = 0f;
         SceneManager.LoadScene("Menu");
     }

@@ -6,11 +6,19 @@ using UnityEngine;
 public class DevOps : MonoBehaviour
 {
     Player player;
-    
     public GameObject menu;
     public GameObject pauseMenu;
     public GameObject victoryMenu;
     public GameObject deadMenu;
+
+    public AudioSource clickSound;
+    public AudioSource gameMusic;
+    public AudioSource victoryMusic;
+
+    List<Vector3> points = new List<Vector3>();
+    public Vector3 point1;
+    public Vector3 point2;
+    int i = 0;
 
     public bool mode = false;
 
@@ -29,6 +37,10 @@ public class DevOps : MonoBehaviour
         infoController = GetComponent<InfoController>();
         hud = GetComponent<HUD>();
         deathIndicator = GetComponent<DeathIndicator>();
+
+        points.Add(player.transform.position);
+        points.Add(point1);
+        points.Add(point2);
     }
 
     void FixedUpdate()
@@ -81,15 +93,35 @@ public class DevOps : MonoBehaviour
                 player.godnessMode = !player.godnessMode;
             }
 
+            if (Input.GetKeyDown(KeyCode.F5))
+            {
+                if (i < points.Count - 1) i++;
+                else i = 0;
+                player.transform.position = points[i]; 
+            }
+
+            if (Input.GetKeyDown(KeyCode.F6))
+            {
+                player.spawnPos = points[i];
+            }
+
             if (Input.GetKeyDown(KeyCode.V) && (player.moveState != Player.MoveState.Dead) && !pauseMenu.activeSelf)
             {
                 if (victoryMenu.activeSelf)
                 {
+                    victoryMusic.Stop();
+                    clickSound.Play();
+                    gameMusic.Play();
+
                     victoryMenu.SetActive(false);
                     player.Resumed();
                 }
                 else
                 {
+                    gameMusic.Stop();
+                    clickSound.Play();
+                    victoryMusic.Play();
+
                     victoryMenu.SetActive(true);
                     player.Paused();
                 }
@@ -97,9 +129,9 @@ public class DevOps : MonoBehaviour
         }
     }
 
-    public void Active(bool modeAndGodness)
+    public void Active(bool tumbler)
     {
-        mode = player.godnessMode = modeAndGodness;
-        menu.GetComponent<CanvasGroup>().alpha = (modeAndGodness) ? 0.5f : 1f;
+        mode = player.godnessMode = tumbler;
+        menu.GetComponent<CanvasGroup>().alpha = (tumbler) ? 0.5f : 1f;
     }
 }

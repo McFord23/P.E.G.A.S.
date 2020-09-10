@@ -28,5 +28,7 @@ public class InfoController : MonoBehaviour
         GUILayout.Label("Debug screen - F2", style);
         GUILayout.Label("On/off DevMode - F3", style);
         GUILayout.Label("Godness mode - F4", style);
+        GUILayout.Label("Teleport to next point - F5", style);
+        GUILayout.Label("Set spawn on current point - F6", style);
     }
 }

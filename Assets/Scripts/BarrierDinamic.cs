@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.WSA.Input;
@@ -7,10 +8,15 @@ public class BarrierDinamic : MonoBehaviour
 {
     public bool isCycle;
     public float speed = 2.5f;
-    private bool move = false;
-    private Vector3 startPosition;
+    public GameObject waitObject;
+    bool move = false;
+    Vector3 startPosition;
     public Vector3 finishPosition;
-    private Vector3 target;
+    Vector3 target;
+
+    //public bool isWait = false;
+    //public float waitTime = 1f;
+    //public BarrierDinamic waitObject;
 
     void Start()
     {
@@ -30,21 +36,42 @@ public class BarrierDinamic : MonoBehaviour
 
         if (move)
         {
-            transform.localPosition = Vector3.MoveTowards(transform.localPosition, target, Time.deltaTime * speed);
+            Move();
         }
+
+        /*if (isWait && (waitObject.transform.localPosition != waitObject.startPosition))
+        {
+            Invoke(nameof(Move), waitTime);
+        }*/
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.tag == "Player")
+        if (waitObject != null)
         {
-            move = true;
+            if (collider.gameObject == waitObject)
+            {
+                move = true;
+            }
         }
+        else
+        {
+            if (collider.tag == "Player")
+            {
+                move = true;
+            }
+        }
+        
     }
 
     public void Reset()
     {
         move = false;
         transform.localPosition = startPosition;
+    }
+
+    private void Move()
+    {
+        transform.localPosition = Vector3.MoveTowards(transform.localPosition, target, Time.deltaTime * speed);
     }
 }

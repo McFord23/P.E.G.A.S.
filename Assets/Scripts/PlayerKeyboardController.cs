@@ -12,6 +12,10 @@ public class PlayerKeyboardController : MonoBehaviour
     GameObject pauseMenu;
     GameObject victoryMenu;
 
+    public AudioSource gameMusic;
+    public AudioSource pauseMusic;
+    public AudioSource clickSound;
+
     float flapTimeTrigger = 0.375f;
 
     void Start()
@@ -43,6 +47,7 @@ public class PlayerKeyboardController : MonoBehaviour
 
             if (Input.GetKeyUp(KeyCode.Space))
             {
+                player.rb.gravityScale = 1f;
                 flapTimeTrigger = 0.375f;
                 if (player.moveState == Player.MoveState.Hover) player.FreeFall();
             }
@@ -71,6 +76,7 @@ public class PlayerKeyboardController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R) && !pauseMenu.activeSelf && !victoryMenu.activeSelf)
         {
+            clickSound.Play();
             player.Reset();
             barriers.Reset();
         }
@@ -79,14 +85,17 @@ public class PlayerKeyboardController : MonoBehaviour
         {
             if (pauseMenu.activeSelf)
             {
-                pauseMenu.SetActive(false);
-                camera.FocusOnFly();
-                player.Resumed();
+                pauseMenu.GetComponent<PauseMenu>().Resume();
             }
             else
             {
+                clickSound.Play();
+
                 pauseMenu.SetActive(true);
                 player.Paused();
+
+                gameMusic.Stop();
+                pauseMusic.Play();
             }
         }
     }

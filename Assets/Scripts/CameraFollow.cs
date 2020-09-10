@@ -12,7 +12,7 @@ public class CameraFollow : MonoBehaviour
 
     public float maxSize = 10f;
     public float minSize = 5f;
-    float size;
+    public float size;
 
     private void Start()
     {

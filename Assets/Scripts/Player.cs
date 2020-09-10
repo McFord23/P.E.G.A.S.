@@ -8,13 +8,14 @@ public class Player : MonoBehaviour
 {
     public GameObject deadMenu;
     public new CameraFollow camera;
+    public AudioSource clickSound;
 
     public Rigidbody2D rb;
     Animator animatorController;
     public MoveState moveState = MoveState.FreeFall;
 
     // Flap properties
-    float flapForce = 8f;
+    public float flapForce = 7f;
     float flapTime = 0;
     float flapCooldown = 0.375f;
     public float speed = 0;
@@ -22,7 +23,7 @@ public class Player : MonoBehaviour
     
 
     // Direction propeties
-    Vector2 spawnPos;
+    public Vector2 spawnPos;
     
     Vector2 mousePos;
     Vector2 pegasPos;
@@ -132,8 +133,14 @@ public class Player : MonoBehaviour
     public void Hover()
     {
         moveState = MoveState.Hover;
-        animatorController.Play("Flap");
-        rb.velocity = flapDirection * flapForce;
+        animatorController.Play("Hover");
+        rb.AddForce(flapDirection, ForceMode2D.Force);
+        rb.gravityScale = 0f;
+
+        /*if (speed > 10)
+        {
+            rb.velocity *= 0.9f;
+        }*/
     }
 
     void CalculateDirection()
@@ -144,7 +151,14 @@ public class Player : MonoBehaviour
         flapDirection = mousePos - pegasPos;
         flapDirection.Normalize();
 
-        transform.right = flapDirection;
+        if (moveState == MoveState.Hover)
+        {
+            transform.right = new Vector3(1, 0);
+        }
+        else
+        {
+            transform.right = flapDirection;
+        }
     }
 
     void Dead()
@@ -154,6 +168,7 @@ public class Player : MonoBehaviour
             moveState = MoveState.Dead;
             animatorController.Play("Dead");
 
+            clickSound.Play();
             deadMenu.SetActive(true);
             camera.FocusOnPlayer();
         }

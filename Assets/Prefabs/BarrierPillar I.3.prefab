@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5330934317369239980}
   - component: {fileID: 5330934317369239981}
   m_Layer: 0
-  m_Name: BarrierStick
+  m_Name: BarrierPillar I.3
   m_TagString: Barrier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -210,6 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCycle: 0
   speed: 6
+  waitObject: {fileID: 0}
   finishPosition: {x: 0, y: 0, z: 0}
 --- !u!50 &5330934317369239970
 Rigidbody2D:
@@ -305,7 +306,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 90, y: 3}
+  m_Offset: {x: 86, y: 3}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
