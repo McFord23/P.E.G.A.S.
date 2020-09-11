@@ -10,13 +10,10 @@ public class BarrierDinamic : MonoBehaviour
     public float speed = 2.5f;
     public GameObject waitObject;
     bool move = false;
+    bool paused = false;
     Vector3 startPosition;
     public Vector3 finishPosition;
     Vector3 target;
-
-    //public bool isWait = false;
-    //public float waitTime = 1f;
-    //public BarrierDinamic waitObject;
 
     void Start()
     {
@@ -34,15 +31,10 @@ public class BarrierDinamic : MonoBehaviour
             target = startPosition;
         }
 
-        if (move)
+        if (move && !paused)
         {
             Move();
         }
-
-        /*if (isWait && (waitObject.transform.localPosition != waitObject.startPosition))
-        {
-            Invoke(nameof(Move), waitTime);
-        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -73,5 +65,10 @@ public class BarrierDinamic : MonoBehaviour
     private void Move()
     {
         transform.localPosition = Vector3.MoveTowards(transform.localPosition, target, Time.deltaTime * speed);
+    }
+
+    public void Pause(bool check)
+    {
+        paused = check;
     }
 }

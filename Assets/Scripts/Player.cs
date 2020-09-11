@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public GameObject deadMenu;
+    GameObject pauseMenu;
+    GameObject deadMenu;
     public new CameraFollow camera;
     public AudioSource clickSound;
 
@@ -55,6 +56,9 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animatorController = GetComponentInChildren<Animator>();
 
+        pauseMenu = GetComponent<PlayerKeyboardController>().pauseMenu;
+        deadMenu = GetComponent<PlayerKeyboardController>().deadMenu;
+
         spawnPos = transform.position;
     }
 
@@ -95,7 +99,7 @@ public class Player : MonoBehaviour
         camera.FocusOnFly();
     }
 
-    public void Paused()
+    public void Pause()
     {
         saveState = moveState;
         saveDirection = rb.velocity;
@@ -108,7 +112,7 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector2(0, 0);
     }
 
-    public void Resumed()
+    public void Resume()
     {
         rb.constraints = RigidbodyConstraints2D.None;
         rb.gravityScale = 1f;
@@ -136,11 +140,6 @@ public class Player : MonoBehaviour
         animatorController.Play("Hover");
         rb.AddForce(flapDirection, ForceMode2D.Force);
         rb.gravityScale = 0f;
-
-        /*if (speed > 10)
-        {
-            rb.velocity *= 0.9f;
-        }*/
     }
 
     void CalculateDirection()
@@ -168,6 +167,7 @@ public class Player : MonoBehaviour
             moveState = MoveState.Dead;
             animatorController.Play("Dead");
 
+            if (pauseMenu.activeSelf) pauseMenu.SetActive(false);
             clickSound.Play();
             deadMenu.SetActive(true);
             camera.FocusOnPlayer();
@@ -176,13 +176,13 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D()
     {
-        //Dead();
-
-        // Dev Ops
         if (!godnessMode) Dead();
+
+        // DevOps.Pull()
         deathIndicator = true;
     }
 
+    // DevOps.Pull()
     private void OnCollisionExit2D()
     {
         deathIndicator = false;

@@ -114,7 +114,7 @@ public class DevOps : MonoBehaviour
                     gameMusic.Play();
 
                     victoryMenu.SetActive(false);
-                    player.Resumed();
+                    player.Resume();
                 }
                 else
                 {
@@ -123,7 +123,7 @@ public class DevOps : MonoBehaviour
                     victoryMusic.Play();
 
                     victoryMenu.SetActive(true);
-                    player.Paused();
+                    player.Pause();
                 }
             }
         }

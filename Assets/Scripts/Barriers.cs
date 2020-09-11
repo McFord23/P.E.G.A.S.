@@ -11,4 +11,12 @@ public class Barriers : MonoBehaviour
             transform.GetChild(i).gameObject.GetComponentInChildren<BarrierDinamic>().Reset();
         }
     }
+
+    public void Pause(bool check)
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.GetComponentInChildren<BarrierDinamic>().Pause(check);
+        }
+    }
 }

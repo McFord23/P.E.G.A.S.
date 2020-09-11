@@ -5,16 +5,11 @@ using UnityEngine;
 public class PlayerKeyboardController : MonoBehaviour
 {
     Player player;
-    public new CameraFollow camera;
-    public Barriers barriers; 
     
     public GameObject menu;
-    GameObject pauseMenu;
+    public GameObject pauseMenu;
+    public GameObject deadMenu;
     GameObject victoryMenu;
-
-    public AudioSource gameMusic;
-    public AudioSource pauseMusic;
-    public AudioSource clickSound;
 
     float flapTimeTrigger = 0.375f;
 
@@ -23,6 +18,7 @@ public class PlayerKeyboardController : MonoBehaviour
         player = GetComponent<Player>();
 
         pauseMenu = menu.transform.Find("PauseMenu").gameObject;
+        deadMenu = menu.transform.Find("DeadMenu").gameObject;
         victoryMenu = menu.transform.Find("VictoryMenu").gameObject;
     }
 
@@ -76,26 +72,18 @@ public class PlayerKeyboardController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R) && !pauseMenu.activeSelf && !victoryMenu.activeSelf)
         {
-            clickSound.Play();
-            player.Reset();
-            barriers.Reset();
+            deadMenu.GetComponent<DeadMenu>().Retry();
         }
 
         if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) && (player.moveState != Player.MoveState.Dead) && !victoryMenu.activeSelf)
         {
-            if (pauseMenu.activeSelf)
+            if (!pauseMenu.activeSelf)
             {
-                pauseMenu.GetComponent<PauseMenu>().Resume();
+                pauseMenu.GetComponent<PauseMenu>().Pause();
             }
             else
             {
-                clickSound.Play();
-
-                pauseMenu.SetActive(true);
-                player.Paused();
-
-                gameMusic.Stop();
-                pauseMusic.Play();
+                pauseMenu.GetComponent<PauseMenu>().Resume();
             }
         }
     }

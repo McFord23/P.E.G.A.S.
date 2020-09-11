@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour
 {
     public Player player;
+    public Barriers barriers;
     public GameObject pauseMenu;
     public new CameraFollow camera;
     private Button fakeButton;
@@ -15,6 +16,17 @@ public class PauseMenu : MonoBehaviour
     public AudioSource gameMusic;
     public AudioSource pauseMusic;
 
+    public void Pause()
+    {
+        clickSound.Play();
+        gameMusic.Stop();
+        pauseMusic.Play();
+
+        pauseMenu.SetActive(true);
+        player.Pause();
+        barriers.Pause(true);
+    }
+
     public void Resume()
     {
         clickSound.Play();
@@ -22,8 +34,9 @@ public class PauseMenu : MonoBehaviour
         gameMusic.Play();
 
         pauseMenu.SetActive(false);
-        player.Resumed();
-        //Time.timeScale = 1f;
+        player.Resume();
+        barriers.Pause(false);
+
         fakeButton.Select();
     }
 
