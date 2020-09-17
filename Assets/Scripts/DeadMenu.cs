@@ -7,14 +7,20 @@ using UnityEngine.UI;
 public class DeadMenu : MonoBehaviour
 {
     public Player player;
-    public GameObject deadMenu;
     public Barriers barriers;
+
+    public GameObject deadMenu;
     private Button fakeButton;
 
     public AudioSource clickSound;
 
-    public void Retry()
+    void Start()
     {
+        fakeButton = deadMenu.GetComponent<Button>();
+    }
+
+    public void Retry()
+    {        
         clickSound.Play();
         deadMenu.SetActive(false);
 
@@ -28,10 +34,5 @@ public class DeadMenu : MonoBehaviour
         clickSound.Play();
         Time.timeScale = 0f;
         SceneManager.LoadScene("Menu");
-    }
-
-    void Start()
-    {
-        fakeButton = deadMenu.GetComponent<Button>();
     }
 }

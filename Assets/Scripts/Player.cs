@@ -6,24 +6,25 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    public Cannon cannon;
+    public CameraFollow cam;
+    Renderer pegas;
+
     GameObject pauseMenu;
     GameObject deadMenu;
-    public new CameraFollow camera;
+    
     public AudioSource clickSound;
 
     public Rigidbody2D rb;
     Animator animatorController;
     public MoveState moveState = MoveState.FreeFall;
 
-    // Flap properties
     public float flapForce = 7f;
     float flapTime = 0;
     float flapCooldown = 0.375f;
     public float speed = 0;
     public float acceleration;
-    
 
-    // Direction propeties
     public Vector2 spawnPos;
     
     Vector2 mousePos;
@@ -40,13 +41,10 @@ public class Player : MonoBehaviour
 
     public enum MoveState
     {
-        Start,
+        Loaded,
         FreeFall,
         Hover,
         Flap,
-        SlowFall,
-        SlowHover,
-        SlowFlap,
         Dead,
         Paused
     }
@@ -54,16 +52,23 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        pegas = GetComponentInChildren<Renderer>();
         animatorController = GetComponentInChildren<Animator>();
 
         pauseMenu = GetComponent<PlayerKeyboardController>().pauseMenu;
         deadMenu = GetComponent<PlayerKeyboardController>().deadMenu;
 
         spawnPos = transform.position;
+        Reset();
     }
 
     void FixedUpdate()
     {
+        /*if (moveState == MoveState.Loaded)
+        {
+            transform.RotateAround(cannon.transform.position, Vector2.zero, cannon.angle);
+        }*/
+        
         if (moveState == MoveState.Flap)
         {
             flapTime -= Time.deltaTime;
@@ -75,7 +80,6 @@ public class Player : MonoBehaviour
 
         if (moveState == MoveState.Flap || moveState == MoveState.Hover || moveState == MoveState.FreeFall)
         {
-            camera.FocusOnFly();
             CalculateDirection();
         }
 
@@ -92,11 +96,13 @@ public class Player : MonoBehaviour
     public void Reset()
     {
         rb.velocity = new Vector2(0, 0);
+        pegas.enabled = false;
+        rb.gravityScale = 0f;
+        moveState = MoveState.Loaded;
         transform.position = spawnPos;
-        FreeFall();
 
         deadMenu.SetActive(false);
-        camera.FocusOnFly();
+        cam.FocusOnCannon();
     }
 
     public void Pause()
@@ -110,14 +116,31 @@ public class Player : MonoBehaviour
         rb.gravityScale = 0f;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         rb.velocity = new Vector2(0, 0);
+
+        cannon.isPaused = true;
+        cam.FocusOnPlayer();
     }
 
     public void Resume()
     {
         rb.constraints = RigidbodyConstraints2D.None;
-        rb.gravityScale = 1f;
         moveState = saveState;
+        if (moveState != MoveState.Loaded) rb.gravityScale = 1f;
         rb.AddForce(saveDirection, ForceMode2D.Impulse);
+
+        cannon.isPaused = false;
+        cam.FocusOnFly();
+    }
+
+    public void Shoot()
+    {
+        pegas.enabled = true;
+        FreeFall();
+        rb.AddForce(cannon.direction * cannon.power, ForceMode2D.Impulse);
+        rb.gravityScale = 1f;
+
+        cannon.Shoot();
+        cam.FocusOnFly();
     }
 
     public void FreeFall()
@@ -170,7 +193,7 @@ public class Player : MonoBehaviour
             if (pauseMenu.activeSelf) pauseMenu.SetActive(false);
             clickSound.Play();
             deadMenu.SetActive(true);
-            camera.FocusOnPlayer();
+            cam.FocusOnPlayer();
         }
     }
 

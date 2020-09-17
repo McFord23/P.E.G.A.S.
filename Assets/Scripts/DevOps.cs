@@ -118,20 +118,20 @@ public class DevOps : MonoBehaviour
                 }
                 else
                 {
+                    victoryMenu.SetActive(true);
                     gameMusic.Stop();
                     clickSound.Play();
                     victoryMusic.Play();
 
-                    victoryMenu.SetActive(true);
                     player.Pause();
                 }
             }
         }
     }
 
-    public void Active(bool tumbler)
+    public void Active(bool check)
     {
-        mode = player.godnessMode = tumbler;
-        menu.GetComponent<CanvasGroup>().alpha = (tumbler) ? 0.5f : 1f;
+        mode = player.godnessMode = check;
+        menu.GetComponent<CanvasGroup>().alpha = (check) ? 0f : 1f;
     }
 }

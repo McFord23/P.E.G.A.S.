@@ -6,9 +6,10 @@ public class CameraFollow : MonoBehaviour
 {
 
     public GameObject player;
-    new Camera camera;
-    bool action = true;
+    Camera cam;
+    int mode = 0;
     Vector3 offset;
+    Vector3 spawnPos;
 
     public float maxSize = 10f;
     public float minSize = 5f;
@@ -16,34 +17,45 @@ public class CameraFollow : MonoBehaviour
 
     private void Start()
     {
-        camera = GetComponent<Camera>();
+        cam = GetComponent<Camera>();
+        spawnPos = transform.position;
         offset = transform.position - player.transform.position;
         size = maxSize;
     }
 
     private void LateUpdate()
     {
-        if (action)
+        switch (mode)
         {
-            transform.position = player.transform.position + offset + new Vector3(0, 0, -10);
-            if (size < maxSize) size += 0.1f;
-        }
-        else
-        {
-            transform.position = Vector3.Lerp(transform.position, player.transform.position + new Vector3(0, 0, -10), Time.deltaTime * 3f);
-            if (size > minSize) size -= 0.05f;
+            case 0:
+                transform.position = spawnPos;
+                if (size < maxSize) size += 0.1f;
+                break;
+            case 1:
+                transform.position = player.transform.position + offset + new Vector3(0, 0, -10);
+                if (size < maxSize) size += 0.1f;
+                break;
+            case 2:
+                transform.position = Vector3.Lerp(transform.position, player.transform.position + new Vector3(0, 0, -10), Time.deltaTime * 3f);
+                if (size > minSize) size -= 0.05f;
+                break;
         }
 
-        camera.orthographicSize = size;
+        cam.orthographicSize = size;
     }
 
-    public void FocusOnPlayer()
+    public void FocusOnCannon()
     {
-        action = false;
+        mode = 0;
     }
 
     public void FocusOnFly()
     {
-        action = true;
+        mode = 1;
+    }
+
+    public void FocusOnPlayer()
+    {
+        mode = 2;
     }
 }

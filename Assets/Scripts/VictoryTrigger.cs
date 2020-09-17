@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class VictoryTrigger : MonoBehaviour
 {
+    public Player player;
+
     public Canvas menu;
     GameObject victoryMenu;
     GameObject deadMenu;
     GameObject pauseMenu;
-    public Player player;
-
+    
     public AudioSource clickSound;
     public AudioSource gameMusic;
     public AudioSource victoryMusic;
@@ -28,11 +29,10 @@ public class VictoryTrigger : MonoBehaviour
             if (deadMenu.activeSelf) deadMenu.SetActive(false);
             if (pauseMenu.activeSelf) pauseMenu.SetActive(false);
 
+            victoryMenu.SetActive(true);
             gameMusic.Stop();
             clickSound.Play();
             victoryMusic.Play();
-
-            victoryMenu.SetActive(true);
             player.Pause();
         }
     }

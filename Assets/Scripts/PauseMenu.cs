@@ -9,22 +9,27 @@ public class PauseMenu : MonoBehaviour
     public Player player;
     public Barriers barriers;
     public GameObject pauseMenu;
-    public new CameraFollow camera;
     private Button fakeButton;
 
     public AudioSource clickSound;
     public AudioSource gameMusic;
     public AudioSource pauseMusic;
 
+
+    private void Start()
+    {
+        fakeButton = pauseMenu.GetComponent<Button>();
+    }
+
     public void Pause()
     {
-        clickSound.Play();
-        gameMusic.Stop();
-        pauseMusic.Play();
-
         pauseMenu.SetActive(true);
         player.Pause();
         barriers.Pause(true);
+
+        clickSound.Play();
+        gameMusic.Stop();
+        pauseMusic.Play();
     }
 
     public void Resume()
@@ -45,18 +50,5 @@ public class PauseMenu : MonoBehaviour
         clickSound.Play();
         Time.timeScale = 0f;
         SceneManager.LoadScene("Menu");
-    }
-
-    private void Start()
-    {
-        fakeButton = pauseMenu.GetComponent<Button>();
-    }
-
-    private void Update()
-    {
-        if (pauseMenu.activeInHierarchy)
-        {
-            camera.FocusOnPlayer();
-        }
     }
 }
