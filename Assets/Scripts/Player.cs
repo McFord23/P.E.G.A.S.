@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
 
     public float flapForce = 7f;
     float flapTime = 0;
-    float flapCooldown = 0.4f; // 0.375f;
+    float flapCooldown = 0.375f;
     public float speed = 0;
     public float acceleration;
 

@@ -12,10 +12,10 @@ public class Tutorial : MonoBehaviour
     Vector3 startPosition;
     public Vector3 finishPosition;
     Vector3 target;
-    public float speed = 1f;
+    public float speed = 0.5f;
 
     float time;
-    public float couldown = 1f;
+    public float couldown = 0.1f;
 
     void Start()
     {
