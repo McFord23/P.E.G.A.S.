@@ -10,6 +10,7 @@ public class Castling : MonoBehaviour
     public Renderer lunaSprite;
     Animator celestiAnimatorController;
     Animator lunAnimatorController;
+    public MusicController musicController;
     Player player;
 
     public GameObject celestia;
@@ -22,34 +23,80 @@ public class Castling : MonoBehaviour
         celestiAnimatorController = celestiaPlayer.GetComponent<Animator>();
         lunAnimatorController = lunaPlayer.GetComponent<Animator>();
 
-        celestiaPlayer.SetActive(false);
-        player.sprite = lunaSprite;
-        player.animatorController = lunAnimatorController;
+        switch (Save.Princess)
+        {
+            case "Celestia":
+                player.animatorController = celestiAnimatorController;
+                player.sprite = celestiaSprite;
+                celestiaPlayer.SetActive(true);
+                luna.SetActive(true);
+                break;
+
+            case "Luna":
+                player.animatorController = lunAnimatorController;
+                player.sprite = lunaSprite;
+                lunaPlayer.SetActive(true);
+                celestia.SetActive(true);
+                break;
+        }
     }
 
     public void ChangePrincess()
     {
-        if (celestiaPlayer.activeSelf)
-        {
-            player.animatorController = lunAnimatorController;
-            player.sprite = lunaSprite;
-            celestiaPlayer.SetActive(false);
-            lunaPlayer.SetActive(true);
+        ChangeMusicTheme();
+        ChangeSprite();
 
-            luna.SetActive(false);
-            celestia.SetActive(true);
-        }
-        else
+        switch (Save.Princess)
         {
-            player.animatorController = celestiAnimatorController;
-            player.sprite = celestiaSprite;
-            lunaPlayer.SetActive(false);
-            celestiaPlayer.SetActive(true);
+            case "Celestia":
+                Save.Princess = "Luna";
+                break;
 
-            celestia.SetActive(false);
-            luna.SetActive(true);
+            case "Luna":
+                Save.Princess = "Celestia";
+                break;
         }
 
         player.Reset();
+    }
+
+    void ChangeSprite()
+    {
+        switch (Save.Princess)
+        {
+            case "Celestia":
+                player.animatorController = lunAnimatorController;
+                player.sprite = lunaSprite;
+                celestiaPlayer.SetActive(false);
+                lunaPlayer.SetActive(true);
+
+                luna.SetActive(false);
+                celestia.SetActive(true);
+                break;
+
+            case "Luna":
+                player.animatorController = celestiAnimatorController;
+                player.sprite = celestiaSprite;
+                lunaPlayer.SetActive(false);
+                celestiaPlayer.SetActive(true);
+
+                celestia.SetActive(false);
+                luna.SetActive(true);
+                break;
+        }
+    }
+
+    void ChangeMusicTheme()
+    {
+        switch (Save.Princess)
+        {
+            case "Celestia":
+                musicController.ChangeTheme("Luna");
+                break;
+
+            case "Luna":
+                musicController.ChangeTheme("Celestia");
+                break;
+        }
     }
 }

@@ -10,10 +10,12 @@ public class Player : MonoBehaviour
     public CameraFollow cam;
     public Renderer sprite;
 
+    GameObject menu;
     GameObject pauseMenu;
     GameObject deadMenu;
     
     public AudioSource clickSound;
+    public SoundController soundController;
 
     public Rigidbody2D rb;
     public Animator animatorController;
@@ -21,7 +23,7 @@ public class Player : MonoBehaviour
 
     public float flapForce = 7f;
     float flapTime = 0;
-    float flapCooldown = 0.4f; // 0.375f;
+    float flapCooldown = 0.375f;
     public float speed = 0;
     public float acceleration;
 
@@ -39,6 +41,10 @@ public class Player : MonoBehaviour
     public bool deathIndicator = false;
     public bool pullClick = false;
 
+    public LayerController layer1;
+    public LayerController layer2;
+    public LayerController layer3;
+
     public enum MoveState
     {
         Loaded,
@@ -53,8 +59,9 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        pauseMenu = GetComponent<PlayerKeyboardController>().pauseMenu;
-        deadMenu = GetComponent<PlayerKeyboardController>().deadMenu;
+        menu = GetComponent<PlayerKeyboardController>().menu;
+        pauseMenu = menu.transform.Find("PauseMenu").gameObject;
+        deadMenu = menu.transform.Find("DeadMenu").gameObject;
 
         spawnPos = transform.position;
         Reset();
@@ -96,8 +103,12 @@ public class Player : MonoBehaviour
         sprite.enabled = false;
 
         deadMenu.SetActive(false);
+        menu.SetActive(false);
         cam.FocusOnCannon();
         cannon.active = true;
+        layer1.Reset();
+        layer2.Reset();
+        layer3.Reset();
     }
 
     public void Pause()
@@ -150,6 +161,8 @@ public class Player : MonoBehaviour
         flapTime = flapCooldown;
         animatorController.Play("Flap");
         rb.AddForce(flapDirection * flapForce, ForceMode2D.Impulse);
+        
+        soundController.Flap();
     }
 
     public void Hover()
@@ -187,6 +200,7 @@ public class Player : MonoBehaviour
 
             if (pauseMenu.activeSelf) pauseMenu.SetActive(false);
             clickSound.Play();
+            menu.SetActive(true);
             deadMenu.SetActive(true);
             cam.FocusOnPlayer();
         }
