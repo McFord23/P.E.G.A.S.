@@ -6,7 +6,6 @@ using UnityEngine;
 public class DevOps : MonoBehaviour
 {
     Player player;
-    public Canvas canvas;
     public GameObject menu;
     public GameObject pauseMenu;
     public GameObject victoryMenu;
@@ -119,12 +118,10 @@ public class DevOps : MonoBehaviour
                     gameMusic.Play();
 
                     victoryMenu.SetActive(false);
-                    menu.SetActive(false);
                     player.Resume();
                 }
                 else
                 {
-                    menu.SetActive(true);
                     victoryMenu.SetActive(true);
                     gameMusic.Stop();
                     clickSound.Play();
@@ -139,6 +136,6 @@ public class DevOps : MonoBehaviour
     public void Active(bool check)
     {
         mode = player.godnessMode = check;
-        canvas.GetComponent<CanvasGroup>().alpha = (check) ? 0f : 1f;
+        menu.GetComponent<CanvasGroup>().alpha = (check) ? 0f : 1f;
     }
 }

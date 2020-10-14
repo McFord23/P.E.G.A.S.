@@ -7,8 +7,8 @@ public class PlayerKeyboardController : MonoBehaviour
     Player player;
     
     public GameObject menu;
-    GameObject pauseMenu;
-    GameObject deadMenu;
+    public GameObject pauseMenu;
+    public GameObject deadMenu;
     GameObject victoryMenu;
 
     void Start()

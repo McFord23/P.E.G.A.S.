@@ -6,7 +6,7 @@ public class VictoryTrigger : MonoBehaviour
 {
     public Player player;
 
-    public GameObject menu;
+    public Canvas menu;
     GameObject victoryMenu;
     GameObject deadMenu;
     GameObject pauseMenu;
