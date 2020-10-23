@@ -10,10 +10,12 @@ public class Player : MonoBehaviour
     public CameraFollow cam;
     public Renderer sprite;
 
+    GameObject menu;
     GameObject pauseMenu;
     GameObject deadMenu;
     
     public AudioSource clickSound;
+    public SoundController soundController;
 
     public Rigidbody2D rb;
     public Animator animatorController;
@@ -53,8 +55,9 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        pauseMenu = GetComponent<PlayerKeyboardController>().pauseMenu;
-        deadMenu = GetComponent<PlayerKeyboardController>().deadMenu;
+        menu = GetComponent<PlayerKeyboardController>().menu;
+        pauseMenu = menu.transform.Find("PauseMenu").gameObject;
+        deadMenu = menu.transform.Find("DeadMenu").gameObject;
 
         spawnPos = transform.position;
         Reset();
@@ -96,6 +99,7 @@ public class Player : MonoBehaviour
         sprite.enabled = false;
 
         deadMenu.SetActive(false);
+        menu.SetActive(false);
         cam.FocusOnCannon();
         cannon.active = true;
     }
@@ -150,6 +154,8 @@ public class Player : MonoBehaviour
         flapTime = flapCooldown;
         animatorController.Play("Flap");
         rb.AddForce(flapDirection * flapForce, ForceMode2D.Impulse);
+        
+        soundController.Flap();
     }
 
     public void Hover()
@@ -187,6 +193,7 @@ public class Player : MonoBehaviour
 
             if (pauseMenu.activeSelf) pauseMenu.SetActive(false);
             clickSound.Play();
+            menu.SetActive(true);
             deadMenu.SetActive(true);
             cam.FocusOnPlayer();
         }
