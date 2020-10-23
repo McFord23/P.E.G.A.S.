@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cannon : MonoBehaviour
 {
-    public bool isPaused = false;
+    public bool active = true;
     public float power = 100f;
     public float angle;
     public Vector2 direction;
@@ -20,7 +20,7 @@ public class Cannon : MonoBehaviour
 
     void Update()
     {
-        if (!isPaused)
+        if (active)
         {
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePos.y = Mathf.Clamp(mousePos.y, 0, 55);
@@ -39,5 +39,6 @@ public class Cannon : MonoBehaviour
     public void Shoot()
     {
         shootSound.Play();
+        active = false;
     }
 }

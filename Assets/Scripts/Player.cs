@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 {
     public Cannon cannon;
     public CameraFollow cam;
-    Renderer pegas;
+    public Renderer sprite;
 
     GameObject pauseMenu;
     GameObject deadMenu;
@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     public AudioSource clickSound;
 
     public Rigidbody2D rb;
-    Animator animatorController;
+    public Animator animatorController;
     public MoveState moveState = MoveState.FreeFall;
 
     public float flapForce = 7f;
@@ -52,8 +52,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        pegas = GetComponentInChildren<Renderer>();
-        animatorController = GetComponentInChildren<Animator>();
 
         pauseMenu = GetComponent<PlayerKeyboardController>().pauseMenu;
         deadMenu = GetComponent<PlayerKeyboardController>().deadMenu;
@@ -63,12 +61,7 @@ public class Player : MonoBehaviour
     }
 
     void FixedUpdate()
-    {
-        /*if (moveState == MoveState.Loaded)
-        {
-            transform.RotateAround(cannon.transform.position, Vector2.zero, cannon.angle);
-        }*/
-        
+    {        
         if (moveState == MoveState.Flap)
         {
             flapTime -= Time.deltaTime;
@@ -96,13 +89,15 @@ public class Player : MonoBehaviour
     public void Reset()
     {
         rb.velocity = new Vector2(0, 0);
-        pegas.enabled = false;
+        sprite.enabled = false;
         rb.gravityScale = 0f;
         moveState = MoveState.Loaded;
         transform.position = spawnPos;
+        sprite.enabled = false;
 
         deadMenu.SetActive(false);
         cam.FocusOnCannon();
+        cannon.active = true;
     }
 
     public void Pause()
@@ -117,7 +112,7 @@ public class Player : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         rb.velocity = new Vector2(0, 0);
 
-        cannon.isPaused = true;
+        cannon.active = false;
         cam.FocusOnPlayer();
     }
 
@@ -128,13 +123,13 @@ public class Player : MonoBehaviour
         if (moveState != MoveState.Loaded) rb.gravityScale = 1f;
         rb.AddForce(saveDirection, ForceMode2D.Impulse);
 
-        cannon.isPaused = false;
+        cannon.active = true;
         cam.FocusOnFly();
     }
 
     public void Shoot()
     {
-        pegas.enabled = true;
+        sprite.enabled = true;
         FreeFall();
         rb.AddForce(cannon.direction * cannon.power, ForceMode2D.Impulse);
         rb.gravityScale = 1f;
