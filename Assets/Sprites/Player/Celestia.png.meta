@@ -1,0 +1,3130 @@
+fileFormatVersion: 2
+guid: 8eff7b4cba0893e4bb608910395caf9b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4013779724170607955
+    second: Celestia_0
+  - first:
+      213: 4897100533787914510
+    second: Celestia_1
+  - first:
+      213: 1279793824220366033
+    second: Celestia_2
+  - first:
+      213: 9202355288789360837
+    second: Celestia_3
+  - first:
+      213: -745178771508793131
+    second: Celestia_4
+  - first:
+      213: -5397784811750587908
+    second: Celestia_5
+  - first:
+      213: -1260016188568863366
+    second: Celestia_6
+  - first:
+      213: -2990824404075152614
+    second: Celestia_7
+  - first:
+      213: -3933169630311894660
+    second: Celestia_8
+  - first:
+      213: -2895783226378031653
+    second: Celestia_9
+  - first:
+      213: 1049648975230044440
+    second: Celestia_10
+  - first:
+      213: 4991346092958928871
+    second: Celestia_11
+  - first:
+      213: -7579378423603273267
+    second: Celestia_12
+  - first:
+      213: -4852711251402425215
+    second: Celestia_13
+  - first:
+      213: 1753738701763818775
+    second: Celestia_14
+  - first:
+      213: -4525373301551711035
+    second: Celestia_15
+  - first:
+      213: -2841916048152907488
+    second: Celestia_16
+  - first:
+      213: 3556785552681301075
+    second: Celestia_17
+  - first:
+      213: 1920615365338974728
+    second: Celestia_18
+  - first:
+      213: -108248541768273811
+    second: Celestia_19
+  - first:
+      213: -2166685818460244935
+    second: Celestia_20
+  - first:
+      213: 4959079969633426661
+    second: Celestia_21
+  - first:
+      213: 216717032535218732
+    second: Celestia_22
+  - first:
+      213: 3584641986330509780
+    second: Celestia_23
+  - first:
+      213: -5818191347472215074
+    second: Celestia_24
+  - first:
+      213: 1125691556722695811
+    second: Celestia_25
+  - first:
+      213: 4517928802774470716
+    second: Celestia_26
+  - first:
+      213: 3897488884037389669
+    second: Celestia_27
+  - first:
+      213: 4213991013595304584
+    second: Celestia_28
+  - first:
+      213: -6770954563628285263
+    second: Celestia_29
+  - first:
+      213: -4497789141164205445
+    second: Celestia_30
+  - first:
+      213: 2475366412689712749
+    second: Celestia_31
+  - first:
+      213: -9196274646621712559
+    second: Celestia_32
+  - first:
+      213: -3483385475670632130
+    second: Celestia_33
+  - first:
+      213: -5520876272678103438
+    second: Celestia_34
+  - first:
+      213: 7519405951977887826
+    second: Celestia_35
+  - first:
+      213: -3209002270334002600
+    second: Celestia_36
+  - first:
+      213: 730850093607829002
+    second: Celestia_37
+  - first:
+      213: 2239660781074908840
+    second: Celestia_38
+  - first:
+      213: 4457880381261015475
+    second: Celestia_39
+  - first:
+      213: 1047319332707201358
+    second: Celestia_40
+  - first:
+      213: 9045228604636197422
+    second: Celestia_41
+  - first:
+      213: -4800316106655388804
+    second: Celestia_42
+  - first:
+      213: 8500675231094159558
+    second: Celestia_43
+  - first:
+      213: 2182239877115493577
+    second: Celestia_44
+  - first:
+      213: -1517237682921849684
+    second: Celestia_45
+  - first:
+      213: -60122418144500169
+    second: Celestia_46
+  - first:
+      213: -8151719911197087518
+    second: Celestia_47
+  - first:
+      213: -3486700563987881411
+    second: Celestia_48
+  - first:
+      213: 5556051582698687333
+    second: Celestia_49
+  - first:
+      213: 4543000505475921517
+    second: Celestia_50
+  - first:
+      213: -4410578390640856387
+    second: Celestia_51
+  - first:
+      213: -1099983557538955111
+    second: Celestia_52
+  - first:
+      213: 8130583071800816259
+    second: Celestia_53
+  - first:
+      213: -5162423975849334368
+    second: Celestia_54
+  - first:
+      213: -7256879109302027929
+    second: Celestia_55
+  - first:
+      213: 3139304219844678043
+    second: Celestia_56
+  - first:
+      213: -4293941629928995077
+    second: Celestia_57
+  - first:
+      213: -9211921666244354859
+    second: Celestia_58
+  - first:
+      213: 8685708059036072431
+    second: Celestia_59
+  - first:
+      213: 359678865602481156
+    second: Celestia_60
+  - first:
+      213: 116584498907562083
+    second: Celestia_61
+  - first:
+      213: -3588650359363007695
+    second: Celestia_62
+  - first:
+      213: 2655157299476170494
+    second: Celestia_63
+  - first:
+      213: 917283705223039982
+    second: Celestia_64
+  - first:
+      213: 6201276737194752352
+    second: Celestia_65
+  - first:
+      213: 6893745013248556612
+    second: Celestia_66
+  - first:
+      213: -3789416983729155313
+    second: Celestia_67
+  - first:
+      213: 4639474452611013651
+    second: Celestia_68
+  - first:
+      213: 3691421561813974709
+    second: Celestia_69
+  - first:
+      213: 8809150881672200541
+    second: Celestia_70
+  - first:
+      213: 4411681594729465616
+    second: Celestia_71
+  - first:
+      213: -629119184070480462
+    second: Celestia_72
+  - first:
+      213: -8209556406482840407
+    second: Celestia_73
+  - first:
+      213: 3096879355448475104
+    second: Celestia_74
+  - first:
+      213: 1156311851518924578
+    second: Celestia_75
+  - first:
+      213: -3895891572901791117
+    second: Celestia_76
+  - first:
+      213: -1680579764568661626
+    second: Celestia_77
+  - first:
+      213: 6973577821656430756
+    second: Celestia_78
+  - first:
+      213: 1335074174083459830
+    second: Celestia_79
+  - first:
+      213: 2400111641446598805
+    second: Celestia_80
+  - first:
+      213: 3889556625095959780
+    second: Celestia_81
+  - first:
+      213: 6496377608942787208
+    second: Celestia_82
+  - first:
+      213: 3535547324187228910
+    second: Celestia_83
+  - first:
+      213: -3128119480412718990
+    second: Celestia_84
+  - first:
+      213: 888618486172799917
+    second: Celestia_85
+  - first:
+      213: -7485556493592055891
+    second: Celestia_86
+  - first:
+      213: 4649988693859079792
+    second: Celestia_87
+  - first:
+      213: 8048981527894554398
+    second: Celestia_88
+  - first:
+      213: -8093453066090361699
+    second: Celestia_89
+  - first:
+      213: -6067444987900385648
+    second: Celestia_90
+  - first:
+      213: 2212407829266443572
+    second: Celestia_91
+  - first:
+      213: 8578281898436290706
+    second: Celestia_92
+  - first:
+      213: -8203112522876737123
+    second: Celestia_93
+  - first:
+      213: 2110427996826937958
+    second: Celestia_94
+  - first:
+      213: -1721793463115667697
+    second: Celestia_95
+  - first:
+      213: -7732203929226528064
+    second: Celestia_96
+  - first:
+      213: -6761230550048212444
+    second: Celestia_97
+  - first:
+      213: 3975558539753021900
+    second: Celestia_98
+  - first:
+      213: -6171454368123562418
+    second: Celestia_99
+  - first:
+      213: -6374185114218017166
+    second: Celestia_100
+  - first:
+      213: -4016052009868241577
+    second: Celestia_101
+  - first:
+      213: 8301461772277076303
+    second: Celestia_102
+  - first:
+      213: -408284621439630201
+    second: Celestia_103
+  - first:
+      213: 2177371443929586988
+    second: Celestia_104
+  - first:
+      213: -523363248003653653
+    second: Celestia_105
+  - first:
+      213: 4181332341529534751
+    second: Celestia_106
+  - first:
+      213: -4364845231979078258
+    second: Celestia_107
+  - first:
+      213: -6560100060640016863
+    second: Celestia_108
+  - first:
+      213: -9160158879085131466
+    second: Celestia_109
+  - first:
+      213: 1278461590677531458
+    second: Celestia_110
+  - first:
+      213: 714322817256667215
+    second: Celestia_111
+  - first:
+      213: -5663108640818356489
+    second: Celestia_112
+  - first:
+      213: 6953419220966059187
+    second: Celestia_113
+  - first:
+      213: -6305799571689274366
+    second: Celestia_114
+  - first:
+      213: 7009311398977652478
+    second: Celestia_115
+  - first:
+      213: -3497749331170523404
+    second: Celestia_116
+  - first:
+      213: -6261572553586541984
+    second: Celestia_117
+  - first:
+      213: 1335597130803545123
+    second: Celestia_118
+  - first:
+      213: 2223518653956604291
+    second: Celestia_119
+  - first:
+      213: 2171666994421849980
+    second: Celestia_120
+  - first:
+      213: 5433230072446514721
+    second: Celestia_121
+  - first:
+      213: 4032740779174366005
+    second: Celestia_122
+  - first:
+      213: -15889535843538297
+    second: Celestia_123
+  - first:
+      213: -4536214438073343257
+    second: Celestia_124
+  - first:
+      213: 9011449403609484004
+    second: Celestia_125
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 37
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Celestia_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da245265b903c48c0800000000000000
+      internalID: -4013779724170607955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_1
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e01fdc15dfef5f340800000000000000
+      internalID: 4897100533787914510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_2
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d4c466d3bdb2c110800000000000000
+      internalID: 1279793824220366033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_3
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c02a35016555bf70800000000000000
+      internalID: 9202355288789360837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_4
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d07e0efad798a5f0800000000000000
+      internalID: -745178771508793131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_5
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf18b99ff473715b0800000000000000
+      internalID: -5397784811750587908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_6
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7d7c1dc3f5838ee0800000000000000
+      internalID: -1260016188568863366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_7
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1bf781fc057e76d0800000000000000
+      internalID: -2990824404075152614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_8
+      rect:
+        serializedVersion: 2
+        x: 1281
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c71b7ef5f039a69c0800000000000000
+      internalID: -3933169630311894660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_9
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdde3358f7c10d7d0800000000000000
+      internalID: -2895783226378031653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_10
+      rect:
+        serializedVersion: 2
+        x: 1601
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81980738e2a119e00800000000000000
+      internalID: 1049648975230044440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_11
+      rect:
+        serializedVersion: 2
+        x: 1761
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7efc9d583d2d44540800000000000000
+      internalID: 4991346092958928871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_12
+      rect:
+        serializedVersion: 2
+        x: 1921
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc1edd22b73a0d690800000000000000
+      internalID: -7579378423603273267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_13
+      rect:
+        serializedVersion: 2
+        x: 2081
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18cfd9ed3d4b7acb0800000000000000
+      internalID: -4852711251402425215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_14
+      rect:
+        serializedVersion: 2
+        x: 2241
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 715bc7bbe08865810800000000000000
+      internalID: 1753738701763818775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_15
+      rect:
+        serializedVersion: 2
+        x: 2401
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cc39fc65f4a231c0800000000000000
+      internalID: -4525373301551711035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_16
+      rect:
+        serializedVersion: 2
+        x: 2561
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0213d5c496c7f88d0800000000000000
+      internalID: -2841916048152907488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_17
+      rect:
+        serializedVersion: 2
+        x: 2721
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3547fc19d9d3c5130800000000000000
+      internalID: 3556785552681301075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_18
+      rect:
+        serializedVersion: 2
+        x: 2881
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80acf29bf7567aa10800000000000000
+      internalID: 1920615365338974728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_19
+      rect:
+        serializedVersion: 2
+        x: 3041
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d60b278568c6f7ef0800000000000000
+      internalID: -108248541768273811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_20
+      rect:
+        serializedVersion: 2
+        x: 3201
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 934fcca4ab26ee1e0800000000000000
+      internalID: -2166685818460244935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_21
+      rect:
+        serializedVersion: 2
+        x: 3361
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ec51c245f032d440800000000000000
+      internalID: 4959079969633426661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_22
+      rect:
+        serializedVersion: 2
+        x: 3521
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2ad90d2efee10300800000000000000
+      internalID: 216717032535218732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_23
+      rect:
+        serializedVersion: 2
+        x: 3681
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d14e22f4e43fb130800000000000000
+      internalID: 3584641986330509780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_24
+      rect:
+        serializedVersion: 2
+        x: 3841
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed3daaaabc1a14fa0800000000000000
+      internalID: -5818191347472215074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_25
+      rect:
+        serializedVersion: 2
+        x: 4001
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38edc15b1824f9f00800000000000000
+      internalID: 1125691556722695811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_26
+      rect:
+        serializedVersion: 2
+        x: 4161
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c30d0e12f48e2be30800000000000000
+      internalID: 4517928802774470716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_27
+      rect:
+        serializedVersion: 2
+        x: 4321
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56d05118d79a61630800000000000000
+      internalID: 3897488884037389669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_28
+      rect:
+        serializedVersion: 2
+        x: 4481
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 882590c008a1b7a30800000000000000
+      internalID: 4213991013595304584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_29
+      rect:
+        serializedVersion: 2
+        x: 4641
+        y: 641
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b240acc2bcb802a0800000000000000
+      internalID: -6770954563628285263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_30
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7a5c4e3b94a491c0800000000000000
+      internalID: -4497789141164205445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_31
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d66ad4523a44a5220800000000000000
+      internalID: 2475366412689712749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_32
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15f8e2fcee4406080800000000000000
+      internalID: -9196274646621712559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_33
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3995ea9d5788afc0800000000000000
+      internalID: -3483385475670632130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_34
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2769326e748e163b0800000000000000
+      internalID: -5520876272678103438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_35
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2589991bfdb4a5860800000000000000
+      internalID: 7519405951977887826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_36
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85ad159ef655773d0800000000000000
+      internalID: -3209002270334002600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_37
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0e3e85b940842a00800000000000000
+      internalID: 730850093607829002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_38
+      rect:
+        serializedVersion: 2
+        x: 1281
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a608593d9fd41f10800000000000000
+      internalID: 2239660781074908840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_39
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b9ee3086929ddd30800000000000000
+      internalID: 4457880381261015475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_40
+      rect:
+        serializedVersion: 2
+        x: 1601
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4179685263d88e00800000000000000
+      internalID: 1047319332707201358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_41
+      rect:
+        serializedVersion: 2
+        x: 1761
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e22fa830e7b178d70800000000000000
+      internalID: 9045228604636197422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_42
+      rect:
+        serializedVersion: 2
+        x: 1921
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7b28352fe9d16db0800000000000000
+      internalID: -4800316106655388804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_43
+      rect:
+        serializedVersion: 2
+        x: 2081
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c8345c851778f570800000000000000
+      internalID: 8500675231094159558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_44
+      rect:
+        serializedVersion: 2
+        x: 2241
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cc39223b9fd84e10800000000000000
+      internalID: 2182239877115493577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_45
+      rect:
+        serializedVersion: 2
+        x: 2401
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cac3b95bd50b1fae0800000000000000
+      internalID: -1517237682921849684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_46
+      rect:
+        serializedVersion: 2
+        x: 2561
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 736a57faaf66a2ff0800000000000000
+      internalID: -60122418144500169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_47
+      rect:
+        serializedVersion: 2
+        x: 2721
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e86e903ee54fde80800000000000000
+      internalID: -8151719911197087518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_48
+      rect:
+        serializedVersion: 2
+        x: 2881
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3229557f40cc9fc0800000000000000
+      internalID: -3486700563987881411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_49
+      rect:
+        serializedVersion: 2
+        x: 3041
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56b808c2a7f0b1d40800000000000000
+      internalID: 5556051582698687333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_50
+      rect:
+        serializedVersion: 2
+        x: 3201
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d66ff4fc3eafb0f30800000000000000
+      internalID: 4543000505475921517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_51
+      rect:
+        serializedVersion: 2
+        x: 3361
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db276db625a7ac2c0800000000000000
+      internalID: -4410578390640856387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_52
+      rect:
+        serializedVersion: 2
+        x: 3521
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 990ce1a48c21cb0f0800000000000000
+      internalID: -1099983557538955111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_53
+      rect:
+        serializedVersion: 2
+        x: 3681
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 382fd73e932a5d070800000000000000
+      internalID: 8130583071800816259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_54
+      rect:
+        serializedVersion: 2
+        x: 3841
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a96a83eeb26b58b0800000000000000
+      internalID: -5162423975849334368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_55
+      rect:
+        serializedVersion: 2
+        x: 4001
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 769791016e26a4b90800000000000000
+      internalID: -7256879109302027929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_56
+      rect:
+        serializedVersion: 2
+        x: 4161
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b911ab12e8c019b20800000000000000
+      internalID: 3139304219844678043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_57
+      rect:
+        serializedVersion: 2
+        x: 4321
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf602dd76dad864c0800000000000000
+      internalID: -4293941629928995077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_58
+      rect:
+        serializedVersion: 2
+        x: 4481
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dcd7c82d0ea82080800000000000000
+      internalID: -9211921666244354859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_59
+      rect:
+        serializedVersion: 2
+        x: 4641
+        y: 481
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe9b799f575d98870800000000000000
+      internalID: 8685708059036072431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_60
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 321
+        width: 158
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40c8379c506ddf400800000000000000
+      internalID: 359678865602481156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_61
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 321
+        width: 158
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 360c3bbebf03e9100800000000000000
+      internalID: 116584498907562083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_62
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 321
+        width: 158
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13b071bf28d823ec0800000000000000
+      internalID: -3588650359363007695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_63
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 321
+        width: 158
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef6001a0f7309d420800000000000000
+      internalID: 2655157299476170494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_64
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 321
+        width: 158
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eebc2108ba8dabc00800000000000000
+      internalID: 917283705223039982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_65
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 321
+        width: 158
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 069f262365c5f0650800000000000000
+      internalID: 6201276737194752352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_66
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44efcce90908baf50800000000000000
+      internalID: 6893745013248556612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_67
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f03ddfa9459496bc0800000000000000
+      internalID: -3789416983729155313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_68
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31c11640f69b26040800000000000000
+      internalID: 4639474452611013651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_69
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5beb32c3a509a3330800000000000000
+      internalID: 3691421561813974709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_70
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5104e2dd04604a70800000000000000
+      internalID: 8809150881672200541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_71
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0178afb4901793d30800000000000000
+      internalID: 4411681594729465616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_72
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bd68107f6be447f0800000000000000
+      internalID: -629119184070480462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_73
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a4de04c1fbc11e80800000000000000
+      internalID: -8209556406482840407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_74
+      rect:
+        serializedVersion: 2
+        x: 1281
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ed3fb5ad535afa20800000000000000
+      internalID: 3096879355448475104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_75
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2271c57a08b0c0010800000000000000
+      internalID: 1156311851518924578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_76
+      rect:
+        serializedVersion: 2
+        x: 1601
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37a30c971430fe9c0800000000000000
+      internalID: -3895891572901791117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_77
+      rect:
+        serializedVersion: 2
+        x: 1761
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 681ec24bb916da8e0800000000000000
+      internalID: -1680579764568661626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_78
+      rect:
+        serializedVersion: 2
+        x: 1921
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a8bf59c41027c060800000000000000
+      internalID: 6973577821656430756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_79
+      rect:
+        serializedVersion: 2
+        x: 2081
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6faea0743e2278210800000000000000
+      internalID: 1335074174083459830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_80
+      rect:
+        serializedVersion: 2
+        x: 2241
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59844b152d8ee4120800000000000000
+      internalID: 2400111641446598805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_81
+      rect:
+        serializedVersion: 2
+        x: 2401
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e4ac9c842b7af530800000000000000
+      internalID: 3889556625095959780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_82
+      rect:
+        serializedVersion: 2
+        x: 2561
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88a16db1405c72a50800000000000000
+      internalID: 6496377608942787208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_83
+      rect:
+        serializedVersion: 2
+        x: 2721
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eea33c82f89c01130800000000000000
+      internalID: 3535547324187228910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_84
+      rect:
+        serializedVersion: 2
+        x: 2881
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2783503f7efa694d0800000000000000
+      internalID: -3128119480412718990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_85
+      rect:
+        serializedVersion: 2
+        x: 3041
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da3dc291ec1055c00800000000000000
+      internalID: 888618486172799917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_86
+      rect:
+        serializedVersion: 2
+        x: 3201
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dafa35d7706fd1890800000000000000
+      internalID: -7485556493592055891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_87
+      rect:
+        serializedVersion: 2
+        x: 3361
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0769d039414188040800000000000000
+      internalID: 4649988693859079792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_88
+      rect:
+        serializedVersion: 2
+        x: 3521
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e17f5d5ed0ab3bf60800000000000000
+      internalID: 8048981527894554398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_89
+      rect:
+        serializedVersion: 2
+        x: 3681
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9c436d31574eaf80800000000000000
+      internalID: -8093453066090361699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_90
+      rect:
+        serializedVersion: 2
+        x: 3841
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09629f12eea1ccba0800000000000000
+      internalID: -6067444987900385648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_91
+      rect:
+        serializedVersion: 2
+        x: 4001
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43d28b9e23d04be10800000000000000
+      internalID: 2212407829266443572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_92
+      rect:
+        serializedVersion: 2
+        x: 4161
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 298657bdfed2c0770800000000000000
+      internalID: 8578281898436290706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_93
+      rect:
+        serializedVersion: 2
+        x: 4321
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d99af555f90b82e80800000000000000
+      internalID: -8203112522876737123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_94
+      rect:
+        serializedVersion: 2
+        x: 4481
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66aa8e2e41fb94d10800000000000000
+      internalID: 2110427996826937958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_95
+      rect:
+        serializedVersion: 2
+        x: 4641
+        y: 161
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f07a66eb7f5fa18e0800000000000000
+      internalID: -1721793463115667697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_96
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cab29b4e71b1b490800000000000000
+      internalID: -7732203929226528064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_97
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42a7bd323a84b22a0800000000000000
+      internalID: -6761230550048212444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_98
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc1efb1bd650c2730800000000000000
+      internalID: 3975558539753021900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_99
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e46567033f69a5aa0800000000000000
+      internalID: -6171454368123562418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_100
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27ec37619685a87a0800000000000000
+      internalID: -6374185114218017166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_101
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7555f4899fd1448c0800000000000000
+      internalID: -4016052009868241577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_102
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f415f05bf77b43370800000000000000
+      internalID: 8301461772277076303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_103
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78406dbcc4b755af0800000000000000
+      internalID: -408284621439630201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_104
+      rect:
+        serializedVersion: 2
+        x: 1281
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2d9083cac3973e10800000000000000
+      internalID: 2177371443929586988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_105
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bef5f3a16e3acb8f0800000000000000
+      internalID: -523363248003653653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_106
+      rect:
+        serializedVersion: 2
+        x: 1601
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1168b86c93170a30800000000000000
+      internalID: 4181332341529534751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_107
+      rect:
+        serializedVersion: 2
+        x: 1761
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8d54503364fc63c0800000000000000
+      internalID: -4364845231979078258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_108
+      rect:
+        serializedVersion: 2
+        x: 1921
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 126888270c7d5f4a0800000000000000
+      internalID: -6560100060640016863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_109
+      rect:
+        serializedVersion: 2
+        x: 2081
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6398df5380490e080800000000000000
+      internalID: -9160158879085131466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_110
+      rect:
+        serializedVersion: 2
+        x: 2241
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24ba05b0b020eb110800000000000000
+      internalID: 1278461590677531458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_111
+      rect:
+        serializedVersion: 2
+        x: 2401
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f483a8151d8c9e900800000000000000
+      internalID: 714322817256667215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_112
+      rect:
+        serializedVersion: 2
+        x: 2561
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fe939312b89861b0800000000000000
+      internalID: -5663108640818356489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_113
+      rect:
+        serializedVersion: 2
+        x: 2721
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bc2e00d0f18f7060800000000000000
+      internalID: 6953419220966059187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_114
+      rect:
+        serializedVersion: 2
+        x: 2881
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20486a8f2bc4d78a0800000000000000
+      internalID: -6305799571689274366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_115
+      rect:
+        serializedVersion: 2
+        x: 3041
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef6c8289493164160800000000000000
+      internalID: 7009311398977652478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_116
+      rect:
+        serializedVersion: 2
+        x: 3201
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f68832e38f757fc0800000000000000
+      internalID: -3497749331170523404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_117
+      rect:
+        serializedVersion: 2
+        x: 3361
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06a732010fc6a19a0800000000000000
+      internalID: -6261572553586541984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_118
+      rect:
+        serializedVersion: 2
+        x: 3521
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3248390a38ef88210800000000000000
+      internalID: 1335597130803545123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_119
+      rect:
+        serializedVersion: 2
+        x: 3681
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 381c9806f668bde10800000000000000
+      internalID: 2223518653956604291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_120
+      rect:
+        serializedVersion: 2
+        x: 3841
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7f54fc10af432e10800000000000000
+      internalID: 2171666994421849980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_121
+      rect:
+        serializedVersion: 2
+        x: 4001
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 126f423e6f5b66b40800000000000000
+      internalID: 5433230072446514721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_122
+      rect:
+        serializedVersion: 2
+        x: 4161
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53b8bed4f5c27f730800000000000000
+      internalID: 4032740779174366005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_123
+      rect:
+        serializedVersion: 2
+        x: 4321
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78a66642d8c87cff0800000000000000
+      internalID: -15889535843538297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_124
+      rect:
+        serializedVersion: 2
+        x: 4481
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e2e3a1a0012c01c0800000000000000
+      internalID: -4536214438073343257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celestia_125
+      rect:
+        serializedVersion: 2
+        x: 4641
+        y: 1
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ea8c85ec791f0d70800000000000000
+      internalID: 9011449403609484004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
