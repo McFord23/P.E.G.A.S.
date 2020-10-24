@@ -5,7 +5,6 @@ using UnityEngine;
 public class ChunkController : MonoBehaviour
 {
     LayerController layerController;
-    bool used = false;
 
     void Start()
     {
@@ -15,9 +14,8 @@ public class ChunkController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && !used)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            used = true;
             layerController.UploadChunks(transform.gameObject);
         }
     }
