@@ -7,7 +7,6 @@ public static class Save
     static string princessName = "Celestia";
     static bool soundEnable = true;
     static bool musicEnable = true;
-    static float masterVolume = 1;
 
     public static string Princess
     {
@@ -42,18 +41,6 @@ public static class Save
         set
         {
             musicEnable = value;
-        }
-    }
-
-    public static float Volume
-    {
-        get
-        {
-            return masterVolume;
-        }
-        set
-        {
-            masterVolume = value;
         }
     }
 }

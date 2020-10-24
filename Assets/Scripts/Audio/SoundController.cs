@@ -22,7 +22,7 @@ public class SoundController : MonoBehaviour
                 flapSounds = new AudioSource[flap.transform.childCount];
                 for (int i = 0; i < flap.transform.childCount; i++)
                 {
-                    flapSounds[i] = flap.transform.GetChild(i).gameObject.GetComponentInChildren<AudioSource>();
+                    flapSounds[i] = flap.transform.GetChild(i).gameObject.GetComponent<AudioSource>();
                 }
                 break;
         }
