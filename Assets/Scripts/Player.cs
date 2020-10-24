@@ -41,6 +41,10 @@ public class Player : MonoBehaviour
     public bool deathIndicator = false;
     public bool pullClick = false;
 
+    public LayerController layer1;
+    public LayerController layer2;
+    public LayerController layer3;
+
     public enum MoveState
     {
         Loaded,
@@ -102,6 +106,9 @@ public class Player : MonoBehaviour
         menu.SetActive(false);
         cam.FocusOnCannon();
         cannon.active = true;
+        layer1.Reset();
+        layer2.Reset();
+        layer3.Reset();
     }
 
     public void Pause()
