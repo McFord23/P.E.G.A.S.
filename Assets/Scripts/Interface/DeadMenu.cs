@@ -6,8 +6,7 @@ using UnityEngine.UI;
 
 public class DeadMenu : MonoBehaviour
 {
-    public Player player;
-    public Barriers barriers;
+    Player player;
 
     public GameObject deadMenu;
     private Button fakeButton;
@@ -16,6 +15,7 @@ public class DeadMenu : MonoBehaviour
 
     void Start()
     {
+        player = GameObject.Find("Player").gameObject.GetComponent<Player>();
         fakeButton = deadMenu.GetComponent<Button>();
     }
 
@@ -27,7 +27,6 @@ public class DeadMenu : MonoBehaviour
         deadMenu.SetActive(false);
 
         player.Reset();
-        barriers.Reset();
     }
 
     public void Exit()

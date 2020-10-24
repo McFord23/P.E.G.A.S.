@@ -4,6 +4,21 @@ using UnityEngine;
 
 public class Barriers : MonoBehaviour
 {
+    Player player;
+
+    void Start()
+    {
+        player = GameObject.Find("Player").GetComponent<Player>();
+    }
+
+    private void Update()
+    {
+        if (player.moveState == Player.MoveState.Loaded)
+        {
+            Reset();
+        }
+    }
+
     public void Reset()
     {
         for (int i = 0; i < transform.childCount; i++)

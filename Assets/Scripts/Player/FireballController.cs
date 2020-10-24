@@ -7,16 +7,15 @@ public class FireballController : MonoBehaviour
 {
     public GameObject fireball;
     Player player;
-    // Start is called before the first frame update
+
     void Start()
     {
-        player = GetComponent<Player>();
+        player = GetComponentInParent<Player>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.Mouse1) && (player.moveState != Player.MoveState.Dead) && (player.moveState != Player.MoveState.Paused) && (player.moveState != Player.MoveState.Loaded))
         {
             Instantiate(fireball,transform.position,transform.rotation);
         }
