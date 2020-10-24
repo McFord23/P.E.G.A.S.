@@ -28,8 +28,8 @@ public class AudioController : MonoBehaviour
     public void EnableMusic(bool value)
     {
         Save.Music = value;
-        if (Save.Music) mixer.audioMixer.SetFloat("MusicVolume", 0);
-        else mixer.audioMixer.SetFloat("MusicVolume", -80);
+        if (Save.Music) mixer.audioMixer.SetFloat("MusicVolume", -6); //dB
+        else mixer.audioMixer.SetFloat("MusicVolume", -80); //dB
     }
 
     public void ChangeVolume(Slider volume)

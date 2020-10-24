@@ -25,7 +25,7 @@ public class MusicController : MonoBehaviour
 
     string scene;
 
-    void Start()
+    void Awake()
     {
         scene = SceneManager.GetActiveScene().name;
 

@@ -6,16 +6,20 @@ public class LayerController : MonoBehaviour
 {
     public float speed = 1f;
     public float transparency = 1f;
+    public GameObject chunk;
+    Vector3[] spawnPositions;
+
     Player player;
     Vector3 position;
-    Vector3 spawnPosition;
     Vector3 playerOldPosition;
-
-    public GameObject chunk;
 
     void Start()
     {
-        spawnPosition = transform.position;
+        spawnPositions = new Vector3[transform.childCount];
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            spawnPositions[i] = transform.GetChild(i).gameObject.transform.position;
+        }
 
         player = GameObject.Find("Player").GetComponent<Player>();
         playerOldPosition = player.transform.position;
@@ -45,7 +49,10 @@ public class LayerController : MonoBehaviour
 
     public void Reset()
     {
-        transform.position = spawnPosition;
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.transform.position = spawnPositions[i];
+        }
     }
 
     public void UploadChunks(GameObject chunkCurrent)

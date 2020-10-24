@@ -101,7 +101,7 @@ public class Player : MonoBehaviour
         deadMenu.SetActive(false);
         menu.SetActive(false);
         cam.FocusOnCannon();
-        cannon.active = true;
+        cannon.Reset();
     }
 
     public void Pause()
@@ -190,6 +190,7 @@ public class Player : MonoBehaviour
         {
             moveState = MoveState.Dead;
             animatorController.Play("Dead");
+            soundController.Hit();
 
             if (pauseMenu.activeSelf) pauseMenu.SetActive(false);
             clickSound.Play();
