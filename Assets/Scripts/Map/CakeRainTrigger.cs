@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class CakeRainTrigger : MonoBehaviour
 {
-    public RainController rainController;
-
+    RainController rainController;
+    private void Start()
+    {
+        rainController = GetComponent<RainController>();
+    }
+ 
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            rainController.Spawn();
+            rainController.Active(true);
         }
-    }
+    } 
 
     public void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Rain"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            rainController.Reset();
+            rainController.Active(false);
         }
     }
 }
