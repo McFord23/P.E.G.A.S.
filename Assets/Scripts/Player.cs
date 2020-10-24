@@ -8,15 +8,17 @@ public class Player : MonoBehaviour
 {
     public Cannon cannon;
     public CameraFollow cam;
-    Renderer pegas;
+    public Renderer sprite;
 
+    GameObject menu;
     GameObject pauseMenu;
     GameObject deadMenu;
     
     public AudioSource clickSound;
+    public SoundController soundController;
 
     public Rigidbody2D rb;
-    Animator animatorController;
+    public Animator animatorController;
     public MoveState moveState = MoveState.FreeFall;
 
     public float flapForce = 7f;
@@ -39,6 +41,10 @@ public class Player : MonoBehaviour
     public bool deathIndicator = false;
     public bool pullClick = false;
 
+    public LayerController layer1;
+    public LayerController layer2;
+    public LayerController layer3;
+
     public enum MoveState
     {
         Loaded,
@@ -52,23 +58,17 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        pegas = GetComponentInChildren<Renderer>();
-        animatorController = GetComponentInChildren<Animator>();
 
-        pauseMenu = GetComponent<PlayerKeyboardController>().pauseMenu;
-        deadMenu = GetComponent<PlayerKeyboardController>().deadMenu;
+        menu = GetComponent<PlayerKeyboardController>().menu;
+        pauseMenu = menu.transform.Find("PauseMenu").gameObject;
+        deadMenu = menu.transform.Find("DeadMenu").gameObject;
 
         spawnPos = transform.position;
         Reset();
     }
 
     void FixedUpdate()
-    {
-        /*if (moveState == MoveState.Loaded)
-        {
-            transform.RotateAround(cannon.transform.position, Vector2.zero, cannon.angle);
-        }*/
-        
+    {        
         if (moveState == MoveState.Flap)
         {
             flapTime -= Time.deltaTime;
@@ -96,13 +96,19 @@ public class Player : MonoBehaviour
     public void Reset()
     {
         rb.velocity = new Vector2(0, 0);
-        pegas.enabled = false;
+        sprite.enabled = false;
         rb.gravityScale = 0f;
         moveState = MoveState.Loaded;
         transform.position = spawnPos;
+        sprite.enabled = false;
 
         deadMenu.SetActive(false);
+        menu.SetActive(false);
         cam.FocusOnCannon();
+        cannon.active = true;
+        layer1.Reset();
+        layer2.Reset();
+        layer3.Reset();
     }
 
     public void Pause()
@@ -117,7 +123,7 @@ public class Player : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         rb.velocity = new Vector2(0, 0);
 
-        cannon.isPaused = true;
+        cannon.active = false;
         cam.FocusOnPlayer();
     }
 
@@ -128,13 +134,13 @@ public class Player : MonoBehaviour
         if (moveState != MoveState.Loaded) rb.gravityScale = 1f;
         rb.AddForce(saveDirection, ForceMode2D.Impulse);
 
-        cannon.isPaused = false;
+        cannon.active = true;
         cam.FocusOnFly();
     }
 
     public void Shoot()
     {
-        pegas.enabled = true;
+        sprite.enabled = true;
         FreeFall();
         rb.AddForce(cannon.direction * cannon.power, ForceMode2D.Impulse);
         rb.gravityScale = 1f;
@@ -155,6 +161,8 @@ public class Player : MonoBehaviour
         flapTime = flapCooldown;
         animatorController.Play("Flap");
         rb.AddForce(flapDirection * flapForce, ForceMode2D.Impulse);
+        
+        soundController.Flap();
     }
 
     public void Hover()
@@ -192,6 +200,7 @@ public class Player : MonoBehaviour
 
             if (pauseMenu.activeSelf) pauseMenu.SetActive(false);
             clickSound.Play();
+            menu.SetActive(true);
             deadMenu.SetActive(true);
             cam.FocusOnPlayer();
         }

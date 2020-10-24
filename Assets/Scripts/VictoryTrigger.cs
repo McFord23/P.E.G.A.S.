@@ -6,14 +6,13 @@ public class VictoryTrigger : MonoBehaviour
 {
     public Player player;
 
-    public Canvas menu;
+    public GameObject menu;
     GameObject victoryMenu;
     GameObject deadMenu;
     GameObject pauseMenu;
     
     public AudioSource clickSound;
-    public AudioSource gameMusic;
-    public AudioSource victoryMusic;
+    public MusicController musicController;
 
     private void Start()
     {
@@ -24,16 +23,16 @@ public class VictoryTrigger : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
             if (deadMenu.activeSelf) deadMenu.SetActive(false);
             if (pauseMenu.activeSelf) pauseMenu.SetActive(false);
 
             victoryMenu.SetActive(true);
-            gameMusic.Stop();
-            clickSound.Play();
-            victoryMusic.Play();
             player.Pause();
+            clickSound.Play();
+            musicController.flyingMusic.Stop();
+            musicController.victoryMusic.Play();
         }
     }
 }

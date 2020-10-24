@@ -7,17 +7,13 @@ public class PlayerKeyboardController : MonoBehaviour
     Player player;
     
     public GameObject menu;
-    public GameObject pauseMenu;
-    public GameObject deadMenu;
+    GameObject pauseMenu;
+    GameObject deadMenu;
     GameObject victoryMenu;
-
-    /*float flapTimeTrigger;
-    float flapTimeCoudown = 0.375f;*/
 
     void Start()
     {
         player = GetComponent<Player>();
-        //flapTimeTrigger = flapTimeCoudown;
 
         pauseMenu = menu.transform.Find("PauseMenu").gameObject;
         deadMenu = menu.transform.Find("DeadMenu").gameObject;
@@ -38,41 +34,10 @@ public class PlayerKeyboardController : MonoBehaviour
                 player.Flap();
             }
 
-            /*if (Input.GetKey(KeyCode.Space))
-            {
-                flapTimeTrigger -= Time.deltaTime;
-                if (flapTimeTrigger <= 0)
-                {
-                    player.Hover();
-                }
-            }
-
-            if (Input.GetKeyUp(KeyCode.Space))
-            {
-                player.rb.gravityScale = 1f;
-                flapTimeTrigger = flapTimeCoudown;
-                if (player.moveState == Player.MoveState.Hover) player.FreeFall();
-            }*/
-
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 player.Flap();
             }
-
-            /*if (Input.GetKey(KeyCode.Mouse0))
-            {
-                flapTimeTrigger -= Time.deltaTime;
-                if (flapTimeTrigger <= 0)
-                {
-                    player.Hover();
-                }
-            }
-
-            if (Input.GetKeyUp(KeyCode.Mouse0))
-            {
-                flapTimeTrigger = 0.375f;
-                if (player.moveState == Player.MoveState.Hover) player.FreeFall();
-            }*/
         }
 
         if (Input.GetKeyDown(KeyCode.R) && !pauseMenu.activeSelf && !victoryMenu.activeSelf)
