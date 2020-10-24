@@ -23,7 +23,7 @@ public class DeadMenu : MonoBehaviour
     {
         clickSound.Play();
         
-        if (deadMenu.activeSelf) fakeButton.Select();
+        fakeButton.Select();
         deadMenu.SetActive(false);
 
         player.Reset();

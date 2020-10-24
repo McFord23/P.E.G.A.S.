@@ -4,41 +4,61 @@ using UnityEngine;
 
 public class Castling : MonoBehaviour
 {
-    public GameObject celestiaPlayer;
-    public GameObject lunaPlayer;
-    public Renderer celestiaSprite;
-    public Renderer lunaSprite;
-    Animator celestiAnimatorController;
-    Animator lunAnimatorController;
-    public MusicController musicController;
     Player player;
 
-    public GameObject celestia;
-    public GameObject luna;
+    GameObject celestiaPlayer;
+    Renderer celestiaSprite;
+    Animator celestiAnimatorController;
+    PolygonCollider2D celestiaLiveCollider;
+    CapsuleCollider2D celestiaDeathCollider;
 
-    public CastlingTrigger trigger;
+    GameObject lunaPlayer;
+    Renderer lunaSprite;
+    Animator lunAnimatorController;
+    PolygonCollider2D lunaLiveCollider;
+    CapsuleCollider2D lunaDeathCollider;
+
+    public GameObject celestiaSister;
+    public GameObject lunaSister;
+
+    public MusicController musicController;
 
     void Start()
     {
         player = GetComponent<Player>();
-
+        
+        celestiaPlayer = transform.Find("Celestia").gameObject;
+        celestiaSprite = celestiaPlayer.GetComponent<Renderer>();
         celestiAnimatorController = celestiaPlayer.GetComponent<Animator>();
+        celestiaLiveCollider = celestiaPlayer.GetComponent<PolygonCollider2D>();
+        celestiaDeathCollider = celestiaPlayer.GetComponent<CapsuleCollider2D>();
+
+        lunaPlayer = transform.Find("Luna").gameObject;
+        lunaSprite = lunaPlayer.GetComponent<Renderer>();
         lunAnimatorController = lunaPlayer.GetComponent<Animator>();
+        lunaLiveCollider = lunaPlayer.GetComponent<PolygonCollider2D>();
+        lunaDeathCollider = lunaPlayer.GetComponent<CapsuleCollider2D>();
 
         switch (Save.Princess)
         {
             case "Celestia":
-                player.animatorController = celestiAnimatorController;
-                player.sprite = celestiaSprite;
                 celestiaPlayer.SetActive(true);
-                luna.SetActive(true);
+                lunaSister.SetActive(true);
+
+                player.sprite = celestiaSprite;
+                player.liveCollider = celestiaLiveCollider;
+                player.deathCollider = celestiaDeathCollider;
+                player.animatorController = celestiAnimatorController;
                 break;
 
             case "Luna":
+                lunaPlayer.SetActive(true);
+                celestiaSister.SetActive(true);
+
                 player.animatorController = lunAnimatorController;
                 player.sprite = lunaSprite;
-                lunaPlayer.SetActive(true);
-                celestia.SetActive(true);
+                player.liveCollider = lunaLiveCollider;
+                player.deathCollider = lunaDeathCollider;
                 break;
         }
     }
@@ -60,7 +80,6 @@ public class Castling : MonoBehaviour
         }
 
         player.Reset();
-        trigger.used = false;
     }
 
     void ChangeSprite()
@@ -68,23 +87,29 @@ public class Castling : MonoBehaviour
         switch (Save.Princess)
         {
             case "Celestia":
-                player.animatorController = lunAnimatorController;
-                player.sprite = lunaSprite;
                 celestiaPlayer.SetActive(false);
                 lunaPlayer.SetActive(true);
 
-                luna.SetActive(false);
-                celestia.SetActive(true);
+                player.animatorController = lunAnimatorController;
+                player.sprite = lunaSprite;
+                player.liveCollider = lunaLiveCollider;
+                player.deathCollider = lunaDeathCollider;
+
+                lunaSister.SetActive(false);
+                celestiaSister.SetActive(true);
                 break;
 
             case "Luna":
-                player.animatorController = celestiAnimatorController;
-                player.sprite = celestiaSprite;
                 lunaPlayer.SetActive(false);
                 celestiaPlayer.SetActive(true);
 
-                celestia.SetActive(false);
-                luna.SetActive(true);
+                player.animatorController = celestiAnimatorController;
+                player.sprite = celestiaSprite;
+                player.liveCollider = celestiaLiveCollider;
+                player.deathCollider = celestiaDeathCollider;
+
+                celestiaSister.SetActive(false);
+                lunaSister.SetActive(true);
                 break;
         }
     }

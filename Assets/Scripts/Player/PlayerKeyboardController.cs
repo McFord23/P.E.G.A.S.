@@ -40,9 +40,9 @@ public class PlayerKeyboardController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && !pauseMenu.activeSelf && !victoryMenu.activeSelf)
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            deadMenu.GetComponent<DeadMenu>().Retry();
+            player.Reset();
         }
 
         if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) && (player.moveState != Player.MoveState.Dead) && !victoryMenu.activeSelf)
