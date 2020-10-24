@@ -21,21 +21,19 @@ public class AudioController : MonoBehaviour
     public void EnableSound(bool value)
     {
         Save.Sound = value;
-        if (Save.Sound) mixer.audioMixer.SetFloat("SoundVolume", 0);
-        else mixer.audioMixer.SetFloat("SoundVolume", -80);
+        if (Save.Sound) mixer.audioMixer.SetFloat("SoundVolume", 0); //dB
+        else mixer.audioMixer.SetFloat("SoundVolume", -80); //dB
     }
 
     public void EnableMusic(bool value)
     {
         Save.Music = value;
-        if (Save.Music) mixer.audioMixer.SetFloat("MusicVolume", 0);
-        else mixer.audioMixer.SetFloat("MusicVolume", -80);
+        if (Save.Music) mixer.audioMixer.SetFloat("MusicVolume", -6); //dB
+        else mixer.audioMixer.SetFloat("MusicVolume", -80); //dB
     }
 
     public void ChangeVolume(Slider volume)
     {
-        //Save.Volume = volume.value;
-        //mixer.audioMixer.SetFloat("MasterVolume", Mathf.Lerp(-80, 0, Save.Volume));
         AudioListener.volume = volume.value;
     }
 }

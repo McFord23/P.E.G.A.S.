@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Barrier
+  - Rain
+  - Fireball
   layers:
   - Default
   - TransparentFX
