@@ -7,6 +7,7 @@ public class LayerController : MonoBehaviour
     public float speed = 1f;
     public float transparency = 1f;
     public GameObject chunk;
+    public float size = 111.86f;
     Vector3[] spawnPositions;
 
     Player player;
@@ -23,8 +24,6 @@ public class LayerController : MonoBehaviour
 
         player = GameObject.Find("Player").GetComponent<Player>();
         playerOldPosition = player.transform.position;
-
-        //SetTransparency(transparency);
     }
 
     
@@ -33,11 +32,11 @@ public class LayerController : MonoBehaviour
         position = Vector3.right * speed * player.speed * Time.deltaTime;
         if (playerOldPosition.x < player.transform.position.x)
         {
-            transform.position -= new Vector3(position.x, 0, 0);
+            transform.position -= position;
         } 
         else if (playerOldPosition.x > player.transform.position.x)
         {
-            transform.position += new Vector3(position.x, 0, 0);
+            transform.position += position;
         }
         playerOldPosition.x = player.transform.position.x;
 
@@ -57,22 +56,7 @@ public class LayerController : MonoBehaviour
 
     public void UploadChunks(GameObject chunkCurrent)
     {
-        Instantiate(chunk, chunkCurrent.transform.position + new Vector3(335.58f, 0f, 0f), chunkCurrent.transform.rotation, transform);
+        Instantiate(chunk, chunkCurrent.transform.position + new Vector3(2 * size, 0f, 0f), chunkCurrent.transform.rotation, transform);
         Destroy(chunkCurrent);
     }
-
-    void SetTransparency(float alpha)
-    {
-        Material material;
-        Color color;
-
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            material = transform.GetChild(i).gameObject.GetComponent<Renderer>().material;
-            color = material.color;
-            color.a = alpha;
-            material.color = color;
-        }
-    }
-
 }

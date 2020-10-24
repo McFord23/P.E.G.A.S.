@@ -53,7 +53,7 @@ public class SoundController : MonoBehaviour
         }
     }
 
-    private void Update()
+    void Update()
     {
         HeadwindVolume();    
     }
@@ -70,7 +70,7 @@ public class SoundController : MonoBehaviour
         hitSound.Play();
     }
 
-    private void HeadwindVolume()
+    void HeadwindVolume()
     {
         headwindSound.volume = player.speed * player.speed / 4000f;
     }

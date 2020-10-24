@@ -6,16 +6,16 @@ using UnityEngine;
 public class ShootingController : MonoBehaviour
 {
     public GameObject fireball;
-    public Player player;
+    Player player;
 
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<Player>();
+        player = GetComponentInParent<Player>();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse1) && (player.moveState != Player.MoveState.Dead) && (player.moveState != Player.MoveState.Paused))
+        if (Input.GetKeyDown(KeyCode.Mouse1) && (player.moveState != Player.MoveState.Dead) && (player.moveState != Player.MoveState.Paused) && (player.moveState != Player.MoveState.Loaded))
         {
             Instantiate(fireball, transform.position, transform.rotation);
         }

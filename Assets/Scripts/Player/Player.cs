@@ -116,7 +116,7 @@ public class Player : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         rb.velocity = new Vector2(0, 0);
 
-        cannon.active = false;
+        cannon.Pause();
         cam.FocusOnPlayer();
     }
 
@@ -127,7 +127,7 @@ public class Player : MonoBehaviour
         if (moveState != MoveState.Loaded) rb.gravityScale = 1f;
         rb.AddForce(saveDirection, ForceMode2D.Impulse);
 
-        cannon.active = true;
+        cannon.Resume();
         cam.FocusOnFly();
     }
 

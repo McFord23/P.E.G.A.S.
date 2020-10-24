@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cannon : MonoBehaviour
 {
-    public bool active = true;
+    bool active = true;
     public float power = 100f;
     public float speed = 1f;
 
@@ -46,6 +46,18 @@ public class Cannon : MonoBehaviour
     {
         active = true;
         soundController.cannonScratchSound.Play();
+    }
+
+    public void Pause()
+    {
+        active = false;
+        soundController.cannonScratchSound.Pause();
+    }
+
+    public void Resume()
+    {
+        active = true;
+        soundController.cannonScratchSound.UnPause();
     }
 
     public void Shoot()
