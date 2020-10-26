@@ -8,19 +8,18 @@ public class SoundController : MonoBehaviour
     AudioSource flapSound;
     AudioSource[] flapSounds;
 
-    //AudioSource turnPage;
-    AudioSource headwindSound;
-
-    Player player;
-    public GameObject menu;
-    string scene;
+    public AudioSource cannonScratchSound;
+    public AudioSource cannonShootSound;
 
     Transform hit;
     AudioSource hitSound;
     AudioSource[] hitSounds;
 
-    public AudioSource cannonScratchSound;
-    public AudioSource cannonShootSound;
+    AudioSource headwindSound;
+    AudioSource turnPageSound;
+
+    Player player;
+    string scene;
 
     void Awake()
     {
@@ -37,8 +36,8 @@ public class SoundController : MonoBehaviour
                     flapSounds[i] = flap.transform.GetChild(i).gameObject.GetComponent<AudioSource>();
                 }
 
-                //turnPage = transform.Find("Turn Page").gameObject.GetComponent<AudioSource>();
-                headwindSound = transform.Find("Headwind").gameObject.GetComponent<AudioSource>();
+                cannonScratchSound = transform.Find("Cannon Scratch").gameObject.GetComponent<AudioSource>();
+                cannonShootSound = transform.Find("Cannon Shoot").gameObject.GetComponent<AudioSource>();
 
                 hit = transform.Find("Hit");
                 hitSounds = new AudioSource[hit.transform.childCount];
@@ -47,8 +46,8 @@ public class SoundController : MonoBehaviour
                     hitSounds[k] = hit.transform.GetChild(k).gameObject.GetComponent<AudioSource>();
                 }
 
-                cannonScratchSound = transform.Find("Cannon Scratch").gameObject.GetComponent<AudioSource>();
-                cannonShootSound = transform.Find("Cannon Shoot").gameObject.GetComponent<AudioSource>();
+                headwindSound = transform.Find("Headwind").gameObject.GetComponent<AudioSource>();
+                turnPageSound = transform.Find("Turn Page").gameObject.GetComponent<AudioSource>();
                 break;
         }
     }
@@ -73,5 +72,10 @@ public class SoundController : MonoBehaviour
     void HeadwindVolume()
     {
         headwindSound.volume = player.speed * player.speed / 4000f;
+    }
+
+    public void PlayTurnPageSound()
+    {
+        turnPageSound.Play();
     }
 }

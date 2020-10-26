@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Cannon : MonoBehaviour
 {
@@ -12,9 +13,12 @@ public class Cannon : MonoBehaviour
     Vector2 mousePos;
     Vector3 target;
     float angle;
-    public Vector2 direction;
+    Vector2 direction;
 
+    public Player player;
     public SoundController soundController;
+
+    public UnityEvent CannonShootEvent;
 
     void Start()
     {
@@ -39,6 +43,11 @@ public class Cannon : MonoBehaviour
 
             direction = transform.right;
             direction.Normalize();
+
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                Shoot();
+            }
         }
     }
 
@@ -56,12 +65,21 @@ public class Cannon : MonoBehaviour
 
     public void Resume()
     {
-        active = true;
-        soundController.cannonScratchSound.UnPause();
+        if (player.moveState == Player.MoveState.Loaded)
+        {
+            active = true;
+            soundController.cannonScratchSound.UnPause();
+        }
     }
 
     public void Shoot()
     {
+        player.sprite.enabled = true;
+        player.moveState = Player.MoveState.Flap;
+        player.rb.AddForce(direction * power, ForceMode2D.Impulse);
+        player.rb.gravityScale = 1f;
+
+        CannonShootEvent.Invoke();
         soundController.cannonShootSound.Play();
         soundController.cannonScratchSound.Stop();
         active = false;

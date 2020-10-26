@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
@@ -41,29 +42,25 @@ public class Player : MonoBehaviour
         Paused
     }
 
-    GameObject menu;
-    GameObject pauseMenu;
-    GameObject deadMenu;
-
-    public Cannon cannon;
-    public CameraFollow cam;
-    public AudioSource clickSound;
+    public UnityEvent VictoryEvent;
+    public UnityEvent PlayerDeadEvent;
+    public UnityEvent PlayerResetEvent;
+    public UnityEvent PlayerPausedEvent;
+    public UnityEvent PlayerResumeEvent;
 
     // Dev ops
     public bool godnessMode = false;
     public bool deathIndicator = false;
     public bool pullClick = false;
 
+    ////////////////////////////////////////////
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
-        menu = GetComponent<PlayerKeyboardController>().menu;
-        pauseMenu = menu.transform.Find("PauseMenu").gameObject;
-        deadMenu = menu.transform.Find("DeadMenu").gameObject;
-
         spawnPos = transform.position;
-        Reset();
+        LoadInCannon();
     }
 
     void FixedUpdate()
@@ -79,36 +76,40 @@ public class Player : MonoBehaviour
 
         if (moveState == MoveState.Flap || moveState == MoveState.Hover || moveState == MoveState.FreeFall)
         {
-            CalculateDirection();
+            //CalculateDirection();
+            FlyPhysics();
+        }
+
+        if (moveState == MoveState.FreeFall)
+        {
+            rb.AddForce(transform.right * rb.velocity.magnitude, ForceMode2D.Force);
         }
 
         acceleration = (rb.velocity.magnitude - speed) / Time.deltaTime;
-        
-        if (moveState == MoveState.FreeFall)
-        {
-            rb.AddForce(flapDirection * rb.velocity.magnitude, ForceMode2D.Force);
-        }
-
         speed = rb.velocity.magnitude;
     }
 
     public void Reset()
     {
         rb.velocity = new Vector2(0, 0);
-        rb.gravityScale = 0f;
-        moveState = MoveState.Loaded;
+        rb.angularVelocity = 0f;
+        transform.right = Vector2.right;
         transform.position = spawnPos;
-        sprite.enabled = false;
         liveCollider.enabled = true;
         deathCollider.enabled = false;
+        LoadInCannon();
 
-        deadMenu.SetActive(false);
-        menu.SetActive(false);
-        cam.FocusOnCannon();
-        cannon.Reset();
+        PlayerResetEvent.Invoke();
     }
 
-    public void Pause()
+    void LoadInCannon()
+    {
+        moveState = MoveState.Loaded;
+        rb.gravityScale = 0f;
+        sprite.enabled = false;
+    }
+
+    public void Pause(string reason)
     {
         saveState = moveState;
         saveDirection = rb.velocity;
@@ -120,8 +121,8 @@ public class Player : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         rb.velocity = new Vector2(0, 0);
 
-        cannon.Pause();
-        cam.FocusOnPlayer();
+        if (reason == "AFK") PlayerPausedEvent.Invoke();
+        else if (reason == "Victory") VictoryEvent.Invoke();
     }
 
     public void Resume()
@@ -131,19 +132,7 @@ public class Player : MonoBehaviour
         if (moveState != MoveState.Loaded) rb.gravityScale = 1f;
         rb.AddForce(saveDirection, ForceMode2D.Impulse);
 
-        cannon.Resume();
-        cam.FocusOnFly();
-    }
-
-    public void Shoot()
-    {
-        sprite.enabled = true;
-        FreeFall();
-        rb.AddForce(cannon.direction * cannon.power, ForceMode2D.Impulse);
-        rb.gravityScale = 1f;
-
-        cannon.Shoot();
-        cam.FocusOnFly();
+        PlayerResumeEvent.Invoke();
     }
 
     public void FreeFall()
@@ -157,7 +146,7 @@ public class Player : MonoBehaviour
         moveState = MoveState.Flap;
         flapTime = flapCooldown;
         animatorController.Play("Flap");
-        rb.AddForce(flapDirection * flapForce, ForceMode2D.Impulse);
+        rb.AddForce(transform.right * flapForce, ForceMode2D.Impulse);
         
         soundController.Flap();
     }
@@ -188,6 +177,13 @@ public class Player : MonoBehaviour
         }
     }
 
+    void FlyPhysics()
+    {
+        transform.Rotate(0f, 0f, 15f * Input.GetAxis("Mouse Y"));
+        //Vector2 localVelocity = transform.InverseTransformDirection(rb.velocity);
+
+    }
+
     void Dead()
     {
         if (!godnessMode)
@@ -196,19 +192,14 @@ public class Player : MonoBehaviour
             deathCollider.enabled = true;
             liveCollider.enabled = false;
             animatorController.Play("Dead");
-            soundController.Hit();
-
-            if (pauseMenu.activeSelf) pauseMenu.SetActive(false);
-            clickSound.Play();
-            menu.SetActive(true);
-            deadMenu.SetActive(true);
-            cam.FocusOnPlayer();
+            PlayerDeadEvent.Invoke();
         }
     }
 
     void OnCollisionEnter2D()
     {
-        if (!godnessMode) Dead();
+        if (!godnessMode && (moveState != Player.MoveState.Dead)) Dead();
+        soundController.Hit();
 
         // DevOps.Pull()
         deathIndicator = true;

@@ -123,4 +123,22 @@ public class MusicController : MonoBehaviour
 
         flyingMusic.Play();
     }
+
+    public void PauseFlyMusic()
+    {
+        flyingMusic.Pause();
+        pauseMusic.Play();
+    }
+
+    public void ResumeFlyMusic()
+    {
+        pauseMusic.Stop();
+        flyingMusic.UnPause();
+    }
+
+    public void PlayVictoryMusic()
+    {
+        flyingMusic.Stop();
+        victoryMusic.Play();
+    }
 }

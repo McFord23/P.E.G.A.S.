@@ -5,13 +5,11 @@ using UnityEngine;
 public class CastlingTrigger : MonoBehaviour
 {
     public Castling player;
-    public bool used = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player" && !used)
+        if (collision.tag == "Player")
         {
-            used = true;
             player.ChangePrincess();
         }
     }

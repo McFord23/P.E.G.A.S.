@@ -130,7 +130,7 @@ public class DevOps : MonoBehaviour
                     clickSound.Play();
                     victoryMusic.Play();
 
-                    player.Pause();
+                    player.Pause("Victory");
                 }
             }
         }
