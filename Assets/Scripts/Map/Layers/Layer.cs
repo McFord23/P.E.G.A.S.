@@ -18,7 +18,7 @@ public class Layer : MonoBehaviour
     void Start()
     {
         spawnPositions = new Vector3[transform.childCount];
-        for (int i = 0; i < transform.childCount; i++)
+        for (int i = 0; i < transform.childCount - 1; i++)
         {
             spawnPositions[i] = transform.GetChild(i).gameObject.transform.position;
         }
@@ -28,23 +28,15 @@ public class Layer : MonoBehaviour
     }
 
     
-   void Update()
+   void FixedUpdate()
     {
-        position = Vector3.right * speed * player.speed * Time.deltaTime;
-        if (playerOldPosition.x < player.transform.position.x)
-        {
-            transform.position -= position;
-        } 
-        else if (playerOldPosition.x > player.transform.position.x)
-        {
-            transform.position += position;
-        }
-        playerOldPosition.x = player.transform.position.x;
+        position = Vector3.right * speed * Time.deltaTime;
+        transform.position -= position;
     }
 
     public void Reset()
     {
-        for (int i = 0; i < transform.childCount; i++)
+        for (int i = 0; i < transform.childCount - 1; i++)
         {
             transform.GetChild(i).gameObject.transform.position = spawnPositions[i];
         }

@@ -20,16 +20,14 @@ public class HeadwindEffect : MonoBehaviour
         main = headwind.main;
         emission = headwind.emission;
 
-        offset = transform.position - player.transform.position;
+        offset = transform.position - Camera.main.transform.position;
     }
 
     void Update()
     {
-        ratio = player.speed / 40f;
-
+        ratio = player.speed / 150f;
         main.startSpeed = ratio * 100;
-        emission.rateOverTime = ratio * 100;
-
-        transform.position = player.transform.position + offset;
+        emission.rateOverTime = ratio * 250;
+        transform.position = new Vector3(Camera.main.transform.position.x + offset.x, transform.position.y, 0);
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class Shooting : MonoBehaviour
@@ -15,9 +14,12 @@ public class Shooting : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse1) && (player.moveState != Player.MoveState.Dead) && (player.moveState != Player.MoveState.Paused) && (player.moveState != Player.MoveState.Loaded))
+        if (player.moveState == Player.MoveState.Idle || player.moveState == Player.MoveState.Run || player.moveState == Player.MoveState.FreeFall || player.moveState == Player.MoveState.Flap)
         {
-            Instantiate(fireball, transform.position, transform.rotation);
+            if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl))
+            {
+                Instantiate(fireball, transform.position, transform.rotation);
+            }
         }
     }
 }

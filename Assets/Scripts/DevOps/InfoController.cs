@@ -20,7 +20,11 @@ public class InfoController : MonoBehaviour
 
     private void OnGUI()
     {
-        GUILayout.Label("Flap - Space / LMB", style);
+        GUILayout.Label("Flap - Space | LMB", style);
+        GUILayout.Label("Rotate Up - Num8", style);
+        GUILayout.Label("Rotate Down - Num5", style);
+        GUILayout.Label("RPM Up - Num6 | ScrollWheel Up", style);
+        GUILayout.Label("RPM Down - Num4 | ScrollWheel Down", style);
         GUILayout.Label("Retry - R", style);
         GUILayout.Label("Pause - Esc", style);
         GUILayout.Label("------------------------------", style);
@@ -30,5 +34,6 @@ public class InfoController : MonoBehaviour
         GUILayout.Label("Godness mode - F4", style);
         GUILayout.Label("Teleport to next point - F5", style);
         GUILayout.Label("Set spawn on current point - F6", style);
+        GUILayout.Label("On/Off Barriers - F7", style);
     }
 }

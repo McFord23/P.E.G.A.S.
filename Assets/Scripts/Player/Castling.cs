@@ -46,7 +46,7 @@ public class Castling : MonoBehaviour
                 lunaSister.SetActive(true);
 
                 player.sprite = celestiaSprite;
-                player.liveCollider = celestiaLiveCollider;
+                player.flyCollider = celestiaLiveCollider;
                 player.deathCollider = celestiaDeathCollider;
                 player.animatorController = celestiAnimatorController;
                 break;
@@ -57,7 +57,7 @@ public class Castling : MonoBehaviour
 
                 player.animatorController = lunAnimatorController;
                 player.sprite = lunaSprite;
-                player.liveCollider = lunaLiveCollider;
+                player.flyCollider = lunaLiveCollider;
                 player.deathCollider = lunaDeathCollider;
                 break;
         }
@@ -92,7 +92,7 @@ public class Castling : MonoBehaviour
 
                 player.animatorController = lunAnimatorController;
                 player.sprite = lunaSprite;
-                player.liveCollider = lunaLiveCollider;
+                player.flyCollider = lunaLiveCollider;
                 player.deathCollider = lunaDeathCollider;
 
                 lunaSister.SetActive(false);
@@ -105,7 +105,7 @@ public class Castling : MonoBehaviour
 
                 player.animatorController = celestiAnimatorController;
                 player.sprite = celestiaSprite;
-                player.liveCollider = celestiaLiveCollider;
+                player.flyCollider = celestiaLiveCollider;
                 player.deathCollider = celestiaDeathCollider;
 
                 celestiaSister.SetActive(false);

@@ -24,7 +24,7 @@ public class DeathIndicator : MonoBehaviour
 
     void Update()
     {
-        playerPos = Camera.main.WorldToScreenPoint(player.transform.position);
+        playerPos = UnityEngine.Camera.main.WorldToScreenPoint(player.transform.position);
     }
 
     void OnGUI()

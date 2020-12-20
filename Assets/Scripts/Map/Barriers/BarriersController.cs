@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BarriersController : MonoBehaviour
-{
+{   
     public void Reset()
     {
         for (int i = 0; i < transform.childCount; i++)

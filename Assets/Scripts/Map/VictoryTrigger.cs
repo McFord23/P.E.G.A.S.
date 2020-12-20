@@ -10,7 +10,7 @@ public class VictoryTrigger : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            player.Pause("Victory");
+            player.Victory();
         }
     }
 }

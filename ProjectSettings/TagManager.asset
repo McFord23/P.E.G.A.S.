@@ -7,6 +7,7 @@ TagManager:
   - Barrier
   - Rain
   - Fireball
+  - Ground
   layers:
   - Default
   - TransparentFX

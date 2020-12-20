@@ -29,4 +29,19 @@ public class CupcakeRain : MonoBehaviour
         }
     }
 
+    public void Pause()
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            particleSystems[i].Pause();
+        }
+    }
+
+    public void Resume()
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            particleSystems[i].Play();
+        }
+    }
 }
