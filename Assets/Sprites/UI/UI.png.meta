@@ -82,10 +82,16 @@ TextureImporter:
     second: WASD Set
   - first:
       213: -4532114073746202998
-    second: Gamepad Set
+    second: Gamepad1 Set
   - first:
       213: -8346291274449466048
     second: Mouse Set
+  - first:
+      213: -343943630576144839
+    second: Gamepad2 Set
+  - first:
+      213: 7301787903208175943
+    second: empty
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -719,7 +725,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gamepad Set
+      name: Gamepad1 Set
       rect:
         serializedVersion: 2
         x: 132
@@ -756,6 +762,48 @@ TextureImporter:
       bones: []
       spriteID: 04d4f727e440c2c80800000000000000
       internalID: -8346291274449466048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gamepad2 Set
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 137
+        width: 156
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93e20cc17111a3bf0800000000000000
+      internalID: -343943630576144839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: empty
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 367
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 749b7f35969255560800000000000000
+      internalID: 7301787903208175943
       vertices: []
       indices: 
       edges: []

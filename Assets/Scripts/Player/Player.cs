@@ -6,10 +6,7 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
-    public float maxRPM;
-    public float minRPM;
     public float speed;
-    public Vector2 velocity;
 
     public float angle;
     public float angleOfAttack;
@@ -19,27 +16,26 @@ public class Player : MonoBehaviour
     Vector2 saveDirection;
     MoveState saveState;
 
-    public Renderer sprite;
-
-    public PolygonCollider2D flyCollider;
-    public CapsuleCollider2D deathCollider;
-    public CircleCollider2D[] rideCollider;
 
     public Rigidbody2D rb;
-    public Animator animatorController;
+    PolygonCollider2D flyCollider;
+    CapsuleCollider2D deathCollider;
+    CircleCollider2D[] rideCollider = new CircleCollider2D[2];
+
+    Renderer sprite;
+    Animator animatorController;
     public SoundController soundController;
     public MoveState moveState;
 
-    public bool landed;
+    bool landed;
 
     public enum MoveState
     {
+        Loaded,
         Idle,
         Run,
-        Loaded,
         FreeFall,
         Flap,
-        FlapGamepad,
         Dead,
         Paused,
         Winner
@@ -64,14 +60,18 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        spawnPos = transform.position;
 
+        rb = GetComponent<Rigidbody2D>();
         rb.drag = Mathf.Epsilon;
         aspectRatio = (wingSpan * wingSpan) / wingArea;
+        flyCollider = GetComponentInChildren<PolygonCollider2D>();
+        deathCollider = GetComponentInChildren<CapsuleCollider2D>();
+        rideCollider = GetComponentsInChildren<CircleCollider2D>();
 
-        spawnPos = transform.position;
+        sprite = GetComponentInChildren<Renderer>();
+        animatorController = GetComponentInChildren<Animator>();
         Idle();
-        //LoadInCannon();
     }
 
     void FixedUpdate()
@@ -80,24 +80,13 @@ public class Player : MonoBehaviour
         {
             RidePhysics();
         }
-        
-        if ((moveState == MoveState.Idle || moveState == MoveState.Run) && (Input.GetAxis("Mouse Y") > 0) || Input.GetAxis("Rotate") > 0)
-        {
-            FlyPhysics();
-            //transform.Rotate(0f, 0f, Save.MouseSensitivity * Input.GetAxis("Mouse X"));
-            
 
-            //rb.AddTorque(Input.GetAxis("Mouse Y") * rb.mass * speed / 44);
-            //rb.AddTorque(Input.GetAxis("Rotate") * rb.mass * 5f * speed / 44);
-        }
-
-        if (moveState == MoveState.Flap || moveState == MoveState.FlapGamepad || moveState == MoveState.FreeFall)
+        if (moveState == MoveState.Flap || moveState == MoveState.FreeFall)
         {
             FlyPhysics();
             //GravityRotation();
         }
 
-        velocity = rb.velocity;
         speed = rb.velocity.magnitude;
         angle = transform.eulerAngles.z;
     }
@@ -115,9 +104,7 @@ public class Player : MonoBehaviour
             collider.enabled = true;
         }
 
-        //LoadInCannon(); // for working DevOps-teleportation
         Idle();
-
         PlayerResetEvent.Invoke();
     }
 
@@ -173,26 +160,25 @@ public class Player : MonoBehaviour
         animatorController.Play("Idle");
     }
 
-    public void Walk(float torque)
+    public void Run(float torque)
     {
         moveState = MoveState.Run;
         animatorController.Play("Walk");
 
         float gear;
         gear = (speed < 20) ? 1.5f : 1;
-
         if (landed) rb.AddForce(transform.right * gear * torque);
     }
 
     void RidePhysics()
     {
-        var friction = (landed) ? -1f : 0f;
-        if (moveState == MoveState.Idle) friction *= rb.mass;
+        var friction = (landed) ? -0.3f : 0f;
+        if (moveState == MoveState.Idle) friction = -rb.mass;
         
         var drag = 0.021f * rb.velocity.sqrMagnitude;
         var dragDirection = -(Vector2)rb.velocity.normalized;
 
-        rb.AddForce(dragDirection * drag + friction * rb.velocity);
+        rb.AddForce(dragDirection * drag + rb.velocity * friction);
     }
 
     public void FreeFall()
@@ -211,17 +197,6 @@ public class Player : MonoBehaviour
         gear = (speed < 20) ? 2 : 1;
         rb.AddForce(transform.right * gear * flapForce);
         //soundController.Flap();
-    }
-
-    public void Flap(float flapForce, string device)
-    {
-        float gear;
-        
-        moveState = (device == "Gamepad") ? MoveState.FlapGamepad : MoveState.Flap;
-        animatorController.Play("Flap");
-
-        gear = (speed < 20) ? 2 : 1;
-        rb.AddForce(Vector3.right * gear * flapForce);
     }
 
     void FlyPhysics()
@@ -273,6 +248,15 @@ public class Player : MonoBehaviour
             rb.gravityScale = 1f;
             PlayerDeadEvent.Invoke();
         }
+    }
+
+    public void Shoot(Vector3 direction, float power)
+    {
+        sprite.enabled = true;
+        transform.right = transform.right;
+        moveState = Player.MoveState.Flap;
+        rb.AddForce(direction * power, ForceMode2D.Impulse);
+        rb.gravityScale = 1f;
     }
 
     void OnCollisionStay2D(Collision2D collision)

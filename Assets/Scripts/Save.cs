@@ -9,4 +9,5 @@ public static class Save
     public static bool Music { get; set; } = false;
     public static float MouseSensitivity { get; set; } = 0.4f;
     public static float KeyboardSensitivity { get; set; } = 6f;
+    public static float GamepadSensitivity { get; set; } = 6f;
 }

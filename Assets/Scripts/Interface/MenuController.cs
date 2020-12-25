@@ -13,12 +13,21 @@ public class MenuController : MonoBehaviour
     GameObject settingsMenu;
     GameObject playersMenu;
 
+    public Button deadStartButton;
+    public Button pauseStartButton;
+    public Button victoryStartButton;
+    public Toggle settingsStartToggle;
+    public Slider settingsMarkStartSlider;
+    public Button playersStartButton;
+
     string resumeMenu;
 
     Toggle resumeMark;
     Toggle settingsMark;
     Toggle playersMark;
-    
+
+    Button[] markButtons = new Button[3];
+
     Image resumeButton;
     public Sprite resumeButtonOn;
     public Sprite resumeButtonOff;
@@ -45,22 +54,49 @@ public class MenuController : MonoBehaviour
         menu.SetActive(false);
         MenuDisabledEvent.Invoke();
 
+
+
         resumeMark = transform.Find("Resume Mark").gameObject.GetComponent<Toggle>();
         settingsMark = transform.Find("Settings Mark").gameObject.GetComponent<Toggle>();
         playersMark = transform.Find("Players Mark").gameObject.GetComponent<Toggle>();
 
-        resumeButton = transform.Find("Resume Icon").gameObject.GetComponent<Image>();
-        playersButton = transform.Find("Players Icon").gameObject.GetComponent<Image>();
+        markButtons[0] = transform.Find("Resume Icon").gameObject.GetComponent<Button>();
+        markButtons[1] = transform.Find("Settings Icon").gameObject.GetComponent<Button>();
+        markButtons[2] = transform.Find("Players Icon").gameObject.GetComponent<Button>();
+
+        resumeButton = markButtons[0].GetComponent<Image>();
+        playersButton = markButtons[2].gameObject.GetComponent<Image>();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.JoystickButton7))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.JoystickButton1))
         {
             if (settingsMenu.activeSelf || playersMenu.activeSelf)
             {
                 EnabledResumeMenu();
             }
+        }
+    }
+
+    public void SetMarkNavigation(Button startButton)
+    {
+        startButton.Select();
+        foreach (Button button in markButtons)
+        {
+            Navigation navigation = button.navigation;
+            navigation.selectOnLeft = startButton;
+            button.navigation = navigation;
+        }
+    }
+
+    public void SetMarkNavigation(Slider startSlider)
+    {
+        foreach (Button button in markButtons)
+        {
+            Navigation navigation = button.navigation;
+            navigation.selectOnLeft = startSlider;
+            button.navigation = navigation;
         }
     }
 
@@ -73,14 +109,17 @@ public class MenuController : MonoBehaviour
         {
             case "dead":
                 deadMenu.SetActive(true);
+                SetMarkNavigation(deadStartButton);
                 break;
             case "pause":
                 pauseMenu.SetActive(true);
+                SetMarkNavigation(pauseStartButton);
                 break;
             case "victory":
                 victoryMenu.SetActive(true);
+                SetMarkNavigation(victoryStartButton);
                 break;
-        }
+        }       
 
         if (settingsMark.isOn) settingsMark.isOn = false;
         if (playersMark.isOn) playersMark.isOn = false;
@@ -98,6 +137,9 @@ public class MenuController : MonoBehaviour
         if (resumeMark.isOn) resumeMark.isOn = false;
         if (playersMark.isOn) playersMark.isOn = false;
         settingsMark.isOn = true;
+
+        settingsMarkStartSlider.Select();
+        SetMarkNavigation(settingsMarkStartSlider);
     }
 
     public void EnabledPlayerMenu()
@@ -111,6 +153,9 @@ public class MenuController : MonoBehaviour
         if (resumeMark.isOn) resumeMark.isOn = false;
         if (settingsMark.isOn) settingsMark.isOn = false;
         playersMark.isOn = true;
+
+        playersStartButton.Select();
+        SetMarkNavigation(playersStartButton);
     }
 
     public void Pause()
@@ -118,7 +163,9 @@ public class MenuController : MonoBehaviour
         menu.SetActive(true);
         MenuEnabledEvent.Invoke();
         pauseMenu.SetActive(true);
-        
+
+        SetMarkNavigation(pauseStartButton);
+
         resumeMenu = "pause";
         resumeButton.sprite = resumeButtonOn;
     }
@@ -135,7 +182,9 @@ public class MenuController : MonoBehaviour
             MenuEnabledEvent.Invoke();
         }
         deadMenu.SetActive(true);
-        
+
+        SetMarkNavigation(deadStartButton);
+
         resumeMenu = "dead";
         resumeButton.sprite = resumeButtonOff;
     }
@@ -152,7 +201,9 @@ public class MenuController : MonoBehaviour
             MenuEnabledEvent.Invoke();
         }
         victoryMenu.SetActive(true);
-        
+
+        SetMarkNavigation(victoryStartButton);
+
         resumeMenu = "victory";
         resumeButton.sprite = resumeButtonOff;
     }

@@ -9,7 +9,7 @@ public class LayersController : MonoBehaviour
     void Start()
     {
         layer = new Layer[transform.childCount];
-        for (int i = 0; i < transform.childCount - 1; i++)
+        for (int i = 0; i < transform.childCount; i++)
         {
             layer[i] = transform.GetChild(i).gameObject.GetComponent<Layer>();
         }
@@ -17,7 +17,7 @@ public class LayersController : MonoBehaviour
 
     public void Reset()
     {
-        for (int i = 0; i < transform.childCount - 1; i++)
+        for (int i = 0; i < transform.childCount; i++)
         {
             layer[i].Reset();
         }

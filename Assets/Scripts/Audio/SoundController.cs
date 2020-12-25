@@ -18,12 +18,11 @@ public class SoundController : MonoBehaviour
     AudioSource headwindSound;
     AudioSource turnPageSound;
 
-    Player player;
+    public Player player;
     string scene;
 
     void Awake()
     {
-        player = GameObject.Find("Player").GetComponent<Player>();
         scene = SceneManager.GetActiveScene().name;
 
         switch (scene)

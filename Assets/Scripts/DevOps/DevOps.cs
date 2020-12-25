@@ -23,7 +23,7 @@ public class DevOps : MonoBehaviour
     List<Vector2> points = new List<Vector2>();
     public Vector2 point1;
     public Vector2 point2;
-    int i = 0;
+    //int i = 0;
 
     public bool mode = false;
 
@@ -107,7 +107,7 @@ public class DevOps : MonoBehaviour
                 else player.rb.constraints = RigidbodyConstraints2D.None;
             }
 
-            if (Input.GetKeyDown(KeyCode.F5))
+            /*if (Input.GetKeyDown(KeyCode.F5))
             {
                 if (i == 0)
                 {
@@ -132,8 +132,6 @@ public class DevOps : MonoBehaviour
                 else i = 0;
 
                 player.transform.position = points[i];
-                
-                
             }
 
             if (Input.GetKeyDown(KeyCode.F6))
@@ -141,7 +139,7 @@ public class DevOps : MonoBehaviour
                 player.spawnPos = points[i];
                 spawnChangeMessege.enabled = true;
                 Invoke("OffMessege", 1f);
-            }
+            }*/
 
             if (Input.GetKeyDown(KeyCode.F7))
             {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HeadwindEffect : MonoBehaviour
 {
-    Player player;
+    public Player player;
     float ratio;
     Vector3 offset;
 
@@ -14,7 +14,6 @@ public class HeadwindEffect : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<Player>();
         headwind = GetComponent<ParticleSystem>();
 
         main = headwind.main;

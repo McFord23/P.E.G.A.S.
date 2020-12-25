@@ -33,23 +33,20 @@ public class Cannon : MonoBehaviour
             {
                 if (transform.eulerAngles.z < 55)
                 {
-                    rb.AddTorque(0.1f * Input.GetAxis("Mouse X"));
-                    rb.AddTorque(0.1f * Input.GetAxis("Mouse Y"));
+                    rb.AddTorque(0.1f * Input.GetAxis("Rotate-Mouse"));
                     rb.AddTorque(Input.GetAxis("Rotate"));
                 }
-                else if ((Input.GetAxis("Mouse Y") < 0) || (Input.GetAxis("Rotate") < 0))
+                else if ((Input.GetAxis("Rotate-Mouse") < 0) || (Input.GetAxis("Rotate") < 0))
                 {
-                    rb.AddTorque(0.1f * Input.GetAxis("Mouse X"));
-                    rb.AddTorque(0.1f * Input.GetAxis("Mouse Y"));
+                    rb.AddTorque(0.1f * Input.GetAxis("Rotate-Mouse"));
                     rb.AddTorque(Input.GetAxis("Rotate"));
                 }
             }
             else
             {
-                if ((Input.GetAxis("Mouse Y") > 0) || (Input.GetAxis("Rotate") > 0))
+                if ((Input.GetAxis("Rotate-Mouse") > 0) || (Input.GetAxis("Rotate") > 0))
                 {
-                    rb.AddTorque(0.1f * Input.GetAxis("Mouse X"));
-                    rb.AddTorque(0.1f * Input.GetAxis("Mouse Y"));
+                    rb.AddTorque(0.1f * Input.GetAxis("Rotate-Mouse"));
                     rb.AddTorque(Input.GetAxis("Rotate"));
                 }
             }
@@ -124,13 +121,7 @@ public class Cannon : MonoBehaviour
 
     public void Shoot()
     {
-        player.sprite.enabled = true;
-        player.transform.right = transform.right;
-        player.moveState = Player.MoveState.Flap;
-        player.rb.AddForce(direction * power, ForceMode2D.Impulse);
-        player.rb.gravityScale = 1f;
         active = false;
-
         CannonShootEvent.Invoke();
         soundController.cannonShootSound.Play();
         soundController.cannonScratchSound.Stop();   

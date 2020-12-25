@@ -28,12 +28,7 @@ public class HUD : MonoBehaviour
         GUILayout.Label("Godness mode: " + player.godnessMode, style);
         GUILayout.Label("Barriers: " + barriers.activeSelf, style);
         GUILayout.Label("");
-        GUILayout.Label("Cannon power: " + cannon.power, style);
-        GUILayout.Label("");
         GUILayout.Label("MoveState: " + player.moveState, style);
-        GUILayout.Label("Landed: " + player.landed, style);
-        GUILayout.Label("");
-        GUILayout.Label("Velocity: " + player.velocity, style);
         GUILayout.Label("Speed: " + (int)player.speed, style);
         GUILayout.Label("Angle: " + (int)player.angle, style);
         GUILayout.Label("Angle of Attack: " + (player.angleOfAttack - player.angleOfAttack % 0.01), style);
