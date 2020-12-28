@@ -7,62 +7,72 @@ using UnityEngine.UI;
 public class PlayerMenu : MonoBehaviour
 {
     PlayersMenu players;
-    Sprite[] setSprites;
-    Image setSprite;
+    Sprite[] layoutSprites;
+    Image layoutSprite;
 
-    public string controllSet;
+    public string layout;
     int index;
     int indexBusy;
 
-    public List<int> blockedIndex = new List<int>();
+    public List<string> blockedLayout = new List<string>();
 
     void Start()
     {
         players = transform.parent.gameObject.GetComponent<PlayersMenu>();
-        setSprites = players.setSprites;
-        setSprite = transform.Find("Set Button/Set").gameObject.GetComponent<Image>();
+        layoutSprites = players.controlLayoutSprites;
+        layoutSprite = transform.Find("Control Layout Button/Control Layout").gameObject.GetComponent<Image>();
 
-        index = SetToIndex(controllSet);
-        setSprite.sprite = setSprites[index];
+        index = LayoutToIndex(layout);
+        layoutSprite.sprite = layoutSprites[index];
+    }
+
+    public void BlockLayout(string set)
+    {
+        blockedLayout.Add(set);
+    }
+
+    public void UnblockLayout(string set)
+    {
+        blockedLayout.Remove(set);
     }
 
     public void SetLimiter(string indexAnotherPlayer)
     {
-        indexBusy = SetToIndex(indexAnotherPlayer);
+        indexBusy = LayoutToIndex(indexAnotherPlayer);
     }
 
-    public void InputSet(string set)
+    public void SetLayout(string set)
     {
-        controllSet = set;
-        index = SetToIndex(controllSet);
-        setSprite.sprite = setSprites[index];
+        layout = set;
+        index = LayoutToIndex(layout);
+        layoutSprite.sprite = layoutSprites[index];
     }
 
-    public void NextSet()
+    public void NextLayout()
     {
-        if (index < setSprites.Length - 1) index++;
+        if (index < layoutSprites.Length - 1) index++;
         else index = 0;
 
-        if (indexBusy == setSprites.Length - 1 && index == indexBusy) index = 0;
+        if (indexBusy == layoutSprites.Length - 1 && index == indexBusy) index = 0;
         else if (index == indexBusy) index++;
 
-        setSprite.sprite = setSprites[index];
-        controllSet = IndexToSet(index);
+        layoutSprite.sprite = layoutSprites[index];
+        layout = IndexToLayout(index);
     }
 
-    public void PerviousSet()
+    public void PerviousLayout()
     {
         if (index > 0) index--;
-        else index = setSprites.Length - 1;
+        else index = layoutSprites.Length - 1;
 
-        if (indexBusy == 0 && index == indexBusy) index = setSprites.Length - 1;
+        if (indexBusy == 0 && index == indexBusy) index = layoutSprites.Length - 1;
         else if (index == indexBusy) index--;
 
-        setSprite.sprite = setSprites[index];
-        controllSet = IndexToSet(index);
+        layoutSprite.sprite = layoutSprites[index];
+        layout = IndexToLayout(index);
     }
 
-    string IndexToSet(int index)
+    string IndexToLayout(int index)
     {
         switch (index)
         {
@@ -84,7 +94,7 @@ public class PlayerMenu : MonoBehaviour
         }
     }
 
-    int SetToIndex(string playerSet)
+    int LayoutToIndex(string playerSet)
     {
         switch (playerSet)
         {

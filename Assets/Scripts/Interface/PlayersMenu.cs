@@ -9,7 +9,7 @@ public class PlayersMenu : MonoBehaviour
     GameObject addPlayer;
     GameObject player2Panel;
 
-    public Sprite[] setSprites;
+    public Sprite[] controlLayoutSprites;
     public PlayerMenu player1Menu;
     public PlayerMenu player2Menu;
 
@@ -22,10 +22,10 @@ public class PlayersMenu : MonoBehaviour
         if (Save.TogetherMode) AddPlayer();
         else KickPlayer();
 
-        player1Menu.controllSet = "mouse";
-        player2Menu.controllSet = "numpad";
-        AnchorPlayer1Set();
-        AnchorPlayer2Set();
+        player1Menu.layout = "mouse";
+        player2Menu.layout = "numpad";
+        AnchorPlayer1Layout();
+        AnchorPlayer2Layout();
     }
 
     public void AddPlayer()
@@ -46,22 +46,22 @@ public class PlayersMenu : MonoBehaviour
 
     public void Swap()
     {
-        var set1 = player1Menu.controllSet;
-        var set2 = player2Menu.controllSet;
+        var set1 = player1Menu.layout;
+        var set2 = player2Menu.layout;
 
-        player1Menu.InputSet(set2);
+        player1Menu.SetLayout(set2);
         player1Menu.SetLimiter(set1);
-        player2Menu.InputSet(set1);
+        player2Menu.SetLayout(set1);
         player2Menu.SetLimiter(set2);
     }
 
-    public void AnchorPlayer1Set()
+    public void AnchorPlayer1Layout()
     {
-        player2Menu.SetLimiter(player1Menu.controllSet);
+        player2Menu.SetLimiter(player1Menu.layout);
     }
 
-    public void AnchorPlayer2Set()
+    public void AnchorPlayer2Layout()
     {
-        player1Menu.SetLimiter(player2Menu.controllSet);
+        player1Menu.SetLimiter(player2Menu.layout);
     }
 }

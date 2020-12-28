@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OutlineSet : MonoBehaviour
+public class OutlineLayout : MonoBehaviour
 {
     Button button;
-    Button set;
-    Button nextSet;
-    Button perviousSet;
+    Button layout;
+    Button nextLayout;
+    Button perviousLayout;
 
     bool isSetSelected = false;
 
     void Start()
     {
         button = GetComponent<Button>();
-        set = transform.Find("Outline").GetComponent<Button>();
-        nextSet = transform.Find("Next Set").GetComponent<Button>();
-        perviousSet = transform.Find("Pervious Set").GetComponent<Button>();
+        layout = transform.Find("Outline").GetComponent<Button>();
+        nextLayout = transform.Find("Next Layout").GetComponent<Button>();
+        perviousLayout = transform.Find("Pervious Layout").GetComponent<Button>();
     }
 
     void Update()
@@ -32,18 +32,18 @@ public class OutlineSet : MonoBehaviour
 
             if (Input.GetButtonDown("Horizontal") && Input.GetAxis("Horizontal") > 0)
             {
-                nextSet.onClick.Invoke();
+                nextLayout.onClick.Invoke();
             }
             else if (Input.GetButtonDown("Horizontal") && Input.GetAxis("Horizontal") < 0)
             {
-                perviousSet.onClick.Invoke();
+                perviousLayout.onClick.Invoke();
             }
         }
     }
 
     public void Press()
     {
-        set.Select();
+        layout.Select();
         isSetSelected = true;
     }
 }

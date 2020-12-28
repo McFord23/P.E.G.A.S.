@@ -70,25 +70,25 @@ TextureImporter:
     second: Left Arrow
   - first:
       213: -6595680761151332689
-    second: Numpad Set
+    second: Numpad Layout
   - first:
       213: -273060469431498887
-    second: Arrow Set
+    second: Arrow Layout
   - first:
       213: 8391660652416901024
-    second: IJKL Set
+    second: IJKL Layout
   - first:
       213: 9094600903545770030
-    second: WASD Set
+    second: WASD Layout
   - first:
       213: -4532114073746202998
-    second: Gamepad1 Set
+    second: Gamepad1 Layout
   - first:
       213: -8346291274449466048
-    second: Mouse Set
+    second: Mouse Layout
   - first:
       213: -343943630576144839
-    second: Gamepad2 Set
+    second: Gamepad2 Layout
   - first:
       213: 7301787903208175943
     second: empty
@@ -112,7 +112,7 @@ TextureImporter:
     second: Small Outline
   - first:
       213: 238177201661318622
-    second: Set Outline
+    second: Control Layout Outline
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -662,7 +662,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Numpad Set
+      name: Numpad Layout
       rect:
         serializedVersion: 2
         x: 132
@@ -683,7 +683,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arrow Set
+      name: Arrow Layout
       rect:
         serializedVersion: 2
         x: 290
@@ -704,7 +704,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IJKL Set
+      name: IJKL Layout
       rect:
         serializedVersion: 2
         x: 290
@@ -725,7 +725,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WASD Set
+      name: WASD Layout
       rect:
         serializedVersion: 2
         x: 132
@@ -746,7 +746,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gamepad1 Set
+      name: Gamepad1 Layout
       rect:
         serializedVersion: 2
         x: 132
@@ -767,7 +767,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mouse Set
+      name: Mouse Layout
       rect:
         serializedVersion: 2
         x: 132
@@ -788,7 +788,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gamepad2 Set
+      name: Gamepad2 Layout
       rect:
         serializedVersion: 2
         x: 290
@@ -914,7 +914,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set Outline
+      name: Control Layout Outline
       rect:
         serializedVersion: 2
         x: 345

@@ -14,8 +14,8 @@ public class PlayersController : MonoBehaviour
     PlayerController player2Controller;
     
     public PlayersMenu playersMenu;
-    string player1Set;
-    string player2Set;
+    string player1Layout;
+    string player2Layout;
 
     float gas;
     float rotate;
@@ -28,8 +28,8 @@ public class PlayersController : MonoBehaviour
         player1Controller = player1GameObject.GetComponent<PlayerController>();
         player2Controller = player2GameObject.GetComponent<PlayerController>();
 
-        player1Set = "mouse";
-        player2Set = "numpad";
+        player1Layout = "mouse";
+        player2Layout = "numpad";
 
         //ChangeSet("Player 1");
         //ChangeSet("Player 2");
@@ -41,12 +41,12 @@ public class PlayersController : MonoBehaviour
     {
         if (togetherMode)
         {
-            UpdateSet(player1Controller);
-            UpdateSet(player2Controller);
+            UpdateLayout(player1Controller);
+            UpdateLayout(player2Controller);
         }
         else
         {
-            UpdateSet(player1Controller);
+            UpdateLayout(player1Controller);
         }
     }
 
@@ -60,16 +60,16 @@ public class PlayersController : MonoBehaviour
 
     }
 
-    public void ChangeSet(string player)
+    public void ChangeLayout(string player)
     {
-        if (player == "Player 1") player1Set = playersMenu.player1Menu.controllSet;
-        else if (player == "Player 2") player2Set = playersMenu.player1Menu.controllSet;
+        if (player == "Player 1") player1Layout = playersMenu.player1Menu.layout;
+        else if (player == "Player 2") player2Layout = playersMenu.player1Menu.layout;
     }
 
-    public void UpdateSet(PlayerController player)
+    public void UpdateLayout(PlayerController player)
     {
-        string playerSet = (player == player1Controller) ? player1Set : player2Set;
-        switch (playerSet)
+        string layout = (player == player1Controller) ? player1Layout : player2Layout;
+        switch (layout)
         {
             case "mouse":
                 gas = Input.GetKey(KeyCode.Mouse0) ? 1f : 0f;
@@ -122,7 +122,7 @@ public class PlayersController : MonoBehaviour
         }
     }
 
-    public void OffSet(PlayerController player)
+    public void OffInput(PlayerController player)
     {
         gas = 0f;
         rotate = 0f;
