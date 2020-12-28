@@ -10,8 +10,8 @@ public class SettingsMenu : MonoBehaviour
 
     void Start()
     {
-        mouseSlider = transform.Find("MouseSlider").gameObject.GetComponent<Slider>();
-        keyboardSlider = transform.Find("KeyboardSlider").gameObject.GetComponent<Slider>();
+        mouseSlider = transform.Find("Mouse Slider").gameObject.GetComponent<Slider>();
+        keyboardSlider = transform.Find("Keyboard Slider").gameObject.GetComponent<Slider>();
 
         mouseSlider.value = Save.MouseSensitivity;
         keyboardSlider.value = Save.KeyboardSensitivity;

@@ -31,7 +31,10 @@ public class PlayersController : MonoBehaviour
         player1Set = "mouse";
         player2Set = "numpad";
 
-        print("Check: " + Input.GetJoystickNames().Length);
+        //ChangeSet("Player 1");
+        //ChangeSet("Player 2");
+
+        //print("Check: " + Input.GetJoystickNames().Length);
     }
 
     void Update()
@@ -60,7 +63,7 @@ public class PlayersController : MonoBehaviour
     public void ChangeSet(string player)
     {
         if (player == "Player 1") player1Set = playersMenu.player1Menu.controllSet;
-        else if (player == "Player 2`") player2Set = playersMenu.player1Menu.controllSet;
+        else if (player == "Player 2") player2Set = playersMenu.player1Menu.controllSet;
     }
 
     public void UpdateSet(PlayerController player)

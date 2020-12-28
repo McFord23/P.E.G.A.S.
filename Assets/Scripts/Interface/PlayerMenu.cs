@@ -14,11 +14,13 @@ public class PlayerMenu : MonoBehaviour
     int index;
     int indexBusy;
 
+    public List<int> blockedIndex = new List<int>();
+
     void Start()
     {
         players = transform.parent.gameObject.GetComponent<PlayersMenu>();
         setSprites = players.setSprites;
-        setSprite = transform.Find("Set").gameObject.GetComponent<Image>();
+        setSprite = transform.Find("Set Button/Set").gameObject.GetComponent<Image>();
 
         index = SetToIndex(controllSet);
         setSprite.sprite = setSprites[index];
@@ -27,6 +29,13 @@ public class PlayerMenu : MonoBehaviour
     public void SetLimiter(string indexAnotherPlayer)
     {
         indexBusy = SetToIndex(indexAnotherPlayer);
+    }
+
+    public void InputSet(string set)
+    {
+        controllSet = set;
+        index = SetToIndex(controllSet);
+        setSprite.sprite = setSprites[index];
     }
 
     public void NextSet()

@@ -37,10 +37,10 @@ TextureImporter:
     second: Settings On
   - first:
       213: -6180191441002391703
-    second: Multiplayer
+    second: TogherMode
   - first:
       213: -1682551497440473549
-    second: Singleplayer
+    second: SoloMode
   - first:
       213: -3197610074630747010
     second: Swap
@@ -92,6 +92,27 @@ TextureImporter:
   - first:
       213: 7301787903208175943
     second: empty
+  - first:
+      213: 1652299931923453484
+    second: 6 Outline
+  - first:
+      213: 388057999756033245
+    second: Lil Outline
+  - first:
+      213: -5481780447360278658
+    second: 3.5 Outline
+  - first:
+      213: 228940821244427079
+    second: 3 Outline
+  - first:
+      213: 6620621745411573659
+    second: Big Outline
+  - first:
+      213: -256003546741158619
+    second: Small Outline
+  - first:
+      213: 238177201661318622
+    second: Set Outline
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -410,7 +431,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Multiplayer
+      name: TogherMode
       rect:
         serializedVersion: 2
         x: 2
@@ -431,11 +452,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Singleplayer
+      name: SoloMode
       rect:
         serializedVersion: 2
-        x: 33
-        y: 409
+        x: 32
+        y: 408
         width: 29
         height: 31
       alignment: 0
@@ -476,8 +497,8 @@ TextureImporter:
       name: Close
       rect:
         serializedVersion: 2
-        x: 8
-        y: 389
+        x: 9
+        y: 388
         width: 16
         height: 16
       alignment: 0
@@ -749,8 +770,8 @@ TextureImporter:
       name: Mouse Set
       rect:
         serializedVersion: 2
-        x: 290
-        y: 231
+        x: 132
+        y: 137
         width: 156
         height: 92
       alignment: 0
@@ -770,8 +791,8 @@ TextureImporter:
       name: Gamepad2 Set
       rect:
         serializedVersion: 2
-        x: 132
-        y: 137
+        x: 290
+        y: 231
         width: 156
         height: 92
       alignment: 0
@@ -791,12 +812,12 @@ TextureImporter:
       name: empty
       rect:
         serializedVersion: 2
-        x: 8
+        x: 9
         y: 367
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -804,6 +825,111 @@ TextureImporter:
       bones: []
       spriteID: 749b7f35969255560800000000000000
       internalID: 7301787903208175943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 6 Outline
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 209
+        width: 96
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2613b8a8062ee610800000000000000
+      internalID: 1652299931923453484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lil Outline
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 209
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddcf4bbd1b8a26500800000000000000
+      internalID: 388057999756033245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Big Outline
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 141
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b97cb7f566c21eb50800000000000000
+      internalID: 6620621745411573659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Small Outline
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 182
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52dc04f612e727cf0800000000000000
+      internalID: -256003546741158619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set Outline
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 141
+        width: 90
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed59e9a27ec2e4300800000000000000
+      internalID: 238177201661318622
       vertices: []
       indices: 
       edges: []

@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Сredits : MonoBehaviour
@@ -19,9 +17,18 @@ public class Сredits : MonoBehaviour
         if (transform.position.y < 30) transform.position += new Vector3(0f, speed * Time.deltaTime, 0f);
         else Exit();
 
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Mouse0))
+        if (skip.activeSelf)
+        {
+            if (Input.GetButtonDown("Submit") || Input.GetButtonDown("Cancel"))
+            {
+                Exit();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetButtonDown("Submit") || Input.GetButtonDown("Cancel"))
         {
             skip.SetActive(true);
+            skip.GetComponent<Button>().Select();
         }
     }
 

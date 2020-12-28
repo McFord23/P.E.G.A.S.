@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
 
         if (player.moveState != Player.MoveState.Paused && player.moveState != Player.MoveState.Dead && player.moveState != Player.MoveState.Winner)
         {
-            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.JoystickButton7))
+            if (Input.GetButtonDown("Cancel"))
             {
                 player.Pause();
             }

@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 7361690258734094578}
   m_Layer: 0
   m_Name: Fog
-  m_TagString: Untagged
+  m_TagString: Layer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

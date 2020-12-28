@@ -21,7 +21,7 @@ public class Fireball : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (!collider.gameObject.CompareTag("Fireball"))
+        if (!collider.gameObject.CompareTag("Fireball") && !collider.gameObject.CompareTag("Layer"))
         {
             Destroy(fireball);
         }

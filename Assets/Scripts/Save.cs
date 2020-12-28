@@ -5,6 +5,7 @@ using UnityEngine;
 public static class Save
 {
     public static string Princess { get; set; } = "Celestia";
+    public static bool TogetherMode { get; set; } = false;
     public static bool Sound { get; set; } = true;
     public static bool Music { get; set; } = false;
     public static float MouseSensitivity { get; set; } = 0.4f;

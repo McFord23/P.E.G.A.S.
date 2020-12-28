@@ -8,6 +8,7 @@ TagManager:
   - Rain
   - Fireball
   - Ground
+  - Layer
   layers:
   - Default
   - TransparentFX
