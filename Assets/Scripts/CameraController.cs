@@ -4,22 +4,17 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public Player player;
-    public GameObject celestia;
-    public GameObject luna;
+    public PlayersController playersController;
 
-    public string mode = "fly-Celestia";
-    public Vector3 offset;
-    Vector3 spawnPos;
+    string mode = "fly";
+    Vector3 offset;
 
     public float maxSize = 10f;
     public float minSize = 5f;
-    public float size;
-    public float playersDistance;
+    float size;
 
     void Start()
     {
-        spawnPos = transform.position;
         offset = new Vector3(5, 0, -10);
         size = maxSize;
     }
@@ -28,50 +23,38 @@ public class CameraController : MonoBehaviour
     {
         switch (mode)
         {
-            case "start":
-                transform.position = spawnPos;
-                if (size < maxSize) size += 0.5f;
+            case "fly":
+                if (Save.TogetherMode)
+                {
+                    transform.position = playersController.GetPlayerPosition() + new Vector3(0, 0, -10);
+                    var distance = playersController.GetDistanceBetweenPlayers();
+                    if (distance >= maxSize) size = distance;
+                }
+                else
+                {
+                    transform.position = playersController.GetPlayerPosition() + offset;
+                    if (size < maxSize) size += 0.1f;
+                }
                 break;
-            case "fly-Celestia":
-                transform.position = celestia.transform.position + offset;
-                if (size < maxSize) size += 0.5f;
-                break;
-            case "fly-Luna":
-                transform.position = luna.transform.position + offset;
-                if (size < maxSize) size += 0.5f;
-                break;
-            case "fly-together":
-                var playersVector = celestia.transform.position - luna.transform.position;
-                playersDistance = playersVector.magnitude;
-
-                transform.position = (celestia.transform.position + luna.transform.position) / 2;
-                if (size < playersDistance) size += 0.5f;
-                break;
-            case "Celestia":
-                transform.position = Vector3.Lerp(transform.position, celestia.transform.position + new Vector3(0, 0, -10), Time.deltaTime * 3f);
-                if (size > minSize) size -= 0.1f;
-                break;
-            case "Luna":
-                transform.position = Vector3.Lerp(transform.position,luna.transform.position + new Vector3(0, 0, -10), Time.deltaTime * 3f);
-                if (size > minSize) size -= 0.1f;
+            case "player":
+                transform.position = Vector3.Lerp(transform.position, playersController.GetPlayerPosition() + new Vector3(0, 0, -10), Time.deltaTime * 3f);
+                if (!Save.TogetherMode)
+                {
+                    if (size > minSize) size -= 0.1f;
+                } 
                 break;
         }
 
         Camera.main.orthographicSize = size;
     }
 
-    public void FocusOnStart()
+    public void FocusOnFly()
     {
-        mode = "start";
+        mode = "fly";
     }
 
-    public void FocusOnFly(string character)
+    public void FocusOnPlayer()
     {
-        mode = "fly-" + character;
-    }
-
-    public void FocusOnPlayer(string character)
-    {
-        mode = character;
+        mode = "player";
     }
 }

@@ -4,42 +4,41 @@ using UnityEngine;
 
 public class CursorController : MonoBehaviour
 {
-    //bool isMenuActive = false;
-    //Vector3 oldMousePos;
+    bool isMenuActive = false;
+    Vector3 oldMousePos;
 
     void Start()
     {
-        //oldMousePos = Input.mousePosition;
+        oldMousePos = Input.mousePosition;
     }
 
     void Update()
     {
-        /*if (isMenuActive)
+        if (isMenuActive)
         {
             if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
             {
                 Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
             }
 
-            if (Input.mousePosition != oldMousePos && Cursor.visible != true)
+            if (Input.mousePosition != oldMousePos && Cursor.lockState == CursorLockMode.Locked)
             {
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
             }
 
             oldMousePos = Input.mousePosition;
-        }*/
+        }
     }
 
     public void StartMonitoring()
     {
-        //isMenuActive = true;
+        isMenuActive = true;
     }
 
     public void StopMonitoring()
     {
-        //isMenuActive = false;
+        isMenuActive = false;
     }
 
     public void CursorLock()

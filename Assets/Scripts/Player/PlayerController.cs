@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    PlayersController playersController;
     Player player;
     float wingPower = 10000;
 
@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        playersController = GetComponentInParent<PlayersController>();
         player = GetComponent<Player>();
     }
 
@@ -23,7 +24,7 @@ public class PlayerController : MonoBehaviour
         {
             if (gasInput > 0)
             {
-                player.Run(gasInput * wingPower);
+                player.Run((gasInput) * wingPower);
             }
 
             transform.Rotate(0f, 0f, rotateInput * player.speed / player.rb.mass);
@@ -37,7 +38,6 @@ public class PlayerController : MonoBehaviour
             }
 
             transform.Rotate(0f, 0f, rotateInput);
-            //player.rb.AddTorque(player.rb.mass * rotate);
         }
     }
 
@@ -56,14 +56,6 @@ public class PlayerController : MonoBehaviour
             if (gasInput == 0)
             {
                 player.FreeFall();
-            }
-        }
-
-        if (player.moveState != Player.MoveState.Paused && player.moveState != Player.MoveState.Dead && player.moveState != Player.MoveState.Winner)
-        {
-            if (Input.GetButtonDown("Cancel"))
-            {
-                player.Pause();
             }
         }
     }

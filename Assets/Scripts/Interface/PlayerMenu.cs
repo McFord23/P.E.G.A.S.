@@ -12,33 +12,29 @@ public class PlayerMenu : MonoBehaviour
 
     public string layout;
     int index;
-    int indexBusy;
+    int indexBlocked;
 
-    public List<string> blockedLayout = new List<string>();
+    public GameObject celestia;
+    public GameObject luna;
+    public Text text;
 
     void Start()
     {
-        players = transform.parent.gameObject.GetComponent<PlayersMenu>();
+        players = transform.parent.GetComponent<PlayersMenu>();
         layoutSprites = players.controlLayoutSprites;
-        layoutSprite = transform.Find("Control Layout Button/Control Layout").gameObject.GetComponent<Image>();
+        layoutSprite = transform.Find("Control Layout").GetComponent<Image>();
 
         index = LayoutToIndex(layout);
         layoutSprite.sprite = layoutSprites[index];
+
+        /*celestia = transform.Find("Character/Celestia").gameObject;
+        luna = transform.Find("Character/Luna").gameObject;
+        text = transform.Find("Character/Name").GetComponent<Text>();*/
     }
 
-    public void BlockLayout(string set)
+    public void BlockIndex(string indexAnotherPlayer)
     {
-        blockedLayout.Add(set);
-    }
-
-    public void UnblockLayout(string set)
-    {
-        blockedLayout.Remove(set);
-    }
-
-    public void SetLimiter(string indexAnotherPlayer)
-    {
-        indexBusy = LayoutToIndex(indexAnotherPlayer);
+        indexBlocked = LayoutToIndex(indexAnotherPlayer);
     }
 
     public void SetLayout(string set)
@@ -53,11 +49,15 @@ public class PlayerMenu : MonoBehaviour
         if (index < layoutSprites.Length - 1) index++;
         else index = 0;
 
-        if (indexBusy == layoutSprites.Length - 1 && index == indexBusy) index = 0;
-        else if (index == indexBusy) index++;
-
+        if (Save.TogetherMode)
+        {
+            if (index == indexBlocked && indexBlocked == layoutSprites.Length - 1) index = 0;
+            else if (index == indexBlocked) index++;
+        }
+        
         layoutSprite.sprite = layoutSprites[index];
         layout = IndexToLayout(index);
+        
     }
 
     public void PerviousLayout()
@@ -65,8 +65,11 @@ public class PlayerMenu : MonoBehaviour
         if (index > 0) index--;
         else index = layoutSprites.Length - 1;
 
-        if (indexBusy == 0 && index == indexBusy) index = layoutSprites.Length - 1;
-        else if (index == indexBusy) index--;
+        if (Save.TogetherMode)
+        {
+            if (index == indexBlocked && indexBlocked == 0) index = layoutSprites.Length - 1;
+            else if (index == indexBlocked) index--;
+        }
 
         layoutSprite.sprite = layoutSprites[index];
         layout = IndexToLayout(index);
@@ -86,10 +89,6 @@ public class PlayerMenu : MonoBehaviour
                 return "ijkl";
             case 4:
                 return "arrow";
-            case 5:
-                return "gamepad1";
-            case 6:
-                return "gamepad2";
             default: throw new ArgumentException("Invalid set's index");
         }
     }
@@ -108,11 +107,24 @@ public class PlayerMenu : MonoBehaviour
                 return 3;
             case "arrow":
                 return 4;
-            case "gamepad1":
-                return 5;
-            case "gamepad2":
-                return 6;
             default: throw new ArgumentException("Invalid set's name");
+        }
+    }
+
+    public void ChangeCharacter(string character)
+    {
+        switch (character)
+        {
+            case "Celestia":
+                luna.SetActive(false);
+                celestia.SetActive(true);
+                text.text = "Celestia";
+                break;
+            case "Luna":
+                celestia.SetActive(false);
+                luna.SetActive(true);
+                text.text = "Luna";
+                break;
         }
     }
 }

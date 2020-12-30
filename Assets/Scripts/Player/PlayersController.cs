@@ -1,125 +1,161 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayersController : MonoBehaviour
 {
-    bool togetherMode = false;
+    GameObject celestia;
+    GameObject luna;
 
-    public GameObject player1GameObject;
-    public GameObject player2GameObject;
     Player player1;
-    Player player2;
     PlayerController player1Controller;
-    PlayerController player2Controller;
-    
-    public PlayersMenu playersMenu;
-    string player1Layout;
-    string player2Layout;
 
-    float gas;
-    float rotate;
-    float shoot;
+    Player player2;
+    PlayerController player2Controller;
+
+    float gas = 0f;
+    float rotate = 0f;
+    float shoot = 0f;
+
+    public UnityEvent PauseEvent;
+    public UnityEvent ResumeEvent;
+    public UnityEvent DeadEvent;
+    public UnityEvent ResetEvent;
+    public UnityEvent VictoryEvent;
+
 
     void Start()
     {
-        player1 = player1GameObject.GetComponent<Player>();
-        player2 = player2GameObject.GetComponent<Player>();
-        player1Controller = player1GameObject.GetComponent<PlayerController>();
-        player2Controller = player2GameObject.GetComponent<PlayerController>();
+        celestia = transform.Find("Celestia").gameObject;
+        luna = transform.Find("Luna").gameObject;
 
-        player1Layout = "mouse";
-        player2Layout = "numpad";
+        if (Save.Player1.character == "Celestia")
+        {
+            player1 = celestia.GetComponent<Player>();
+            player1Controller = celestia.GetComponent<PlayerController>();
 
-        //ChangeSet("Player 1");
-        //ChangeSet("Player 2");
+            player2 = luna.GetComponent<Player>();
+            player2Controller = luna.GetComponent<PlayerController>();
+        }
+        else
+        {
+            player1 = luna.GetComponent<Player>();
+            player1Controller = luna.GetComponent<PlayerController>();
 
-        //print("Check: " + Input.GetJoystickNames().Length);
+            player2 = celestia.GetComponent<Player>();
+            player2Controller = celestia.GetComponent<PlayerController>();
+        }
     }
 
     void Update()
     {
-        if (togetherMode)
+        if (Save.TogetherMode)
         {
             UpdateLayout(player1Controller);
             UpdateLayout(player2Controller);
+
+            if (player1.moveState != Player.MoveState.Paused && player1.moveState != Player.MoveState.Winner)
+            {
+                if (player2.moveState != Player.MoveState.Paused && player2.moveState != Player.MoveState.Winner)
+                {
+                    if (player1.moveState != Player.MoveState.Dead && player2.moveState != Player.MoveState.Dead)
+                    {
+                        if (Input.GetButtonDown("Cancel"))
+                        {
+                            Pause();
+                        }
+                    }
+                }
+            }
         }
         else
         {
             UpdateLayout(player1Controller);
-        }
-    }
+            OffInput(player2Controller);
 
-    public void TogetherMode(bool var)
-    {
-        togetherMode = var;
+            if (player1.moveState != Player.MoveState.Paused && player1.moveState != Player.MoveState.Dead && player1.moveState != Player.MoveState.Winner)
+            {
+                if (Input.GetButtonDown("Cancel"))
+                {
+                    Pause();
+                }
+            }
+        }  
     }
 
     public void ChangeCharacter()
     {
+        if (Save.Player1.character == "Celestia")
+        {
+            Save.Player1.character = "Luna";
+            Save.Player2.character = "Celestia";
 
-    }
+            player1 = luna.GetComponent<Player>();
+            player1Controller = luna.GetComponent<PlayerController>();
 
-    public void ChangeLayout(string player)
-    {
-        if (player == "Player 1") player1Layout = playersMenu.player1Menu.layout;
-        else if (player == "Player 2") player2Layout = playersMenu.player1Menu.layout;
+            player2 = celestia.GetComponent<Player>();
+            player2Controller = celestia.GetComponent<PlayerController>();
+        }
+        else
+        {
+            Save.Player1.character = "Celestia";
+            Save.Player2.character = "Luna";
+
+            player1 = celestia.GetComponent<Player>();
+            player1Controller = celestia.GetComponent<PlayerController>();
+
+            player2 = luna.GetComponent<Player>();
+            player2Controller = luna.GetComponent<PlayerController>();
+        }
     }
 
     public void UpdateLayout(PlayerController player)
     {
-        string layout = (player == player1Controller) ? player1Layout : player2Layout;
+        string layout = (player == player1Controller) ? Save.Player1.controlLayout : Save.Player2.controlLayout;
         switch (layout)
         {
             case "mouse":
                 gas = Input.GetKey(KeyCode.Mouse0) ? 1f : 0f;
-                rotate = Save.MouseSensitivity * Input.GetAxis("Rotate-Mouse");
+                rotate = Save.Sensitivity.mouse * Input.GetAxis("Rotate-Mouse");
                 shoot = Input.GetKey(KeyCode.Mouse1) ? 1f : 0f;
-                player.SetInput(gas, rotate, shoot);
                 break;
            
             case "wasd":
                 gas = Input.GetKey(KeyCode.LeftShift) ? 1f : 0f;
-                rotate = Save.KeyboardSensitivity * Input.GetAxis("Rotate-WASD");
+                rotate = Save.Sensitivity.keyboard * Input.GetAxis("Rotate-WASD");
                 shoot = Input.GetKey(KeyCode.LeftControl) ? 1f : 0f;
-                player.SetInput(gas, rotate, shoot);
                 break;
             
             case "ijkl":
                 gas = Input.GetKey(KeyCode.RightShift) ? 1f : 0f;
-                rotate = Save.KeyboardSensitivity * Input.GetAxis("Rotate-IJKL");
+                rotate = Save.Sensitivity.keyboard * Input.GetAxis("Rotate-IJKL");
                 shoot = Input.GetKey(KeyCode.RightControl) ? 1f : 0f;
-                player.SetInput(gas, rotate, shoot);
                 break;
            
             case "arrow":
                 gas = Input.GetKey(KeyCode.RightShift) ? 1f : 0f;
-                rotate = Save.KeyboardSensitivity * Input.GetAxis("Rotate-Arrow");
+                rotate = Save.Sensitivity.keyboard * Input.GetAxis("Rotate-Arrow");
                 shoot = Input.GetKey(KeyCode.RightControl) ? 1f : 0f;
-                player.SetInput(gas, rotate, shoot);
                 break;
            
             case "numpad":
                 gas = Input.GetKey(KeyCode.Space) ? 1f : 0f;
-                rotate = Save.KeyboardSensitivity * Input.GetAxis("Rotate-Numpad");
-                shoot = Input.GetKey(KeyCode.LeftShift) ? 1f : 0f;
-                player.SetInput(gas, rotate, shoot);
-                break;
-           
-            case "gamepad1":
-                gas = Input.GetAxis("Gas-Gamepad 1");
-                rotate = Save.GamepadSensitivity * Input.GetAxis("Rotate-Gamepad 1");
-                shoot = Input.GetAxis("Shoot-Gamepad 1");
-                player.SetInput(gas, rotate, shoot);
-                break;
-           
-            case "gamepad2":
-                gas = Input.GetAxis("Gas-Gamepad 2");
-                rotate = Save.GamepadSensitivity * Input.GetAxis("Rotate-Gamepad 2");
-                shoot = Input.GetAxis("Shoot-Gamepad 2");
-                player.SetInput(gas, rotate, shoot);
+                rotate = Save.Sensitivity.keyboard * Input.GetAxis("Rotate-Numpad");
+                shoot = Input.GetKey(KeyCode.CapsLock) ? 1f : 0f;
                 break;
         }
+
+        int gamepad = (player == player1Controller) ? Save.Player1.gamepad : Save.Player2.gamepad;
+        bool gamepadActive = (gamepad == 1) ? Gamepad.gamepad1 : Gamepad.gamepad2;
+        if (gamepadActive)
+        {
+            gas = Mathf.Clamp01(gas + Input.GetAxis("Gas-Gamepad " + gamepad));
+            rotate += Save.Sensitivity.gamepad * Input.GetAxis("Rotate-Gamepad " + gamepad);
+            shoot = Mathf.Clamp01(shoot + Input.GetAxis("Shoot-Gamepad " + gamepad));
+        }
+
+        player.SetInput(gas, rotate, shoot);
     }
 
     public void OffInput(PlayerController player)
@@ -128,5 +164,86 @@ public class PlayersController : MonoBehaviour
         rotate = 0f;
         shoot = 0f;
         player.SetInput(gas, rotate, shoot);
+    }
+
+    // Gets
+    public Vector3 GetPlayerPosition()
+    {
+        if (Save.TogetherMode)
+        {
+            var vector = new Vector3((player1.transform.position.x + player2.transform.position.x) / 2, (player1.transform.position.y + player2.transform.position.y) / 2, 0);
+            return vector;
+        }
+        else
+        {
+            return player1.transform.position;
+        }
+    }
+
+    public float GetDistanceBetweenPlayers()
+    {
+        var vector = player1.transform.position - player2.transform.position;
+        return Mathf.Abs(vector.magnitude);
+    }
+
+    public float GetPlayerSpeed()
+    {
+        if(Save.TogetherMode)
+        {
+            return (player1.speed + player2.speed) / 2;
+        }
+        else
+        {
+            return player1.speed;
+        }
+    }
+
+
+    // Working
+    public void Pause()
+    {
+        player1.Pause();
+        player2.Pause();
+
+        PauseEvent.Invoke();
+    }
+
+    public void Resume()
+    {
+        player1.Resume();
+        player2.Resume();
+
+        ResumeEvent.Invoke();
+    }
+
+    public void Dead()
+    {
+        if (Save.TogetherMode)
+        {
+            if (player1.moveState == Player.MoveState.Dead && player2.moveState == Player.MoveState.Dead)
+            {
+                DeadEvent.Invoke();
+            }
+        }
+        else
+        {
+            DeadEvent.Invoke();
+        }
+    }
+
+    public void Reset()
+    {
+        player1.Reset();
+        player2.Reset();
+
+        ResetEvent.Invoke();
+    }
+
+    public void Victory()
+    {
+        player1.Victory();
+        player2.Victory();
+        
+        VictoryEvent.Invoke();
     }
 }

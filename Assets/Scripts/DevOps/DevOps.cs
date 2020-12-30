@@ -178,11 +178,11 @@ public class DevOps : MonoBehaviour
         canvas.GetComponent<CanvasGroup>().alpha = (check) ? 0f : 1f;
     }
 
-    public void Reset()
+    /*public void Reset()
     {
         if (player.spawnPos == points[0]) player.LoadInCannon();
         else player.moveState = Player.MoveState.FreeFall;
-    }
+    }*/
 
     void OffMessege()
     {

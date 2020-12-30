@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HeadwindEffect : MonoBehaviour
 {
-    public Player player;
+    public PlayersController playersController;
     float ratio;
     Vector3 offset;
 
@@ -24,7 +24,7 @@ public class HeadwindEffect : MonoBehaviour
 
     void Update()
     {
-        ratio = player.speed / 150f;
+        ratio = playersController.GetPlayerSpeed() / 150f;
         main.startSpeed = ratio * 100;
         emission.rateOverTime = ratio * 250;
         transform.position = new Vector3(Camera.main.transform.position.x + offset.x, transform.position.y, 0);

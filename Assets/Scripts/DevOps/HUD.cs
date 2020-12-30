@@ -28,6 +28,8 @@ public class HUD : MonoBehaviour
         GUILayout.Label("Godness mode: " + player.godnessMode, style);
         GUILayout.Label("Barriers: " + barriers.activeSelf, style);
         GUILayout.Label("");
+        GUILayout.Label("Together Mode: " + Save.TogetherMode, style);
+        GUILayout.Label("");
         GUILayout.Label("MoveState: " + player.moveState, style);
         GUILayout.Label("Speed: " + (int)player.speed, style);
         GUILayout.Label("Angle: " + (int)player.angle, style);

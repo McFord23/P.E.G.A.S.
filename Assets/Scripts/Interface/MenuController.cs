@@ -31,6 +31,8 @@ public class MenuController : MonoBehaviour
     public UnityEvent MenuEnabledEvent;
     public UnityEvent MenuDisabledEvent;
 
+    bool isSelectedState = false;
+
     void Awake()
     {
         menu = transform.gameObject;
@@ -60,13 +62,13 @@ public class MenuController : MonoBehaviour
 
     void Update()
     {
-        /*if (Input.GetButtonDown("Cancel"))
+        if (!isSelectedState && Input.GetButtonDown("Cancel"))
         {
             if (settingsMenu.activeSelf || playersMenu.activeSelf)
             {
-                EnabledResumeMenu();
+                Back();
             }
-        }*/
+        }
     }
 
     public void Back()
@@ -200,5 +202,10 @@ public class MenuController : MonoBehaviour
         resumeMenu = "victory";
         resumeIcon.sprite = resumeIconOff;
         navigation.StartSelect("Victory");
+    }
+
+    public void SelectedState(bool var)
+    {
+        isSelectedState = var;
     }
 }

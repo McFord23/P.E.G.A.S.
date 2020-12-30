@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class FireballsController : MonoBehaviour
 {
-    public Player player;
+    public PlayersController playersController;
 }

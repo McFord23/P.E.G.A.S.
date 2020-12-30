@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class VictoryTrigger : MonoBehaviour
 {
-    public Player player;
+    public PlayersController playersController;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            player.Victory();
+            playersController.Victory();
         }
     }
 }

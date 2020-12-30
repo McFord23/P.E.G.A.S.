@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
@@ -10,6 +8,8 @@ public class Player : MonoBehaviour
 
     public float angle;
     public float angleOfAttack;
+
+    bool landed;
 
     public Vector2 spawnPos;
 
@@ -23,15 +23,14 @@ public class Player : MonoBehaviour
     CircleCollider2D[] rideCollider = new CircleCollider2D[2];
 
     Renderer sprite;
+    public MoveState moveState;
     Animator animatorController;
     public SoundController soundController;
-    public MoveState moveState;
-
-    bool landed;
+    PlayersController playersController;
 
     public enum MoveState
     {
-        Loaded,
+        //Loaded,
         Idle,
         Run,
         FreeFall,
@@ -40,13 +39,6 @@ public class Player : MonoBehaviour
         Paused,
         Winner
     }
-
-    public UnityEvent VictoryEvent;
-    public UnityEvent PlayerDeadEvent;
-    public UnityEvent PlayerResetEvent;
-    public UnityEvent PlayerPausedEvent;
-    public UnityEvent PlayerResumeEvent;
-    public UnityEvent PlayerLoadInCannonEvent;
 
     // Dev ops
     public bool godnessMode = false;
@@ -71,6 +63,7 @@ public class Player : MonoBehaviour
 
         sprite = GetComponentInChildren<Renderer>();
         animatorController = GetComponentInChildren<Animator>();
+        playersController = GetComponentInParent<PlayersController>();
         Idle();
     }
 
@@ -105,16 +98,15 @@ public class Player : MonoBehaviour
         }
 
         Idle();
-        PlayerResetEvent.Invoke();
     }
 
-    public void LoadInCannon()
+    /*public void LoadInCannon()
     {
         moveState = MoveState.Loaded;
         rb.gravityScale = 0f;
         sprite.enabled = false;
         PlayerLoadInCannonEvent.Invoke();
-    }
+    }*/
 
     public void Victory()
     {
@@ -124,8 +116,6 @@ public class Player : MonoBehaviour
         rb.gravityScale = 0f;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         rb.velocity = new Vector2(0, 0);
-
-        VictoryEvent.Invoke();
     }
 
     public void Pause()
@@ -139,19 +129,16 @@ public class Player : MonoBehaviour
         rb.gravityScale = 0f;
         rb.constraints = RigidbodyConstraints2D.FreezePosition;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-
-        PlayerPausedEvent.Invoke();
     }
 
     public void Resume()
     {
-        rb.constraints = RigidbodyConstraints2D.None;
         moveState = saveState;
         animatorController.speed = 1;
-        if (moveState != MoveState.Loaded) rb.gravityScale = 1f;
-        rb.AddForce(saveDirection * 500, ForceMode2D.Impulse);
 
-        PlayerResumeEvent.Invoke();
+        rb.gravityScale = 1f;
+        rb.constraints = RigidbodyConstraints2D.None;
+        rb.AddForce(saveDirection * 500, ForceMode2D.Impulse);
     }
 
     public void Idle()
@@ -246,7 +233,7 @@ public class Player : MonoBehaviour
             flyCollider.enabled = false;
             animatorController.Play("Dead");
             rb.gravityScale = 1f;
-            PlayerDeadEvent.Invoke();
+            playersController.Dead();
         }
     }
 
@@ -267,18 +254,21 @@ public class Player : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D()
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if ((moveState != MoveState.Idle) && (moveState != MoveState.Run))
         {
-            if (!godnessMode && (moveState != MoveState.Dead))
+            if (!collision.gameObject.CompareTag("Player"))
             {
-                Dead();
-            }
-            soundController.Hit();
+                if (!godnessMode && (moveState != MoveState.Dead))
+                {
+                    Dead();
+                }
+                soundController.Hit();
 
-            // DevOps.Pull()
-            deathIndicator = true;
+                // DevOps.Pull()
+                deathIndicator = true;
+            }
         }
     }
 

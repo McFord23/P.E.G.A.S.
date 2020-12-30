@@ -10,6 +10,10 @@ public class PlayersMenu : MonoBehaviour
     GameObject player2Panel;
 
     public Sprite[] controlLayoutSprites;
+    public Sprite[] gamepadSprites;
+    Image player1GamepadImage;
+    Image player2GamepadImage;
+
     public PlayerMenu player1Menu;
     public PlayerMenu player2Menu;
 
@@ -19,13 +23,19 @@ public class PlayersMenu : MonoBehaviour
         addPlayer = transform.Find("Add Player").gameObject;
         player2Panel = transform.Find("Player #2").gameObject;
 
+        player1GamepadImage = transform.Find("Player #1/Gamepad").GetComponent<Image>();
+        player2GamepadImage = transform.Find("Player #2/Gamepad").GetComponent<Image>();
+
+        player1Menu.layout = Save.Player1.controlLayout;
+        player2Menu.layout = Save.Player2.controlLayout;
+        ChangePlayer1Layout();
+        ChangePlayer2Layout();
+
+        player1Menu.ChangeCharacter(Save.Player1.character);
+        player2Menu.ChangeCharacter(Save.Player2.character);
+
         if (Save.TogetherMode) AddPlayer();
         else KickPlayer();
-
-        player1Menu.layout = "mouse";
-        player2Menu.layout = "numpad";
-        AnchorPlayer1Layout();
-        AnchorPlayer2Layout();
     }
 
     public void AddPlayer()
@@ -44,24 +54,40 @@ public class PlayersMenu : MonoBehaviour
         addPlayer.SetActive(true);
     }
 
-    public void Swap()
+    public void ChangeCharacter()
     {
-        var set1 = player1Menu.layout;
-        var set2 = player2Menu.layout;
-
-        player1Menu.SetLayout(set2);
-        player1Menu.SetLimiter(set1);
-        player2Menu.SetLayout(set1);
-        player2Menu.SetLimiter(set2);
+        if (Save.Player1.character == "Celestia")
+        {
+            player1Menu.ChangeCharacter("Luna");
+            player2Menu.ChangeCharacter("Celestia");
+        }
+        else
+        {
+            player1Menu.ChangeCharacter("Celestia");
+            player2Menu.ChangeCharacter("Luna");
+        }
     }
 
-    public void AnchorPlayer1Layout()
+    public void ChangeGamepad()
     {
-        player2Menu.SetLimiter(player1Menu.layout);
+        var gamepad = Save.Player1.gamepad;
+        Save.Player1.gamepad = Save.Player2.gamepad;
+        Save.Player2.gamepad = gamepad;
+
+        var gamepadImage = player1GamepadImage.sprite;
+        player1GamepadImage.sprite = player2GamepadImage.sprite;
+        player2GamepadImage.sprite = gamepadImage;
     }
 
-    public void AnchorPlayer2Layout()
+    public void ChangePlayer1Layout()
     {
-        player1Menu.SetLimiter(player2Menu.layout);
+        Save.Player1.controlLayout = player1Menu.layout;
+        player2Menu.BlockIndex(player1Menu.layout);
+    }
+
+    public void ChangePlayer2Layout()
+    {
+        Save.Player2.controlLayout = player2Menu.layout;
+        player1Menu.BlockIndex(player2Menu.layout);
     }
 }

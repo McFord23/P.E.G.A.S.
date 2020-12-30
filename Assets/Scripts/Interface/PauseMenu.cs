@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
@@ -11,7 +10,7 @@ public class PauseMenu : MonoBehaviour
     GameObject menu;
     UnityEvent MenuDisabledEvent;
 
-    public Player player;
+    public PlayersController playersController;
 
     void Start()
     {
@@ -30,7 +29,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        player.Resume();
+        playersController.Resume();
         MenuDisabledEvent.Invoke();
         pauseMenu.SetActive(false);
         menu.SetActive(false);
@@ -38,6 +37,6 @@ public class PauseMenu : MonoBehaviour
 
     public void Exit()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Main Menu");
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class OutlineSlider : MonoBehaviour
 {
+    public MenuController menu;
     Button button;
     Slider slider;
     bool isSliderSelected = false;
@@ -22,6 +23,7 @@ public class OutlineSlider : MonoBehaviour
             if (Input.GetButtonDown("Cancel"))
             {
                 button.Select();
+                menu.SelectedState(false);
             }
         }
     }
@@ -30,5 +32,6 @@ public class OutlineSlider : MonoBehaviour
     {
         slider.Select();
         isSliderSelected = true;
+        menu.SelectedState(true);
     }
 }

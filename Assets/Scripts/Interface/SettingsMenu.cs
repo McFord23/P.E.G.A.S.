@@ -13,17 +13,17 @@ public class SettingsMenu : MonoBehaviour
         mouseSlider = transform.Find("Mouse Slider").gameObject.GetComponent<Slider>();
         keyboardSlider = transform.Find("Keyboard Slider").gameObject.GetComponent<Slider>();
 
-        mouseSlider.value = Save.MouseSensitivity;
-        keyboardSlider.value = Save.KeyboardSensitivity;
+        mouseSlider.value = Save.Sensitivity.mouse;
+        keyboardSlider.value = Save.Sensitivity.keyboard;
     }
 
     public void SetMouseSensitivity(float value)
     {
-        Save.MouseSensitivity = value;
+        Save.Sensitivity.mouse = value;
     }
 
     public void SetKeyboardSensitivity(float value)
     {
-        Save.KeyboardSensitivity = value;
+        Save.Sensitivity.keyboard = value;
     }
 }

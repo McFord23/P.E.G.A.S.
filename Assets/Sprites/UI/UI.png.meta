@@ -37,7 +37,7 @@ TextureImporter:
     second: Settings On
   - first:
       213: -6180191441002391703
-    second: TogherMode
+    second: TogetherMode
   - first:
       213: -1682551497440473549
     second: SoloMode
@@ -113,6 +113,27 @@ TextureImporter:
   - first:
       213: 238177201661318622
     second: Control Layout Outline
+  - first:
+      213: -5481780447360278658
+    second: Handler Selected
+  - first:
+      213: 228940821244427079
+    second: Gamepad1 Off
+  - first:
+      213: 9084407170249120912
+    second: Gamepad2 Off
+  - first:
+      213: -4464969597253999955
+    second: Handle Right Selected
+  - first:
+      213: -7543061489181569089
+    second: Left Arrow Selected
+  - first:
+      213: -3947773304791079134
+    second: Close Selected
+  - first:
+      213: -7867266084347359734
+    second: Lil Junior Outline
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -203,8 +224,8 @@ TextureImporter:
       name: Sound On
       rect:
         serializedVersion: 2
-        x: 2
-        y: 499
+        x: 12
+        y: 376
         width: 14
         height: 10
       alignment: 0
@@ -224,8 +245,8 @@ TextureImporter:
       name: Sound Off
       rect:
         serializedVersion: 2
-        x: 2
-        y: 485
+        x: 45
+        y: 376
         width: 14
         height: 10
       alignment: 0
@@ -245,8 +266,8 @@ TextureImporter:
       name: Music On
       rect:
         serializedVersion: 2
-        x: 22
-        y: 497
+        x: 9
+        y: 390
         width: 20
         height: 14
       alignment: 0
@@ -266,8 +287,8 @@ TextureImporter:
       name: Music Off
       rect:
         serializedVersion: 2
-        x: 22
-        y: 482
+        x: 39
+        y: 390
         width: 20
         height: 14
       alignment: 0
@@ -287,10 +308,10 @@ TextureImporter:
       name: Handle
       rect:
         serializedVersion: 2
-        x: 46
-        y: 486
-        width: 15
-        height: 15
+        x: 1
+        y: 435
+        width: 26
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -308,8 +329,8 @@ TextureImporter:
       name: Background
       rect:
         serializedVersion: 2
-        x: 49
-        y: 476
+        x: 60
+        y: 437
         width: 9
         height: 9
       alignment: 0
@@ -329,8 +350,8 @@ TextureImporter:
       name: Fill Area
       rect:
         serializedVersion: 2
-        x: 49
-        y: 502
+        x: 60
+        y: 449
         width: 9
         height: 9
       alignment: 0
@@ -350,8 +371,8 @@ TextureImporter:
       name: Resume On
       rect:
         serializedVersion: 2
-        x: 8
-        y: 460
+        x: 11
+        y: 356
         width: 16
         height: 16
       alignment: 0
@@ -371,8 +392,8 @@ TextureImporter:
       name: Resume Off
       rect:
         serializedVersion: 2
-        x: 36
-        y: 460
+        x: 40
+        y: 356
         width: 16
         height: 16
       alignment: 0
@@ -392,8 +413,8 @@ TextureImporter:
       name: Settings off
       rect:
         serializedVersion: 2
-        x: 36
-        y: 443
+        x: 40
+        y: 338
         width: 16
         height: 16
       alignment: 0
@@ -413,8 +434,8 @@ TextureImporter:
       name: Settings On
       rect:
         serializedVersion: 2
-        x: 8
-        y: 442
+        x: 10
+        y: 338
         width: 16
         height: 16
       alignment: 0
@@ -431,11 +452,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TogherMode
+      name: TogetherMode
       rect:
         serializedVersion: 2
-        x: 2
-        y: 408
+        x: 4
+        y: 304
         width: 29
         height: 31
       alignment: 0
@@ -455,8 +476,8 @@ TextureImporter:
       name: SoloMode
       rect:
         serializedVersion: 2
-        x: 32
-        y: 408
+        x: 36
+        y: 304
         width: 29
         height: 31
       alignment: 0
@@ -476,8 +497,8 @@ TextureImporter:
       name: Swap
       rect:
         serializedVersion: 2
-        x: 36
-        y: 388
+        x: 28
+        y: 282
         width: 17
         height: 18
       alignment: 0
@@ -497,8 +518,8 @@ TextureImporter:
       name: Close
       rect:
         serializedVersion: 2
-        x: 9
-        y: 388
+        x: 5
+        y: 413
         width: 16
         height: 16
       alignment: 0
@@ -518,8 +539,8 @@ TextureImporter:
       name: Deco
       rect:
         serializedVersion: 2
-        x: 72
-        y: 297
+        x: 391
+        y: 367
         width: 50
         height: 50
       alignment: 0
@@ -539,8 +560,8 @@ TextureImporter:
       name: Mark x32 Open
       rect:
         serializedVersion: 2
-        x: 72
-        y: 479
+        x: 391
+        y: 478
         width: 35
         height: 32
       alignment: 4
@@ -560,8 +581,8 @@ TextureImporter:
       name: Mark x32
       rect:
         serializedVersion: 2
-        x: 75
-        y: 443
+        x: 443
+        y: 478
         width: 32
         height: 32
       alignment: 4
@@ -581,8 +602,8 @@ TextureImporter:
       name: Mark x42
       rect:
         serializedVersion: 2
-        x: 75
-        y: 397
+        x: 443
+        y: 432
         width: 43
         height: 42
       alignment: 4
@@ -602,8 +623,8 @@ TextureImporter:
       name: Mark x42 Open
       rect:
         serializedVersion: 2
-        x: 72
-        y: 351
+        x: 391
+        y: 432
         width: 46
         height: 42
       alignment: 4
@@ -623,10 +644,10 @@ TextureImporter:
       name: Right Arrow
       rect:
         serializedVersion: 2
-        x: 48
-        y: 367
-        width: 9
-        height: 16
+        x: 1
+        y: 487
+        width: 26
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -644,10 +665,10 @@ TextureImporter:
       name: Left Arrow
       rect:
         serializedVersion: 2
-        x: 33
-        y: 367
-        width: 9
-        height: 16
+        x: 1
+        y: 461
+        width: 26
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -665,8 +686,8 @@ TextureImporter:
       name: Numpad Layout
       rect:
         serializedVersion: 2
-        x: 132
-        y: 419
+        x: 72
+        y: 325
         width: 156
         height: 92
       alignment: 0
@@ -686,8 +707,8 @@ TextureImporter:
       name: Arrow Layout
       rect:
         serializedVersion: 2
-        x: 290
-        y: 419
+        x: 230
+        y: 325
         width: 156
         height: 92
       alignment: 0
@@ -707,8 +728,8 @@ TextureImporter:
       name: IJKL Layout
       rect:
         serializedVersion: 2
-        x: 290
-        y: 325
+        x: 230
+        y: 231
         width: 156
         height: 92
       alignment: 0
@@ -728,8 +749,8 @@ TextureImporter:
       name: WASD Layout
       rect:
         serializedVersion: 2
-        x: 132
-        y: 325
+        x: 72
+        y: 231
         width: 156
         height: 92
       alignment: 0
@@ -749,8 +770,8 @@ TextureImporter:
       name: Gamepad1 Layout
       rect:
         serializedVersion: 2
-        x: 132
-        y: 231
+        x: 72
+        y: 137
         width: 156
         height: 92
       alignment: 0
@@ -770,8 +791,8 @@ TextureImporter:
       name: Mouse Layout
       rect:
         serializedVersion: 2
-        x: 132
-        y: 137
+        x: 230
+        y: 419
         width: 156
         height: 92
       alignment: 0
@@ -791,8 +812,8 @@ TextureImporter:
       name: Gamepad2 Layout
       rect:
         serializedVersion: 2
-        x: 290
-        y: 231
+        x: 72
+        y: 43
         width: 156
         height: 92
       alignment: 0
@@ -812,8 +833,8 @@ TextureImporter:
       name: empty
       rect:
         serializedVersion: 2
-        x: 9
-        y: 367
+        x: 60
+        y: 491
         width: 16
         height: 16
       alignment: 0
@@ -833,8 +854,8 @@ TextureImporter:
       name: 6 Outline
       rect:
         serializedVersion: 2
-        x: 339
-        y: 209
+        x: 128
+        y: 488
         width: 96
         height: 16
       alignment: 0
@@ -854,8 +875,8 @@ TextureImporter:
       name: Lil Outline
       rect:
         serializedVersion: 2
-        x: 309
-        y: 209
+        x: 93
+        y: 486
         width: 16
         height: 16
       alignment: 0
@@ -875,8 +896,8 @@ TextureImporter:
       name: Big Outline
       rect:
         serializedVersion: 2
-        x: 301
-        y: 141
+        x: 83
+        y: 422
         width: 35
         height: 36
       alignment: 0
@@ -896,8 +917,8 @@ TextureImporter:
       name: Small Outline
       rect:
         serializedVersion: 2
-        x: 304
-        y: 182
+        x: 88
+        y: 460
         width: 26
         height: 24
       alignment: 0
@@ -917,8 +938,8 @@ TextureImporter:
       name: Control Layout Outline
       rect:
         serializedVersion: 2
-        x: 345
-        y: 141
+        x: 134
+        y: 423
         width: 90
         height: 60
       alignment: 0
@@ -930,6 +951,153 @@ TextureImporter:
       bones: []
       spriteID: ed59e9a27ec2e4300800000000000000
       internalID: 238177201661318622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Handler Selected
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 435
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7f98621abdcce3b0800000000000000
+      internalID: -5481780447360278658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gamepad1 Off
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 137
+        width: 156
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74b3cd4c67c5d2300800000000000000
+      internalID: 228940821244427079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gamepad2 Off
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 43
+        width: 156
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09cd5b9a03c421e70800000000000000
+      internalID: 9084407170249120912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Handle Right Selected
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 487
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da2a1c6cecd3902c0800000000000000
+      internalID: -4464969597253999955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left Arrow Selected
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 461
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbf476a5a89a15790800000000000000
+      internalID: -7543061489181569089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Close Selected
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 409
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22768227811b639c0800000000000000
+      internalID: -3947773304791079134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lil Junior Outline
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 488
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0e4ff8cd2bd1d290800000000000000
+      internalID: -7867266084347359734
       vertices: []
       indices: 
       edges: []

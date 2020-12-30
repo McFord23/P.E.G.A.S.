@@ -11,13 +11,8 @@ public class MenuNavigation : MonoBehaviour
     public Button[] deadButtons;
     public Button[] victoryButtons;
     public Button[] settingsButtons;
-
     public List<Button> soloButtons = new List<Button>();
     public List<Button> togetherButtons = new List<Button>();
-    Button addPlayerButton;
-    Button player1SetButton;
-    Button player2SetButton;
-    Button swapButton;
 
     int index;
     bool selectNone;
@@ -29,13 +24,8 @@ public class MenuNavigation : MonoBehaviour
         buttons.AddRange(deadButtons);
         buttons.AddRange(victoryButtons);
         buttons.AddRange(settingsButtons);
-
         buttons.AddRange(soloButtons);
         buttons.AddRange(togetherButtons);
-        addPlayerButton = soloButtons[0];
-        player1SetButton = soloButtons[1];
-        player2SetButton = togetherButtons[0];
-        swapButton = togetherButtons[1];
     }
 
     void Start()
@@ -127,24 +117,38 @@ public class MenuNavigation : MonoBehaviour
     public void SetSoloMenuNavigation()
     {
         Navigation navigation;
-        navigation = player1SetButton.navigation;
-        navigation.selectOnRight = addPlayerButton;
-        navigation.selectOnUp = null;
-        player1SetButton.navigation = navigation;
-        
+        navigation = soloButtons[1].navigation;
+        navigation.selectOnRight = soloButtons[0];
+        soloButtons[1].navigation = navigation;
+
+        navigation = soloButtons[2].navigation;
+        navigation.selectOnRight = soloButtons[0];
+        soloButtons[2].navigation = navigation;
+
+        navigation = soloButtons[3].navigation;
+        navigation.selectOnRight = soloButtons[0];
+        soloButtons[3].navigation = navigation;
+
         SetMarkNavigation(soloButtons[0]);
-        addPlayerButton.Select();
+        soloButtons[0].Select();
     }
 
     public void SetTogetherMenuNavigation()
     {
         Navigation navigation;
-        navigation = player1SetButton.navigation;
-        navigation.selectOnRight = player2SetButton;
-        navigation.selectOnUp = swapButton;
-        player1SetButton.navigation = navigation;
-        
+        navigation = soloButtons[1].navigation;
+        navigation.selectOnRight = togetherButtons[1];
+        soloButtons[1].navigation = navigation;
+
+        navigation = soloButtons[2].navigation;
+        navigation.selectOnRight = togetherButtons[2];
+        soloButtons[2].navigation = navigation;
+
+        navigation = soloButtons[3].navigation;
+        navigation.selectOnRight = togetherButtons[3];
+        soloButtons[3].navigation = navigation;
+
         SetMarkNavigation(togetherButtons[0]);
-        player2SetButton.Select();
+        togetherButtons[0].Select();
     }
 }

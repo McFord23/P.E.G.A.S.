@@ -36,7 +36,7 @@ public class MusicController : MonoBehaviour
                 celestiaMenuLoop = transform.Find("Celestia Menu (loop)").GetComponentInChildren<AudioSource>();
                 lunaMenu = transform.Find("Luna Menu").GetComponentInChildren<AudioSource>();
 
-                switch (Save.Princess)
+                switch (Save.Player1.character)
                 {
                     case "Luna":
                         menuMusic = lunaMenu;
@@ -58,7 +58,7 @@ public class MusicController : MonoBehaviour
                 celestiaPause = transform.Find("Celestia Pause").GetComponentInChildren<AudioSource>();
                 victoryMusic = transform.Find("Victory").GetComponentInChildren<AudioSource>();
 
-                switch (Save.Princess)
+                switch (Save.Player1.character)
                 {
                     case "Luna":
                         flyingMusic = lunaFlying;
@@ -85,7 +85,7 @@ public class MusicController : MonoBehaviour
         switch (scene)
         {
             case "Menu":
-                if (Save.Princess == "Celestia" && !menuMusic.isPlaying)
+                if (Save.Player1.character == "Celestia" && !menuMusic.isPlaying)
                 {
                     menuMusic.Stop();
                     menuMusic = celestiaMenuLoop;
@@ -94,7 +94,7 @@ public class MusicController : MonoBehaviour
                 break;
 
             case "Game":
-                if (Save.Princess == "Celestia" && !(flyingMusic.loop) && (flyingMusic.time >= 116.5f))
+                if (Save.Player1.character == "Celestia" && !(flyingMusic.loop) && (flyingMusic.time >= 116.5f))
                 {
                     flyingMusic.Stop();
                     flyingMusic = celestiaFlyingLoop;

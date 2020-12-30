@@ -16,8 +16,8 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         settingsMenu = transform.Find("SettingsMenu").gameObject;
-        mouseSlider.value = Save.MouseSensitivity;
-        keyboardSlider.value = Save.KeyboardSensitivity;
+        mouseSlider.value = Save.Sensitivity.mouse;
+        keyboardSlider.value = Save.Sensitivity.keyboard;
     }
 
     public void Play()
@@ -46,11 +46,11 @@ public class MainMenu : MonoBehaviour
 
     public void SetMouseSensitivity(float value)
     {
-        Save.MouseSensitivity = value;
+        Save.Sensitivity.mouse = value;
     }
 
     public void SetKeyboardSensitivity(float value)
     {
-        Save.KeyboardSensitivity = value;
+        Save.Sensitivity.keyboard = value;
     }
 }

@@ -12,7 +12,7 @@ public class Cannon : MonoBehaviour
     public Vector3 direction;
     Rigidbody2D rb;
 
-    public Player player;
+    //public Player player;
     public SoundController soundController;
 
     public UnityEvent CannonShootEvent;
@@ -110,14 +110,14 @@ public class Cannon : MonoBehaviour
         } 
     }
 
-    public void Resume()
+    /*public void Resume()
     {
         if (player.moveState == Player.MoveState.Loaded)
         {
             active = true;
             soundController.cannonScratchSound.UnPause();
         }
-    }
+    }*/
 
     public void Shoot()
     {

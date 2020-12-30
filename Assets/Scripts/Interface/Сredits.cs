@@ -34,6 +34,6 @@ public class Сredits : MonoBehaviour
 
     public void Exit()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Main Menu");
     }
 }
