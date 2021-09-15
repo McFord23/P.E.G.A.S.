@@ -48,6 +48,7 @@ public class CursorController : MonoBehaviour
 
     public void CursorUnlock()
     {
+        Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
 

@@ -9,6 +9,8 @@ TagManager:
   - Fireball
   - Ground
   - Layer
+  - Windigo
+  - Heart
   layers:
   - Default
   - TransparentFX
@@ -19,9 +21,9 @@ TagManager:
   - 
   - 
   - Player
-  - 
-  - 
-  - 
+  - Windigo
+  - MacGaffin
+  - Finish
   - 
   - 
   - 

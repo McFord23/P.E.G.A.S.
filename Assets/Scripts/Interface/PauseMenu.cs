@@ -37,6 +37,8 @@ public class PauseMenu : MonoBehaviour
 
     public void Exit()
     {
+        Save.Player1.live = true;
+        Save.Player2.live = true;
         SceneManager.LoadScene("Main Menu");
     }
 }

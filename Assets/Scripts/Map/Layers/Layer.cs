@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Layer : MonoBehaviour
 {
@@ -20,7 +17,6 @@ public class Layer : MonoBehaviour
             spawnPositions[i] = transform.GetChild(i).gameObject.transform.position;
         }
     }
-
     
    void FixedUpdate()
     {
@@ -36,9 +32,15 @@ public class Layer : MonoBehaviour
         }
     }
 
-    public void UploadChunks(GameObject chunkCurrent)
+    public void UploadChunks(GameObject chunk, float direction)
     {
-        Instantiate(chunk, chunkCurrent.transform.position + new Vector3(2 * size, 0f, 0f), chunkCurrent.transform.rotation, transform);
-        Destroy(chunkCurrent);
+        if (chunk.transform.position == transform.GetChild(0).transform.position)
+        {
+            transform.GetChild(1).transform.position += new Vector3(size * direction, 0f, 0f);
+        }
+        else
+        {
+            transform.GetChild(0).transform.position += new Vector3(size * direction, 0f, 0f);
+        }
     }
 }

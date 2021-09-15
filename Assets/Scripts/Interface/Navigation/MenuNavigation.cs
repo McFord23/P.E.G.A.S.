@@ -7,6 +7,7 @@ public class MenuNavigation : MonoBehaviour
 {
     List<Button> buttons = new List<Button>();
     public Button[] markButtons;
+    public Button[] mainMenuButtons;
     public Button[] pauseButtons;
     public Button[] deadButtons;
     public Button[] victoryButtons;
@@ -20,6 +21,7 @@ public class MenuNavigation : MonoBehaviour
     void Awake()
     {
         buttons.AddRange(markButtons);
+        buttons.AddRange(mainMenuButtons);
         buttons.AddRange(pauseButtons);
         buttons.AddRange(deadButtons);
         buttons.AddRange(victoryButtons);
@@ -67,6 +69,9 @@ public class MenuNavigation : MonoBehaviour
     {
         switch (menu)
         {
+            case "Main Menu":
+                UpdateSelectIndex(mainMenuButtons[0]);
+                break;
             case "Pause":
                 UpdateSelectIndex(pauseButtons[0]);
                 break;
@@ -85,6 +90,9 @@ public class MenuNavigation : MonoBehaviour
     {
         switch (menu)
         {
+            case "Main Menu":
+                SetMarkNavigation(mainMenuButtons[0]);
+                break;
             case "Pause":
                 SetMarkNavigation(pauseButtons[0]);
                 break;

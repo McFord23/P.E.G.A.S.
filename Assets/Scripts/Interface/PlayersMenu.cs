@@ -17,7 +17,7 @@ public class PlayersMenu : MonoBehaviour
     public PlayerMenu player1Menu;
     public PlayerMenu player2Menu;
 
-    void Start()
+    private void Awake()
     {
         menu = GetComponentInParent<MenuController>();
         addPlayer = transform.Find("Add Player").gameObject;
@@ -28,6 +28,10 @@ public class PlayersMenu : MonoBehaviour
 
         player1Menu.layout = Save.Player1.controlLayout;
         player2Menu.layout = Save.Player2.controlLayout;
+    }
+
+    void Start()
+    {
         ChangePlayer1Layout();
         ChangePlayer2Layout();
 
@@ -36,6 +40,8 @@ public class PlayersMenu : MonoBehaviour
 
         if (Save.TogetherMode) AddPlayer();
         else KickPlayer();
+
+        UpdateGamepadStatus();
     }
 
     public void AddPlayer()
@@ -58,11 +64,17 @@ public class PlayersMenu : MonoBehaviour
     {
         if (Save.Player1.character == "Celestia")
         {
+            Save.Player1.character = "Luna";
+            Save.Player2.character = "Celestia";
+
             player1Menu.ChangeCharacter("Luna");
             player2Menu.ChangeCharacter("Celestia");
         }
         else
         {
+            Save.Player1.character = "Celestia";
+            Save.Player2.character = "Luna";
+
             player1Menu.ChangeCharacter("Celestia");
             player2Menu.ChangeCharacter("Luna");
         }
@@ -77,6 +89,26 @@ public class PlayersMenu : MonoBehaviour
         var gamepadImage = player1GamepadImage.sprite;
         player1GamepadImage.sprite = player2GamepadImage.sprite;
         player2GamepadImage.sprite = gamepadImage;
+    }
+
+    public void UpdateGamepadStatus()
+    {
+        if (Save.Player1.gamepad == 1)
+        {
+            if (Gamepad.gamepad1) player1GamepadImage.sprite = gamepadSprites[0];
+            else player1GamepadImage.sprite = gamepadSprites[1];
+
+            if (Gamepad.gamepad2) player2GamepadImage.sprite = gamepadSprites[2];
+            else player2GamepadImage.sprite = gamepadSprites[3];
+        }
+        else
+        {
+            if (Gamepad.gamepad1) player2GamepadImage.sprite = gamepadSprites[0];
+            else player2GamepadImage.sprite = gamepadSprites[1];
+
+            if (Gamepad.gamepad2) player1GamepadImage.sprite = gamepadSprites[2];
+            else player1GamepadImage.sprite = gamepadSprites[3];
+        }
     }
 
     public void ChangePlayer1Layout()

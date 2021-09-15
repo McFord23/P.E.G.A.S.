@@ -1,14 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class CupcakeRainTrigger : MonoBehaviour
+public class SnowfallTrigger : MonoBehaviour
 {
-    CupcakeRain rainController;
+    Snowfall rainController;
 
     void Start()
     {
-        rainController = GetComponent<CupcakeRain>();
+        rainController = GetComponent<Snowfall>();
     }
  
     public void OnTriggerEnter2D(Collider2D collider)

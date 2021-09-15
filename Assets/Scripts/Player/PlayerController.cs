@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    PlayersController playersController;
     Player player;
     float wingPower = 10000;
 
@@ -14,7 +11,6 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        playersController = GetComponentInParent<PlayersController>();
         player = GetComponent<Player>();
     }
 

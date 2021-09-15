@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UIElements.Experimental;
+﻿using UnityEngine;
 
-public class CupcakeRain : MonoBehaviour
+public class Snowfall : MonoBehaviour
 {
     ParticleSystem[] particleSystems;
     ParticleSystem.EmissionModule[] emissions;
@@ -18,7 +15,7 @@ public class CupcakeRain : MonoBehaviour
             emissions[i] = particleSystems[i].emission; 
         }
 
-        Active(false);
+        Active(true);
     }
 
     public void Active(bool val)

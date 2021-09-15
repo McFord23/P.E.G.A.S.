@@ -1,28 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     public float speed;
-
     public float angle;
     public float angleOfAttack;
+    public bool landed;
 
-    bool landed;
+    bool haveHeart = false;
 
     public Vector2 spawnPos;
 
     Vector2 saveDirection;
     MoveState saveState;
 
-
     public Rigidbody2D rb;
     PolygonCollider2D flyCollider;
     CapsuleCollider2D deathCollider;
     CircleCollider2D[] rideCollider = new CircleCollider2D[2];
 
-    Renderer sprite;
     public MoveState moveState;
     Animator animatorController;
     public SoundController soundController;
@@ -39,6 +35,8 @@ public class Player : MonoBehaviour
         Paused,
         Winner
     }
+
+    Heart heart;
 
     // Dev ops
     public bool godnessMode = false;
@@ -61,10 +59,13 @@ public class Player : MonoBehaviour
         deathCollider = GetComponentInChildren<CapsuleCollider2D>();
         rideCollider = GetComponentsInChildren<CircleCollider2D>();
 
-        sprite = GetComponentInChildren<Renderer>();
         animatorController = GetComponentInChildren<Animator>();
         playersController = GetComponentInParent<PlayersController>();
-        Idle();
+
+        if (landed) Idle();
+        else FreeFall();
+
+        heart = playersController.heart;
     }
 
     void FixedUpdate()
@@ -80,33 +81,40 @@ public class Player : MonoBehaviour
             //GravityRotation();
         }
 
+        if (moveState == MoveState.Dead)
+        {
+            if (landed) rb.drag = 3f;
+            else rb.drag = 1f;
+        }
+
+        if (rb.velocity.x > 0.01) transform.localScale = new Vector3(1, 1, 1);
+        else if (rb.velocity.x < -0.01) transform.localScale = new Vector3(1, -1, 1);
+
         speed = rb.velocity.magnitude;
         angle = transform.eulerAngles.z;
     }
 
     public void Reset()
     {
+        transform.localScale = new Vector3(1, 1, 1);
         rb.velocity = new Vector2(0, 0);
+        rb.drag = Mathf.Epsilon;
         rb.angularVelocity = 0f;
         transform.right = Vector2.right;
         transform.position = spawnPos;
+        Resurrect();
+        haveHeart = false;
+    }
 
+    public void Resurrect()
+    {
         deathCollider.enabled = false;
         foreach (CircleCollider2D collider in rideCollider)
         {
             collider.enabled = true;
         }
-
         Idle();
     }
-
-    /*public void LoadInCannon()
-    {
-        moveState = MoveState.Loaded;
-        rb.gravityScale = 0f;
-        sprite.enabled = false;
-        PlayerLoadInCannonEvent.Invoke();
-    }*/
 
     public void Victory()
     {
@@ -183,7 +191,6 @@ public class Player : MonoBehaviour
 
         gear = (speed < 20) ? 2 : 1;
         rb.AddForce(transform.right * gear * flapForce);
-        //soundController.Flap();
     }
 
     void FlyPhysics()
@@ -224,7 +231,7 @@ public class Player : MonoBehaviour
         }*/
     }
 
-    void Dead()
+    public void Dead()
     {
         if (!godnessMode)
         {
@@ -233,17 +240,17 @@ public class Player : MonoBehaviour
             flyCollider.enabled = false;
             animatorController.Play("Dead");
             rb.gravityScale = 1f;
+            
             playersController.Dead();
+
+            if (haveHeart) SetHeart(false);
+            heart.DropTarget();
         }
     }
 
-    public void Shoot(Vector3 direction, float power)
+    public void SetHeart(bool var)
     {
-        sprite.enabled = true;
-        transform.right = transform.right;
-        moveState = Player.MoveState.Flap;
-        rb.AddForce(direction * power, ForceMode2D.Impulse);
-        rb.gravityScale = 1f;
+        haveHeart = var;
     }
 
     void OnCollisionStay2D(Collision2D collision)

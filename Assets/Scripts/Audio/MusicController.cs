@@ -31,7 +31,7 @@ public class MusicController : MonoBehaviour
 
         switch (scene)
         {
-            case "Menu":
+            case "Main Menu":
                 celestiaMenuStart = transform.Find("Celestia Menu (start)").GetComponentInChildren<AudioSource>();
                 celestiaMenuLoop = transform.Find("Celestia Menu (loop)").GetComponentInChildren<AudioSource>();
                 lunaMenu = transform.Find("Luna Menu").GetComponentInChildren<AudioSource>();
@@ -84,7 +84,7 @@ public class MusicController : MonoBehaviour
     {
         switch (scene)
         {
-            case "Menu":
+            case "Main Menu":
                 if (Save.Player1.character == "Celestia" && !menuMusic.isPlaying)
                 {
                     menuMusic.Stop();

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Chunk : MonoBehaviour
 {
@@ -12,11 +10,12 @@ public class Chunk : MonoBehaviour
         SetTransparency();
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collider.gameObject.CompareTag("Player"))
         {
-            layerController.UploadChunks(transform.gameObject);
+            var direction = collider.transform.parent.GetComponentInParent<PlayersController>().GetPlayerDirection();
+            layerController.UploadChunks(transform.gameObject, direction);
         }
     }
 

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,9 +13,13 @@ public class PlayersController : MonoBehaviour
     Player player2;
     PlayerController player2Controller;
 
+    Player survivor;
+
     float gas = 0f;
     float rotate = 0f;
     float shoot = 0f;
+
+    public Heart heart;
 
     public UnityEvent PauseEvent;
     public UnityEvent ResumeEvent;
@@ -24,32 +27,20 @@ public class PlayersController : MonoBehaviour
     public UnityEvent ResetEvent;
     public UnityEvent VictoryEvent;
 
-
     void Start()
     {
         celestia = transform.Find("Celestia").gameObject;
         luna = transform.Find("Luna").gameObject;
-
-        if (Save.Player1.character == "Celestia")
-        {
-            player1 = celestia.GetComponent<Player>();
-            player1Controller = celestia.GetComponent<PlayerController>();
-
-            player2 = luna.GetComponent<Player>();
-            player2Controller = luna.GetComponent<PlayerController>();
-        }
-        else
-        {
-            player1 = luna.GetComponent<Player>();
-            player1Controller = luna.GetComponent<PlayerController>();
-
-            player2 = celestia.GetComponent<Player>();
-            player2Controller = celestia.GetComponent<PlayerController>();
-        }
+        UpdateCharacter();
     }
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Reset();
+        }
+
         if (Save.TogetherMode)
         {
             UpdateLayout(player1Controller);
@@ -59,7 +50,7 @@ public class PlayersController : MonoBehaviour
             {
                 if (player2.moveState != Player.MoveState.Paused && player2.moveState != Player.MoveState.Winner)
                 {
-                    if (player1.moveState != Player.MoveState.Dead && player2.moveState != Player.MoveState.Dead)
+                    if (!(player1.moveState == Player.MoveState.Dead && player2.moveState == Player.MoveState.Dead))
                     {
                         if (Input.GetButtonDown("Cancel"))
                         {
@@ -84,29 +75,23 @@ public class PlayersController : MonoBehaviour
         }  
     }
 
-    public void ChangeCharacter()
+    public void UpdateCharacter()
     {
         if (Save.Player1.character == "Celestia")
         {
-            Save.Player1.character = "Luna";
-            Save.Player2.character = "Celestia";
-
-            player1 = luna.GetComponent<Player>();
-            player1Controller = luna.GetComponent<PlayerController>();
-
-            player2 = celestia.GetComponent<Player>();
-            player2Controller = celestia.GetComponent<PlayerController>();
-        }
-        else
-        {
-            Save.Player1.character = "Celestia";
-            Save.Player2.character = "Luna";
-
             player1 = celestia.GetComponent<Player>();
             player1Controller = celestia.GetComponent<PlayerController>();
 
             player2 = luna.GetComponent<Player>();
             player2Controller = luna.GetComponent<PlayerController>();
+        }
+        else
+        {
+            player1 = luna.GetComponent<Player>();
+            player1Controller = luna.GetComponent<PlayerController>();
+
+            player2 = celestia.GetComponent<Player>();
+            player2Controller = celestia.GetComponent<PlayerController>();
         }
     }
 
@@ -166,13 +151,28 @@ public class PlayersController : MonoBehaviour
         player.SetInput(gas, rotate, shoot);
     }
 
-    // Gets
     public Vector3 GetPlayerPosition()
     {
         if (Save.TogetherMode)
         {
-            var vector = new Vector3((player1.transform.position.x + player2.transform.position.x) / 2, (player1.transform.position.y + player2.transform.position.y) / 2, 0);
-            return vector;
+            if (player1.moveState == Player.MoveState.Dead && player2.moveState != Player.MoveState.Dead)
+            {
+                if (GetDistanceBetweenPlayers() > CameraController.maxSize) return player2.transform.position;
+                else return new Vector3((player1.transform.position.x + player2.transform.position.x) / 2, (player1.transform.position.y + player2.transform.position.y) / 2, 0);
+            }
+            else if (player2.moveState == Player.MoveState.Dead && player1.moveState != Player.MoveState.Dead)
+            {
+                if (GetDistanceBetweenPlayers() > CameraController.maxSize) return player1.transform.position;
+                else return new Vector3((player1.transform.position.x + player2.transform.position.x) / 2, (player1.transform.position.y + player2.transform.position.y) / 2, 0);
+            }
+            else if (player1.moveState == Player.MoveState.Dead && player2.moveState == Player.MoveState.Dead)
+            {
+                return survivor.transform.position;
+            }
+            else
+            {
+                return new Vector3((player1.transform.position.x + player2.transform.position.x) / 2, (player1.transform.position.y + player2.transform.position.y) / 2, 0);
+            }
         }
         else
         {
@@ -180,10 +180,32 @@ public class PlayersController : MonoBehaviour
         }
     }
 
-    public float GetDistanceBetweenPlayers()
+    public Vector3 GetPlayerPosition(int i)
+    {
+        switch (i)
+        {
+            case 1:
+                return player1.transform.position;
+            case 2:
+                return player1.transform.position;
+            default: throw new ArgumentException("Invalid player index: ");
+        }
+    }
+
+    float GetDistanceBetweenPlayers()
     {
         var vector = player1.transform.position - player2.transform.position;
         return Mathf.Abs(vector.magnitude);
+    }
+
+    public float GetFocusSize()
+    {
+        if (player1.moveState == Player.MoveState.Dead || player2.moveState == Player.MoveState.Dead)
+        {
+            if (GetDistanceBetweenPlayers() <= CameraController.maxSize) return GetDistanceBetweenPlayers();
+            else return CameraController.flySize;
+        }
+        else return GetDistanceBetweenPlayers();
     }
 
     public float GetPlayerSpeed()
@@ -198,8 +220,26 @@ public class PlayersController : MonoBehaviour
         }
     }
 
+    public float GetPlayerDirection()
+    {
+        if (Save.TogetherMode)
+        {
+            if (player1.moveState == Player.MoveState.Dead)
+            {
+                return player2.transform.localScale.y;
+            }
+            else if (player2.moveState == Player.MoveState.Dead)
+            {
+                return player1.transform.localScale.y;
+            }
+            else return 0;
+        }
+        else
+        {
+            return player1.transform.localScale.y;
+        }
+    }
 
-    // Working
     public void Pause()
     {
         player1.Pause();
@@ -216,17 +256,38 @@ public class PlayersController : MonoBehaviour
         ResumeEvent.Invoke();
     }
 
+    public void KillPlayer(int i)
+    {
+        switch (i)
+        {
+            case 1:
+                player1.Dead();
+                break;
+            case 2:
+                player2.Dead();
+                break;
+        }
+    }
+
     public void Dead()
     {
         if (Save.TogetherMode)
         {
-            if (player1.moveState == Player.MoveState.Dead && player2.moveState == Player.MoveState.Dead)
+            if (player1.moveState == Player.MoveState.Dead && player2.moveState != Player.MoveState.Dead)
             {
-                DeadEvent.Invoke();
+                Save.Player1.live = false;
+                survivor = player2;
             }
+            else if (player1.moveState != Player.MoveState.Dead && player2.moveState == Player.MoveState.Dead)
+            {
+                Save.Player2.live = false;
+                survivor = player1;
+            }
+            else DeadEvent.Invoke();
         }
         else
         {
+            Save.Player1.live = false;
             DeadEvent.Invoke();
         }
     }
@@ -234,7 +295,10 @@ public class PlayersController : MonoBehaviour
     public void Reset()
     {
         player1.Reset();
+        Save.Player1.live = true;
+
         player2.Reset();
+        Save.Player1.live = true;
 
         ResetEvent.Invoke();
     }

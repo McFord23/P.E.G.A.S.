@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,30 +16,22 @@ public class PlayerMenu : MonoBehaviour
     public GameObject luna;
     public Text text;
 
-    void Start()
+    void Awake()
     {
         players = transform.parent.GetComponent<PlayersMenu>();
         layoutSprites = players.controlLayoutSprites;
         layoutSprite = transform.Find("Control Layout").GetComponent<Image>();
+    }
 
+    void Start()
+    {
         index = LayoutToIndex(layout);
         layoutSprite.sprite = layoutSprites[index];
-
-        /*celestia = transform.Find("Character/Celestia").gameObject;
-        luna = transform.Find("Character/Luna").gameObject;
-        text = transform.Find("Character/Name").GetComponent<Text>();*/
     }
 
     public void BlockIndex(string indexAnotherPlayer)
     {
         indexBlocked = LayoutToIndex(indexAnotherPlayer);
-    }
-
-    public void SetLayout(string set)
-    {
-        layout = set;
-        index = LayoutToIndex(layout);
-        layoutSprite.sprite = layoutSprites[index];
     }
 
     public void NextLayout()
@@ -89,7 +79,7 @@ public class PlayerMenu : MonoBehaviour
                 return "ijkl";
             case 4:
                 return "arrow";
-            default: throw new ArgumentException("Invalid set's index");
+            default: throw new ArgumentException("Invalid set's index: ");
         }
     }
 
@@ -107,7 +97,7 @@ public class PlayerMenu : MonoBehaviour
                 return 3;
             case "arrow":
                 return 4;
-            default: throw new ArgumentException("Invalid set's name");
+            default: throw new ArgumentException("Invalid set's name " + playerSet);
         }
     }
 

@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class FireballsController : MonoBehaviour
 {
-    public PlayersController playersController;
+    public Rigidbody2D GetFireball()
+    {
+        return transform.GetChild(transform.childCount - 1).GetComponent<Rigidbody2D>();
+    }
 }

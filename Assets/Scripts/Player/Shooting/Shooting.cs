@@ -1,16 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
+    public float speed;
     public GameObject fireball;
-    public Transform parent;
+    FireballsController fireballsController;
+    Transform parent;
     Player player;
     float shootInput;
 
     void Start()
     {
+        parent = transform.parent.parent.Find("Fireballs");
+        fireballsController = parent.GetComponent<FireballsController>();
         player = GetComponentInParent<Player>();
     }
 
@@ -23,6 +25,7 @@ public class Shooting : MonoBehaviour
             if (shootInput > 0)
             {
                 Instantiate(fireball, transform.position, transform.rotation, parent);
+                fireballsController.GetFireball().AddRelativeForce(new Vector2(1, 0) * (speed + player.speed), ForceMode2D.Impulse);
             }
         }
     }

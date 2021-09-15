@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public static class Save
+﻿public static class Save
 {
     public static bool TogetherMode = false;
 
@@ -11,6 +7,7 @@ public static class Save
         public static string character = "Celestia";
         public static string controlLayout = "mouse";
         public static int gamepad = 1;
+        public static bool live = true;
     }
 
     public struct Player2
@@ -18,6 +15,7 @@ public static class Save
         public static string character = "Luna";
         public static string controlLayout = "numpad";
         public static int gamepad = 2;
+        public static bool live = true;
     }
     
     public struct Sensitivity

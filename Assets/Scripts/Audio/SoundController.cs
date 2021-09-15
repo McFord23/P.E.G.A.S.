@@ -18,7 +18,7 @@ public class SoundController : MonoBehaviour
     AudioSource headwindSound;
     AudioSource turnPageSound;
 
-    public Player player;
+    public PlayersController playersController;
     string scene;
 
     void Awake()
@@ -46,14 +46,20 @@ public class SoundController : MonoBehaviour
                 }
 
                 headwindSound = transform.Find("Headwind").gameObject.GetComponent<AudioSource>();
-                turnPageSound = transform.Find("Turn Page").gameObject.GetComponent<AudioSource>();
                 break;
         }
+
+        turnPageSound = transform.Find("Turn Page").gameObject.GetComponent<AudioSource>();
     }
 
     void Update()
     {
-        HeadwindVolume();    
+        switch (scene)
+        {
+            case "Game":
+                HeadwindVolume();
+                break;
+        }
     }
 
     public void Flap()
@@ -70,7 +76,7 @@ public class SoundController : MonoBehaviour
 
     void HeadwindVolume()
     {
-        headwindSound.volume = player.speed * player.speed / 4000f;
+        headwindSound.volume = Mathf.Pow(playersController.GetPlayerSpeed(), 2) / 4000f;
     }
 
     public void PlayTurnPageSound()
