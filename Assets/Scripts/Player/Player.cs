@@ -78,7 +78,6 @@ public class Player : MonoBehaviour
         if (moveState == MoveState.Flap || moveState == MoveState.FreeFall)
         {
             FlyPhysics();
-            //GravityRotation();
         }
 
         if (moveState == MoveState.Dead)

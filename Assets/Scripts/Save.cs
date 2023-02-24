@@ -26,5 +26,5 @@
     }
     
     public static bool sound = true;
-    public static bool music = false;
+    public static bool music = true;
 }
