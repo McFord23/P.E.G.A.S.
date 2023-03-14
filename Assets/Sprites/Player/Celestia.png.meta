@@ -381,7 +381,7 @@ TextureImporter:
       213: 9011449403609484004
     second: Celestia_125
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -402,6 +402,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -411,8 +412,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -433,11 +434,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -453,6 +457,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
@@ -3122,6 +3138,133 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Celestia_0: -4013779724170607955
+      Celestia_1: 4897100533787914510
+      Celestia_10: 1049648975230044440
+      Celestia_100: -6374185114218017166
+      Celestia_101: -4016052009868241577
+      Celestia_102: 8301461772277076303
+      Celestia_103: -408284621439630201
+      Celestia_104: 2177371443929586988
+      Celestia_105: -523363248003653653
+      Celestia_106: 4181332341529534751
+      Celestia_107: -4364845231979078258
+      Celestia_108: -6560100060640016863
+      Celestia_109: -9160158879085131466
+      Celestia_11: 4991346092958928871
+      Celestia_110: 1278461590677531458
+      Celestia_111: 714322817256667215
+      Celestia_112: -5663108640818356489
+      Celestia_113: 6953419220966059187
+      Celestia_114: -6305799571689274366
+      Celestia_115: 7009311398977652478
+      Celestia_116: -3497749331170523404
+      Celestia_117: -6261572553586541984
+      Celestia_118: 1335597130803545123
+      Celestia_119: 2223518653956604291
+      Celestia_12: -7579378423603273267
+      Celestia_120: 2171666994421849980
+      Celestia_121: 5433230072446514721
+      Celestia_122: 4032740779174366005
+      Celestia_123: -15889535843538297
+      Celestia_124: -4536214438073343257
+      Celestia_125: 9011449403609484004
+      Celestia_13: -4852711251402425215
+      Celestia_14: 1753738701763818775
+      Celestia_15: -4525373301551711035
+      Celestia_16: -2841916048152907488
+      Celestia_17: 3556785552681301075
+      Celestia_18: 1920615365338974728
+      Celestia_19: -108248541768273811
+      Celestia_2: 1279793824220366033
+      Celestia_20: -2166685818460244935
+      Celestia_21: 4959079969633426661
+      Celestia_22: 216717032535218732
+      Celestia_23: 3584641986330509780
+      Celestia_24: -5818191347472215074
+      Celestia_25: 1125691556722695811
+      Celestia_26: 4517928802774470716
+      Celestia_27: 3897488884037389669
+      Celestia_28: 4213991013595304584
+      Celestia_29: -6770954563628285263
+      Celestia_3: 9202355288789360837
+      Celestia_30: -4497789141164205445
+      Celestia_31: 2475366412689712749
+      Celestia_32: -9196274646621712559
+      Celestia_33: -3483385475670632130
+      Celestia_34: -5520876272678103438
+      Celestia_35: 7519405951977887826
+      Celestia_36: -3209002270334002600
+      Celestia_37: 730850093607829002
+      Celestia_38: 2239660781074908840
+      Celestia_39: 4457880381261015475
+      Celestia_4: -745178771508793131
+      Celestia_40: 1047319332707201358
+      Celestia_41: 9045228604636197422
+      Celestia_42: -4800316106655388804
+      Celestia_43: 8500675231094159558
+      Celestia_44: 2182239877115493577
+      Celestia_45: -1517237682921849684
+      Celestia_46: -60122418144500169
+      Celestia_47: -8151719911197087518
+      Celestia_48: -3486700563987881411
+      Celestia_49: 5556051582698687333
+      Celestia_5: -5397784811750587908
+      Celestia_50: 4543000505475921517
+      Celestia_51: -4410578390640856387
+      Celestia_52: -1099983557538955111
+      Celestia_53: 8130583071800816259
+      Celestia_54: -5162423975849334368
+      Celestia_55: -7256879109302027929
+      Celestia_56: 3139304219844678043
+      Celestia_57: -4293941629928995077
+      Celestia_58: -9211921666244354859
+      Celestia_59: 8685708059036072431
+      Celestia_6: -1260016188568863366
+      Celestia_60: 359678865602481156
+      Celestia_61: 116584498907562083
+      Celestia_62: -3588650359363007695
+      Celestia_63: 2655157299476170494
+      Celestia_64: 917283705223039982
+      Celestia_65: 6201276737194752352
+      Celestia_66: 6893745013248556612
+      Celestia_67: -3789416983729155313
+      Celestia_68: 4639474452611013651
+      Celestia_69: 3691421561813974709
+      Celestia_7: -2990824404075152614
+      Celestia_70: 8809150881672200541
+      Celestia_71: 4411681594729465616
+      Celestia_72: -629119184070480462
+      Celestia_73: -8209556406482840407
+      Celestia_74: 3096879355448475104
+      Celestia_75: 1156311851518924578
+      Celestia_76: -3895891572901791117
+      Celestia_77: -1680579764568661626
+      Celestia_78: 6973577821656430756
+      Celestia_79: 1335074174083459830
+      Celestia_8: -3933169630311894660
+      Celestia_80: 2400111641446598805
+      Celestia_81: 3889556625095959780
+      Celestia_82: 6496377608942787208
+      Celestia_83: 3535547324187228910
+      Celestia_84: -3128119480412718990
+      Celestia_85: 888618486172799917
+      Celestia_86: -7485556493592055891
+      Celestia_87: 4649988693859079792
+      Celestia_88: 8048981527894554398
+      Celestia_89: -8093453066090361699
+      Celestia_9: -2895783226378031653
+      Celestia_90: -6067444987900385648
+      Celestia_91: 2212407829266443572
+      Celestia_92: 8578281898436290706
+      Celestia_93: -8203112522876737123
+      Celestia_94: 2110427996826937958
+      Celestia_95: -1721793463115667697
+      Celestia_96: -7732203929226528064
+      Celestia_97: -6761230550048212444
+      Celestia_98: 3975558539753021900
+      Celestia_99: -6171454368123562418
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

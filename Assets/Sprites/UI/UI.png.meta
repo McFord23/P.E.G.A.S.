@@ -135,7 +135,7 @@ TextureImporter:
       213: -7867266084347359734
     second: Lil Junior Outline
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -156,6 +156,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -165,8 +166,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -187,11 +188,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -207,6 +211,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1112,6 +1128,49 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      6 Outline: 1652299931923453484
+      Arrow Layout: -273060469431498887
+      Background: -4814514297299439395
+      Big Outline: 6620621745411573659
+      Close: -1557013538026691241
+      Close Selected: -3947773304791079134
+      Control Layout Outline: 238177201661318622
+      Deco: 82707731993968007
+      Fill Area: -824557042417737680
+      Gamepad1 Layout: -4532114073746202998
+      Gamepad1 Off: 228940821244427079
+      Gamepad2 Layout: -343943630576144839
+      Gamepad2 Off: 9084407170249120912
+      Handle: -5055451889963847731
+      Handle Right Selected: -4464969597253999955
+      Handler Selected: -5481780447360278658
+      IJKL Layout: 8391660652416901024
+      Left Arrow: 7843416716369364892
+      Left Arrow Selected: -7543061489181569089
+      Lil Junior Outline: -7867266084347359734
+      Lil Outline: 388057999756033245
+      Mark x32: -9136572144232859775
+      Mark x32 Open: 1080825480604336155
+      Mark x42: 8586885197115800619
+      Mark x42 Open: 8160775752198118580
+      Mouse Layout: -8346291274449466048
+      Music Off: 2893844524057394724
+      Music On: -2343514708694829045
+      Numpad Layout: -6595680761151332689
+      Resume Off: 3560920895182511107
+      Resume On: 2421033810969775829
+      Right Arrow: 7448113381798972013
+      Settings On: -5583131565456696208
+      Settings off: -1734547207228286997
+      Small Outline: -256003546741158619
+      SoloMode: -1682551497440473549
+      Sound Off: -2338714880042470739
+      Sound On: 4529634503963134589
+      Swap: -3197610074630747010
+      TogetherMode: -6180191441002391703
+      WASD Layout: 9094600903545770030
+      empty: 7301787903208175943
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -723,7 +723,7 @@ TextureImporter:
       213: 2646968305925667680
     second: BoardMare_239
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -744,6 +744,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -753,8 +754,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -775,11 +776,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -795,6 +799,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
@@ -5858,6 +5874,247 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      BoardMare_0: -4903660505442985527
+      BoardMare_1: 4032218311957182019
+      BoardMare_10: -6924827012643843258
+      BoardMare_100: 3465062679525543275
+      BoardMare_101: 4125735049852772742
+      BoardMare_102: 9037299578292010758
+      BoardMare_103: 1392064898540548018
+      BoardMare_104: -6443043453817914272
+      BoardMare_105: -2716213079862615413
+      BoardMare_106: 793118228933129914
+      BoardMare_107: -3948920046997558044
+      BoardMare_108: -5002395659064011295
+      BoardMare_109: 8010328088442763756
+      BoardMare_11: 2018735702404367100
+      BoardMare_110: 3719433067684129928
+      BoardMare_111: -9220348263451795134
+      BoardMare_112: 3248023118140439117
+      BoardMare_113: -128099834240411544
+      BoardMare_114: -4668059955670913034
+      BoardMare_115: 7374706973575628625
+      BoardMare_116: 8854306029997769027
+      BoardMare_117: -5753281566395382107
+      BoardMare_118: -4875055853972236396
+      BoardMare_119: -2153277678911151825
+      BoardMare_12: 8627895846000119925
+      BoardMare_120: -7997547898090591921
+      BoardMare_121: -7565870275908612375
+      BoardMare_122: -280435981329081871
+      BoardMare_123: -4496843138175510902
+      BoardMare_124: -1287682949090408908
+      BoardMare_125: -2939886746608301759
+      BoardMare_126: 58873862792956110
+      BoardMare_127: -5680696083356664477
+      BoardMare_128: -5220818468523874761
+      BoardMare_129: 8315323498509869872
+      BoardMare_13: -5831088957099924186
+      BoardMare_130: -2679296627046938178
+      BoardMare_131: -368926575618468988
+      BoardMare_132: 6731722738971929211
+      BoardMare_133: -4170683702415644266
+      BoardMare_134: -3859731302935196251
+      BoardMare_135: -1716962120390167824
+      BoardMare_136: 8607353599591493171
+      BoardMare_137: 2586371409707123096
+      BoardMare_138: -5323280713357217848
+      BoardMare_139: -8434444225873326831
+      BoardMare_14: -4927782029816018155
+      BoardMare_140: -242859175893043025
+      BoardMare_141: 6655203597648411228
+      BoardMare_142: 4901177320513949075
+      BoardMare_143: 6259176076880889488
+      BoardMare_144: -1039104354467446397
+      BoardMare_145: -8058764788910808998
+      BoardMare_146: -8662214083092791265
+      BoardMare_147: -1919752447257872931
+      BoardMare_148: -1357077239444840013
+      BoardMare_149: -4273158049722541186
+      BoardMare_15: -1826932995928246350
+      BoardMare_150: -1702944030663219063
+      BoardMare_151: 1099417029876485030
+      BoardMare_152: -792290159839361284
+      BoardMare_153: -469991863420291072
+      BoardMare_154: 3766488752612678383
+      BoardMare_155: -1527178632335700586
+      BoardMare_156: 8714189221962262537
+      BoardMare_157: -176533550013526589
+      BoardMare_158: 2243250282687424237
+      BoardMare_159: 1440183454935010993
+      BoardMare_16: -5007234928773932676
+      BoardMare_160: -1998622878877889781
+      BoardMare_161: -6151067700330828964
+      BoardMare_162: -7748063020841651476
+      BoardMare_163: -417531390317073181
+      BoardMare_164: -1801571818444154222
+      BoardMare_165: -4365909803819057446
+      BoardMare_166: 573590272861655851
+      BoardMare_167: -4837216906593576819
+      BoardMare_168: -6364265469427193537
+      BoardMare_169: -8342840440306980111
+      BoardMare_17: -6786676928802417825
+      BoardMare_170: 900239735721936472
+      BoardMare_171: 7057925082001995556
+      BoardMare_172: -1415227373619320055
+      BoardMare_173: 7717596617863961695
+      BoardMare_174: -3120178041214644415
+      BoardMare_175: 7609718091386908391
+      BoardMare_176: -6421131523475695302
+      BoardMare_177: -5005319140672208205
+      BoardMare_178: 876253823644709638
+      BoardMare_179: 3899475026316385106
+      BoardMare_18: 9086882120049709967
+      BoardMare_180: -4098166698621130098
+      BoardMare_181: 7908945607553377143
+      BoardMare_182: -5695640235293224056
+      BoardMare_183: 9068705873927687684
+      BoardMare_184: -5630941653376275307
+      BoardMare_185: 5440851723892114269
+      BoardMare_186: 8896079785278919671
+      BoardMare_187: -1805072968749280194
+      BoardMare_188: 1736385494842783119
+      BoardMare_189: -3421762593078645591
+      BoardMare_19: 4297217187197832888
+      BoardMare_190: -4946545106873285555
+      BoardMare_191: 8922011591076172835
+      BoardMare_192: 9121781372310736144
+      BoardMare_193: -3264150608742723710
+      BoardMare_194: -3666110127787167701
+      BoardMare_195: 4082984669066818564
+      BoardMare_196: -7430060039549444185
+      BoardMare_197: -6896592447648340180
+      BoardMare_198: 7064325883335220224
+      BoardMare_199: -5562491852721538930
+      BoardMare_2: -8357505383482270043
+      BoardMare_20: -99484202554872391
+      BoardMare_200: 3298213195077594229
+      BoardMare_201: 5579510567411042355
+      BoardMare_202: 2793771911953437982
+      BoardMare_203: 8340350055015449751
+      BoardMare_204: -500428426871759595
+      BoardMare_205: -5574976532700337200
+      BoardMare_206: -8814727428199064019
+      BoardMare_207: -4773749181097425519
+      BoardMare_208: 7011436576899558207
+      BoardMare_209: 878693429697492793
+      BoardMare_21: 2809010403066487668
+      BoardMare_210: 2189853349068820110
+      BoardMare_211: -4094772915436997732
+      BoardMare_212: -4821922333575964828
+      BoardMare_213: -750823333701765081
+      BoardMare_214: -6147781433516933427
+      BoardMare_215: 1321356930813785297
+      BoardMare_216: 7839663018115634657
+      BoardMare_217: 5557508189576101395
+      BoardMare_218: 2162953334163344401
+      BoardMare_219: -3686690463800196562
+      BoardMare_22: -207665945929811073
+      BoardMare_220: 7781121975500611900
+      BoardMare_221: -1132303962338649348
+      BoardMare_222: -5352458181660937614
+      BoardMare_223: -261125472849281361
+      BoardMare_224: 8857208178381494583
+      BoardMare_225: 7697579683738638831
+      BoardMare_226: -6200578785007206778
+      BoardMare_227: 8091845502980693147
+      BoardMare_228: 8946020534006201819
+      BoardMare_229: -4632394828693865957
+      BoardMare_23: -851349674440432453
+      BoardMare_230: 4715641908680543459
+      BoardMare_231: -5210281601471171998
+      BoardMare_232: 7930480868112522803
+      BoardMare_233: -3264178349858161013
+      BoardMare_234: -7601984615957238372
+      BoardMare_235: -6998438986152040354
+      BoardMare_236: 8612059417461526393
+      BoardMare_237: 751862069502372014
+      BoardMare_238: 6001010985171352468
+      BoardMare_239: 2646968305925667680
+      BoardMare_24: -3721247000172056674
+      BoardMare_25: 6963736760484157916
+      BoardMare_26: -8395691181372451497
+      BoardMare_27: -647265682999440082
+      BoardMare_28: -4978972928971227394
+      BoardMare_29: -214724988144870544
+      BoardMare_3: -3226607755985078921
+      BoardMare_30: -4145227079740772678
+      BoardMare_31: -9059677608612214113
+      BoardMare_32: 160791459404700031
+      BoardMare_33: 1130473360858601569
+      BoardMare_34: 4446706186131377828
+      BoardMare_35: 6964706860841546708
+      BoardMare_36: -385654654028637570
+      BoardMare_37: 443435970281425560
+      BoardMare_38: 8560522681153098226
+      BoardMare_39: -2940923348601619377
+      BoardMare_4: 923130352661108569
+      BoardMare_40: 4155286084655573207
+      BoardMare_41: 5206741485693540757
+      BoardMare_42: -8189855389630413092
+      BoardMare_43: -201062666297867711
+      BoardMare_44: 1900159011601623786
+      BoardMare_45: -8870453751661630275
+      BoardMare_46: 8652992505681005731
+      BoardMare_47: 4082889814315911029
+      BoardMare_48: -5062469663229434969
+      BoardMare_49: -3065709181292532582
+      BoardMare_5: -5368169558769247687
+      BoardMare_50: -8376212873627615287
+      BoardMare_51: 5964836152724504009
+      BoardMare_52: 250865661444505664
+      BoardMare_53: 9139816873681297745
+      BoardMare_54: 3426397796729225170
+      BoardMare_55: 7319795106367544334
+      BoardMare_56: -6849745666498602157
+      BoardMare_57: 9028793754160233040
+      BoardMare_58: -4648778990953685636
+      BoardMare_59: 1564792347470909544
+      BoardMare_6: 1886609139254047903
+      BoardMare_60: 496043401600095053
+      BoardMare_61: 7960323609265347340
+      BoardMare_62: -3774496633639131135
+      BoardMare_63: -6693164525643557938
+      BoardMare_64: 6368847020074536508
+      BoardMare_65: -6235745013882870303
+      BoardMare_66: 1896499043835942983
+      BoardMare_67: -3510351032922754663
+      BoardMare_68: -1540321248443871121
+      BoardMare_69: -1351943610071924565
+      BoardMare_7: 6669386011524848694
+      BoardMare_70: 1656081688653793026
+      BoardMare_71: -5089119529964252834
+      BoardMare_72: -8663598361496618939
+      BoardMare_73: 6357537758665846393
+      BoardMare_74: 8549837051952329990
+      BoardMare_75: -7760986061221845832
+      BoardMare_76: -2043896458615947299
+      BoardMare_77: 3859502507683419845
+      BoardMare_78: -8945029177478496085
+      BoardMare_79: -7364331852699375996
+      BoardMare_8: -8635961311626277653
+      BoardMare_80: -8528986480588285230
+      BoardMare_81: 6515864814248492507
+      BoardMare_82: -8844900210516333165
+      BoardMare_83: 8065960439758632842
+      BoardMare_84: -1595449301580290303
+      BoardMare_85: -5857015957556293737
+      BoardMare_86: 7699644497217454736
+      BoardMare_87: 1302815536302600939
+      BoardMare_88: 3753855817369444148
+      BoardMare_89: -570073037076087189
+      BoardMare_9: 2257196411263730349
+      BoardMare_90: -4651718647004662597
+      BoardMare_91: 1633298786067013856
+      BoardMare_92: 8234680440448919264
+      BoardMare_93: -7440065726061392515
+      BoardMare_94: 709689731605873138
+      BoardMare_95: -276144252243302322
+      BoardMare_96: -2164757851608619181
+      BoardMare_97: -7697178011590811229
+      BoardMare_98: -8229007219548414670
+      BoardMare_99: -4209796607166353530
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

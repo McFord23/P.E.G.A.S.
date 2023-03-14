@@ -381,7 +381,7 @@ TextureImporter:
       213: -2754483757369113785
     second: Luna_125
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -402,6 +402,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -411,8 +412,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -433,11 +434,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -453,6 +457,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
@@ -3122,6 +3138,133 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Luna_0: 4125636645744980110
+      Luna_1: 758070524931626382
+      Luna_10: -8954064289739469767
+      Luna_100: -2234988743045864622
+      Luna_101: -4294102298238734719
+      Luna_102: 1672837330667813460
+      Luna_103: 3458519218434935784
+      Luna_104: -5363016642038197350
+      Luna_105: -7389916359905387281
+      Luna_106: -9181139911261819926
+      Luna_107: -8533840677563440317
+      Luna_108: 8415325028967459516
+      Luna_109: 7201556573243989470
+      Luna_11: -4429300474569075065
+      Luna_110: 1727190219220578711
+      Luna_111: 1039890926554623603
+      Luna_112: -3175268352694314190
+      Luna_113: 7040195771249589084
+      Luna_114: -5892905296915850635
+      Luna_115: 6376539624224547351
+      Luna_116: 1822219925855518282
+      Luna_117: 7860000101890636524
+      Luna_118: -4788530344256098810
+      Luna_119: 4835756145737054471
+      Luna_12: 8717921804991195124
+      Luna_120: -9001085632291402228
+      Luna_121: 4338884469744826617
+      Luna_122: 5320285166187704838
+      Luna_123: 5694183404439309474
+      Luna_124: -6042498846645045993
+      Luna_125: -2754483757369113785
+      Luna_13: 2844171513123577726
+      Luna_14: 6155896330953098514
+      Luna_15: 4012834483996816552
+      Luna_16: 2594390347345665518
+      Luna_17: 6409860838397712390
+      Luna_18: -5296373891017499536
+      Luna_19: 4732029981365864088
+      Luna_2: -3766068879812535546
+      Luna_20: 6033381033872992027
+      Luna_21: 5386866687792013048
+      Luna_22: 2953038323145682800
+      Luna_23: -1691776507492311908
+      Luna_24: 6004745488875973859
+      Luna_25: -1801166758312375367
+      Luna_26: 7039572375469680161
+      Luna_27: 1335391453675997648
+      Luna_28: 3691099896635581705
+      Luna_29: 4663003152737072081
+      Luna_3: -2009443300490716365
+      Luna_30: -8654873307931666533
+      Luna_31: -2380804569789769408
+      Luna_32: 4131873052734738510
+      Luna_33: 975765289243681733
+      Luna_34: -5307947420165095095
+      Luna_35: -8543496141862034773
+      Luna_36: 6782325532972281332
+      Luna_37: 7182135937751363328
+      Luna_38: -359194478061470907
+      Luna_39: 4909896034306413411
+      Luna_4: 1891900035898640601
+      Luna_40: 7280559273398578667
+      Luna_41: -7163365036641839684
+      Luna_42: 3041068698910763893
+      Luna_43: 6415419576736200035
+      Luna_44: 116954034919847137
+      Luna_45: -5923581794366823051
+      Luna_46: 7369949006779964479
+      Luna_47: -5016142219521300466
+      Luna_48: -7333641949188198629
+      Luna_49: -1149549611560256164
+      Luna_5: 6293139423444599005
+      Luna_50: -2062296677949759151
+      Luna_51: 7504687843523623248
+      Luna_52: -2251676763139022026
+      Luna_53: 6930828694795996146
+      Luna_54: -27173380962786052
+      Luna_55: 1773227360400972155
+      Luna_56: 3417992308481909029
+      Luna_57: 3860650875929741745
+      Luna_58: -2485585023701448456
+      Luna_59: 5549063837386625623
+      Luna_6: -1153376196279930185
+      Luna_60: 8742847148523902506
+      Luna_61: -496798658899484632
+      Luna_62: -6807675950134756434
+      Luna_63: 1904818744680347065
+      Luna_64: 591819598628264792
+      Luna_65: -4465285476150442149
+      Luna_66: -2684321556117253277
+      Luna_67: -7937470812523721091
+      Luna_68: 5528559899849711798
+      Luna_69: -6311080368119880954
+      Luna_7: 1183229404410161921
+      Luna_70: -1878740820153473502
+      Luna_71: 8162110541380122763
+      Luna_72: 7963240484285280441
+      Luna_73: -1099417197881393742
+      Luna_74: 1402011131132806370
+      Luna_75: 2627146732755020465
+      Luna_76: -6255179755669615819
+      Luna_77: 9041003321130007872
+      Luna_78: -458619944022082214
+      Luna_79: -30060528939436032
+      Luna_8: -8610921550061833882
+      Luna_80: -157912103314723836
+      Luna_81: -2646875287584536226
+      Luna_82: 2411582293792663436
+      Luna_83: -6894662144638651775
+      Luna_84: 1730799475893409039
+      Luna_85: 2654463413310281908
+      Luna_86: -6216595179885791665
+      Luna_87: 1749381728322322220
+      Luna_88: -4537522429678461516
+      Luna_89: 4305176376627793452
+      Luna_9: 8140417034703528508
+      Luna_90: -4526954559115270600
+      Luna_91: -9005145134377711762
+      Luna_92: -9159162402105954807
+      Luna_93: 4462349355565458232
+      Luna_94: 2091098660177718412
+      Luna_95: -4359045411433589648
+      Luna_96: 3660090090013706413
+      Luna_97: 419200415730559112
+      Luna_98: -5511440561424962105
+      Luna_99: 6589413566222424929
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
