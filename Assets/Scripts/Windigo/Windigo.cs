@@ -2,24 +2,21 @@
 
 public class Windigo : MonoBehaviour
 {
-    GameObject windigo;
     public float speed;
-    float angle;
 
     // Fly Physics
     public float wingSpan = 13.56f;
     public float wingArea = 78.04f;
-    float aspectRatio;
+    private float aspectRatio;
 
-    Vector2 spawnPos;
+    private Vector2 saveDirection;
+    private MoveState saveState;
 
-    Vector2 saveDirection;
-    MoveState saveState;
+    private Rigidbody2D rb;
+    private MoveState moveState;
 
-    Rigidbody2D rb;
-    MoveState moveState;
-    Animator animatorController;
-    public SoundController soundController;
+    private WindigosManager windigosManager;
+    private SoundController soundController;
 
     public enum MoveState
     {
@@ -30,54 +27,39 @@ public class Windigo : MonoBehaviour
         Winner
     }
 
-    public Heart heart;
-    bool haveHeart = false;
+    private CollectingItem item;
 
     public MoveState GetMoveState()
     {
         return moveState;
     }
 
-    void Start()
+    public void Start()
     {
-        windigo = transform.gameObject;
-        spawnPos = transform.position;
+        windigosManager = transform.parent.GetComponent<WindigosManager>();
+        soundController = windigosManager.soundController;
 
         rb = GetComponent<Rigidbody2D>();
         rb.drag = Mathf.Epsilon;
         aspectRatio = (wingSpan * wingSpan) / wingArea;
-        animatorController = GetComponentInChildren<Animator>();
         
         FreeFall();
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if (moveState == MoveState.Flap || moveState == MoveState.FreeFall)
         {
             FlyPhysics();
             Flap(speed);
         }
-
-        angle = transform.eulerAngles.z;
     }
 
     public void Reset()
     {
-        windigo.SetActive(true);
         moveState = MoveState.FreeFall;
-        windigo.layer = 9;
         rb.velocity = new Vector2(0, 0);
         rb.angularVelocity = 0f;
-        transform.right = Vector2.right;
-        transform.position = spawnPos;
-    }
-
-    public void Victory()
-    {
-        Dead();
-        windigo.layer = 8;
-        rb.AddForce(1000 * Vector3.right, ForceMode2D.Impulse);
     }
 
     public void Pause()
@@ -86,17 +68,14 @@ public class Windigo : MonoBehaviour
         saveDirection = rb.velocity;
 
         moveState = MoveState.Paused;
-        //animatorController.speed = 0;
 
         rb.gravityScale = 0f;
-        rb.constraints = RigidbodyConstraints2D.FreezePosition;
-        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
     public void Resume()
     {
         moveState = saveState;
-        //animatorController.speed = 1;
 
         rb.gravityScale = 1f;
         rb.constraints = RigidbodyConstraints2D.None;
@@ -106,7 +85,6 @@ public class Windigo : MonoBehaviour
     public void FreeFall()
     {
         moveState = MoveState.FreeFall;
-        //animatorController.Play("FreeFall");
     }
 
     public void Flap(float flapForce)
@@ -114,14 +92,12 @@ public class Windigo : MonoBehaviour
         float gear;
 
         moveState = MoveState.Flap;
-        //animatorController.Play("Flap");
 
         gear = (speed < 20) ? 2 : 1;
         rb.AddForce(transform.right * gear * flapForce);
-        //soundController.Flap();
     }
 
-    void FlyPhysics()
+    private void FlyPhysics()
     {
         var localVelocity = transform.InverseTransformDirection(rb.velocity);
         var angleOfAttack = Mathf.Atan2(localVelocity.y, localVelocity.x);
@@ -140,31 +116,38 @@ public class Windigo : MonoBehaviour
         rb.AddForce(liftDirection * lift + dragDirection * drag);
     }
 
-    public void SetHeart(bool var)
-    {
-        haveHeart = var;
-    }
-
-    void Dead()
+    private void Dead()
     {
         soundController.Hit();
-        windigo.layer = 8;
+        gameObject.layer = 8;
         moveState = MoveState.Dead;
 
-        if (haveHeart) SetHeart(false);
-        heart.DropTarget();
+        if (item != null)
+        {
+            item.Drop();
+            item = null;
+        }
     }
 
     public void Destroy()
     {
         if (moveState == MoveState.Dead)
         {
-            windigo.SetActive(false);
+            windigosManager.Remove(this);
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         Dead();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("Item") && item == null && moveState != MoveState.Dead)
+        {
+            item = collider.gameObject.GetComponent<CollectingItem>();
+            item.Pickup(transform);
+        }
     }
 }

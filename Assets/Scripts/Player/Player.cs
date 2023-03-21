@@ -7,22 +7,20 @@ public class Player : MonoBehaviour
     public float angleOfAttack;
     public bool landed;
 
-    bool haveHeart = false;
-
     public Vector2 spawnPos;
 
-    Vector2 saveDirection;
-    MoveState saveState;
+    private Vector2 saveDirection;
+    private MoveState saveState;
 
-    public Rigidbody2D rb;
-    PolygonCollider2D flyCollider;
-    CapsuleCollider2D deathCollider;
-    CircleCollider2D[] rideCollider = new CircleCollider2D[2];
+    public Rigidbody2D rb { private set; get; }
+    private PolygonCollider2D flyCollider;
+    private CapsuleCollider2D deathCollider;
+    private CircleCollider2D[] rideColliders = new CircleCollider2D[2];
 
     public MoveState moveState;
-    Animator animatorController;
+    private Animator animatorController;
     public SoundController soundController;
-    PlayersController playersController;
+    private PlayersController playersController;
 
     public enum MoveState
     {
@@ -36,19 +34,14 @@ public class Player : MonoBehaviour
         Winner
     }
 
-    Heart heart;
-
-    // Dev ops
-    public bool godnessMode = false;
-    public bool deathIndicator = false;
-    public bool pullClick = false;
+    private CollectingItem item;
 
     // Fly Physics
     public float wingSpan = 13.56f;
     public float wingArea = 78.04f;
-    float aspectRatio;
+    private float aspectRatio;
 
-    void Start()
+    private void Start()
     {
         spawnPos = transform.position;
 
@@ -57,18 +50,16 @@ public class Player : MonoBehaviour
         aspectRatio = (wingSpan * wingSpan) / wingArea;
         flyCollider = GetComponentInChildren<PolygonCollider2D>();
         deathCollider = GetComponentInChildren<CapsuleCollider2D>();
-        rideCollider = GetComponentsInChildren<CircleCollider2D>();
+        rideColliders = GetComponentsInChildren<CircleCollider2D>();
 
         animatorController = GetComponentInChildren<Animator>();
         playersController = GetComponentInParent<PlayersController>();
 
         if (landed) Idle();
         else FreeFall();
-
-        heart = playersController.heart;
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if (moveState == MoveState.Idle || moveState == MoveState.Run)
         {
@@ -83,11 +74,11 @@ public class Player : MonoBehaviour
         if (moveState == MoveState.Dead)
         {
             if (landed) rb.drag = 3f;
-            else rb.drag = 1f;
+            else rb.drag = 0.3f;
         }
 
-        if (rb.velocity.x > 0.01) transform.localScale = new Vector3(1, 1, 1);
-        else if (rb.velocity.x < -0.01) transform.localScale = new Vector3(1, -1, 1);
+        if (rb.velocity.x > 0.0001f && transform.localScale.y == -1) transform.localScale = new Vector3(1, 1, 1);
+        else if (rb.velocity.x < -0.0001f && transform.localScale.y == 1) transform.localScale = new Vector3(1, -1, 1);
 
         speed = rb.velocity.magnitude;
         angle = transform.eulerAngles.z;
@@ -98,20 +89,28 @@ public class Player : MonoBehaviour
         transform.localScale = new Vector3(1, 1, 1);
         rb.velocity = new Vector2(0, 0);
         rb.drag = Mathf.Epsilon;
+        rb.angularDrag = 2.5f;
         rb.angularVelocity = 0f;
         transform.right = Vector2.right;
         transform.position = spawnPos;
+
+        if (item != null)
+        {
+            item.Drop();
+            item = null;
+        }
+
         Resurrect();
-        haveHeart = false;
     }
 
     public void Resurrect()
     {
         deathCollider.enabled = false;
-        foreach (CircleCollider2D collider in rideCollider)
+        foreach (CircleCollider2D collider in rideColliders)
         {
             collider.enabled = true;
         }
+
         Idle();
     }
 
@@ -134,8 +133,7 @@ public class Player : MonoBehaviour
         animatorController.speed = 0;
 
         rb.gravityScale = 0f;
-        rb.constraints = RigidbodyConstraints2D.FreezePosition;
-        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
     public void Resume()
@@ -164,13 +162,13 @@ public class Player : MonoBehaviour
         if (landed) rb.AddForce(transform.right * gear * torque);
     }
 
-    void RidePhysics()
+    private void RidePhysics()
     {
         var friction = (landed) ? -0.3f : 0f;
         if (moveState == MoveState.Idle) friction = -rb.mass;
         
         var drag = 0.021f * rb.velocity.sqrMagnitude;
-        var dragDirection = -(Vector2)rb.velocity.normalized;
+        var dragDirection = -rb.velocity.normalized;
 
         rb.AddForce(dragDirection * drag + rb.velocity * friction);
     }
@@ -192,7 +190,7 @@ public class Player : MonoBehaviour
         rb.AddForce(transform.right * gear * flapForce);
     }
 
-    void FlyPhysics()
+    private void FlyPhysics()
     {
         var localVelocity = transform.InverseTransformDirection(rb.velocity);
         angleOfAttack = Mathf.Atan2(localVelocity.y, localVelocity.x);
@@ -211,97 +209,62 @@ public class Player : MonoBehaviour
         rb.AddForce(liftDirection * lift + dragDirection * drag);
     }
 
-    void GravityRotation()
-    {
-        var gravityRotation = 1 / (1 + speed);
-        if (((transform.eulerAngles.z > 300f) && (transform.eulerAngles.z < 360f)) || ((transform.eulerAngles.z > 0f) && (transform.eulerAngles.z < 90f)))
-        {
-            transform.Rotate(0f, 0f, -2.5f * gravityRotation);
-            //rb.AddTorque(-500f * gravityRotation);
-        }
-        else if ((transform.eulerAngles.z > 90f) && (transform.eulerAngles.z < 240f))
-        {
-            transform.Rotate(0f, 0f, 2.5f * gravityRotation);
-            //rb.AddTorque(500f * gravityRotation);
-        }
-        /*else
-        {
-            rb.angularVelocity = 0;
-        }*/
-    }
-
     public void Dead()
     {
-        if (!godnessMode)
-        {
-            moveState = MoveState.Dead;
-            deathCollider.enabled = true;
-            flyCollider.enabled = false;
-            animatorController.Play("Dead");
-            rb.gravityScale = 1f;
-            
-            playersController.Dead();
+        moveState = MoveState.Dead;
+        deathCollider.enabled = true;
+        flyCollider.enabled = false;
+        animatorController.Play("Dead");
+        rb.gravityScale = 1f;
+        rb.angularDrag = 0.3f;
 
-            if (haveHeart) SetHeart(false);
-            heart.DropTarget();
+        playersController.Dead();
+
+        if (item != null)
+        {
+            item.Drop();
+            item = null;
         }
     }
 
-    public void SetHeart(bool var)
-    {
-        haveHeart = var;
-    }
-
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            landed = true;
-        }
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if ((moveState != MoveState.Idle) && (moveState != MoveState.Run))
         {
-            if (!collision.gameObject.CompareTag("Player"))
+            soundController.Hit();
+            if (moveState != MoveState.Dead) Dead();
+        }
+        else
+        {
+            if (collision.gameObject.CompareTag("Ground"))
             {
-                if (!godnessMode && (moveState != MoveState.Dead))
-                {
-                    Dead();
-                }
-                soundController.Hit();
-
-                // DevOps.Pull()
-                deathIndicator = true;
+                landed = true;
             }
         }
     }
 
-    void OnCollisionExit2D()
+    private void OnCollisionExit2D()
     {
-        // DevOps.Pull()
-        deathIndicator = false;
         landed = false;
 
         if (moveState == MoveState.Idle || moveState == MoveState.Run)
         {
-            foreach (CircleCollider2D collider in rideCollider)
+            foreach (CircleCollider2D rideCollider in rideColliders)
             {
-                collider.enabled = false;
+                rideCollider.enabled = false;
             }
+
             flyCollider.enabled = true;
             FreeFall();
         }
     }
 
-    void OnMouseDown()
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        pullClick = true;
-    }
-
-    void OnMouseUp()
-    {
-        pullClick = false;
+        if (collider.gameObject.CompareTag("Item") && item == null && moveState != MoveState.Dead)
+        {
+            item = collider.gameObject.GetComponent<CollectingItem>();
+            item.Pickup(transform);
+        }
     }
 }

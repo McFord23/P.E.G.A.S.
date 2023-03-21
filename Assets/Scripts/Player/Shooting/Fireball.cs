@@ -2,24 +2,21 @@
 
 public class Fireball : MonoBehaviour
 {
-    GameObject fireball;
+    private GameObject fireball;
 
-    void Start()
+    private void Start()
     {
         fireball = transform.gameObject;
         Invoke("AutoDestroy", 1.0f);
     }
 
-    void AutoDestroy()
+    private void AutoDestroy()
     {
         Destroy(fireball);
     }
 
-    void OnTriggerEnter2D(Collider2D collider)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!collider.gameObject.CompareTag("Fireball") && !collider.gameObject.CompareTag("Layer") && !collider.gameObject.CompareTag("Heart"))
-        {
-            Destroy(fireball);
-        }
+        Destroy(fireball);
     }
 }

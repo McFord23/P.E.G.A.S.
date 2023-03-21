@@ -76,7 +76,7 @@ public class SoundController : MonoBehaviour
 
     void HeadwindVolume()
     {
-        headwindSound.volume = Mathf.Pow(playersController.GetPlayerSpeed(), 2) / 4000f;
+        headwindSound.volume = Mathf.Pow(playersController.GetSpeed(), 2) / 4000f;
     }
 
     public void PlayTurnPageSound()

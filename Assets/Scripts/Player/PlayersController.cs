@@ -4,22 +4,20 @@ using UnityEngine.Events;
 
 public class PlayersController : MonoBehaviour
 {
-    GameObject celestia;
-    GameObject luna;
+    private GameObject celestia;
+    private GameObject luna;
 
-    Player player1;
-    PlayerController player1Controller;
+    private Player player1;
+    private PlayerController player1Controller;
 
-    Player player2;
-    PlayerController player2Controller;
+    private Player player2;
+    private PlayerController player2Controller;
 
-    Player survivor;
+    private Player survivor;
 
-    float gas = 0f;
-    float rotate = 0f;
-    float shoot = 0f;
-
-    public Heart heart;
+    private float gas = 0f;
+    private float rotate = 0f;
+    private float shoot = 0f;
 
     public UnityEvent PauseEvent;
     public UnityEvent ResumeEvent;
@@ -27,18 +25,28 @@ public class PlayersController : MonoBehaviour
     public UnityEvent ResetEvent;
     public UnityEvent VictoryEvent;
 
-    void Start()
+    private void Start()
     {
         celestia = transform.Find("Celestia").gameObject;
         luna = transform.Find("Luna").gameObject;
         UpdateCharacter();
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            Reset();
+            if (player1.moveState != Player.MoveState.Paused && player1.moveState != Player.MoveState.Winner)
+            {
+                if (!Save.TogetherMode)
+                {
+                    Reset();
+                }
+                else if (player2.moveState != Player.MoveState.Paused && player2.moveState != Player.MoveState.Winner)
+                {
+                    Reset();
+                }
+            }
         }
 
         if (Save.TogetherMode)
@@ -157,26 +165,26 @@ public class PlayersController : MonoBehaviour
         {
             if (player1.moveState == Player.MoveState.Dead && player2.moveState != Player.MoveState.Dead)
             {
-                if (GetDistanceBetweenPlayers() > CameraController.maxSize) return player2.transform.position;
-                else return new Vector3((player1.transform.position.x + player2.transform.position.x) / 2, (player1.transform.position.y + player2.transform.position.y) / 2, 0);
+                if (GetDistanceBetweenPlayers() > CameraController.maxSize) return player2.rb.position;
+                else return new Vector3((player1.rb.position.x + player2.rb.position.x) / 2, (player1.rb.position.y + player2.rb.position.y) / 2, 0);
             }
             else if (player2.moveState == Player.MoveState.Dead && player1.moveState != Player.MoveState.Dead)
             {
                 if (GetDistanceBetweenPlayers() > CameraController.maxSize) return player1.transform.position;
-                else return new Vector3((player1.transform.position.x + player2.transform.position.x) / 2, (player1.transform.position.y + player2.transform.position.y) / 2, 0);
+                else return new Vector3((player1.rb.position.x + player2.rb.position.x) / 2, (player1.rb.position.y + player2.rb.position.y) / 2, 0);
             }
             else if (player1.moveState == Player.MoveState.Dead && player2.moveState == Player.MoveState.Dead)
             {
-                return survivor.transform.position;
+                return survivor.rb.position;
             }
             else
             {
-                return new Vector3((player1.transform.position.x + player2.transform.position.x) / 2, (player1.transform.position.y + player2.transform.position.y) / 2, 0);
+                return new Vector3((player1.rb.position.x + player2.rb.position.x) / 2, (player1.rb.position.y + player2.rb.position.y) / 2, 0);
             }
         }
         else
         {
-            return player1.transform.position;
+            return player1.rb.position;
         }
     }
 
@@ -185,16 +193,16 @@ public class PlayersController : MonoBehaviour
         switch (i)
         {
             case 1:
-                return player1.transform.position;
+                return player1.rb.position;
             case 2:
-                return player1.transform.position;
+                return player1.rb.position;
             default: throw new ArgumentException("Invalid player index: ");
         }
     }
 
     float GetDistanceBetweenPlayers()
     {
-        var vector = player1.transform.position - player2.transform.position;
+        var vector = player1.rb.position - player2.rb.position;
         return Mathf.Abs(vector.magnitude);
     }
 
@@ -202,13 +210,13 @@ public class PlayersController : MonoBehaviour
     {
         if (player1.moveState == Player.MoveState.Dead || player2.moveState == Player.MoveState.Dead)
         {
-            if (GetDistanceBetweenPlayers() <= CameraController.maxSize) return GetDistanceBetweenPlayers();
-            else return CameraController.flySize;
+            if (GetDistanceBetweenPlayers() > CameraController.maxSize) return CameraController.flySize;
+            else return GetDistanceBetweenPlayers();
         }
         else return GetDistanceBetweenPlayers();
     }
 
-    public float GetPlayerSpeed()
+    public float GetSpeed()
     {
         if(Save.TogetherMode)
         {
@@ -220,7 +228,7 @@ public class PlayersController : MonoBehaviour
         }
     }
 
-    public float GetPlayerDirection()
+    public float GetDirection()
     {
         if (Save.TogetherMode)
         {
@@ -232,7 +240,7 @@ public class PlayersController : MonoBehaviour
             {
                 return player1.transform.localScale.y;
             }
-            else return 0;
+            else return player1.transform.localScale.y;
         }
         else
         {

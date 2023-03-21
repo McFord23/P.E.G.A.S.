@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
                 player.Run((gasInput) * wingPower);
             }
 
-            transform.Rotate(0f, 0f, rotateInput * player.speed / player.rb.mass);
+            player.rb.AddTorque(250f * rotateInput * player.speed / player.rb.mass);
         }
 
         if (player.moveState == Player.MoveState.Flap || player.moveState == Player.MoveState.FreeFall)
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
                 player.Flap(gasInput * wingPower);
             }
 
-            transform.Rotate(0f, 0f, rotateInput);
+            player.rb.AddTorque(250f * rotateInput);
         }
     }
 

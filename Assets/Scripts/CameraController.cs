@@ -3,20 +3,31 @@
 public class CameraController : MonoBehaviour
 {
     public PlayersController playersController;
+    private Rigidbody2D rb;
 
-    string mode = "fly";
-    Vector3 playerOffset;
-    Vector3 interfaceOffset;
-    Vector3 mapOffset;
+    private Mode mode;
 
-    public static float maxSize = 42f; // ort = 25
-    public static float flySize = 22f; // ort = 13
-    public static float minSize = 10f; // ort = 5
-    float size;
-    float zoomSpeed = 0.5f;
-
-    void Start()
+    public enum Mode
     {
+        Fly,
+        Player
+    }
+
+    private Vector3 playerOffset;
+    private Vector3 interfaceOffset;
+    private Vector3 mapOffset;
+    private float moveSpeed = 0.1f;
+
+    public static float maxSize = 90f; // ort = 25
+    public static float flySize = 60f; // ort = 13
+    public static float minSize = 30f; // ort = 5
+    private float size;
+    private float zoomSpeed = 0.01f;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+
         mapOffset = new Vector3(0, 0, -10);
         playerOffset = new Vector3(10, 0, 0);
         interfaceOffset = new Vector3(1.25f, 0, -10);
@@ -24,67 +35,60 @@ public class CameraController : MonoBehaviour
         size = flySize;
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
+        Vector3 target = transform.position;
+
         switch (mode)
         {
-            case "fly":
-                if (playersController.GetPlayerDirection() > 0) playerOffset = new Vector3(10, 0, 0);
-                else if (playersController.GetPlayerDirection() < 0) playerOffset = new Vector3(-10, 0, 0);
+            case Mode.Fly:
+                if (playersController.GetDirection() > 0) playerOffset = new Vector3(10, 0, 0);
+                else if (playersController.GetDirection() < 0) playerOffset = new Vector3(-10, 0, 0);
 
                 if (Save.TogetherMode)
                 {
                     if (Save.Player1.live && Save.Player2.live)
                     {
-                        transform.position = Vector3.Lerp(transform.position, playersController.GetPlayerPosition() + mapOffset, playersController.GetPlayerSpeed());
+                        target = Vector3.Lerp(rb.position, playersController.GetPlayerPosition() + mapOffset, playersController.GetSpeed());
                     }
                     else
                     {
-                        transform.position = Vector3.Lerp(transform.position, playersController.GetPlayerPosition() + playerOffset + mapOffset, Time.deltaTime * 5f);
+                        target = Vector3.Lerp(rb.position, playersController.GetPlayerPosition() + playerOffset + mapOffset, moveSpeed);
                     }
 
                     var focusSize = playersController.GetFocusSize();
                     if (focusSize > maxSize) size = maxSize;
                     else if (focusSize >= flySize) size = focusSize;
                     else size = flySize;
-
                 }
                 else
                 {
-
-                    transform.position = Vector3.Lerp(transform.position, playersController.GetPlayerPosition() + playerOffset + mapOffset, Time.deltaTime * 5f);
-                    if (size < flySize) size += zoomSpeed;
-
+                    target = Vector3.Lerp(rb.position, playersController.GetPlayerPosition() + playerOffset + mapOffset, moveSpeed);
+                    size = flySize;
                 }
                 break;
-            case "player":
-                transform.position = Vector3.Lerp(transform.position, playersController.GetPlayerPosition() + interfaceOffset, Time.deltaTime * 5f);
+
+            case Mode.Player:
+                target = Vector3.Lerp(rb.position, playersController.GetPlayerPosition() + interfaceOffset, moveSpeed);
+
                 if (!Save.TogetherMode)
                 {
-                    if (size > minSize) size -= zoomSpeed;
+                    size = minSize;
                 }
-                break;
-            case "heart":
-                transform.position = Vector3.Lerp(transform.position, playersController.heart.transform.position + interfaceOffset, Time.deltaTime * 5f);
-                if (size > minSize) size -= zoomSpeed;
                 break;
         }
 
-        Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, -size);
+        rb.MovePosition(target);
+        Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, size, zoomSpeed);
     }
 
     public void FocusOnFly()
     {
-        mode = "fly";
+        mode = Mode.Fly;
     }
 
     public void FocusOnPlayer()
     {
-        mode = "player";
-    }
-
-    public void FocusOnHeart()
-    {
-        mode = "heart";
+        mode = Mode.Player;
     }
 }

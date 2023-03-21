@@ -6,11 +6,9 @@ TagManager:
   tags:
   - Barrier
   - Rain
-  - Fireball
   - Ground
-  - Layer
   - Windigo
-  - Heart
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -19,12 +17,12 @@ TagManager:
   - Water
   - UI
   - 
-  - 
+  - Fireball
   - Player
   - Windigo
   - MacGaffin
   - Finish
-  - 
+  - Background
   - 
   - 
   - 

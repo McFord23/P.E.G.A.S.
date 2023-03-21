@@ -1,18 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class HeadwindEffect : MonoBehaviour
 {
     public PlayersController playersController;
-    float ratio;
-    Vector3 offset;
+    private float ratio;
+    private Vector3 offset;
 
-    ParticleSystem headwind;
-    ParticleSystem.MainModule main;
-    ParticleSystem.EmissionModule emission;
+    private ParticleSystem headwind;
+    private ParticleSystem.MainModule main;
+    private ParticleSystem.EmissionModule emission;
 
-    void Start()
+    private void Start()
     {
         headwind = GetComponent<ParticleSystem>();
 
@@ -22,11 +20,17 @@ public class HeadwindEffect : MonoBehaviour
         offset = transform.position - Camera.main.transform.position;
     }
 
-    void Update()
+    private void Update()
     {
-        ratio = playersController.GetPlayerSpeed() / 150f;
+        ratio = playersController.GetSpeed() / 150f;
         main.startSpeed = ratio * 100;
         emission.rateOverTime = ratio * 250;
-        transform.position = new Vector3(Camera.main.transform.position.x + offset.x, transform.position.y, 0);
+
+        float x = Camera.main.transform.position.x + playersController.GetDirection() * offset.x;
+        transform.position = new Vector3(x, transform.position.y, 0);
+
+        Quaternion rot = transform.rotation;
+        rot.eulerAngles = new Vector3(0, playersController.GetDirection() * -90, 0);
+        transform.rotation = rot;
     }
 }
