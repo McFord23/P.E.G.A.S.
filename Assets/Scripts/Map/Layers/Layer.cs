@@ -20,7 +20,7 @@ public class Layer : MonoBehaviour
     
    void FixedUpdate()
     {
-        position = Vector3.right * speed * Time.deltaTime;
+        position = Vector3.right * (speed * Time.deltaTime);
         transform.position -= position;
     }
 

@@ -1,8 +1,8 @@
-﻿using System.Runtime.InteropServices.ComTypes;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
-public class SoundController : MonoBehaviour
+public class SoundController : SingletonBehaviour<SoundController>
 {
     Transform flap;
     AudioSource flapSound;
@@ -18,11 +18,13 @@ public class SoundController : MonoBehaviour
     AudioSource headwindSound;
     AudioSource turnPageSound;
 
-    public PlayersController playersController;
+    [FormerlySerializedAs("playersController")] 
+    public PlayersManager playersManager;
     string scene;
 
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         scene = SceneManager.GetActiveScene().name;
 
         switch (scene)
@@ -52,7 +54,7 @@ public class SoundController : MonoBehaviour
         turnPageSound = transform.Find("Turn Page").gameObject.GetComponent<AudioSource>();
     }
 
-    void Update()
+    private void Update()
     {
         switch (scene)
         {
@@ -76,7 +78,7 @@ public class SoundController : MonoBehaviour
 
     void HeadwindVolume()
     {
-        headwindSound.volume = Mathf.Pow(playersController.GetPlayerSpeed(), 2) / 4000f;
+        headwindSound.volume = Mathf.Pow(playersManager.GetPlayerSpeed(), 2) / 4000f;
     }
 
     public void PlayTurnPageSound()

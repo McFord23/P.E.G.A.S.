@@ -1,17 +1,28 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour
+public class MainMenu : NetworkBehaviour
 {
     public void Play()
     {
-        SceneManager.LoadScene("Game");
+        if (IsClient)
+        {
+            RequestLoadSceneServerRpc();
+        }
+        else
+        {
+            SceneManagerAdapter.LoadScene("Game");
+        }
     }
 
     public void Exit()
     {
         Application.Quit();
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void RequestLoadSceneServerRpc()
+    {
+        SceneManagerAdapter.LoadScene("Game");
     }
 }

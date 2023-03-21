@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Enums;
 using UnityEngine;
-using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class MusicController : MonoBehaviour
@@ -36,13 +34,13 @@ public class MusicController : MonoBehaviour
                 celestiaMenuLoop = transform.Find("Celestia Menu (loop)").GetComponentInChildren<AudioSource>();
                 lunaMenu = transform.Find("Luna Menu").GetComponentInChildren<AudioSource>();
 
-                switch (Save.Player1.character)
+                switch (Save.players[0].character)
                 {
-                    case "Luna":
+                    case Character.Luna:
                         menuMusic = lunaMenu;
                         break;
 
-                    case "Celestia":
+                    case Character.Celestia:
                         menuMusic = celestiaMenuStart;
                         break;
                 }
@@ -58,14 +56,14 @@ public class MusicController : MonoBehaviour
                 celestiaPause = transform.Find("Celestia Pause").GetComponentInChildren<AudioSource>();
                 victoryMusic = transform.Find("Victory").GetComponentInChildren<AudioSource>();
 
-                switch (Save.Player1.character)
+                switch (Save.players[0].character)
                 {
-                    case "Luna":
+                    case Character.Luna:
                         flyingMusic = lunaFlying;
                         pauseMusic = lunaPause;
                         break;
 
-                    case "Celestia":
+                    case Character.Celestia:
                         flyingMusic = celestiaFlyingStart;
                         pauseMusic = celestiaPause;
                         break;
@@ -85,7 +83,7 @@ public class MusicController : MonoBehaviour
         switch (scene)
         {
             case "Main Menu":
-                if (Save.Player1.character == "Celestia" && !menuMusic.isPlaying)
+                if (Save.players[0].character == Character.Celestia && !menuMusic.isPlaying)
                 {
                     menuMusic.Stop();
                     menuMusic = celestiaMenuLoop;
@@ -94,7 +92,7 @@ public class MusicController : MonoBehaviour
                 break;
 
             case "Game":
-                if (Save.Player1.character == "Celestia" && !(flyingMusic.loop) && (flyingMusic.time >= 116.5f))
+                if (Save.players[0].character == Character.Celestia && !(flyingMusic.loop) && (flyingMusic.time >= 116.5f))
                 {
                     flyingMusic.Stop();
                     flyingMusic = celestiaFlyingLoop;
@@ -104,18 +102,18 @@ public class MusicController : MonoBehaviour
         }
     }
 
-    public void ChangeTheme(string theme)
+    public void ChangeTheme(Character theme)
     {
         flyingMusic.Stop();
         
         switch (theme)
         {
-            case "Luna":
+            case Character.Luna:
                 flyingMusic = lunaFlying;
                 pauseMusic = lunaPause;
                 break;
 
-            case "Celestia":
+            case Character.Celestia:
                 flyingMusic = celestiaFlyingStart;
                 pauseMusic = celestiaPause;
                 break;

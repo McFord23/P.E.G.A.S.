@@ -1,13 +1,14 @@
-﻿using UnityEngine;
+﻿using Enums;
+using UnityEngine;
 
 public class Thermaldome : MonoBehaviour
 {
-    public PlayersController players;
+    public PlayersManager players;
 
     void Update()
     {
         if (GetDistance(1) > 225) players.KillPlayer(1);
-        if (Save.TogetherMode && GetDistance(2) > 225) players.KillPlayer(2);
+        if (Save.gameMode != GameMode.Single && GetDistance(2) > 225) players.KillPlayer(2);
     }
 
     float GetDistance(int player)

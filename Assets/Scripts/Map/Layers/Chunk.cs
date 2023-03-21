@@ -12,11 +12,11 @@ public class Chunk : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.CompareTag("Player"))
-        {
-            var direction = collider.transform.parent.GetComponentInParent<PlayersController>().GetPlayerDirection();
-            layerController.UploadChunks(transform.gameObject, direction);
-        }
+        if (!collider.gameObject.CompareTag("Player")) 
+            return;
+        
+        var direction = collider.transform.localScale.y;
+        layerController.UploadChunks(transform.gameObject, direction);
     }
 
     void SetTransparency()
@@ -26,7 +26,7 @@ public class Chunk : MonoBehaviour
 
         for (int i = 0; i < transform.childCount; i++)
         {
-            material = transform.GetChild(i).gameObject.GetComponent<Renderer>().material;
+            material = transform.GetChild(i).GetComponent<Renderer>().material;
             color = material.color;
             color.a = layerController.transparency;
             material.color = color;

@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class DeadMenu : MonoBehaviour
 {
@@ -10,7 +8,8 @@ public class DeadMenu : MonoBehaviour
     GameObject menu;
     UnityEvent MenuDisabledEvent;
 
-    public PlayersController playersController;
+    [FormerlySerializedAs("playersController")] 
+    public PlayersManager playersManager;
 
     void Start()
     {
@@ -29,7 +28,7 @@ public class DeadMenu : MonoBehaviour
 
     public void Retry()
     {
-        playersController.Reset();
+        playersManager.Reset();
         MenuDisabledEvent.Invoke();
         deadMenu.SetActive(false);
         menu.SetActive(false);
@@ -37,8 +36,8 @@ public class DeadMenu : MonoBehaviour
 
     public void Exit()
     {
-        Save.Player1.live = true;
-        Save.Player2.live = true;
-        SceneManager.LoadScene("Main Menu");
+        Save.players[0].live = true;
+        Save.players[1].live = true;
+        SceneManagerAdapter.LoadScene("Main Menu");
     }
 }

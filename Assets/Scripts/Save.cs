@@ -1,22 +1,34 @@
-﻿public static class Save
+﻿using Enums;
+
+public static class Save
 {
-    public static bool TogetherMode = false;
+    public static GameMode gameMode = GameMode.Single;
 
-    public struct Player1
+    public struct Player
     {
-        public static string character = "Celestia";
-        public static string controlLayout = "mouse";
-        public static int gamepad = 1;
-        public static bool live = true;
+        public Character character;
+        public ControlLayout controlLayout;
+        public int gamepad;
+        public bool live;
     }
 
-    public struct Player2
+    public static Player[] players =
     {
-        public static string character = "Luna";
-        public static string controlLayout = "numpad";
-        public static int gamepad = 2;
-        public static bool live = true;
-    }
+        new()
+        {
+            character = Character.Celestia, 
+            controlLayout = ControlLayout.Mouse,
+            gamepad = 1,
+            live = true
+        },
+        new()
+        {
+            character = Character.Luna,
+            controlLayout = ControlLayout.Numpad,
+            gamepad = 2,
+            live = true
+        }
+    };
     
     public struct Sensitivity
     {

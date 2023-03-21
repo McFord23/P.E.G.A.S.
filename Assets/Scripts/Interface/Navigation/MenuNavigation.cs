@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Enums;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -32,7 +32,7 @@ public class MenuNavigation : MonoBehaviour
 
     void Start()
     {
-        if (Save.TogetherMode) SetTogetherMenuNavigation();
+        if (Save.gameMode != GameMode.Single) SetTogetherMenuNavigation();
         else SetSoloMenuNavigation();
     }
 
@@ -106,8 +106,7 @@ public class MenuNavigation : MonoBehaviour
                 SetMarkNavigation(settingsButtons[0]);
                 break;
             case "Players":
-                if (Save.TogetherMode) SetMarkNavigation(togetherButtons[0]);
-                else SetMarkNavigation(soloButtons[0]);
+                SetMarkNavigation(Save.gameMode != GameMode.Single ? togetherButtons[0] : soloButtons[0]);
                 break;
         }
     }

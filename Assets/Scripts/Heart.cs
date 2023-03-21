@@ -34,7 +34,7 @@ public class Heart : MonoBehaviour
         {
             if (collider.gameObject.CompareTag("Player"))
             {
-                if (collider.gameObject.transform.parent.GetComponent<Player>().moveState != Player.MoveState.Dead)
+                if (collider.gameObject.transform.parent.GetComponent<Player>().moveState != MoveState.Dead)
                 {
                     target = collider.gameObject;
                 }
