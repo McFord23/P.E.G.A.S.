@@ -48,8 +48,6 @@ public class Background : MonoBehaviour
 
     private void SwapSpawnPoint()
     {
-        Vector3 temp = spawnPosCC;
-        spawnPosCC = spawnPosNC;
-        spawnPosNC = temp;
+        (spawnPosCC, spawnPosNC) = (spawnPosNC, spawnPosCC);
     }
 }

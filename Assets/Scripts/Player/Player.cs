@@ -1,6 +1,7 @@
+using Unity.Netcode;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : NetworkBehaviour
 {
     public float speed;
     public float angle;
@@ -18,21 +19,10 @@ public class Player : MonoBehaviour
     private CircleCollider2D[] rideColliders = new CircleCollider2D[2];
 
     public MoveState moveState;
+    
     private Animator animatorController;
-    public SoundController soundController;
-    private PlayersController playersController;
-
-    public enum MoveState
-    {
-        //Loaded,
-        Idle,
-        Run,
-        FreeFall,
-        Flap,
-        Dead,
-        Paused,
-        Winner
-    }
+    private SoundController soundController;
+    private PlayersManager playersManager;
 
     private CollectingItem item;
 
@@ -43,8 +33,6 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        spawnPos = transform.position;
-
         rb = GetComponent<Rigidbody2D>();
         rb.drag = Mathf.Epsilon;
         aspectRatio = (wingSpan * wingSpan) / wingArea;
@@ -52,33 +40,41 @@ public class Player : MonoBehaviour
         deathCollider = GetComponentInChildren<CapsuleCollider2D>();
         rideColliders = GetComponentsInChildren<CircleCollider2D>();
 
+        soundController = SoundController.Instance;
         animatorController = GetComponentInChildren<Animator>();
-        playersController = GetComponentInParent<PlayersController>();
-
-        if (landed) Idle();
-        else FreeFall();
+        playersManager = PlayersManager.Instance;
+        playersManager.LoadPlayer(this);
+        spawnPos = playersManager.transform.position;
+        
+        Idle();
     }
 
     private void FixedUpdate()
     {
-        if (moveState == MoveState.Idle || moveState == MoveState.Run)
+        if (moveState is MoveState.Idle or MoveState.Run)
         {
             RidePhysics();
         }
 
-        if (moveState == MoveState.Flap || moveState == MoveState.FreeFall)
+        if (moveState is MoveState.Flap or MoveState.FreeFall)
         {
             FlyPhysics();
         }
 
         if (moveState == MoveState.Dead)
         {
-            if (landed) rb.drag = 3f;
-            else rb.drag = 0.3f;
+            rb.drag = landed ? 3f : 0.3f;
         }
 
-        if (rb.velocity.x > 0.0001f && transform.localScale.y == -1) transform.localScale = new Vector3(1, 1, 1);
-        else if (rb.velocity.x < -0.0001f && transform.localScale.y == 1) transform.localScale = new Vector3(1, -1, 1);
+        switch (rb.velocity.x)
+        {
+            case > 0.0001f when transform.localScale.y == -1:
+                transform.localScale = new Vector3(1, 1, 1);
+                break;
+            case < -0.0001f when transform.localScale.y == 1:
+                transform.localScale = new Vector3(1, -1, 1);
+                break;
+        }
 
         speed = rb.velocity.magnitude;
         angle = transform.eulerAngles.z;
@@ -86,29 +82,30 @@ public class Player : MonoBehaviour
 
     public void Reset()
     {
-        transform.localScale = new Vector3(1, 1, 1);
+        var localTransform = transform;
+        localTransform.localScale = new Vector3(1, 1, 1);
         rb.velocity = new Vector2(0, 0);
         rb.drag = Mathf.Epsilon;
         rb.angularDrag = 2.5f;
         rb.angularVelocity = 0f;
-        transform.right = Vector2.right;
-        transform.position = spawnPos;
+        localTransform.right = Vector2.right;
+        localTransform.position = spawnPos;
 
         if (item != null)
         {
             item.Drop();
             item = null;
         }
-
+        
         Resurrect();
     }
 
-    public void Resurrect()
+    private void Resurrect()
     {
         deathCollider.enabled = false;
-        foreach (CircleCollider2D collider in rideColliders)
+        foreach (var rideCollider in rideColliders)
         {
-            collider.enabled = true;
+            rideCollider.enabled = true;
         }
 
         Idle();
@@ -159,18 +156,19 @@ public class Player : MonoBehaviour
 
         float gear;
         gear = (speed < 20) ? 1.5f : 1;
-        if (landed) rb.AddForce(transform.right * gear * torque);
+        if (landed) rb.AddForce(transform.right * (gear * torque));
     }
 
     private void RidePhysics()
     {
         var friction = (landed) ? -0.3f : 0f;
         if (moveState == MoveState.Idle) friction = -rb.mass;
-        
-        var drag = 0.021f * rb.velocity.sqrMagnitude;
-        var dragDirection = -rb.velocity.normalized;
 
-        rb.AddForce(dragDirection * drag + rb.velocity * friction);
+        var velocity = rb.velocity;
+        var drag = 0.021f * velocity.sqrMagnitude;
+        var dragDirection = -velocity.normalized;
+
+        rb.AddForce(dragDirection * drag + velocity * friction);
     }
 
     public void FreeFall()
@@ -187,29 +185,29 @@ public class Player : MonoBehaviour
         animatorController.Play("Flap");
 
         gear = (speed < 20) ? 2 : 1;
-        rb.AddForce(transform.right * gear * flapForce);
+        rb.AddForce(transform.right * (gear * flapForce));
     }
 
     private void FlyPhysics()
     {
-        var localVelocity = transform.InverseTransformDirection(rb.velocity);
+        var velocity = rb.velocity;
+        var localVelocity = transform.InverseTransformDirection(velocity);
         angleOfAttack = Mathf.Atan2(localVelocity.y, localVelocity.x);
 
         var inducedLift = angleOfAttack * (aspectRatio / (aspectRatio + 2f)) * 2f * Mathf.PI;
         var inducedDrag = (inducedLift * inducedLift) / (aspectRatio * Mathf.PI);
-        var pressure = rb.velocity.sqrMagnitude * 1.2754f * 0.5f * wingArea;
-
+        var pressure = velocity.sqrMagnitude * 1.2754f * 0.5f * wingArea;
         var lift = inducedLift * pressure;
         var drag = (0.021f + inducedDrag) * pressure;
 
-        var dragDirection = -(Vector3)rb.velocity.normalized;
+        var dragDirection = -(Vector3)velocity.normalized;
         var liftDirection = Vector3.Cross(dragDirection, -transform.forward);
 
         // Lift + Drag = Total Force
         rb.AddForce(liftDirection * lift + dragDirection * drag);
     }
 
-    public void Dead()
+    public void Kill()
     {
         moveState = MoveState.Dead;
         deathCollider.enabled = true;
@@ -217,10 +215,10 @@ public class Player : MonoBehaviour
         animatorController.Play("Dead");
         rb.gravityScale = 1f;
         rb.angularDrag = 0.3f;
+            
+        playersManager.Dead();
 
-        playersController.Dead();
-
-        if (item != null)
+        if ((bool)item)
         {
             item.Drop();
             item = null;
@@ -229,34 +227,36 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if ((moveState != MoveState.Idle) && (moveState != MoveState.Run))
-        {
-            soundController.Hit();
-            if (moveState != MoveState.Dead) Dead();
-        }
-        else
+        if (moveState is MoveState.Idle or MoveState.Run)
         {
             if (collision.gameObject.CompareTag("Ground"))
             {
                 landed = true;
             }
         }
-    }
-
-    private void OnCollisionExit2D()
-    {
-        landed = false;
-
-        if (moveState == MoveState.Idle || moveState == MoveState.Run)
+        else
         {
-            foreach (CircleCollider2D rideCollider in rideColliders)
+            if (moveState != MoveState.Dead)
             {
-                rideCollider.enabled = false;
+                Kill();
             }
 
-            flyCollider.enabled = true;
-            FreeFall();
+            soundController.Hit();
         }
+    }
+
+   private void OnCollisionExit2D()
+    {
+        landed = false;
+        
+        if (moveState is not (MoveState.Idle or MoveState.Run)) return;
+
+        foreach (CircleCollider2D rideCollider in rideColliders)
+        {
+            rideCollider.enabled = false;
+        }
+        flyCollider.enabled = true;
+        FreeFall();
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -267,4 +267,16 @@ public class Player : MonoBehaviour
             item.Pickup(transform);
         }
     }
+}
+
+public enum MoveState
+{
+    Loaded,
+    Idle,
+    Run,
+    FreeFall,
+    Flap,
+    Dead,
+    Paused,
+    Winner
 }

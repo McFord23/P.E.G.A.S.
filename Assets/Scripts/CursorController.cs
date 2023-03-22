@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class CursorController : MonoBehaviour
 {
-    bool isMenuActive = false;
-    Vector3 oldMousePos;
+    private bool isMenuActive = false;
+    private Vector3 oldMousePos;
 
-    void Start()
+    private void Start()
     {
         oldMousePos = Input.mousePosition;
     }
 
-    void Update()
+    private void Update()
     {
         if (isMenuActive)
         {

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Enums;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -46,8 +47,7 @@ public class MenuController : MonoBehaviour
 
         resumeIcon = transform.Find("Resume Mark/Resume Icon").GetComponent<Image>();
         playersIcon = transform.Find("Players Mark/Players Icon").GetComponent<Image>();
-        if (Save.TogetherMode) playersIcon.sprite = togetherIcon;
-        else playersIcon.sprite = soloIcon;
+        UpdatePlayersIcon();
 
         menu = transform.gameObject;
         settingsMenu = transform.Find("Settings Menu").gameObject;
@@ -217,8 +217,9 @@ public class MenuController : MonoBehaviour
 
     public void UpdatePlayersIcon()
     {
-        if (Save.TogetherMode) playersIcon.sprite = togetherIcon;
-        else playersIcon.sprite = soloIcon;
+        playersIcon.sprite = Save.gameMode != GameMode.Single 
+            ? togetherIcon 
+            : soloIcon;
     }
 
     public void MainMenu()

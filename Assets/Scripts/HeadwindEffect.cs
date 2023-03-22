@@ -1,8 +1,13 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
+// ReSharper disable All
 
 public class HeadwindEffect : MonoBehaviour
 {
-    public PlayersController playersController;
+    [FormerlySerializedAs("playersController")] 
+    public PlayersManager playersManager;
+    private Transform view;
+    
     private float ratio;
     private Vector3 offset;
 
@@ -12,25 +17,28 @@ public class HeadwindEffect : MonoBehaviour
 
     private void Start()
     {
+        view = Camera.main.transform;
         headwind = GetComponent<ParticleSystem>();
 
         main = headwind.main;
         emission = headwind.emission;
 
-        offset = transform.position - Camera.main.transform.position;
+        offset = transform.position - view.position;
     }
 
     private void Update()
     {
-        ratio = playersController.GetSpeed() / 150f;
+        var localTranform = transform;
+        
+        ratio = playersManager.GetSpeed() / 150f;
         main.startSpeed = ratio * 100;
         emission.rateOverTime = ratio * 250;
 
-        float x = Camera.main.transform.position.x + playersController.GetDirection() * offset.x;
-        transform.position = new Vector3(x, transform.position.y, 0);
+        float x = view.position.x + playersManager.GetDirection() * offset.x;
+        localTranform.position = new Vector3(x, localTranform.position.y, 0);
 
-        Quaternion rot = transform.rotation;
-        rot.eulerAngles = new Vector3(0, playersController.GetDirection() * -90, 0);
-        transform.rotation = rot;
+        Quaternion rot = localTranform.rotation;
+        rot.eulerAngles = new Vector3(0, playersManager.GetDirection() * -90, 0);
+        localTranform.rotation = rot;
     }
 }

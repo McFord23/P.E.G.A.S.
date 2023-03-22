@@ -1,9 +1,14 @@
-﻿using UnityEngine;
+﻿using Enums;
+using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CameraController : MonoBehaviour
 {
-    public PlayersController playersController;
+    private Camera controllableCamera;
     private Rigidbody2D rb;
+    
+    [FormerlySerializedAs("playersController")] 
+    public PlayersManager playersManager;
 
     private Mode mode;
 
@@ -26,6 +31,7 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
+        controllableCamera = GetComponent<Camera>();
         rb = GetComponent<Rigidbody2D>();
 
         mapOffset = new Vector3(0, 0, -10);
@@ -37,49 +43,32 @@ public class CameraController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        var playerPosition = playersManager.GetPosition();
+        if (playerPosition == Vector3.zero)
+        {
+            return;
+        }
+        
         Vector3 target = transform.position;
 
         switch (mode)
         {
             case Mode.Fly:
-                if (playersController.GetDirection() > 0) playerOffset = new Vector3(10, 0, 0);
-                else if (playersController.GetDirection() < 0) playerOffset = new Vector3(-10, 0, 0);
+                if (playersManager.GetDirection() > 0) playerOffset = new Vector3(10, 0, 0);
+                else if (playersManager.GetDirection() < 0) playerOffset = new Vector3(-10, 0, 0);
 
-                if (Save.TogetherMode)
-                {
-                    if (Save.Player1.live && Save.Player2.live)
-                    {
-                        target = Vector3.Lerp(rb.position, playersController.GetPlayerPosition() + mapOffset, playersController.GetSpeed());
-                    }
-                    else
-                    {
-                        target = Vector3.Lerp(rb.position, playersController.GetPlayerPosition() + playerOffset + mapOffset, moveSpeed);
-                    }
-
-                    var focusSize = playersController.GetFocusSize();
-                    if (focusSize > maxSize) size = maxSize;
-                    else if (focusSize >= flySize) size = focusSize;
-                    else size = flySize;
-                }
-                else
-                {
-                    target = Vector3.Lerp(rb.position, playersController.GetPlayerPosition() + playerOffset + mapOffset, moveSpeed);
-                    size = flySize;
-                }
+                target = Vector3.Lerp(rb.position, playerPosition + playerOffset + mapOffset, moveSpeed);
+                size = flySize;
                 break;
-
+            
             case Mode.Player:
-                target = Vector3.Lerp(rb.position, playersController.GetPlayerPosition() + interfaceOffset, moveSpeed);
-
-                if (!Save.TogetherMode)
-                {
-                    size = minSize;
-                }
+                target = Vector3.Lerp(rb.position, playerPosition + interfaceOffset, moveSpeed);
+                size = minSize;
                 break;
         }
 
         rb.MovePosition(target);
-        Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, size, zoomSpeed);
+        controllableCamera.fieldOfView = Mathf.Lerp(controllableCamera.fieldOfView, size, zoomSpeed);
     }
 
     public void FocusOnFly()

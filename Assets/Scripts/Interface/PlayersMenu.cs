@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Enums;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,8 +25,8 @@ public class PlayersMenu : MonoBehaviour
         player1GamepadImage = transform.Find("Player #1/Gamepad").GetComponent<Image>();
         player2GamepadImage = transform.Find("Player #2/Gamepad").GetComponent<Image>();
 
-        player1Menu.layout = Save.Player1.controlLayout;
-        player2Menu.layout = Save.Player2.controlLayout;
+        player1Menu.layout = Save.players[0].controlLayout;
+        player2Menu.layout = Save.players[1].controlLayout;
     }
 
     void Start()
@@ -35,10 +34,10 @@ public class PlayersMenu : MonoBehaviour
         ChangePlayer1Layout();
         ChangePlayer2Layout();
 
-        player1Menu.ChangeCharacter(Save.Player1.character);
-        player2Menu.ChangeCharacter(Save.Player2.character);
+        player1Menu.ChangeCharacter(Save.players[0].character);
+        player2Menu.ChangeCharacter(Save.players[1].character);
 
-        if (Save.TogetherMode) AddPlayer();
+        if (Save.gameMode != GameMode.Single) AddPlayer();
         else KickPlayer();
 
         UpdateGamepadStatus();
@@ -46,7 +45,7 @@ public class PlayersMenu : MonoBehaviour
 
     public void AddPlayer()
     {
-        Save.TogetherMode = true;
+        Save.gameMode = GameMode.Host;
         menu.UpdatePlayersIcon();
         addPlayer.SetActive(false);
         player2Panel.SetActive(true);
@@ -54,7 +53,7 @@ public class PlayersMenu : MonoBehaviour
 
     public void KickPlayer()
     {
-        Save.TogetherMode = false;
+        Save.gameMode = GameMode.Single;
         menu.UpdatePlayersIcon();
         player2Panel.SetActive(false);
         addPlayer.SetActive(true);
@@ -62,38 +61,33 @@ public class PlayersMenu : MonoBehaviour
 
     public void ChangeCharacter()
     {
-        if (Save.Player1.character == "Celestia")
+        if (Save.players[0].character == Character.Celestia)
         {
-            Save.Player1.character = "Luna";
-            Save.Player2.character = "Celestia";
+            Save.players[0].character = Character.Luna;
+            Save.players[1].character = Character.Celestia;
 
-            player1Menu.ChangeCharacter("Luna");
-            player2Menu.ChangeCharacter("Celestia");
+            player1Menu.ChangeCharacter(Character.Luna);
+            player2Menu.ChangeCharacter(Character.Celestia);
         }
         else
         {
-            Save.Player1.character = "Celestia";
-            Save.Player2.character = "Luna";
+            Save.players[0].character = Character.Celestia;
+            Save.players[1].character = Character.Luna;
 
-            player1Menu.ChangeCharacter("Celestia");
-            player2Menu.ChangeCharacter("Luna");
+            player1Menu.ChangeCharacter(Character.Celestia);
+            player2Menu.ChangeCharacter(Character.Luna);
         }
     }
 
     public void ChangeGamepad()
     {
-        var gamepad = Save.Player1.gamepad;
-        Save.Player1.gamepad = Save.Player2.gamepad;
-        Save.Player2.gamepad = gamepad;
-
-        var gamepadImage = player1GamepadImage.sprite;
-        player1GamepadImage.sprite = player2GamepadImage.sprite;
-        player2GamepadImage.sprite = gamepadImage;
+        (Save.players[0].gamepad, Save.players[1].gamepad) = (Save.players[1].gamepad, Save.players[0].gamepad);
+        (player1GamepadImage.sprite, player2GamepadImage.sprite) = (player2GamepadImage.sprite, player1GamepadImage.sprite);
     }
 
     public void UpdateGamepadStatus()
     {
-        if (Save.Player1.gamepad == 1)
+        if (Save.players[0].gamepad == 1)
         {
             if (Gamepad.gamepad1) player1GamepadImage.sprite = gamepadSprites[0];
             else player1GamepadImage.sprite = gamepadSprites[1];
@@ -113,13 +107,13 @@ public class PlayersMenu : MonoBehaviour
 
     public void ChangePlayer1Layout()
     {
-        Save.Player1.controlLayout = player1Menu.layout;
+        Save.players[0].controlLayout = player1Menu.layout;
         player2Menu.BlockIndex(player1Menu.layout);
     }
 
     public void ChangePlayer2Layout()
     {
-        Save.Player2.controlLayout = player2Menu.layout;
+        Save.players[1].controlLayout = player2Menu.layout;
         player1Menu.BlockIndex(player2Menu.layout);
     }
 }

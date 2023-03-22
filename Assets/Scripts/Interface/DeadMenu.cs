@@ -1,25 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class DeadMenu : MonoBehaviour
 {
-    GameObject deadMenu;
-    GameObject menu;
-    UnityEvent MenuDisabledEvent;
+    private GameObject deadMenu;
+    private GameObject menu;
+    private UnityEvent MenuDisabledEvent;
+    
+    [SerializeField]
+    private PlayersManager playersManager;
 
-    public PlayersController playersController;
-
-    void Start()
+    private void Start()
     {
         deadMenu = transform.gameObject;
         menu = transform.parent.gameObject;
         MenuDisabledEvent = menu.GetComponent<MenuController>().MenuDisabledEvent;
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.JoystickButton5))
         {
@@ -29,7 +28,7 @@ public class DeadMenu : MonoBehaviour
 
     public void Retry()
     {
-        playersController.Reset();
+        playersManager.Reset();
         MenuDisabledEvent.Invoke();
         deadMenu.SetActive(false);
         menu.SetActive(false);
@@ -37,8 +36,8 @@ public class DeadMenu : MonoBehaviour
 
     public void Exit()
     {
-        Save.Player1.live = true;
-        Save.Player2.live = true;
-        SceneManager.LoadScene("Main Menu");
+        Save.players[0].live = true;
+        Save.players[1].live = true;
+        SceneManagerAdapter.LoadScene("Main Menu");
     }
 }

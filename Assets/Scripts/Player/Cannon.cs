@@ -112,7 +112,7 @@ public class Cannon : MonoBehaviour
 
     /*public void Resume()
     {
-        if (player.moveState == Player.MoveState.Loaded)
+        if (player.moveState == MoveState.Loaded)
         {
             active = true;
             soundController.cannonScratchSound.UnPause();

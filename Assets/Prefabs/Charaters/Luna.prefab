@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 788791566603366164}
   - component: {fileID: 788791566603366165}
   - component: {fileID: 788791566603366152}
+  - component: {fileID: 2911142177495176658}
   m_Layer: 8
   m_Name: Sprite
   m_TagString: Player
@@ -249,6 +250,20 @@ CircleCollider2D:
   m_Offset: {x: -0.35, y: -1.09}
   serializedVersion: 2
   m_Radius: 0.15
+--- !u!114 &2911142177495176658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788791566603366154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d0727d5ae3244e3b569694d3912374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TransitionStateInfoList: []
+  m_Animator: {fileID: 788791566603366166}
 --- !u!1 &788791568059140383
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,6 +276,9 @@ GameObject:
   - component: {fileID: 788791568059140376}
   - component: {fileID: 788791568059140390}
   - component: {fileID: 788791568059140377}
+  - component: {fileID: 7948664637580210497}
+  - component: {fileID: 1898321296602287250}
+  - component: {fileID: 989893824467195048}
   m_Layer: 8
   m_Name: Luna
   m_TagString: Player
@@ -299,10 +317,10 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 500
   m_LinearDrag: 1
-  m_AngularDrag: 0.05
+  m_AngularDrag: 2.5
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
@@ -323,12 +341,7 @@ MonoBehaviour:
   angleOfAttack: 0
   landed: 1
   spawnPos: {x: 0, y: 0}
-  rb: {fileID: 0}
   moveState: 1
-  soundController: {fileID: 0}
-  godnessMode: 0
-  deathIndicator: 0
-  pullClick: 0
   wingSpan: 6
   wingArea: 22
 --- !u!114 &788791568059140377
@@ -341,5 +354,59 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0bb23e6026569974ab53726c804f5c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7948664637580210497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788791568059140383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 951099334
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+--- !u!114 &1898321296602287250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788791568059140383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34ffb5119b103f14e8baa98f7b14f93e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 1
+  SyncRotAngleX: 0
+  SyncRotAngleY: 0
+  SyncRotAngleZ: 1
+  SyncScaleX: 0
+  SyncScaleY: 0
+  SyncScaleZ: 0
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  InLocalSpace: 0
+  Interpolate: 1
+--- !u!114 &989893824467195048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788791568059140383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80d7c879794dfda4687da0e400131852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -2,16 +2,15 @@
 
 public class BackgroundsManager : MonoBehaviour
 {
-    public PlayersController playersController;
-    Background[] layer;
+    Background[] backgrounds;
 
     void Start()
     {
-        layer = new Background[transform.childCount];
+        backgrounds = new Background[transform.childCount];
         for (int i = 0; i < transform.childCount; i++)
         {
-            layer[i] = transform.GetChild(i).GetComponent<Background>();
-            layer[i].Initialize();
+            backgrounds[i] = transform.GetChild(i).GetComponent<Background>();
+            backgrounds[i].Initialize();
         }
     }
 
@@ -19,7 +18,7 @@ public class BackgroundsManager : MonoBehaviour
     {
         for (int i = 0; i < transform.childCount; i++)
         {
-            layer[i].Reset();
+            backgrounds[i].Reset();
         }
     }
 }
