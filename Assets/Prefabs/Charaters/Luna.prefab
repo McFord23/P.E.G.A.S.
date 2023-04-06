@@ -59,9 +59,8 @@ GameObject:
   - component: {fileID: 788791566603366166}
   - component: {fileID: 788791566603366153}
   - component: {fileID: 788791566603366164}
-  - component: {fileID: 788791566603366165}
-  - component: {fileID: 788791566603366152}
   - component: {fileID: 2911142177495176658}
+  - component: {fileID: 2661975813241906590}
   m_Layer: 8
   m_Name: Sprite
   m_TagString: Player
@@ -218,38 +217,6 @@ PolygonCollider2D:
       - {x: -0.31577492, y: -0.18922234}
       - {x: -0.022764616, y: -0.2025606}
       - {x: 0.15525842, y: -0.24295712}
---- !u!58 &788791566603366165
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 788791566603366154}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.3, y: -1.09}
-  serializedVersion: 2
-  m_Radius: 0.15
---- !u!58 &788791566603366152
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 788791566603366154}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.35, y: -1.09}
-  serializedVersion: 2
-  m_Radius: 0.15
 --- !u!114 &2911142177495176658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,6 +231,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TransitionStateInfoList: []
   m_Animator: {fileID: 788791566603366166}
+--- !u!61 &2661975813241906590
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788791566603366154}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.5}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.2702703, y: 4.2702703}
+    newSize: {x: 1.58, y: 1.58}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.7, y: 0.8}
+  m_EdgeRadius: 0
 --- !u!1 &788791568059140383
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,6 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98789432e884e9a45adc252915ce4833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crushEffectPrefab: {fileID: 5466016915314235085, guid: 52dd9e522eea9ec41b12d0432fe4bd1a, type: 3}
   speed: 0
   angle: 1
   angleOfAttack: 0

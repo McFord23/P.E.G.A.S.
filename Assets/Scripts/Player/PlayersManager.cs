@@ -154,10 +154,10 @@ public class PlayersManager : SingletonBehaviour<PlayersManager>
 
     public void Reset()
     {
-        players[0]?.Reset();
+        players[0]?.Revive();
         Save.players[0].live = true;
 
-        players[1]?.Reset();
+        players[1]?.Revive();
         Save.players[1].live = true;
 
         ResetEvent.Invoke();
