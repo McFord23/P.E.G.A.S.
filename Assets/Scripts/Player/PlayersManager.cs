@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayersManager : SingletonBehaviour<PlayersManager>
+public class PlayersManager : SingletonMonoBehaviour<PlayersManager>
 {
     private Player[] players = new Player[2];
     private PlayerController[] playerControllers = new PlayerController[2];
@@ -137,17 +137,17 @@ public class PlayersManager : SingletonBehaviour<PlayersManager>
         {
             if (players[0].moveState == MoveState.Dead && players[1].moveState != MoveState.Dead)
             {
-                Save.players[0].live = false;
+                Global.players[0].live = false;
             }
             else if (players[0].moveState != MoveState.Dead && players[1].moveState == MoveState.Dead)
             {
-                Save.players[1].live = false;
+                Global.players[1].live = false;
             }
             else DeadEvent.Invoke();
         }
         else
         {
-            Save.players[0].live = false;
+            Global.players[0].live = false;
             DeadEvent.Invoke();
         }
     }
@@ -155,10 +155,10 @@ public class PlayersManager : SingletonBehaviour<PlayersManager>
     public void Reset()
     {
         players[0]?.Reset();
-        Save.players[0].live = true;
+        Global.players[0].live = true;
 
         players[1]?.Reset();
-        Save.players[1].live = true;
+        Global.players[1].live = true;
 
         ResetEvent.Invoke();
     }

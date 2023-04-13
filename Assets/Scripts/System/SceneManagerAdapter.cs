@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class SceneManagerAdapter
 {
     private static bool IsMultiplayer => 
-        Save.gameMode != GameMode.Single && 
+        Global.gameMode != GameMode.Single && 
         (NetworkManager.Singleton.IsClient || NetworkManager.Singleton.IsHost);
 
     public static void LoadScene(string sceneName)

@@ -6,60 +6,92 @@ using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
-    GameObject menu;
-    GameObject mainMenu;
-    GameObject deadMenu;
-    GameObject pauseMenu;
-    GameObject victoryMenu;
-    GameObject settingsMenu;
-    GameObject playersMenu;
+    private RectTransform menuTransform;
+    private Vector2 monoPageTarget = new Vector2(-310, 0);
+    private Vector2 dualPageTarget = Vector2.zero;
+    private float speed = 8f;
 
-    string resumeMenu;
-    MenuNavigation navigation;
+    [Header("Menu Background")]
+    public Sprite holePage;
+    public Sprite holeArchPage;
+    private Image background;
 
-    Toggle resumeMark;
-    Toggle settingsMark;
-    Toggle playersMark;
+    private GameObject menu;
+    private GameObject mainMenu;
+    
+    private GameObject settingsMenu;
+    private Image settingsPage;
+    private GameObject engraving;
 
-    Image resumeIcon;
-    public Sprite resumeIconOn;
-    public Sprite resumeIconOff;
+    private GameObject deadMenu;
+    private GameObject pauseMenu;
+    private GameObject victoryMenu;
 
-    Image playersIcon;
+    private GameObject playersMenu;
+
+    private string resumeMenu;
+    private MenuNavigation navigation;
+
+    private RectTransform settingsMarkRect;
+    private Toggle settingsMark;
+    private Toggle playersMark;
+
+    [Header("Icon")]
     public Sprite soloIcon;
     public Sprite togetherIcon;
+    private Image playersIcon;
 
     public UnityEvent MenuEnabledEvent;
     public UnityEvent MenuDisabledEvent;
     public UnityEvent ChangeMenuEvent;
 
-    bool isSelectedState = false;
+    private bool isSelectedState = false;
 
-    string scene;
+    public Mode mode { private set; get; }
+
+    public enum Mode
+    {
+        Main,
+        Game
+    }
+
+    private string scene;
 
     void Awake()
     {
-        navigation = GetComponent<MenuNavigation>();
+        menuTransform = GetComponent<RectTransform>();
 
-        resumeMark = transform.Find("Resume Mark").GetComponent<Toggle>();
-        settingsMark = transform.Find("Settings Mark").GetComponent<Toggle>();
+        background = transform.Find("Background").GetComponent<Image>();
+
+        settingsMarkRect = transform.Find("Settings Mark").GetComponent<RectTransform>();
+        settingsMark = settingsMarkRect.GetComponent<Toggle>();
         playersMark = transform.Find("Players Mark").GetComponent<Toggle>();
 
-        resumeIcon = transform.Find("Resume Mark/Resume Icon").GetComponent<Image>();
         playersIcon = transform.Find("Players Mark/Players Icon").GetComponent<Image>();
         UpdatePlayersIcon();
 
-        menu = transform.gameObject;
+        menu = gameObject;
         settingsMenu = transform.Find("Settings Menu").gameObject;
+        settingsPage = settingsMenu.GetComponent<Image>();
+        engraving = transform.Find("Engraving").gameObject;
+
         playersMenu = transform.Find("Players Menu").gameObject;
 
+        navigation = GetComponent<MenuNavigation>();
+
         scene = SceneManager.GetActiveScene().name;
+
         switch (scene)
         {
             case "Main Menu":
+                mode = Mode.Main;
+                SetBackgroundMask(true);
                 mainMenu = transform.Find("Main Menu").gameObject;
                 break;
+            
             case "Game":
+                mode = Mode.Game;
+                SetBackgroundMask(false);
                 deadMenu = transform.Find("Dead Menu").gameObject;
                 pauseMenu = transform.Find("Pause Menu").gameObject;
                 victoryMenu = transform.Find("Victory Menu").gameObject;
@@ -72,13 +104,14 @@ public class MenuController : MonoBehaviour
         settingsMenu.SetActive(false);
         playersMenu.SetActive(false);
 
-        switch (scene)
+        switch (mode)
         {
-            case "Main Menu":
+            case Mode.Main:
                 MainMenu();
+                menuTransform.anchoredPosition = monoPageTarget;
                 MenuEnabledEvent.Invoke();
                 break;
-            case "Game":
+            case Mode.Game:
                 deadMenu.SetActive(false);
                 pauseMenu.SetActive(false);
                 victoryMenu.SetActive(false);
@@ -90,9 +123,13 @@ public class MenuController : MonoBehaviour
 
     void Update()
     {
-        if (!isSelectedState && Input.GetButtonDown("Cancel"))
+        if ((bool)mainMenu)
         {
-            if (settingsMenu.activeSelf || playersMenu.activeSelf)
+            if (mainMenu.activeSelf) menuTransform.anchoredPosition = Vector2.Lerp(menuTransform.anchoredPosition, monoPageTarget, Time.deltaTime * speed);
+            else menuTransform.anchoredPosition = Vector2.Lerp(menuTransform.anchoredPosition, dualPageTarget, Time.deltaTime * speed);
+
+            if (isSelectedState) return;
+            if (Input.GetButtonDown("Cancel"))
             {
                 Back();
             }
@@ -101,7 +138,7 @@ public class MenuController : MonoBehaviour
 
     public void Back()
     {
-        if (settingsMenu.activeSelf) settingsMenu.SetActive(false);
+        if (settingsMenu.activeSelf) DisableSettingsMenu();
         if (playersMenu.activeSelf) playersMenu.SetActive(false);
         
         switch (resumeMenu)
@@ -127,54 +164,27 @@ public class MenuController : MonoBehaviour
                 break;
         }       
 
-        if (settingsMark.isOn) settingsMark.isOn = false;
         if (playersMark.isOn) playersMark.isOn = false;
-        resumeMark.isOn = true;
-        ChangeMenuEvent.Invoke();
-    }
-
-    public void EnabledResumeMenu()
-    {
-        if (settingsMenu.activeSelf) settingsMenu.SetActive(false);
-        if (playersMenu.activeSelf) playersMenu.SetActive(false);
-
-        switch (resumeMenu)
-        {
-            case "main menu":
-                mainMenu.SetActive(true);
-                navigation.SetMarkNavigation("Main Menu");
-                break;
-
-            case "dead":
-                deadMenu.SetActive(true);
-                navigation.SetMarkNavigation("Dead");
-                break;
-
-            case "pause":
-                pauseMenu.SetActive(true);
-                navigation.SetMarkNavigation("Pause");
-                break;
-
-            case "victory":
-                victoryMenu.SetActive(true);
-                navigation.SetMarkNavigation("Victory");
-                break;
-        }
-
         if (settingsMark.isOn) settingsMark.isOn = false;
-        if (playersMark.isOn) playersMark.isOn = false;
-        resumeMark.isOn = true;
+        FlipSettingMark(false);
+
         ChangeMenuEvent.Invoke();
     }
 
     public void EnabledSettingsMenu()
     {
-        switch (scene)
+        switch (mode)
         {
-            case "Main Menu":
+            case Mode.Main:
+                settingsPage.sprite = holePage;
+                engraving.SetActive(true);
+
                 if (mainMenu.activeSelf) mainMenu.SetActive(false);
                 break;
-            case "Game":
+
+            case Mode.Game:
+                settingsPage.sprite = holeArchPage;
+
                 if (deadMenu.activeSelf) deadMenu.SetActive(false);
                 if (pauseMenu.activeSelf) pauseMenu.SetActive(false);
                 if (victoryMenu.activeSelf) victoryMenu.SetActive(false);
@@ -184,32 +194,42 @@ public class MenuController : MonoBehaviour
         if (playersMenu.activeSelf) playersMenu.SetActive(false);
         settingsMenu.SetActive(true);
 
-        if (resumeMark.isOn) resumeMark.isOn = false;
         if (playersMark.isOn) playersMark.isOn = false;
+
         settingsMark.isOn = true;
+        FlipSettingMark(false);
+
         navigation.SetMarkNavigation("Settings");
         ChangeMenuEvent.Invoke();
     }
 
-    public void EnabledPlayerMenu()
+    private void DisableSettingsMenu()
     {
-        switch (scene)
+        if (engraving.activeSelf) engraving.SetActive(false);
+        settingsMenu.SetActive(false);
+    }
+
+    public void EnabledPlayersMenu()
+    {
+        switch (mode)
         {
-            case "Main Menu":
+            case Mode.Main:
                 if (mainMenu.activeSelf) mainMenu.SetActive(false);
                 break;
-            case "Game":
+
+            case Mode.Game:
                 if (deadMenu.activeSelf) deadMenu.SetActive(false);
                 if (pauseMenu.activeSelf) pauseMenu.SetActive(false);
                 if (victoryMenu.activeSelf) victoryMenu.SetActive(false);
                 break;
         }
 
-        if (settingsMenu.activeSelf) settingsMenu.SetActive(false);
+        if (settingsMenu.activeSelf) DisableSettingsMenu();
         playersMenu.SetActive(true);
 
-        if (resumeMark.isOn) resumeMark.isOn = false;
         if (settingsMark.isOn) settingsMark.isOn = false;
+        FlipSettingMark(true);
+
         playersMark.isOn = true;
         navigation.SetMarkNavigation("Players");
         ChangeMenuEvent.Invoke();
@@ -217,7 +237,7 @@ public class MenuController : MonoBehaviour
 
     public void UpdatePlayersIcon()
     {
-        playersIcon.sprite = Save.gameMode != GameMode.Single 
+        playersIcon.sprite = Global.playerAmmount == 2 
             ? togetherIcon 
             : soloIcon;
     }
@@ -227,7 +247,6 @@ public class MenuController : MonoBehaviour
         mainMenu.SetActive(true);
 
         resumeMenu = "main menu";
-        resumeIcon.sprite = resumeIconOff;
         navigation.StartSelect("Main Menu");
     }
 
@@ -238,7 +257,6 @@ public class MenuController : MonoBehaviour
         pauseMenu.SetActive(true);
 
         resumeMenu = "pause";
-        resumeIcon.sprite = resumeIconOn;
         navigation.StartSelect("Pause");
     }
 
@@ -256,7 +274,6 @@ public class MenuController : MonoBehaviour
         deadMenu.SetActive(true);
 
         resumeMenu = "dead";
-        resumeIcon.sprite = resumeIconOff;
         navigation.StartSelect("Dead");
     }
 
@@ -278,12 +295,38 @@ public class MenuController : MonoBehaviour
         victoryMenu.SetActive(true);
 
         resumeMenu = "victory";
-        resumeIcon.sprite = resumeIconOff;
         navigation.StartSelect("Victory");
     }
 
     public void SelectedState(bool var)
     {
         isSelectedState = var;
+    }
+
+    private void FlipSettingMark(bool checkPositive)
+    {
+        if (checkPositive)
+        {
+            if (settingsMarkRect.localScale.x < 0) return;
+        }
+        else
+        {
+            if (settingsMarkRect.localScale.x > 0) return;
+        }
+
+        Vector3 pos = settingsMarkRect.localPosition;
+        pos.x = -pos.x;
+        settingsMarkRect.localPosition = pos;
+        
+        Vector3 scale = settingsMarkRect.localScale;
+        scale.x = -scale.x;
+        settingsMarkRect.localScale = scale;
+    }
+
+    private void SetBackgroundMask(bool isOn)
+    {
+        Color color = background.color;
+        color.a = isOn ? 0 : 1;
+        background.color = color;
     }
 }

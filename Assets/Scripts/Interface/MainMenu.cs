@@ -5,6 +5,8 @@ public class MainMenu : NetworkBehaviour
 {
     public void Play()
     {
+        print("is client: " + IsClient);
+
         if (IsClient)
         {
             RequestLoadSceneServerRpc();

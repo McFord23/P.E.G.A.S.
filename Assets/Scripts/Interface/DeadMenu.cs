@@ -36,8 +36,8 @@ public class DeadMenu : MonoBehaviour
 
     public void Exit()
     {
-        Save.players[0].live = true;
-        Save.players[1].live = true;
+        Global.players[0].live = true;
+        Global.players[1].live = true;
         SceneManagerAdapter.LoadScene("Main Menu");
     }
 }
