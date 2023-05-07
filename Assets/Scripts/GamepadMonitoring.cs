@@ -5,11 +5,10 @@ using Enums;
 
 public class GamepadMonitoring : NetworkBehaviour
 {
-    public bool[] isGamepadConnected = new bool[2];
+    public bool[] newConnection = new bool[2];
     public bool[] oldConnection = new bool[2];
 
-    public UnityEvent GamepadEnabledEvent;
-    public UnityEvent GamepadDisabledEvent;
+    public UnityEvent ChangeConnectionEvent;
 
     private NetworkVariable<bool> gamepad1 = new NetworkVariable<bool>(false, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     private NetworkVariable<bool> gamepad2 = new NetworkVariable<bool>(false, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
@@ -20,19 +19,18 @@ public class GamepadMonitoring : NetworkBehaviour
         {
             try
             {
-                isGamepadConnected[i] = (Input.GetJoystickNames()[i] != "") ? true : false;
-                if (isGamepadConnected[i]) GamepadEnabledEvent.Invoke();
+                newConnection[i] = (Input.GetJoystickNames()[i] != "") ? true : false;
             }
             catch
             {
-                isGamepadConnected[i] = false;
+                newConnection[i] = false;
             }
 
-            oldConnection[i] = isGamepadConnected[i];
+            oldConnection[i] = newConnection[i];
         }
 
-        Gamepad.gamepad1 = isGamepadConnected[0];
-        Gamepad.gamepad2 = isGamepadConnected[1];
+        Gamepad.gamepad1 = newConnection[0];
+        Gamepad.gamepad2 = newConnection[1];
     }
 
     private void Update()
@@ -60,22 +58,21 @@ public class GamepadMonitoring : NetworkBehaviour
         {
             try
             {
-                isGamepadConnected[i] = (Input.GetJoystickNames()[i] != "") ? true : false;
+                newConnection[i] = (Input.GetJoystickNames()[i] != "") ? true : false;
             }
             catch
             {
-                isGamepadConnected[i] = false;
+                newConnection[i] = false;
             }
 
-            if (isGamepadConnected[i] != oldConnection[i])
+            if (newConnection[i] != oldConnection[i])
             {
-                Gamepad.gamepad1 = isGamepadConnected[0];
-                Gamepad.gamepad2 = isGamepadConnected[1];
+                Gamepad.gamepad1 = newConnection[0];
+                Gamepad.gamepad2 = newConnection[1];
 
-                if (isGamepadConnected[i]) GamepadEnabledEvent.Invoke();
-                else GamepadDisabledEvent.Invoke();
+                oldConnection[i] = newConnection[i];
 
-                oldConnection[i] = isGamepadConnected[i];
+                ChangeConnectionEvent.Invoke();
             }
         }
     }
@@ -94,7 +91,7 @@ public class GamepadMonitoring : NetworkBehaviour
             gamepad1Status = false;
         }
 
-        gamepad1.Value = gamepad1Status;
+        ChangeStatusServerRpc(false, gamepad1Status);
         CheckChangeStatus(gamepad1Status, gamepad2Status);
     }
 
@@ -112,8 +109,15 @@ public class GamepadMonitoring : NetworkBehaviour
             gamepad2Status = false;
         }
 
-        gamepad2.Value = gamepad2Status;
+        ChangeStatusServerRpc(true, gamepad2Status);
         CheckChangeStatus(gamepad1Status, gamepad2Status);
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void ChangeStatusServerRpc(bool isClient, bool gamepadStatus)
+    {
+        if (isClient) gamepad2.Value = gamepadStatus;
+        else gamepad1.Value = gamepadStatus;
     }
 
     private void CheckChangeStatus(bool newGamepad1Status, bool newGamepad2Status)
@@ -121,17 +125,13 @@ public class GamepadMonitoring : NetworkBehaviour
         if (newGamepad1Status != Gamepad.gamepad1)
         {
             Gamepad.gamepad1 = newGamepad1Status;
-
-            if (Gamepad.gamepad1) GamepadEnabledEvent.Invoke();
-            else GamepadDisabledEvent.Invoke();
+            ChangeConnectionEvent.Invoke();
         }
 
         if (newGamepad2Status != Gamepad.gamepad2)
         {
             Gamepad.gamepad2 = newGamepad1Status;
-
-            if (Gamepad.gamepad2) GamepadEnabledEvent.Invoke();
-            else GamepadDisabledEvent.Invoke();
+            ChangeConnectionEvent.Invoke();
         }
     }
 }

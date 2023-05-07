@@ -3,7 +3,6 @@
 public static class Global
 {
     public static GameMode gameMode = GameMode.Single;
-    public static int playerAmmount = 1;
 
     public struct Player
     {

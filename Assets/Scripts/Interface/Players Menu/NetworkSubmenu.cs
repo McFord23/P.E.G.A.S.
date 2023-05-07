@@ -6,90 +6,116 @@ using System.Collections;
 
 public class NetworkSubmenu : NetworkBehaviour
 {
-    private NetworkMonitoring networkMonitoring;
-    private IPFieldManager ipFieldManager;
+    private AddressFieldManager ipFieldManager;
     private PlayersMenu playersMenu;
 
     private Text status;
     private Color brown;
     private Color red;
+    private IEnumerator hideErrorConnection;
 
     private Button createButton;
     private Button connectButton;
     private GameObject shutdownButton;
     private GameObject cancelButton;
 
+    private HostMonitoring hostMonitoring;
+    private ClientMonitoring clientMonitoring;
+
     private void Start()
     {
-        networkMonitoring = NetworkMonitoring.Instance;
-        ipFieldManager = GetComponentInChildren<IPFieldManager>();
+        ipFieldManager = GetComponentInChildren<AddressFieldManager>();
         playersMenu = GetComponentInParent<PlayersMenu>();
 
         status = transform.Find("Status").GetComponent<Text>();
         brown = status.color;
         red = new Color(0.45f, 0.2f, 0.15f);
+        hideErrorConnection = HideErrorConnection();
 
         createButton = transform.Find("Create").GetComponent<Button>();
         connectButton = transform.Find("Connect").GetComponent<Button>();
         shutdownButton = transform.Find("Shutdown").gameObject;
         cancelButton = transform.Find("Cancel").gameObject;
+
+        hostMonitoring = HostMonitoring.Instance;
+        clientMonitoring = ClientMonitoring.Instance;
     }
 
-    public void CreateHost()
+    public void HostSubscribe()
     {
-        Application.logMessageReceived += OnCreatingFailure;
+        hostMonitoring.OnStartCreationEvent += OnHostStartCreating;
+        hostMonitoring.OnCreatingFailureEvent += OnHostCreatingFailure;
+        hostMonitoring.OnCreatedEvent += OnHostCreated;
+        hostMonitoring.OnClientConnectedEvent += OnClientConnected;
+        hostMonitoring.OnClientDisconnectedEvent += OnClientDisconnected;
+        hostMonitoring.OnShutdownEvent += OnHostShutdown;
+    }
 
-        status.text = "creating...";
-        status.color = brown;
-        status.gameObject.SetActive(true);
-
+    public void OnHostStartCreating()
+    {
+        ShowStatus("creating...");
         ipFieldManager.Block(true);
 
-        NetworkManager.StartHost();
+        createButton.interactable = false;
+        connectButton.interactable = false;
     }
 
-    private void OnCreatingFailure(string logString, string stackTrace, LogType type)
+    private void OnHostCreatingFailure(string log)
     {
-        if (type == LogType.Error && stackTrace.Contains("Netcode"))
-        {
-            Application.logMessageReceived -= OnCreatingFailure;
-            ShowError(logString);
-        }
+        ShowError(log);
+        createButton.interactable = true;
+        connectButton.interactable = true;
+
+        HostUnsubscribe();
     }
 
-    public override void OnNetworkSpawn()
+    private void OnHostCreated()
     {
-        base.OnNetworkSpawn();
+        ShowStatus("no player");
 
-        Application.logMessageReceived -= OnCreatingFailure;
+        createButton.interactable = true;
+        connectButton.interactable = true;
+        createButton.gameObject.SetActive(false);
+        connectButton.gameObject.SetActive(false);
 
-        if (IsHost)
-        {
-            Global.gameMode = GameMode.Host;
-            ShowStatus("no player");
-
-            createButton.gameObject.SetActive(false);
-            connectButton.gameObject.SetActive(false);
-            shutdownButton.SetActive(true);
-        }
-        else if (IsClient)
-        {
-            print("Client Connected to Host");
-            Global.gameMode = GameMode.Client;
-            
-            status.gameObject.SetActive(false);
-            ipFieldManager.Block(false);
-
-            cancelButton.SetActive(false);
-            createButton.gameObject.SetActive(true);
-            connectButton.gameObject.SetActive(true);
-
-            OnClientConnectedServerRpc();
-            StartCoroutine(networkMonitoring.CheckConnection());
-        }
+        shutdownButton.SetActive(true);
+        playersMenu.UpdateBackButtons(true);
     }
 
-    public void Connect()
+    private void OnHostShutdown()
+    {
+        HostUnsubscribe();
+        status.gameObject.SetActive(false);
+
+        ipFieldManager.Block(false);
+
+        shutdownButton.SetActive(false);
+        cancelButton.SetActive(false);
+        createButton.gameObject.SetActive(true);
+        connectButton.gameObject.SetActive(true);
+
+        playersMenu.UpdateBackButtons(false);
+    }
+
+    private void HostUnsubscribe()
+    {
+        hostMonitoring.OnStartCreationEvent -= OnHostStartCreating;
+        hostMonitoring.OnCreatingFailureEvent -= OnHostCreatingFailure;
+        hostMonitoring.OnCreatedEvent -= OnHostCreated;
+        hostMonitoring.OnClientConnectedEvent -= OnClientConnected;
+        hostMonitoring.OnClientDisconnectedEvent -= OnClientDisconnected;
+        hostMonitoring.OnShutdownEvent -= OnHostShutdown;
+    }
+
+    public void ClientSubscribe()
+    {
+        clientMonitoring.OnConnectionStartEvent += OnClientStartConnecting;
+        clientMonitoring.OnConnectionFailureEvent += OnClientFailureConnecting;
+        clientMonitoring.OnConnectedEvent += OnClientConnected;
+        clientMonitoring.OnDisconnectedEvent += OnClientDisconnected;
+    }
+
+    public void OnClientStartConnecting()
     {
         ShowStatus("connecting...");
 
@@ -99,73 +125,36 @@ public class NetworkSubmenu : NetworkBehaviour
         connectButton.gameObject.SetActive(false);
         cancelButton.SetActive(true);
 
-        NetworkManager.StartClient();
-        StartCoroutine("WaitingConnection");
+        playersMenu.UpdateBackButtons(true);
     }
 
-    private void OnConnectingFailure()
+    private void OnClientFailureConnecting()
     {
         ShowError("connection error");
-        Shutdown(true);
-    }
 
-    [ServerRpc(RequireOwnership = false)]
-    private void OnClientConnectedServerRpc()
-    {
-        OnClientConnectedClientRpc();
-    }
-
-    [ClientRpc]
-    private void OnClientConnectedClientRpc()
-    {
-        Global.playerAmmount = 2;
-        playersMenu.UpdatePlayersSubmenu();
-        gameObject.SetActive(false);
-    }
-
-    public void CancelConnecting()
-    {
-        StopCoroutine("WaitingConnection");
-        Shutdown();
-    }
-
-    public void Shutdown(bool statusActive = false)
-    {
-        NetworkManager.Shutdown();
-
-        status.gameObject.SetActive(statusActive);
         ipFieldManager.Block(false);
 
-        shutdownButton.SetActive(false);
         cancelButton.SetActive(false);
         createButton.gameObject.SetActive(true);
         connectButton.gameObject.SetActive(true);
 
-        Global.gameMode = GameMode.Single;
+        ClientUnsubscribe();
     }
 
-    public void Disconnect()
+    private void OnClientConnected()
     {
-        RequestClientDisconnectServerRpc(1);
+        HideStatus();
+        gameObject.SetActive(false);
+        playersMenu.ShowPlayer2Submenu();
     }
 
-    [ServerRpc(RequireOwnership = false)]
-    private void RequestClientDisconnectServerRpc(ulong id)
+    private void OnClientDisconnected()
     {
-        RequestDisconnectClientRpc();
-        NetworkManager.DisconnectClient(id);
-    }
-
-    [ClientRpc]
-    private void RequestDisconnectClientRpc()
-    {
-        Global.playerAmmount = 1;
-
-        if (IsHost)
+        if (Global.gameMode == GameMode.Host)
         {
             ShowStatus("no player");
         }
-        else if (IsClient)
+        else
         {
             HideStatus();
 
@@ -175,48 +164,52 @@ public class NetworkSubmenu : NetworkBehaviour
             createButton.gameObject.SetActive(true);
             connectButton.gameObject.SetActive(true);
 
-            StopCoroutine("CheckShutdown");
-            NetworkManager.Shutdown();
+            playersMenu.UpdateBackButtons(false);
+
+            ClientUnsubscribe();
         }
 
-        playersMenu.Bannish();
+        playersMenu.HidePlayer2Submenu();
         gameObject.SetActive(true);
     }
 
-    public void OnHostDown()
+    private void ClientUnsubscribe()
     {
-        HideStatus();
-
-        ipFieldManager.Block(false);
-
-        cancelButton.SetActive(false);
-        createButton.gameObject.SetActive(true);
-        connectButton.gameObject.SetActive(true);
-
-        NetworkManager.Shutdown();
-
-        Global.gameMode = GameMode.Single;
-        playersMenu.Bannish();
-        gameObject.SetActive(true);
+        clientMonitoring.OnConnectionStartEvent -= OnClientStartConnecting;
+        clientMonitoring.OnConnectionFailureEvent -= OnClientFailureConnecting;
+        clientMonitoring.OnConnectedEvent -= OnClientConnected;
+        clientMonitoring.OnDisconnectedEvent -= OnClientDisconnected;
     }
 
     private void ShowStatus(string text)
     {
-        StopCoroutine("HideErrorConnection");
+        StopCoroutine(hideErrorConnection);
 
         status.text = text;
         status.color = brown;
         status.gameObject.SetActive(true);
     }
-
-    public void ShowError(string error, bool blockButton = false)
+    
+    public void ShowError(string error)
     {
-        StopCoroutine("HideErrorConnection");
+        StopCoroutine(hideErrorConnection);
 
         status.text = error;
         status.color = red;
         status.gameObject.SetActive(true);
-        StartCoroutine("HideErrorConnection");
+
+        StartCoroutine(hideErrorConnection);
+    }
+
+    public void ShowError(string error, bool blockButton)
+    {
+        StopCoroutine(hideErrorConnection);
+
+        status.text = error;
+        status.color = red;
+        status.gameObject.SetActive(true);
+
+        StartCoroutine(hideErrorConnection);
 
         if (blockButton)
         {
@@ -227,7 +220,8 @@ public class NetworkSubmenu : NetworkBehaviour
 
     public void HideStatus()
     {
-        StopCoroutine("HideErrorConnection");
+        StopCoroutine(hideErrorConnection);
+
         status.gameObject.SetActive(false);
         createButton.interactable = true;
         connectButton.interactable = true;

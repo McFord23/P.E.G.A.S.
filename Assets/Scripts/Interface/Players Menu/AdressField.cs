@@ -1,14 +1,14 @@
 using UnityEngine;
 using TMPro;
 
-public class IPField : MonoBehaviour
+public class AdressField : MonoBehaviour
 {
     private TMP_InputField inputField;
     private TMP_Text text;
     private Color brown;
     private Color red;
 
-    private IPFieldManager manager;
+    private AddressFieldManager manager;
     private NetworkSubmenu networkSubmenu;
 
     private float cooldown = 1f;
@@ -21,7 +21,7 @@ public class IPField : MonoBehaviour
         brown = text.color;
         red = red = new Color(0.45f, 0.2f, 0.15f);
 
-        manager = transform.GetComponentInParent<IPFieldManager>();
+        manager = transform.GetComponentInParent<AddressFieldManager>();
         networkSubmenu = manager.GetComponentInParent<NetworkSubmenu>();
     }
 

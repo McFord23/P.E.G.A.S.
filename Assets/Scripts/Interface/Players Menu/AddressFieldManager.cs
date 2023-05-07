@@ -5,7 +5,7 @@ using UnityEngine;
 using TMPro;
 
 
-public class IPFieldManager : NetworkBehaviour
+public class AddressFieldManager : NetworkBehaviour
 {
     private List<TMP_InputField> fields = new();
     private UnityTransport transport;
@@ -19,7 +19,7 @@ public class IPFieldManager : NetworkBehaviour
             if (transform.GetChild(i).TryGetComponent(out TMP_InputField field))
             {
                 fields.Add(field);
-                field.GetComponent<IPField>().Initialize();
+                field.GetComponent<AdressField>().Initialize();
             }
         }
 

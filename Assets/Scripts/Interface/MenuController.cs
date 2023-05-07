@@ -68,7 +68,6 @@ public class MenuController : MonoBehaviour
         playersMark = transform.Find("Players Mark").GetComponent<Toggle>();
 
         playersIcon = transform.Find("Players Mark/Players Icon").GetComponent<Image>();
-        UpdatePlayersIcon();
 
         menu = gameObject;
         settingsMenu = transform.Find("Settings Menu").gameObject;
@@ -235,9 +234,9 @@ public class MenuController : MonoBehaviour
         ChangeMenuEvent.Invoke();
     }
 
-    public void UpdatePlayersIcon()
+    public void UpdatePlayersIcon(bool togetherMode)
     {
-        playersIcon.sprite = Global.playerAmmount == 2 
+        playersIcon.sprite = togetherMode 
             ? togetherIcon 
             : soloIcon;
     }

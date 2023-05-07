@@ -79,13 +79,13 @@ public class PlayerController : NetworkBehaviour
                 shoot = Input.GetKey(KeyCode.Mouse1) ? 1f : 0f;
                 break;
            
-            case ControlLayout.Wasd:
+            case ControlLayout.WASD:
                 gas = Input.GetKey(KeyCode.LeftShift) ? 1f : 0f;
                 rotate = Global.Sensitivity.keyboard * Input.GetAxis("Rotate-WASD");
                 shoot = Input.GetKey(KeyCode.LeftControl) ? 1f : 0f;
                 break;
             
-            case ControlLayout.Ijkl:
+            case ControlLayout.IJKL:
                 gas = Input.GetKey(KeyCode.RightShift) ? 1f : 0f;
                 rotate = Global.Sensitivity.keyboard * Input.GetAxis("Rotate-IJKL");
                 shoot = Input.GetKey(KeyCode.RightControl) ? 1f : 0f;

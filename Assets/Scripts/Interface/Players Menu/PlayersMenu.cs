@@ -47,20 +47,16 @@ public class PlayersMenu : MonoBehaviour
         networkBannishButton = player2Submenu.transform.Find("Network Bannish").gameObject;
         quitButton = player2Submenu.transform.Find("Quit").gameObject;
 
-        player1Submenu.Initialize();
-        player2Submenu.Initialize();
-
         player1GamepadImage = transform.Find("Player #1/Gamepad").GetComponent<Image>();
         player2GamepadImage = transform.Find("Player #2/Gamepad").GetComponent<Image>();
 
-        player1Submenu.layout = Global.players[0].controlLayout;
-        player2Submenu.layout = Global.players[1].controlLayout;
+        player1Submenu.Initialize();
+        player2Submenu.Initialize();
     }
 
     void Start()
     {
-        ChangePlayer1Layout();
-        ChangePlayer2Layout();
+        UpdatePlayersLayout();
 
         player1Submenu.ChangeCharacter(Global.players[0].character);
         player2Submenu.ChangeCharacter(Global.players[1].character);
@@ -71,10 +67,14 @@ public class PlayersMenu : MonoBehaviour
     public void LocalCoop()
     {
         Global.gameMode = GameMode.LocalCoop;
-        Global.playerAmmount = 2;
         coopSubmenu.SetActive(false);
 
-        UpdatePlayersSubmenu();
+        if (Global.players[0].controlLayout == Global.players[1].controlLayout)
+        {
+            player2Submenu.NextLayout();
+        }
+
+        ShowPlayer2Submenu();
     }
 
     public void NetworkCoop()
@@ -89,15 +89,8 @@ public class PlayersMenu : MonoBehaviour
     public void LocalBannish()
     {
         Global.gameMode = GameMode.Single;
-        Global.playerAmmount = 1;
         coopSubmenu.SetActive(true);
-        Bannish();
-    }
-
-    public void Bannish()
-    {
-        menu.UpdatePlayersIcon();
-        UpdatePlayersSubmenu();
+        HidePlayer2Submenu();
     }
 
     public void BackCoop()
@@ -108,7 +101,7 @@ public class PlayersMenu : MonoBehaviour
         UpdateBackButtons(true);
     }
 
-    private void UpdateBackButtons(bool toOne)
+    public void UpdateBackButtons(bool toOne)
     {
         if (toOne)
         {
@@ -146,7 +139,7 @@ public class PlayersMenu : MonoBehaviour
         }
     }
 
-    public void UpdatePlayersSubmenu()
+    public void ShowPlayer2Submenu()
     {
         switch (Global.gameMode)
         {
@@ -157,47 +150,47 @@ public class PlayersMenu : MonoBehaviour
 
                 player2Submenu.ShowButton(true);
                 player1Submenu.ShowButton(true);
-
-                player2Submenu.gameObject.SetActive(true);
                 break;
 
-            case GameMode.Host when Global.playerAmmount == 2:
+            case GameMode.Host:
                 player2Title.text = "Network Coop";
                 p1.text = "You";
                 p2.text = "Sister";
 
                 player2Submenu.ShowButton(false);
-                player1Submenu.ShowButton(true);
-
-                player2Submenu.gameObject.SetActive(true);
+                player1Submenu.ShowButton(true);;
                 break;
 
-            case GameMode.Client when Global.playerAmmount == 2:
+            case GameMode.Client:
                 player2Title.text = "Network Coop";
                 p1.text = "Sister";
                 p2.text = "You";
 
                 player2Submenu.ShowButton(true);
                 player1Submenu.ShowButton(false);
-
-                player2Submenu.gameObject.SetActive(true);
-                break;
-
-            default:
-                player2Title.text = "Local Coop";
-                p1.text = "Player 1";
-                p2.text = "Player 2";
-
-                player1Submenu.ShowButton(true);
-
-                player1Submenu.gameObject.SetActive(true);
-                player2Submenu.gameObject.SetActive(false);
                 break;
         }
 
+        player2Submenu.gameObject.SetActive(true);
+
         UpdateKickButton();
         UpdateGamepadStatus();
-        menu.UpdatePlayersIcon();
+        menu.UpdatePlayersIcon(true);
+    }
+
+    public void HidePlayer2Submenu()
+    {
+        player2Title.text = "";
+        p1.text = "Player 1";
+        p2.text = "Player 2";
+
+        player1Submenu.ShowButton(true);
+
+        player1Submenu.gameObject.SetActive(true);
+        player2Submenu.gameObject.SetActive(false);
+
+        player2Submenu.gameObject.SetActive(false);
+        menu.UpdatePlayersIcon(false);
     }
 
     public void ChangeCharacter()
@@ -220,6 +213,16 @@ public class PlayersMenu : MonoBehaviour
         }
     }
 
+    public void ChangeHostCharacter(Character player)
+    {
+        player1Submenu.ChangeCharacter(player);
+    }
+
+    public void ChangeClientCharacter(Character player)
+    {
+        player2Submenu.ChangeCharacter(player);
+    }
+
     public void ChangeGamepad()
     {
         (Global.players[0].gamepad, Global.players[1].gamepad) = (Global.players[1].gamepad, Global.players[0].gamepad);
@@ -228,30 +231,48 @@ public class PlayersMenu : MonoBehaviour
 
     public void UpdateGamepadStatus()
     {
-        if (Global.gameMode == GameMode.Single)
+        switch (Global.gameMode)
         {
-            if (Gamepad.gamepad1) player1GamepadImage.sprite = gamepadSprites[0];
-            else player1GamepadImage.sprite = gamepadSprites[3];
-        }
-        else
-        {
-            if (Gamepad.gamepad1) player1GamepadImage.sprite = gamepadSprites[1];
-            else player1GamepadImage.sprite = gamepadSprites[3];
+            case GameMode.Single:
+                if (Gamepad.gamepad1) player1GamepadImage.sprite = gamepadSprites[0];
+                else player1GamepadImage.sprite = gamepadSprites[3];
+                break;
 
-            if (Gamepad.gamepad2) player2GamepadImage.sprite = gamepadSprites[2];
-            else player2GamepadImage.sprite = gamepadSprites[3];
+            case GameMode.LocalCoop:
+                if (Gamepad.gamepad1) player1GamepadImage.sprite = gamepadSprites[1];
+                else player1GamepadImage.sprite = gamepadSprites[3];
+
+                if (Gamepad.gamepad2) player2GamepadImage.sprite = gamepadSprites[2];
+                else player2GamepadImage.sprite = gamepadSprites[3];
+                break;
+
+            case GameMode.Host:
+            case GameMode.Client:
+                if (Gamepad.gamepad1) player1GamepadImage.sprite = gamepadSprites[0];
+                else player1GamepadImage.sprite = gamepadSprites[3];
+
+                if (Gamepad.gamepad2) player2GamepadImage.sprite = gamepadSprites[0];
+                else player2GamepadImage.sprite = gamepadSprites[3];
+                break;
         }
     }
 
     public void ChangePlayer1Layout()
     {
         Global.players[0].controlLayout = player1Submenu.layout;
-        player2Submenu.BlockIndex(player1Submenu.layout);
+        player2Submenu.Block(player1Submenu.layout);
     }
 
     public void ChangePlayer2Layout()
     {
         Global.players[1].controlLayout = player2Submenu.layout;
-        player1Submenu.BlockIndex(player2Submenu.layout);
+        player1Submenu.Block(player2Submenu.layout);
+    }
+
+    public void UpdatePlayersLayout()
+    {
+        player1Submenu.SetLayout(Global.players[0].controlLayout);
+        player2Submenu.SetLayout(Global.players[1].controlLayout);
+        print("check in pm");
     }
 }

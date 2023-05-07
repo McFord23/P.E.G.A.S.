@@ -8,7 +8,7 @@ public class PlayerSubmenu : MonoBehaviour
     private Sprite[] layoutSprites;
     private Image layoutSprite;
 
-    public ControlLayout layout;
+    public ControlLayout layout { private set; get; }
     private int index;
     private int indexBlocked;
 
@@ -37,7 +37,14 @@ public class PlayerSubmenu : MonoBehaviour
         layoutSprite.sprite = layoutSprites[index];
     }
 
-    public void BlockIndex(ControlLayout indexAnotherPlayer)
+    public void SetLayout(ControlLayout controlLayout)
+    {
+        layout = controlLayout;
+        index = (int)controlLayout;
+        layoutSprite.sprite = layoutSprites[index];
+    }
+
+    public void Block(ControlLayout indexAnotherPlayer)
     {
         indexBlocked = (int)indexAnotherPlayer;
     }
@@ -47,7 +54,7 @@ public class PlayerSubmenu : MonoBehaviour
         if (index < layoutSprites.Length - 1) index++;
         else index = 0;
 
-        if (Global.gameMode != GameMode.Single)
+        if (Global.gameMode == GameMode.LocalCoop)
         {
             if (index == indexBlocked && indexBlocked == layoutSprites.Length - 1) index = 0;
             else if (index == indexBlocked) index++;
@@ -63,7 +70,7 @@ public class PlayerSubmenu : MonoBehaviour
         if (index > 0) index--;
         else index = layoutSprites.Length - 1;
 
-        if (Global.gameMode != GameMode.Single)
+        if (Global.gameMode == GameMode.LocalCoop)
         {
             if (index == indexBlocked && indexBlocked == 0) index = layoutSprites.Length - 1;
             else if (index == indexBlocked) index--;
