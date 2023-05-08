@@ -9,6 +9,8 @@ using UnityEngine.SceneManagement;
  */
 public class SceneManagerAdapter : SingletonNetworkBehaviour<SceneManagerAdapter>
 {
+    [SerializeField] private GameObject loadScreen;
+
     public void LoadScene(string sceneName)
     {
         switch (Global.gameMode)
@@ -18,32 +20,28 @@ public class SceneManagerAdapter : SingletonNetworkBehaviour<SceneManagerAdapter
                 SceneManager.LoadScene(sceneName);
                 break;
 
-            case GameMode.Client:
-                RequestLoadSceneServerRpc();
-                break;
-
             case GameMode.Host:
-                NetworkManager.Singleton.SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+            case GameMode.Client:
+                if (loadScreen) loadScreen.SetActive(true);
+                RequestLoadSceneServerRpc(sceneName);
                 break;
         }
     }
 
     [ServerRpc(RequireOwnership = false)]
-    private void RequestLoadSceneServerRpc()
+    private void RequestLoadSceneServerRpc(string sceneName)
     {
-        print("request accept");
-        LoadSceneClientRpc();
+        LoadSceneClientRpc(sceneName);
     }
 
     [ClientRpc]
-    private void LoadSceneClientRpc()
+    private void LoadSceneClientRpc(string sceneName)
     {
-        print(NetworkManager.LocalClientId + " is Host: " + IsHost);
-        print(NetworkManager.LocalClientId + " GameMode: " + Global.gameMode);
+        if (loadScreen) loadScreen.SetActive(true);
 
-        if (IsHost || Global.gameMode == GameMode.Host)
+        if (Global.gameMode == GameMode.Host)
         {
-            NetworkManager.SceneManager.LoadScene("Game", LoadSceneMode.Single);
+            NetworkManager.SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
         }
     }
 }

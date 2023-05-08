@@ -27,7 +27,7 @@ public class CameraController : MonoBehaviour
     public static float flySize = 60f; // ort = 13
     public static float minSize = 30f; // ort = 5
     private float size;
-    private float zoomSpeed = 0.01f;
+    private float zoomSpeed = 0.04f;
 
     private void Start()
     {
@@ -36,7 +36,7 @@ public class CameraController : MonoBehaviour
 
         mapOffset = new Vector3(0, 0, -10);
         playerOffset = new Vector3(10, 0, 0);
-        interfaceOffset = new Vector3(1.25f, 0, -10);
+        interfaceOffset = new Vector3(2.75f, 0, -10);
         
         size = flySize;
     }
@@ -62,7 +62,7 @@ public class CameraController : MonoBehaviour
                 break;
             
             case Mode.Player:
-                target = Vector3.Lerp(rb.position, playerPosition + interfaceOffset, moveSpeed);
+                target = Vector3.Lerp(rb.position, playerPosition + interfaceOffset, 2 * moveSpeed);
                 size = minSize;
                 break;
         }

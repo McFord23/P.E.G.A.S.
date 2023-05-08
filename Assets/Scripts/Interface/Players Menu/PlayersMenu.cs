@@ -54,14 +54,25 @@ public class PlayersMenu : MonoBehaviour
         player2Submenu.Initialize();
     }
 
-    void Start()
+    private void Start()
     {
-        UpdatePlayersLayout();
-
         player1Submenu.ChangeCharacter(Global.players[0].character);
         player2Submenu.ChangeCharacter(Global.players[1].character);
 
+        UpdatePlayersLayout();
         UpdateGamepadStatus();
+
+        switch (Global.gameMode)
+        {            
+            case GameMode.LocalCoop:
+                LocalCoop();
+                break;
+
+            case GameMode.Client:
+            case GameMode.Host:
+                NetworkCoop();
+                break;
+        }
     }
 
     public void LocalCoop()
@@ -74,6 +85,7 @@ public class PlayersMenu : MonoBehaviour
             player2Submenu.NextLayout();
         }
 
+        UpdateBackButtons(true);
         ShowPlayer2Submenu();
     }
 
@@ -185,10 +197,6 @@ public class PlayersMenu : MonoBehaviour
         p2.text = "Player 2";
 
         player1Submenu.ShowButton(true);
-
-        player1Submenu.gameObject.SetActive(true);
-        player2Submenu.gameObject.SetActive(false);
-
         player2Submenu.gameObject.SetActive(false);
         menu.UpdatePlayersIcon(false);
     }

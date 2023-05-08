@@ -27,6 +27,7 @@ public class MenuController : MonoBehaviour
     private GameObject deathSubmenu;
     private GameObject pauseSubmenu;
     private GameObject victorySubmenu;
+
     private GameObject playersMenu;
 
     private string resumeMenu;
@@ -57,7 +58,7 @@ public class MenuController : MonoBehaviour
 
     private string scene;
 
-    void Awake()
+    private void Awake()
     {
         menuTransform = GetComponent<RectTransform>();
 
@@ -100,7 +101,7 @@ public class MenuController : MonoBehaviour
         }
     }
 
-    void Start()
+    private void Start()
     {
         settingsMenu.SetActive(false);
         playersMenu.SetActive(false);
@@ -123,7 +124,7 @@ public class MenuController : MonoBehaviour
         }
     }
 
-    void Update()
+    private void Update()
     {
         if ((bool)mainMenu)
         {

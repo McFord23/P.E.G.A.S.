@@ -37,6 +37,12 @@ public class ControlLayoutSync : NetworkBehaviour
 
     public override void OnNetworkDespawn()
     {
+        host.OnCreatedEvent -= OnHostUp;
+        client.OnConnectedEvent -= OnClientConnected;
+
+        layoutHost.OnValueChanged -= OnLayoutChange;
+        layoutClient.OnValueChanged -= OnLayoutChange;
+
         foreach (Button button in buttons)
         {
             button.onClick.RemoveListener(LayoutChangeSync);

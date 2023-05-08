@@ -4,24 +4,29 @@ using UnityEngine.Serialization;
 
 public class PauseMenu : MonoBehaviour
 {
-    GameObject menu;
-    UnityEvent MenuDisabledEvent;
+    private GameObject menu;
+    private UnityEvent MenuDisabledEvent;
 
     [FormerlySerializedAs("playersController")] 
-    public PlayersManager playersManager;
+    [SerializeField] private PlayersManager playersManager;
 
-    void Start()
+    private void Start()
     {
         menu = transform.parent.parent.gameObject;
         MenuDisabledEvent = menu.GetComponent<MenuController>().MenuDisabledEvent;
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetButtonDown("Cancel"))
         {
-            Resume();
+            ExecuteResume();
         }
+    }
+
+    public void ExecuteResume()
+    {
+        EventAdapter.Instance.Execute(EventKey.Resume);
     }
 
     public void Resume()

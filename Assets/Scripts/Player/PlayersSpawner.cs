@@ -20,10 +20,10 @@ public class PlayersSpawner : NetworkBehaviour
             SpawnSinglePlayer();
             return;
         }
-        
+
         if (NetworkManager.IsHost)
         {
-            NetworkManager.Singleton.SceneManager.OnLoadEventCompleted += SceneManagerOnOnLoadEventCompleted;
+            NetworkManager.SceneManager.OnLoadEventCompleted += SceneManagerOnOnLoadEventCompleted;
         }
     }
 

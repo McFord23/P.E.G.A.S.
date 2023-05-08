@@ -39,6 +39,23 @@ public class NetworkSubmenu : NetworkBehaviour
 
         hostMonitoring = HostMonitoring.Instance;
         clientMonitoring = ClientMonitoring.Instance;
+
+        switch (Global.gameMode)
+        {
+            case GameMode.Client:
+                playersMenu.UpdateBackButtons(true);
+                OnClientConnected();
+                break;
+
+            case GameMode.Host:
+                if (Global.fullParty)
+                {
+                    playersMenu.UpdateBackButtons(true);
+                    OnClientConnected();
+                }
+                else OnHostCreated();
+                break;
+        }
     }
 
     public void HostSubscribe()

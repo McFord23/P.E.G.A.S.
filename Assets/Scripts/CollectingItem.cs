@@ -43,11 +43,16 @@ public class CollectingItem : MonoBehaviour
         transform.parent = null;
     }
 
+    public void Victory()
+    {
+        VictoryEvent.Invoke();
+    }
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.CompareTag("Finish"))
         {
-            VictoryEvent.Invoke();
+            EventAdapter.Instance.Execute(EventKey.Victory);
         }
     }
 }

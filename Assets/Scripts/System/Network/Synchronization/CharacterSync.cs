@@ -37,6 +37,12 @@ public class CharacterSync : NetworkBehaviour
 
     public override void OnNetworkDespawn()
     {
+        host.OnCreatedEvent -= OnHostUp;
+        client.OnConnectedEvent -= OnClientConnected;
+
+        characterHost.OnValueChanged -= OnHostCharacterChange;
+        characterClient.OnValueChanged -= OnClientCharacterChange;
+
         foreach (Button button in buttons)
         {
             button.onClick.RemoveListener(CharacterChangeSync);

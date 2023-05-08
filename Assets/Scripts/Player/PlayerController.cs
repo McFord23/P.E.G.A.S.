@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class PlayerController : NetworkBehaviour
 {
-    Player player;
-    float wingPower = 10000;
+    private Player player;
+    private float wingPower = 10000;
 
-    float gasInput = 0f;
-    float rotateInput = 0f;
-    float shootInput = 0f;
+    private float gasInput = 0f;
+    private float rotateInput = 0f;
+    private float shootInput = 0f;
 
-    void Start()
+    private void Start()
     {
         player = GetComponent<Player>();
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if (player.moveState is MoveState.Idle or MoveState.Run)
         {
@@ -39,7 +39,7 @@ public class PlayerController : NetworkBehaviour
         }
     }
 
-    void Update()
+    private void Update()
     {
         if (player.moveState == MoveState.Run)
         {

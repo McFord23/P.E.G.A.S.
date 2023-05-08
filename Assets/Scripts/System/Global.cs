@@ -3,6 +3,7 @@
 public static class Global
 {
     public static GameMode gameMode = GameMode.Single;
+    public static bool fullParty = false;
 
     public struct Player
     {

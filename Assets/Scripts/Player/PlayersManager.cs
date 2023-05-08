@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Enums;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class PlayersManager : SingletonMonoBehaviour<PlayersManager>
@@ -29,9 +30,8 @@ public class PlayersManager : SingletonMonoBehaviour<PlayersManager>
         playerControllers[spawnPlayerNum] = newPlayer.GetComponent<PlayerController>();
     }
 
-    void Update()
+    private void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.R))
         {
             Reset();
@@ -44,7 +44,7 @@ public class PlayersManager : SingletonMonoBehaviour<PlayersManager>
             if (players[0].moveState == MoveState.Dead && players[1].moveState == MoveState.Dead) return;
             if (Input.GetButtonDown("Cancel"))
             {
-                Pause();
+                EventAdapter.Instance.Execute(EventKey.Pause);
             }
         }
         else if (players[0])
@@ -54,7 +54,7 @@ public class PlayersManager : SingletonMonoBehaviour<PlayersManager>
             
             if (Input.GetButtonDown("Cancel"))
             {
-                Pause();
+                EventAdapter.Instance.Execute(EventKey.Pause);
             }
         }
     }
@@ -114,7 +114,6 @@ public class PlayersManager : SingletonMonoBehaviour<PlayersManager>
     {
         players[0]?.Pause();
         players[1]?.Pause();
-
         PauseEvent.Invoke();
     }
 
@@ -122,7 +121,6 @@ public class PlayersManager : SingletonMonoBehaviour<PlayersManager>
     {
         players[0]?.Resume();
         players[1]?.Resume();
-
         ResumeEvent.Invoke();
     }
 
