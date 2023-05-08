@@ -3,6 +3,14 @@ using UnityEngine;
 
 public class Player : NetworkBehaviour
 {
+    private const float SlowSpeed = 30f;
+    private const float StartFlySpeed = 40f;
+    private const float CrushSpeed = 70f;
+    private const float StartFlyForce = 250f;
+    private const float ReviveTime = 3f;
+
+    [SerializeField] private GameObject crushEffectPrefab;
+    
     public float speed;
     public float angle;
     public float angleOfAttack;
@@ -13,10 +21,10 @@ public class Player : NetworkBehaviour
     private Vector2 saveDirection;
     private MoveState saveState;
 
-    public Rigidbody2D rb { private set; get; }
+    public Rigidbody2D rb { get; private set; }
     private PolygonCollider2D flyCollider;
     private CapsuleCollider2D deathCollider;
-    private CircleCollider2D[] rideColliders = new CircleCollider2D[2];
+    private BoxCollider2D rideCollider;
 
     public MoveState moveState;
     
@@ -31,6 +39,9 @@ public class Player : NetworkBehaviour
     public float wingArea = 78.04f;
     private float aspectRatio;
 
+    private bool countReviveTimer;
+    private float reviveTimer;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -38,7 +49,7 @@ public class Player : NetworkBehaviour
         aspectRatio = (wingSpan * wingSpan) / wingArea;
         flyCollider = GetComponentInChildren<PolygonCollider2D>();
         deathCollider = GetComponentInChildren<CapsuleCollider2D>();
-        rideColliders = GetComponentsInChildren<CircleCollider2D>();
+        rideCollider = GetComponentInChildren<BoxCollider2D>();
 
         soundController = SoundController.Instance;
         animatorController = GetComponentInChildren<Animator>();
@@ -49,11 +60,21 @@ public class Player : NetworkBehaviour
         Idle();
     }
 
+    private void Update()
+    {
+        UpdateReviveTime();
+    }
+
     private void FixedUpdate()
     {
         if (moveState is MoveState.Idle or MoveState.Run)
         {
             RidePhysics();
+
+            if (speed >= StartFlySpeed)
+            {
+                SetFlyMode(true);
+            }
         }
 
         if (moveState is MoveState.Flap or MoveState.FreeFall)
@@ -66,21 +87,13 @@ public class Player : NetworkBehaviour
             rb.drag = landed ? 3f : 0.3f;
         }
 
-        switch (rb.velocity.x)
-        {
-            case > 0.0001f when transform.localScale.y == -1:
-                transform.localScale = new Vector3(1, 1, 1);
-                break;
-            case < -0.0001f when transform.localScale.y == 1:
-                transform.localScale = new Vector3(1, -1, 1);
-                break;
-        }
+        HandleFlyFlip();
 
         speed = rb.velocity.magnitude;
         angle = transform.eulerAngles.z;
     }
 
-    public void Reset()
+    public void Revive(bool teleportBack = true)
     {
         var localTransform = transform;
         localTransform.localScale = new Vector3(1, 1, 1);
@@ -89,9 +102,13 @@ public class Player : NetworkBehaviour
         rb.angularDrag = 2.5f;
         rb.angularVelocity = 0f;
         localTransform.right = Vector2.right;
-        localTransform.position = spawnPos;
 
-        if (item != null)
+        if (teleportBack)
+        {
+            localTransform.position = spawnPos;
+        }
+
+        if ((bool)item)
         {
             item.Drop();
             item = null;
@@ -100,14 +117,21 @@ public class Player : NetworkBehaviour
         Resurrect();
     }
 
+    private void UpdateReviveTime()
+    {
+        if (!countReviveTimer) return;
+        
+        reviveTimer -= Time.deltaTime;
+        if (!(reviveTimer <= 0)) return;
+        
+        Revive(false);
+        countReviveTimer = false;
+    }
+
     private void Resurrect()
     {
         deathCollider.enabled = false;
-        foreach (var rideCollider in rideColliders)
-        {
-            rideCollider.enabled = true;
-        }
-
+        rideCollider.enabled = true;
         Idle();
     }
 
@@ -154,8 +178,7 @@ public class Player : NetworkBehaviour
         moveState = MoveState.Run;
         animatorController.Play("Walk");
 
-        float gear;
-        gear = (speed < 20) ? 1.5f : 1;
+        var gear = (speed < 20) ? 1.5f : 1;
         if (landed) rb.AddForce(transform.right * (gear * torque));
     }
 
@@ -179,12 +202,10 @@ public class Player : NetworkBehaviour
 
     public void Flap(float flapForce)
     {
-        float gear;
-
         moveState = MoveState.Flap;
         animatorController.Play("Flap");
 
-        gear = (speed < 20) ? 2 : 1;
+        var gear = (speed < 20) ? 2 : 1;
         rb.AddForce(transform.right * (gear * flapForce));
     }
 
@@ -207,8 +228,21 @@ public class Player : NetworkBehaviour
         rb.AddForce(liftDirection * lift + dragDirection * drag);
     }
 
+    private void HandleFlyFlip()
+    {
+        var localTransform = transform;
+        var scaleY = rb.velocity.x switch
+        {
+            > 0.0001f => 1,
+            < -0.0001f => -1,
+            _ => localTransform.localScale.y
+        };
+        localTransform.localScale = new Vector3(1, scaleY, 1);
+    }
+
     public void Kill()
     {
+        landed = true;
         moveState = MoveState.Dead;
         deathCollider.enabled = true;
         flyCollider.enabled = false;
@@ -216,7 +250,16 @@ public class Player : NetworkBehaviour
         rb.gravityScale = 1f;
         rb.angularDrag = 0.3f;
             
-        playersManager.Dead();
+        if (speed >= CrushSpeed)
+        {
+            Instantiate(crushEffectPrefab, transform.position, Quaternion.identity);
+            playersManager.Dead();
+        }
+        else
+        {
+            countReviveTimer = true;
+            reviveTimer = ReviveTime;
+        }
 
         if ((bool)item)
         {
@@ -224,40 +267,46 @@ public class Player : NetworkBehaviour
             item = null;
         }
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    
+    private void OnCollisionEnter2D()
     {
-        if (moveState is MoveState.Idle or MoveState.Run)
-        {
-            if (collision.gameObject.CompareTag("Ground"))
-            {
-                landed = true;
-            }
-        }
-        else
-        {
-            if (moveState != MoveState.Dead)
-            {
-                Kill();
-            }
+        if (moveState is MoveState.Idle or MoveState.Run or MoveState.Dead) return;
 
-            soundController.Hit();
+        if (speed <= SlowSpeed)
+        {
+            SetFlyMode(false);
+            return;
         }
+        
+        soundController.Hit();
+        Kill();
     }
 
    private void OnCollisionExit2D()
     {
-        landed = false;
-        
         if (moveState is not (MoveState.Idle or MoveState.Run)) return;
-
-        foreach (CircleCollider2D rideCollider in rideColliders)
-        {
-            rideCollider.enabled = false;
-        }
-        flyCollider.enabled = true;
-        FreeFall();
+        SetFlyMode(true);
     }
+   
+   private void SetFlyMode(bool fly)
+   {
+       rideCollider.enabled = !fly;
+       flyCollider.enabled = fly;
+        
+       landed = !fly;
+        
+       if (fly)
+       {
+           FreeFall();
+           rb.AddForce(Vector2.up * StartFlyForce);
+       }
+       else
+       {
+           rb.velocity = Vector3.zero;
+           rb.angularVelocity = 0;
+           Idle();
+       }
+   }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
