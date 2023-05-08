@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 public class DeadMenu : MonoBehaviour
 {
-    private GameObject deadMenu;
     private GameObject menu;
     private UnityEvent MenuDisabledEvent;
     
@@ -13,8 +11,7 @@ public class DeadMenu : MonoBehaviour
 
     private void Start()
     {
-        deadMenu = transform.gameObject;
-        menu = transform.parent.gameObject;
+        menu = transform.parent.parent.gameObject;
         MenuDisabledEvent = menu.GetComponent<MenuController>().MenuDisabledEvent;
     }
 
@@ -30,7 +27,7 @@ public class DeadMenu : MonoBehaviour
     {
         playersManager.Reset();
         MenuDisabledEvent.Invoke();
-        deadMenu.SetActive(false);
+        gameObject.SetActive(false);
         menu.SetActive(false);
     }
 
@@ -38,6 +35,6 @@ public class DeadMenu : MonoBehaviour
     {
         Global.players[0].live = true;
         Global.players[1].live = true;
-        SceneManagerAdapter.LoadScene("Main Menu");
+        SceneManagerAdapter.Instance.LoadScene("Main Menu");
     }
 }

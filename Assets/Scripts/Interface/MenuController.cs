@@ -22,15 +22,15 @@ public class MenuController : MonoBehaviour
     private GameObject settingsMenu;
     private Image settingsPage;
     private GameObject engraving;
+    private GameObject backButton;
 
-    private GameObject deadMenu;
-    private GameObject pauseMenu;
-    private GameObject victoryMenu;
-
+    private GameObject deathSubmenu;
+    private GameObject pauseSubmenu;
+    private GameObject victorySubmenu;
     private GameObject playersMenu;
 
     private string resumeMenu;
-    private MenuNavigation navigation;
+    //private MenuNavigation navigation;
 
     private RectTransform settingsMarkRect;
     private Toggle settingsMark;
@@ -73,10 +73,13 @@ public class MenuController : MonoBehaviour
         settingsMenu = transform.Find("Settings Menu").gameObject;
         settingsPage = settingsMenu.GetComponent<Image>();
         engraving = transform.Find("Engraving").gameObject;
+        backButton = settingsMenu.transform.Find("Back").gameObject;
 
         playersMenu = transform.Find("Players Menu").gameObject;
 
-        navigation = GetComponent<MenuNavigation>();
+        mainMenu = transform.Find("Main Menu").gameObject;
+
+        //navigation = GetComponent<MenuNavigation>();
 
         scene = SceneManager.GetActiveScene().name;
 
@@ -85,15 +88,14 @@ public class MenuController : MonoBehaviour
             case "Main Menu":
                 mode = Mode.Main;
                 SetBackgroundMask(true);
-                mainMenu = transform.Find("Main Menu").gameObject;
                 break;
             
             case "Game":
                 mode = Mode.Game;
                 SetBackgroundMask(false);
-                deadMenu = transform.Find("Dead Menu").gameObject;
-                pauseMenu = transform.Find("Pause Menu").gameObject;
-                victoryMenu = transform.Find("Victory Menu").gameObject;
+                deathSubmenu = settingsMenu.transform.Find("Death Submenu").gameObject;
+                pauseSubmenu = settingsMenu.transform.Find("Pause Submenu").gameObject;
+                victorySubmenu = settingsMenu.transform.Find("Victory Submenu").gameObject;
                 break;
         }
     }
@@ -111,9 +113,10 @@ public class MenuController : MonoBehaviour
                 MenuEnabledEvent.Invoke();
                 break;
             case Mode.Game:
-                deadMenu.SetActive(false);
-                pauseMenu.SetActive(false);
-                victoryMenu.SetActive(false);
+                backButton.SetActive(false);
+                deathSubmenu.SetActive(false);
+                pauseSubmenu.SetActive(false);
+                victorySubmenu.SetActive(false);
                 menu.SetActive(false);
                 MenuDisabledEvent.Invoke();
                 break;
@@ -137,34 +140,40 @@ public class MenuController : MonoBehaviour
 
     public void Back()
     {
-        if (settingsMenu.activeSelf) DisableSettingsMenu();
         if (playersMenu.activeSelf) playersMenu.SetActive(false);
         
         switch (resumeMenu)
         {
             case "main menu":
+                settingsMark.isOn = false;
+                DisableSettingsMenu();
                 mainMenu.SetActive(true);
-                navigation.StartSelect("Main Menu");
+                //navigation.StartSelect("Main Menu");
                 break;
 
             case "dead":
-                deadMenu.SetActive(true);
-                navigation.StartSelect("Dead");
+                settingsMark.isOn = true;
+                EnabledSettingsMenu();
+                deathSubmenu.SetActive(true);
+                //navigation.StartSelect("Dead");
                 break;
 
             case "pause":
-                pauseMenu.SetActive(true);
-                navigation.StartSelect("Pause");
+                settingsMark.isOn = true;
+                EnabledSettingsMenu();
+                pauseSubmenu.SetActive(true);
+                //navigation.StartSelect("Pause");
                 break;
 
             case "victory":
-                victoryMenu.SetActive(true);
-                navigation.StartSelect("Victory");
+                settingsMark.isOn = true;
+                EnabledSettingsMenu();
+                victorySubmenu.SetActive(true);
+                //navigation.StartSelect("Victory");
                 break;
         }       
 
         if (playersMark.isOn) playersMark.isOn = false;
-        if (settingsMark.isOn) settingsMark.isOn = false;
         FlipSettingMark(false);
 
         ChangeMenuEvent.Invoke();
@@ -183,10 +192,6 @@ public class MenuController : MonoBehaviour
 
             case Mode.Game:
                 settingsPage.sprite = holeArchPage;
-
-                if (deadMenu.activeSelf) deadMenu.SetActive(false);
-                if (pauseMenu.activeSelf) pauseMenu.SetActive(false);
-                if (victoryMenu.activeSelf) victoryMenu.SetActive(false);
                 break;
         }
 
@@ -198,7 +203,7 @@ public class MenuController : MonoBehaviour
         settingsMark.isOn = true;
         FlipSettingMark(false);
 
-        navigation.SetMarkNavigation("Settings");
+        //navigation.SetMarkNavigation("Settings");
         ChangeMenuEvent.Invoke();
     }
 
@@ -210,19 +215,7 @@ public class MenuController : MonoBehaviour
 
     public void EnabledPlayersMenu()
     {
-        switch (mode)
-        {
-            case Mode.Main:
-                if (mainMenu.activeSelf) mainMenu.SetActive(false);
-                break;
-
-            case Mode.Game:
-                if (deadMenu.activeSelf) deadMenu.SetActive(false);
-                if (pauseMenu.activeSelf) pauseMenu.SetActive(false);
-                if (victoryMenu.activeSelf) victoryMenu.SetActive(false);
-                break;
-        }
-
+        if (mainMenu.activeSelf) mainMenu.SetActive(false);
         if (settingsMenu.activeSelf) DisableSettingsMenu();
         playersMenu.SetActive(true);
 
@@ -230,7 +223,7 @@ public class MenuController : MonoBehaviour
         FlipSettingMark(true);
 
         playersMark.isOn = true;
-        navigation.SetMarkNavigation("Players");
+        //navigation.SetMarkNavigation("Players");
         ChangeMenuEvent.Invoke();
     }
 
@@ -246,55 +239,57 @@ public class MenuController : MonoBehaviour
         mainMenu.SetActive(true);
 
         resumeMenu = "main menu";
-        navigation.StartSelect("Main Menu");
+        //navigation.StartSelect("Main Menu");
     }
 
     public void Pause()
     {
         menu.SetActive(true);
         MenuEnabledEvent.Invoke();
-        pauseMenu.SetActive(true);
-
+        EnabledSettingsMenu();
+        pauseSubmenu.SetActive(true);
         resumeMenu = "pause";
-        navigation.StartSelect("Pause");
+        //navigation.StartSelect("Pause");
     }
 
     public void Dead()
     {
-        if (pauseMenu.activeSelf)
+        if (pauseSubmenu.activeSelf)
         {
-            pauseMenu.SetActive(false);
+            pauseSubmenu.SetActive(false);
         }
         else
         {
             menu.SetActive(true);
+            EnabledSettingsMenu();
             MenuEnabledEvent.Invoke();
         }
-        deadMenu.SetActive(true);
+        deathSubmenu.SetActive(true);
 
         resumeMenu = "dead";
-        navigation.StartSelect("Dead");
+        //navigation.StartSelect("Dead");
     }
 
     public void Victory()
     {
-        if (deadMenu.activeSelf)
+        if (deathSubmenu.activeSelf)
         {
-            deadMenu.SetActive(false);
+            deathSubmenu.SetActive(false);
         }
-        else if (pauseMenu.activeSelf)
+        else if (pauseSubmenu.activeSelf)
         {
-            pauseMenu.SetActive(false);
+            pauseSubmenu.SetActive(false);
         }
         else
         {
             menu.SetActive(true);
+            EnabledSettingsMenu();
             MenuEnabledEvent.Invoke();
         }
-        victoryMenu.SetActive(true);
+        victorySubmenu.SetActive(true);
 
         resumeMenu = "victory";
-        navigation.StartSelect("Victory");
+        //navigation.StartSelect("Victory");
     }
 
     public void SelectedState(bool var)

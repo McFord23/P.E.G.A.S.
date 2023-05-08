@@ -4,7 +4,6 @@ using UnityEngine.Serialization;
 
 public class PauseMenu : MonoBehaviour
 {
-    GameObject pauseMenu;
     GameObject menu;
     UnityEvent MenuDisabledEvent;
 
@@ -13,8 +12,7 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
-        pauseMenu = transform.gameObject;
-        menu = transform.parent.gameObject;
+        menu = transform.parent.parent.gameObject;
         MenuDisabledEvent = menu.GetComponent<MenuController>().MenuDisabledEvent;
     }
 
@@ -30,7 +28,7 @@ public class PauseMenu : MonoBehaviour
     {
         playersManager.Resume();
         MenuDisabledEvent.Invoke();
-        pauseMenu.SetActive(false);
+        gameObject.SetActive(false);
         menu.SetActive(false);
     }
 
@@ -38,6 +36,6 @@ public class PauseMenu : MonoBehaviour
     {
         Global.players[0].live = true;
         Global.players[1].live = true;
-        SceneManagerAdapter.LoadScene("Main Menu");
+        SceneManagerAdapter.Instance.LoadScene("Main Menu");
     }
 }

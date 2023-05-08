@@ -273,6 +273,5 @@ public class PlayersMenu : MonoBehaviour
     {
         player1Submenu.SetLayout(Global.players[0].controlLayout);
         player2Submenu.SetLayout(Global.players[1].controlLayout);
-        print("check in pm");
     }
 }

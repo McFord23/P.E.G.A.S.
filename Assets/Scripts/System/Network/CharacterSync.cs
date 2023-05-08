@@ -20,9 +20,8 @@ public class CharacterSync : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
-        var sync = transform.parent;
-        host = sync.Find("Host Monitoring").GetComponent<HostMonitoring>();
-        client = sync.Find("Client Monitoring").GetComponent<ClientMonitoring>();
+        host = HostMonitoring.Instance;
+        client = ClientMonitoring.Instance;
 
         host.OnCreatedEvent += OnHostUp;
         client.OnConnectedEvent += OnClientConnected;

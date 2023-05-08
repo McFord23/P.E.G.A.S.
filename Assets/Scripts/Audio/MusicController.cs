@@ -4,11 +4,11 @@ using UnityEngine.SceneManagement;
 
 public class MusicController : MonoBehaviour
 {
-    public AudioSource flyingMusic;
-    public AudioSource pauseMusic;
-    public AudioSource menuMusic;
-    public AudioSource victoryMusic;
-    public AudioSource creditsMusic;
+    private AudioSource flyingMusic;
+    private AudioSource pauseMusic;
+    private AudioSource menuMusic;
+    private AudioSource victoryMusic;
+    private AudioSource creditsMusic;
 
     AudioSource celestiaMenuStart;
     AudioSource celestiaMenuLoop;
