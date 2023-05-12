@@ -2,13 +2,12 @@
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class CameraController : MonoBehaviour
+public class CameraController : SingletonMonoBehaviour<CameraController>
 {
     private Camera controllableCamera;
-    private Rigidbody2D rb;
+    public Rigidbody2D rb { get; private set; }
     
-    [FormerlySerializedAs("playersController")] 
-    public PlayersManager playersManager;
+    private PlayersManager playersManager;
 
     private Mode mode;
 
@@ -32,6 +31,7 @@ public class CameraController : MonoBehaviour
     private void Start()
     {
         controllableCamera = GetComponent<Camera>();
+        playersManager = PlayersManager.Instance;
         rb = GetComponent<Rigidbody2D>();
 
         mapOffset = new Vector3(0, 0, -10);
@@ -50,19 +50,22 @@ public class CameraController : MonoBehaviour
         }
         
         Vector3 target = transform.position;
+        
+        // max player speed = 184
+        float speed = Mathf.Max(playersManager.GetSpeed() / 70, 1) * moveSpeed;
 
         switch (mode)
         {
             case Mode.Fly:
                 if (playersManager.GetDirection() > 0) playerOffset = new Vector3(10, 0, 0);
                 else if (playersManager.GetDirection() < 0) playerOffset = new Vector3(-10, 0, 0);
-
-                target = Vector3.Lerp(rb.position, playerPosition + playerOffset + mapOffset, moveSpeed);
+                
+                target = Vector3.Lerp(rb.position, playerPosition + playerOffset + mapOffset, speed);
                 size = flySize;
                 break;
             
             case Mode.Player:
-                target = Vector3.Lerp(rb.position, playerPosition + interfaceOffset, 2 * moveSpeed);
+                target = Vector3.Lerp(rb.position, playerPosition + interfaceOffset, 1.5f * speed);
                 size = minSize;
                 break;
         }

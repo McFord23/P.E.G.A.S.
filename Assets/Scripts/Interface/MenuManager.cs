@@ -1,10 +1,9 @@
-﻿using Enums;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MenuController : MonoBehaviour
+public class MenuManager : SingletonMonoBehaviour<MenuManager>
 {
     private RectTransform menuTransform;
     private Vector2 monoPageTarget = new Vector2(-310, 0);
@@ -48,9 +47,9 @@ public class MenuController : MonoBehaviour
 
     private bool isSelectedState = false;
 
-    public Mode mode { private set; get; }
+    private Mode mode;
 
-    public enum Mode
+    private enum Mode
     {
         Main,
         Game
@@ -58,8 +57,10 @@ public class MenuController : MonoBehaviour
 
     private string scene;
 
-    private void Awake()
+    private void Start()
     {
+        base.Awake();
+        
         menuTransform = GetComponent<RectTransform>();
 
         background = transform.Find("Background").GetComponent<Image>();
@@ -75,11 +76,15 @@ public class MenuController : MonoBehaviour
         settingsPage = settingsMenu.GetComponent<Image>();
         engraving = transform.Find("Engraving").gameObject;
         backButton = settingsMenu.transform.Find("Back").gameObject;
-
-        playersMenu = transform.Find("Players Menu").gameObject;
-
+        settingsMenu.SetActive(false);
+        
         mainMenu = transform.Find("Main Menu").gameObject;
 
+        playersMenu = transform.Find("Players Menu").gameObject;
+        playersMenu.SetActive(false);
+
+        playersMenu.GetComponent<PlayersMenu>().Initialize();
+        
         //navigation = GetComponent<MenuNavigation>();
 
         scene = SceneManager.GetActiveScene().name;
@@ -89,6 +94,10 @@ public class MenuController : MonoBehaviour
             case "Main Menu":
                 mode = Mode.Main;
                 SetBackgroundMask(true);
+                
+                MainMenu();
+                menuTransform.anchoredPosition = monoPageTarget;
+                MenuEnabledEvent.Invoke();
                 break;
             
             case "Game":
@@ -97,29 +106,13 @@ public class MenuController : MonoBehaviour
                 deathSubmenu = settingsMenu.transform.Find("Death Submenu").gameObject;
                 pauseSubmenu = settingsMenu.transform.Find("Pause Submenu").gameObject;
                 victorySubmenu = settingsMenu.transform.Find("Victory Submenu").gameObject;
-                break;
-        }
-    }
-
-    private void Start()
-    {
-        settingsMenu.SetActive(false);
-        playersMenu.SetActive(false);
-
-        switch (mode)
-        {
-            case Mode.Main:
-                MainMenu();
-                menuTransform.anchoredPosition = monoPageTarget;
-                MenuEnabledEvent.Invoke();
-                break;
-            case Mode.Game:
+                
                 backButton.SetActive(false);
                 deathSubmenu.SetActive(false);
                 pauseSubmenu.SetActive(false);
                 victorySubmenu.SetActive(false);
-                menu.SetActive(false);
-                MenuDisabledEvent.Invoke();
+                
+                DisableMenu();
                 break;
         }
     }
@@ -137,6 +130,12 @@ public class MenuController : MonoBehaviour
                 Back();
             }
         }
+    }
+
+    public void DisableMenu()
+    {
+        gameObject.SetActive(false);
+        MenuDisabledEvent.Invoke();
     }
 
     public void Back()

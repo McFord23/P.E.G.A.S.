@@ -22,10 +22,10 @@ public class NetworkSubmenu : NetworkBehaviour
     private HostMonitoring hostMonitoring;
     private ClientMonitoring clientMonitoring;
 
-    private void Start()
+    public void Initialize()
     {
         ipFieldManager = GetComponentInChildren<AddressFieldManager>();
-        playersMenu = GetComponentInParent<PlayersMenu>();
+        playersMenu = GetComponentInParent<PlayersMenu>(true);
 
         status = transform.Find("Status").GetComponent<Text>();
         brown = status.color;

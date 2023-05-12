@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &473008259382546749
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7137626301912640986}
+  - component: {fileID: 4091569048829719050}
+  m_Layer: 0
+  m_Name: Log
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7137626301912640986
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473008259382546749}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8825258293389494982}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4091569048829719050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473008259382546749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 337e727001bcb244d863093b9b7a6632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &548478082922268447
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,7 +232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efcd92f12e2f52a4181b323179fb6b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playersManager: {fileID: 0}
 --- !u!1 &1698087783969067801
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,7 +707,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: YAY
+  m_Text: "\u0410\u0412\u0415 \u041D\u0410\u041C"
 --- !u!114 &4357521464814465344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -846,9 +889,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ResumeAdapter, Assembly-CSharp
-        m_MethodName: Resume
+      - m_Target: {fileID: 3502128489368677346}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: ExecuteResume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -972,6 +1015,7 @@ Transform:
   - {fileID: 7038055526297532695}
   - {fileID: 7038055525419924561}
   - {fileID: 7038055527208871907}
+  - {fileID: 7137626301912640986}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2913,7 +2957,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.6551724, y: 1}
+  m_AnchorMax: {x: 0.66101694, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3827,9 +3871,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 7038055526310634466}
   m_Direction: 0
   m_MinValue: 0.05
-  m_MaxValue: 1.5
+  m_MaxValue: 3
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -6073,7 +6117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7784,7 +7828,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4431d027b87e0f4faf48413bfa1946e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playersManager: {fileID: 0}
 --- !u!1 &7038055526084061404
 GameObject:
   m_ObjectHideFlags: 0
@@ -9269,8 +9312,8 @@ RectTransform:
   m_Father: {fileID: 7038055527094781215}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.6551724, y: 0}
-  m_AnchorMax: {x: 0.6551724, y: 1}
+  m_AnchorMin: {x: 0.66101694, y: 0}
+  m_AnchorMax: {x: 0.66101694, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 15, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

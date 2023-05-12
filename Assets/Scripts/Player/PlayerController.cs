@@ -18,6 +18,11 @@ public class PlayerController : NetworkBehaviour
 
     private void FixedUpdate()
     {
+        if (Global.gameMode is GameMode.Host or GameMode.Client)
+        {
+            if (!IsOwner) return;
+        }
+        
         if (player.moveState is MoveState.Idle or MoveState.Run)
         {
             if (gasInput > 0)
@@ -26,9 +31,8 @@ public class PlayerController : NetworkBehaviour
             }
 
             player.rb.AddTorque(250f * rotateInput * player.speed / player.rb.mass);
-        }
-
-        if (player.moveState is MoveState.Flap or MoveState.FreeFall)
+        } 
+        else if (player.moveState is MoveState.Flap or MoveState.FreeFall)
         {
             if (gasInput > 0)
             {
@@ -41,6 +45,11 @@ public class PlayerController : NetworkBehaviour
 
     private void Update()
     {
+        if (Global.gameMode is GameMode.Host or GameMode.Client)
+        {
+            if (!IsOwner) return;
+        }
+
         if (player.moveState == MoveState.Run)
         {
             if (gasInput == 0)
@@ -57,10 +66,7 @@ public class PlayerController : NetworkBehaviour
             }
         }
 
-        if (IsOwner || Global.gameMode == GameMode.Single)
-        {
-            UpdatePlayerInput();
-        }
+        UpdatePlayerInput();
     }
     
     private void UpdatePlayerInput()
@@ -68,8 +74,10 @@ public class PlayerController : NetworkBehaviour
         var gas = 0f;
         var rotate = 0f;
         var shoot = 0f;
-        
-        var input = Global.players[0].controlLayout;
+
+        int id = Global.gameMode == GameMode.Client ? 1 : 0; 
+
+        var input = Global.players[id].controlLayout;
         
         switch (input)
         {
@@ -104,7 +112,7 @@ public class PlayerController : NetworkBehaviour
                 break;
         }
 
-        int gamepad = Global.players[0].gamepad;
+        int gamepad = Global.players[id].gamepad;
         bool gamepadActive = (gamepad == 1) ? Gamepad.gamepad1 : Gamepad.gamepad2;
         if (gamepadActive)
         {

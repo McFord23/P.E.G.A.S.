@@ -29,10 +29,7 @@ public class PlayerSubmenu : MonoBehaviour
         characterButton = transform.Find("Character/Change Character Icon").gameObject;
         nextButton = transform.Find("Control Layout/Next Layout").gameObject;
         perviousButton = transform.Find("Control Layout/Pervious Layout").gameObject;
-    }
-
-    private void Start()
-    {
+        
         index = (int)layout;
         layoutSprite.sprite = layoutSprites[index];
     }

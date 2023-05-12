@@ -44,7 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 309d4228dc0fab249b15381c5604803d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 35
   fireball: {fileID: 3971052911475143570, guid: 3ae58ac55a2ff5d4bb5c5210413b9e1f, type: 3}
 --- !u!1 &788791566603366154
 GameObject:
@@ -271,7 +270,7 @@ GameObject:
   - component: {fileID: 788791568059140377}
   - component: {fileID: 7948664637580210497}
   - component: {fileID: 1898321296602287250}
-  - component: {fileID: 989893824467195048}
+  - component: {fileID: 719568186739166642}
   m_Layer: 8
   m_Name: Luna
   m_TagString: Player
@@ -330,10 +329,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crushEffectPrefab: {fileID: 5466016915314235085, guid: 52dd9e522eea9ec41b12d0432fe4bd1a, type: 3}
-  speed: 0
-  angle: 1
-  angleOfAttack: 0
-  landed: 1
   spawnPos: {x: 0, y: 0}
   moveState: 1
   wingSpan: 6
@@ -380,19 +375,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SyncPositionX: 1
   SyncPositionY: 1
-  SyncPositionZ: 1
+  SyncPositionZ: 0
   SyncRotAngleX: 0
   SyncRotAngleY: 0
   SyncRotAngleZ: 1
   SyncScaleX: 0
-  SyncScaleY: 0
+  SyncScaleY: 1
   SyncScaleZ: 0
   PositionThreshold: 0.001
   RotAngleThreshold: 0.01
   ScaleThreshold: 0.01
   InLocalSpace: 0
   Interpolate: 1
---- !u!114 &989893824467195048
+--- !u!114 &719568186739166642
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

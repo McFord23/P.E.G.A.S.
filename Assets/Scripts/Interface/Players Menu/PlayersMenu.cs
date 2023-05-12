@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class PlayersMenu : MonoBehaviour
 {
-    private MenuController menu;
+    private MenuManager menu;
     private GameObject coopSubmenu;
     private GameObject networkSubmenu;
 
@@ -27,12 +27,10 @@ public class PlayersMenu : MonoBehaviour
     private Image player1GamepadImage;
     private Image player2GamepadImage;
 
-    private void Awake()
+    public void Initialize()
     {
-        menu = GetComponentInParent<MenuController>();
-        coopSubmenu = transform.Find("Coop Submenu").gameObject;
-        networkSubmenu = transform.Find("Network Submenu").gameObject;
-        
+        menu = GetComponentInParent<MenuManager>();
+
         player1Submenu = transform.Find("Player #1").GetComponent<PlayerSubmenu>();
         p1 = player1Submenu.transform.Find("P1Text").GetComponent<Text>();
         
@@ -52,27 +50,29 @@ public class PlayersMenu : MonoBehaviour
 
         player1Submenu.Initialize();
         player2Submenu.Initialize();
-    }
-
-    private void Start()
-    {
-        player1Submenu.ChangeCharacter(Global.players[0].character);
-        player2Submenu.ChangeCharacter(Global.players[1].character);
-
-        UpdatePlayersLayout();
-        UpdateGamepadStatus();
-
+        
+        coopSubmenu = transform.Find("Coop Submenu").gameObject;
+        networkSubmenu = transform.Find("Network Submenu").gameObject;
+        
         switch (Global.gameMode)
         {            
             case GameMode.LocalCoop:
                 LocalCoop();
                 break;
-
-            case GameMode.Client:
+            
             case GameMode.Host:
+            case GameMode.Client:
                 NetworkCoop();
                 break;
         }
+
+        networkSubmenu.GetComponent<NetworkSubmenu>().Initialize();
+
+        player1Submenu.ChangeCharacter(Global.players[0].character);
+        player2Submenu.ChangeCharacter(Global.players[1].character);
+        
+        UpdatePlayersLayout();
+        UpdateGamepadStatus();
     }
 
     public void LocalCoop()
@@ -230,13 +230,7 @@ public class PlayersMenu : MonoBehaviour
     {
         player2Submenu.ChangeCharacter(player);
     }
-
-    public void ChangeGamepad()
-    {
-        (Global.players[0].gamepad, Global.players[1].gamepad) = (Global.players[1].gamepad, Global.players[0].gamepad);
-        (player1GamepadImage.sprite, player2GamepadImage.sprite) = (player2GamepadImage.sprite, player1GamepadImage.sprite);
-    }
-
+    
     public void UpdateGamepadStatus()
     {
         switch (Global.gameMode)

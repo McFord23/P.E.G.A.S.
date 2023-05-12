@@ -32,8 +32,13 @@ public class PlayersManager : SingletonMonoBehaviour<PlayersManager>
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.JoystickButton5))
         {
+            if (players[0].moveState == MoveState.Paused)
+            {
+                EventAdapter.Instance.Execute(EventKey.Resume);
+            }
+            
             Reset();
         }
 
@@ -85,17 +90,21 @@ public class PlayersManager : SingletonMonoBehaviour<PlayersManager>
 
     public float GetSpeed()
     {
-        if (!players[0] && !players[1])
+        switch (Global.gameMode)
         {
-            return 0;
-        }
-        
-        if(HaveOtherPlayer)
-        {
-            return (players[1].speed + players[0].speed) / 2;
-        }
+            case GameMode.Single:
+            case GameMode.Host when HaveBothPlayers:
+                return players[0].speed;
 
-        return players[0].speed;
+            case GameMode.Client when HaveBothPlayers:
+                return players[1].speed;
+            
+            case GameMode.LocalCoop when HaveBothPlayers:
+                return (players[1].speed + players[0].speed) / 2;
+            
+            default:
+                return 0;
+        }
     }
 
     public float GetDirection()

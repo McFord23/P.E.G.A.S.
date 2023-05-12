@@ -1,16 +1,29 @@
 ﻿using Enums;
+using Unity.Collections;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /**
  * Абстрагирует мультиплеерный и одиночный переход между сценами 
- * Должен использоваться везде вместо обычного
  */
 public class SceneManagerAdapter : SingletonNetworkBehaviour<SceneManagerAdapter>
 {
     [SerializeField] private GameObject loadScreen;
 
+    /*private void Start()
+    {
+        ClientMonitoring.Instance.OnConnectedEvent += LoadHostScene;
+    }
+
+    private void LoadHostScene()
+    {
+        if (SceneManager.GetActiveScene().name != NetworkManager.SceneManager.)
+        {
+            if (loadScreen) loadScreen.SetActive(true);
+        }
+    }*/
+    
     public void LoadScene(string sceneName)
     {
         switch (Global.gameMode)
@@ -23,25 +36,25 @@ public class SceneManagerAdapter : SingletonNetworkBehaviour<SceneManagerAdapter
             case GameMode.Host:
             case GameMode.Client:
                 if (loadScreen) loadScreen.SetActive(true);
-                RequestLoadSceneServerRpc(sceneName);
+                RequestLoadSceneServerRpc(new FixedString32Bytes(sceneName));
                 break;
         }
     }
 
     [ServerRpc(RequireOwnership = false)]
-    private void RequestLoadSceneServerRpc(string sceneName)
+    private void RequestLoadSceneServerRpc(FixedString32Bytes sceneName)
     {
-        LoadSceneClientRpc(sceneName);
+        RequestLoadSceneClientRpc(sceneName);
     }
 
     [ClientRpc]
-    private void LoadSceneClientRpc(string sceneName)
+    private void RequestLoadSceneClientRpc(FixedString32Bytes sceneName)
     {
         if (loadScreen) loadScreen.SetActive(true);
 
         if (Global.gameMode == GameMode.Host)
         {
-            NetworkManager.SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+            NetworkManager.SceneManager.LoadScene(sceneName.ToString(), LoadSceneMode.Single);
         }
     }
 }

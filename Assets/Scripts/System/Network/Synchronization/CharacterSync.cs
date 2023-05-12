@@ -15,8 +15,11 @@ public class CharacterSync : NetworkBehaviour
     private HostMonitoring host;
     private ClientMonitoring client;
 
-    private NetworkVariable<Character> characterHost = new NetworkVariable<Character>(Character.Celestia, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
-    private NetworkVariable<Character> characterClient = new NetworkVariable<Character>(Character.Luna, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    private NetworkVariable<Character> characterHost = new (Character.Celestia, 
+        NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    
+    private NetworkVariable<Character> characterClient = new (Character.Luna, 
+        NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
     public override void OnNetworkSpawn()
     {

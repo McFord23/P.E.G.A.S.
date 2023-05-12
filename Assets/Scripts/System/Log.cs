@@ -8,9 +8,12 @@ public class Log : MonoBehaviour
     private GUIStyle style = new GUIStyle();
     private bool fadeOut = false;
 
-    private void Start()
+    private IEnumerator autoHide;
+
+    private void Awake()
     {
         style.normal.textColor = Color.white;
+        autoHide = AutoHide();
     }
 
     private void Update()
@@ -18,6 +21,13 @@ public class Log : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F3))
         {
             float alpha = style.normal.textColor.a == 1 ? 0 : 1;
+            
+            if (alpha == 1)
+            {
+                StopCoroutine(autoHide);
+                fadeOut = false;
+            }
+            
             ChangeTextAplha(alpha);
         }
     }
@@ -46,7 +56,7 @@ public class Log : MonoBehaviour
         color.a = 1f;
         style.normal.textColor = color;
 
-        if (!fadeOut) StartCoroutine(AutoHide());
+        if (!fadeOut) StartCoroutine(autoHide);
     }
 
     private void OnGUI()

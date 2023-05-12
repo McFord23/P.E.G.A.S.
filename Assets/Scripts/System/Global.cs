@@ -34,7 +34,7 @@ public static class Global
     
     public struct Sensitivity
     {
-        public static float mouse = 0.4f;
+        public static float mouse = 2f;
         public static float keyboard = 6f;
         public static float gamepad = 6f;
     }

@@ -219,7 +219,6 @@ GameObject:
   - component: {fileID: 2116929138}
   - component: {fileID: 2116929137}
   - component: {fileID: 2116929140}
-  - component: {fileID: 2116929141}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -267,7 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RunInBackground: 1
-  LogLevel: 0
+  LogLevel: 1
   NetworkConfig:
     ProtocolVersion: 0
     NetworkTransport: {fileID: 2116929137}
@@ -280,6 +279,21 @@ MonoBehaviour:
       OverridingTargetPrefab: {fileID: 0}
     - Override: 0
       Prefab: {fileID: 788791568059140383, guid: 37d22b561820f51429df48747eb7507d, type: 3}
+      SourcePrefabToOverride: {fileID: 0}
+      SourceHashToOverride: 0
+      OverridingTargetPrefab: {fileID: 0}
+    - Override: 0
+      Prefab: {fileID: 2845547584719624696, guid: 59a1da88b6b718d44bb97299c308bdb8, type: 3}
+      SourcePrefabToOverride: {fileID: 0}
+      SourceHashToOverride: 0
+      OverridingTargetPrefab: {fileID: 0}
+    - Override: 0
+      Prefab: {fileID: 3971052911475143570, guid: 3ae58ac55a2ff5d4bb5c5210413b9e1f, type: 3}
+      SourcePrefabToOverride: {fileID: 0}
+      SourceHashToOverride: 0
+      OverridingTargetPrefab: {fileID: 0}
+    - Override: 0
+      Prefab: {fileID: 98673855362152391, guid: 870593e9cc5ad26479fe0d28463e2495, type: 3}
       SourcePrefabToOverride: {fileID: 0}
       SourceHashToOverride: 0
       OverridingTargetPrefab: {fileID: 0}
@@ -323,18 +337,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52ac563b61cfecb40af099dd62f8da9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2116929141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2116929136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 337e727001bcb244d863093b9b7a6632, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &7038055525687191608

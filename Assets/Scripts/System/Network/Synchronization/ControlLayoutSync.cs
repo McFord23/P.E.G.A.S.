@@ -15,8 +15,11 @@ public class ControlLayoutSync : NetworkBehaviour
     private HostMonitoring host;
     private ClientMonitoring client;
 
-    private NetworkVariable<ControlLayout> layoutHost = new NetworkVariable<ControlLayout>(ControlLayout.Mouse, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
-    private NetworkVariable<ControlLayout> layoutClient = new NetworkVariable<ControlLayout>(ControlLayout.WASD, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    private NetworkVariable<ControlLayout> layoutHost = new (ControlLayout.Mouse, 
+        NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    
+    private NetworkVariable<ControlLayout> layoutClient = new (ControlLayout.WASD, 
+        NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
     public override void OnNetworkSpawn()
     {
