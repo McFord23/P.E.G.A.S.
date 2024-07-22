@@ -269,8 +269,7 @@ GameObject:
   - component: {fileID: 788791568059140390}
   - component: {fileID: 788791568059140377}
   - component: {fileID: 7948664637580210497}
-  - component: {fileID: 1898321296602287250}
-  - component: {fileID: 719568186739166642}
+  - component: {fileID: 628033404458315728}
   m_Layer: 8
   m_Name: Luna
   m_TagString: Player
@@ -361,7 +360,7 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
---- !u!114 &1898321296602287250
+--- !u!114 &628033404458315728
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -370,32 +369,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 788791568059140383}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34ffb5119b103f14e8baa98f7b14f93e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 0
-  SyncRotAngleX: 0
-  SyncRotAngleY: 0
-  SyncRotAngleZ: 1
-  SyncScaleX: 0
-  SyncScaleY: 1
-  SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  InLocalSpace: 0
-  Interpolate: 1
---- !u!114 &719568186739166642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 788791568059140383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80d7c879794dfda4687da0e400131852, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e411944faa27b74ea9e0b468f3c6805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

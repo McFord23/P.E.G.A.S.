@@ -135,4 +135,9 @@ public class PlayerController : NetworkBehaviour
     {
         return shootInput;
     }
+
+    private void OnGUI()
+    {
+        GUILayout.Label("Rotate: " + rotateInput);
+    }
 }
